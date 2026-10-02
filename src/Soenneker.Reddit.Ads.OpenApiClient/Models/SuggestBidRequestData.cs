@@ -43,12 +43,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public DateTimeOffset? EndTime { get; set; }
         /// <summary>The goal objective of the ad group.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsGoalType? GoalType { get; set; }
-        /// <summary>The goal value (microcurrency).</summary>
+        /// <summary>The goal value (microcurrency). When `goal_type` is either `LIFETIME_SPEND` or `DAILY_SPEND`, `goal_value` is required to return metrics other than `min_bid_value`.</summary>
         public int? GoalValue { get; set; }
         /// <summary>Whether the ad group belongs to a CBO (campaign budget optimization) campaign. This cannot be modified with the API.</summary>
         public bool? IsCampaignBudgetOptimization { get; private set; }
-        /// <summary>The event you want to measure. Must match the campaign&apos;s optimization goal for CBO campaigns. Set to `NULL` for conversions or app installs objectives to default from the campaign. **This can&apos;t be changed later.** See the [goal options](https://ads-api.reddit.com/docs/v3/operations/Create%20Ad%20Group#optimization-goal-options).</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal? OptimizationGoal { get; set; }
+        /// <summary>The ad group optimization goal to suggest bids for.</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.SuggestBidRequestDataOptimizationGoal? OptimizationGoal { get; set; }
         /// <summary>DEPRECATED: This field is no longer used. It will be ignored if provided. Use `data.duration.start_time` instead.</summary>
         [Obsolete("")]
         public DateTimeOffset? StartTime { get; set; }
@@ -60,6 +60,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargeting Targeting { get; set; }
 #endif
+        /// <summary>Whether the campaign uses a product catalog. It can be `true` only when `objective` is `SALES`. Omitted when unset. When `true`, all ad groups in the campaign must use a catalog.</summary>
+        public bool? UseCatalog { get; set; }
         /// <summary>The type of view-through conversion being measured. For ad groups under CBO campaigns, this field must match the campaign&apos;s `view_through_conversion_type`.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType? ViewThroughConversionType { get; set; }
         /// <summary>
@@ -91,9 +93,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "goal_type", n => { GoalType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsGoalType>(); } },
                 { "goal_value", n => { GoalValue = n.GetIntValue(); } },
                 { "is_campaign_budget_optimization", n => { IsCampaignBudgetOptimization = n.GetBoolValue(); } },
-                { "optimization_goal", n => { OptimizationGoal = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal>(); } },
+                { "optimization_goal", n => { OptimizationGoal = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SuggestBidRequestDataOptimizationGoal>(); } },
                 { "start_time", n => { StartTime = n.GetDateTimeOffsetValue(); } },
                 { "targeting", n => { Targeting = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargeting>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargeting.CreateFromDiscriminatorValue); } },
+                { "use_catalog", n => { UseCatalog = n.GetBoolValue(); } },
                 { "view_through_conversion_type", n => { ViewThroughConversionType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType>(); } },
             };
         }
@@ -114,9 +117,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("end_time", EndTime);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsGoalType>("goal_type", GoalType);
             writer.WriteIntValue("goal_value", GoalValue);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal>("optimization_goal", OptimizationGoal);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SuggestBidRequestDataOptimizationGoal>("optimization_goal", OptimizationGoal);
             writer.WriteDateTimeOffsetValue("start_time", StartTime);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargeting>("targeting", Targeting);
+            writer.WriteBoolValue("use_catalog", UseCatalog);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType>("view_through_conversion_type", ViewThroughConversionType);
         }
     }

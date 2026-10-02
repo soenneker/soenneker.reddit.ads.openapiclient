@@ -22,6 +22,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #endif
         /// <summary>The [campaign objective](https://business.reddithelp.com/s/article/Ad-campaign-objectives).</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective? Objective { get; set; }
+        /// <summary>Whether the campaign uses a product catalog. It can be `true` only when `objective` is `SALES`. Omitted when unset. When `true`, all ad groups in the campaign must use a catalog.</summary>
+        public bool? UseCatalog { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,6 +44,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             {
                 { "ad_group_configs", n => { AdGroupConfigs = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingEstimatesAdGroupGoalValueAdGroupConfigsItem>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingEstimatesAdGroupGoalValueAdGroupConfigsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "objective", n => { Objective = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective>(); } },
+                { "use_catalog", n => { UseCatalog = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -53,6 +56,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingEstimatesAdGroupGoalValueAdGroupConfigsItem>("ad_group_configs", AdGroupConfigs);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective>("objective", Objective);
+            writer.WriteBoolValue("use_catalog", UseCatalog);
         }
     }
 }

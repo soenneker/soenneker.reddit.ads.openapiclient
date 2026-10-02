@@ -67,25 +67,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         #pragma warning disable CS1591
         MobileConversionPurchase,
         #pragma warning restore CS1591
-        [EnumMember(Value = "MOBILE_CONVERSION_COMPLETED_TUTORIAL")]
-        #pragma warning disable CS1591
-        MobileConversionCompletedTutorial,
-        #pragma warning restore CS1591
         [EnumMember(Value = "MOBILE_CONVERSION_LEVEL_ACHIEVED")]
         #pragma warning disable CS1591
         MobileConversionLevelAchieved,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MOBILE_CONVERSION_SPEND_CREDITS")]
-        #pragma warning disable CS1591
-        MobileConversionSpendCredits,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MOBILE_CONVERSION_REINSTALL")]
-        #pragma warning disable CS1591
-        MobileConversionReinstall,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MOBILE_CONVERSION_UNLOCK_ACHIEVEMENT")]
-        #pragma warning disable CS1591
-        MobileConversionUnlockAchievement,
         #pragma warning restore CS1591
         [EnumMember(Value = "MOBILE_CONVERSION_START_TRIAL")]
         #pragma warning disable CS1591
@@ -94,10 +78,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         [EnumMember(Value = "MOBILE_CONVERSION_SUBSCRIBE")]
         #pragma warning disable CS1591
         MobileConversionSubscribe,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MOBILE_CONVERSION_ONBOARD_STARTED")]
-        #pragma warning disable CS1591
-        MobileConversionOnboardStarted,
         #pragma warning restore CS1591
         [EnumMember(Value = "MOBILE_CONVERSION_FIRST_TIME_PURCHASE")]
         #pragma warning disable CS1591

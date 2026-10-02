@@ -146,6 +146,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #endif
         /// <summary>The campaign type. `AUTOMATED` identifies a Reddit Max campaign. See the [Max campaign setup guide](/docs/v3/guides/programs/campaign/max-campaign-setup).</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignType? Type { get; set; }
+        /// <summary>Whether the campaign uses a product catalog. It can be `true` only when `objective` is `SALES`. Omitted when unset. When `true`, all ad groups in the campaign must use a catalog.</summary>
+        public bool? UseCatalog { get; set; }
         /// <summary>The conversion attribution window. Determines how conversions are counted after a user interacts with an ad. Only available when `is_campaign_budget_optimization` is `true`.&gt; **Important:** This cannot be changed after publishing the campaign.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignViewThroughConversionType? ViewThroughConversionType { get; set; }
         /// <summary>
@@ -201,6 +203,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "spend_cap", n => { SpendCap = n.GetIntValue(); } },
                 { "start_time", n => { StartTime = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignType>(); } },
+                { "use_catalog", n => { UseCatalog = n.GetBoolValue(); } },
                 { "view_through_conversion_type", n => { ViewThroughConversionType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignViewThroughConversionType>(); } },
             };
         }
@@ -234,6 +237,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteIntValue("spend_cap", SpendCap);
             writer.WriteStringValue("start_time", StartTime);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignType>("type", Type);
+            writer.WriteBoolValue("use_catalog", UseCatalog);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignViewThroughConversionType>("view_through_conversion_type", ViewThroughConversionType);
         }
     }

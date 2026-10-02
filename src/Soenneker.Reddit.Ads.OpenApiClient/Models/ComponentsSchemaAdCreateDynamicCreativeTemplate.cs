@@ -13,7 +13,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaAdCreateDynamicCreativeTemplate : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The ad_account_id property</summary>
+        /// <summary>The ad account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AdAccountId { get; set; }
@@ -73,7 +73,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.EventTrackersItem> EventTrackers { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The entity name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

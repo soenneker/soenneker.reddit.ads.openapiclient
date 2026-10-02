@@ -12,7 +12,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     public partial class CreateSavedAudienceRequestData : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name property</summary>
+        /// <summary>The entity name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

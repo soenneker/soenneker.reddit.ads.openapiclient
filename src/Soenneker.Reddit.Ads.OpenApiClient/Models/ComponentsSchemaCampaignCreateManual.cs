@@ -104,6 +104,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public string StartTime { get; set; }
 #endif
+        /// <summary>Whether the campaign uses a product catalog. It can be `true` only when `objective` is `SALES`. Omitted when unset. When `true`, all ad groups in the campaign must use a catalog.</summary>
+        public bool? UseCatalog { get; set; }
         /// <summary>The conversion attribution window. Determines how conversions are counted after a user interacts with an ad. Only available when `is_campaign_budget_optimization` is `true`.&gt; **Important:** This cannot be changed after publishing the campaign.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType? ViewThroughConversionType { get; set; }
         /// <summary>
@@ -143,6 +145,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "special_ad_categories", n => { SpecialAdCategories = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SpecialAdCategoriesItem>()?.AsList(); } },
                 { "spend_cap", n => { SpendCap = n.GetIntValue(); } },
                 { "start_time", n => { StartTime = n.GetStringValue(); } },
+                { "use_catalog", n => { UseCatalog = n.GetBoolValue(); } },
                 { "view_through_conversion_type", n => { ViewThroughConversionType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType>(); } },
             };
         }
@@ -171,6 +174,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock>("schedule", Schedule);
             writer.WriteIntValue("spend_cap", SpendCap);
             writer.WriteStringValue("start_time", StartTime);
+            writer.WriteBoolValue("use_catalog", UseCatalog);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType>("view_through_conversion_type", ViewThroughConversionType);
         }
     }

@@ -32,10 +32,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper2? Timezone { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper3? Timezone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper2 Timezone { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper3 Timezone { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductFeedSchedule"/> and sets the default values.
@@ -71,7 +71,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "is_paused", n => { IsPaused = n.GetBoolValue(); } },
                 { "minute", n => { Minute = n.GetIntValue(); } },
                 { "next_import_at", n => { NextImportAt = n.GetDateTimeOffsetValue(); } },
-                { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper2>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper2.CreateFromDiscriminatorValue); } },
+                { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper3>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper3.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteIntValue("interval_count", IntervalCount);
             writer.WriteBoolValue("is_paused", IsPaused);
             writer.WriteIntValue("minute", Minute);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper2>("timezone", Timezone);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper3>("timezone", Timezone);
         }
     }
 }

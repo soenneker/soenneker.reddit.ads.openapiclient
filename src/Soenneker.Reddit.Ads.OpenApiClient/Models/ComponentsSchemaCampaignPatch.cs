@@ -75,6 +75,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public string StartTime { get; set; }
 #endif
+        /// <summary>Whether the campaign uses a product catalog. It can be `true` only when `objective` is `SALES`. Omitted when unset. When `true`, all ad groups in the campaign must use a catalog.</summary>
+        public bool? UseCatalog { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -106,6 +108,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "schedule", n => { Schedule = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "spend_cap", n => { SpendCap = n.GetIntValue(); } },
                 { "start_time", n => { StartTime = n.GetStringValue(); } },
+                { "use_catalog", n => { UseCatalog = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -128,6 +131,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock>("schedule", Schedule);
             writer.WriteIntValue("spend_cap", SpendCap);
             writer.WriteStringValue("start_time", StartTime);
+            writer.WriteBoolValue("use_catalog", UseCatalog);
         }
     }
 }

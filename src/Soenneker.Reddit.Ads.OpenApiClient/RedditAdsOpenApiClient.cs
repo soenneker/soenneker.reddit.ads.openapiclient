@@ -19,6 +19,7 @@ using Soenneker.Reddit.Ads.OpenApiClient.Custom_audiences;
 using Soenneker.Reddit.Ads.OpenApiClient.Data_deletion_jobs;
 using Soenneker.Reddit.Ads.OpenApiClient.Forecasting;
 using Soenneker.Reddit.Ads.OpenApiClient.Funding_instruments;
+using Soenneker.Reddit.Ads.OpenApiClient.Generated_content;
 using Soenneker.Reddit.Ads.OpenApiClient.Industries;
 using Soenneker.Reddit.Ads.OpenApiClient.Lead_gen_forms;
 using Soenneker.Reddit.Ads.OpenApiClient.Me;
@@ -109,6 +110,11 @@ namespace Soenneker.Reddit.Ads.OpenApiClient
         public global::Soenneker.Reddit.Ads.OpenApiClient.Funding_instruments.Funding_instrumentsRequestBuilder Funding_instruments
         {
             get => new global::Soenneker.Reddit.Ads.OpenApiClient.Funding_instruments.Funding_instrumentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The generated_content property</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Generated_content.Generated_contentRequestBuilder Generated_content
+        {
+            get => new global::Soenneker.Reddit.Ads.OpenApiClient.Generated_content.Generated_contentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The industries property</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Industries.IndustriesRequestBuilder Industries

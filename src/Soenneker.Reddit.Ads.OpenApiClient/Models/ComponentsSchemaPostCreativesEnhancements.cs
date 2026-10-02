@@ -13,9 +13,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaPostCreativesEnhancements : IParsable
     {
-        /// <summary>Deprecated. Use `user_generated_content.enroll_status` instead.</summary>
-        [Obsolete("")]
-        public bool? AllowUserGeneratedContent { get; set; }
         /// <summary>The [Redditor Highlights](https://business.reddithelp.com/s/article/redditor-highlights) enhancement setting for this creative.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,7 +39,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allow_user_generated_content", n => { AllowUserGeneratedContent = n.GetBoolValue(); } },
                 { "user_generated_content", n => { UserGeneratedContent = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEnhancementsUgc>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEnhancementsUgc.CreateFromDiscriminatorValue); } },
             };
         }
@@ -53,7 +49,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("allow_user_generated_content", AllowUserGeneratedContent);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEnhancementsUgc>("user_generated_content", UserGeneratedContent);
         }
     }

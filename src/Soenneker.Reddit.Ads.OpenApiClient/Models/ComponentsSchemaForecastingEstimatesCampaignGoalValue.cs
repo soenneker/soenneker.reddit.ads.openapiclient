@@ -24,6 +24,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public int? GoalValue { get; set; }
         /// <summary>The [campaign objective](https://business.reddithelp.com/s/article/Ad-campaign-objectives).</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective? Objective { get; set; }
+        /// <summary>Whether the campaign uses a product catalog. It can be `true` only when `objective` is `SALES`. Omitted when unset. When `true`, all ad groups in the campaign must use a catalog.</summary>
+        public bool? UseCatalog { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,6 +47,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "ad_group_configs", n => { AdGroupConfigs = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingEstimatesCampaignGoalValueAdGroupConfigsItem>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingEstimatesCampaignGoalValueAdGroupConfigsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "goal_value", n => { GoalValue = n.GetIntValue(); } },
                 { "objective", n => { Objective = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective>(); } },
+                { "use_catalog", n => { UseCatalog = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -57,6 +60,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingEstimatesCampaignGoalValueAdGroupConfigsItem>("ad_group_configs", AdGroupConfigs);
             writer.WriteIntValue("goal_value", GoalValue);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective>("objective", Objective);
+            writer.WriteBoolValue("use_catalog", UseCatalog);
         }
     }
 }

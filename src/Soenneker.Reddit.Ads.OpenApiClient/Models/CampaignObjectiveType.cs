@@ -11,6 +11,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         #pragma warning disable CS1591
         AppInstalls,
         #pragma warning restore CS1591
+        [EnumMember(Value = "BRAND_AWARENESS")]
+        #pragma warning disable CS1591
+        BrandAwareness,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CATALOG_SALES")]
         #pragma warning disable CS1591
         CatalogSales,
@@ -30,6 +34,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         [EnumMember(Value = "LEAD_GENERATION")]
         #pragma warning disable CS1591
         LeadGeneration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SALES")]
+        #pragma warning disable CS1591
+        Sales,
         #pragma warning restore CS1591
         [EnumMember(Value = "VIDEO_VIEWABLE_IMPRESSIONS")]
         #pragma warning disable CS1591

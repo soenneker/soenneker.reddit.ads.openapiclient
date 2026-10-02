@@ -13,7 +13,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     public partial class ComponentsSchemaReportMetric : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account&apos;s</summary>
+        /// <summary>The ad account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }

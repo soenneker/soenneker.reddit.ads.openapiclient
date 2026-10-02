@@ -9,7 +9,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ComponentsEnumsTimeZonesWrapper2 : IAdditionalDataHolder, IParsable
+    public partial class ComponentsEnumsTimeZonesWrapper3 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -17,21 +17,21 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The entity&apos;s default time zone.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZones? Value { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper2"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper3"/> and sets the default values.
         /// </summary>
-        public ComponentsEnumsTimeZonesWrapper2()
+        public ComponentsEnumsTimeZonesWrapper3()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper3"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper2 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper2();
+            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZonesWrapper3();
         }
         /// <summary>
         /// The deserialization information for the current model

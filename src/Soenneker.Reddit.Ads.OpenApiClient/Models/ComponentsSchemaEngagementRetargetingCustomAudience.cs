@@ -50,7 +50,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #endif
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The entity name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

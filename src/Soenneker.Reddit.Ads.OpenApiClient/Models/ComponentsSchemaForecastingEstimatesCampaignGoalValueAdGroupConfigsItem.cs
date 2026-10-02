@@ -18,7 +18,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3? BidType { get; set; }
         /// <summary>The amount to pay per bidding event (microcurrency).</summary>
         public int? BidValue { get; set; }
-        /// <summary>The end_time property</summary>
+        /// <summary>When the ad group will stop delivering ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EndTime { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #endif
         /// <summary>Indicates the catalog sale ad group&apos;s type.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingType2? ShoppingType { get; set; }
-        /// <summary>The start_time property</summary>
+        /// <summary>When the ad group will begin to deliver ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Required if `end_time` is set. For ad groups in a campaign with a start time in the future, this must match or be later than the campaign start time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StartTime { get; set; }

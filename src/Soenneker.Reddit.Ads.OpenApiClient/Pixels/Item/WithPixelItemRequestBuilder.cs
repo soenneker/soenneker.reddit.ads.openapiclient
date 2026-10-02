@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Reddit.Ads.OpenApiClient.Pixels.Item.Conversion_events;
+using Soenneker.Reddit.Ads.OpenApiClient.Pixels.Item.Data_deletion_jobs;
 using Soenneker.Reddit.Ads.OpenApiClient.Pixels.Item.Last_fired_at;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,11 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Pixels.Item
         public global::Soenneker.Reddit.Ads.OpenApiClient.Pixels.Item.Conversion_events.Conversion_eventsRequestBuilder Conversion_events
         {
             get => new global::Soenneker.Reddit.Ads.OpenApiClient.Pixels.Item.Conversion_events.Conversion_eventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The data_deletion_jobs property</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Pixels.Item.Data_deletion_jobs.Data_deletion_jobsRequestBuilder Data_deletion_jobs
+        {
+            get => new global::Soenneker.Reddit.Ads.OpenApiClient.Pixels.Item.Data_deletion_jobs.Data_deletion_jobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The last_fired_at property</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Pixels.Item.Last_fired_at.Last_fired_atRequestBuilder Last_fired_at
