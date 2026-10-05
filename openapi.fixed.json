@@ -4815,6 +4815,80 @@
         ]
       }
     },
+    "/posts/{postId}/creative_assets": {
+      "get": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "List Post Creative Assets",
+        "description": "List creative assets associated with a post. Use the returned asset IDs for asset-level reporting.\nResults can include repeated asset relationships.\n\u003Ch2\u003ERate Limit\u003C/h2\u003E\n        \u003Cdiv\u003E\u003Ca href=\u0022/ratelimits/Creative Management\u0022\u003ESee the rate limits for \u003Cstrong\u003ECreative Management\u003C/strong\u003E\u003C/a\u003E\u003C/div\u003E\u003Cbr\u003E\n        \u003Cdetails class=\u0022sl-panel sl-outline-none sl-w-full sl-rounded-lg sl-border\u0022\u003E\n            \u003Csummary\n                class=\u0022sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-font-medium sl-pr-4 sl-pl-3 sl-border-input focus:sl-border-primary sl-cursor-pointer sl-select-none\u0022\u003E\n                \u003Cdiv class=\u0022sl-flex sl-flex-1 sl-items-center sl-h-lg\u0022\u003E\n                    \u003Cdiv class=\u0022sl-flex sl-items-center sl-mr-1.5\u0022\u003E\n                        \u003Csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022chevron-down\u0022\n                            class=\u0022svg-inline--fa fa-chevron-down fa-fw fa-sm sl-icon\u0022 role=\u0022img\u0022\n                            xmlns=\u0022http://www.w3.org/2000/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003E\n                            \u003Cpath fill=\u0022currentColor\u0022\n                                d=\u0022M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\u0022\u003E\n                            \u003C/path\u003E\n                        \u003C/svg\u003E\n                    \u003C/div\u003E\n                    Policy Slug: \u003Cspan class=\u0022sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border\u0022 style=\u0022font-size: 0.8125em;\u0022\u003E ads-creative-management\u003C/span\u003E\n                \u003C/div\u003E\n            \u003C/summary\u003E\n            \u003Cdiv class=\u0022sl-panel__content-wrapper sl-border-t\u0022 role=\u0022region\u0022\u003E\n                \u003Cdiv class=\u0022sl-panel__content sl-p-4\u0022\u003E\n                    \u003Cdiv class=\u0022sl--m-2\u0022\u003E\n                        \u003Cdiv\u003E\n                            \u003Cdiv class=\u0022sl-m-2 sl-p-2 sl-border\u0022\u003E\n                                \u003Cdiv class=\u0022sl-prose sl-markdown-viewer\u0022 style=\u0022font-size: 12px;\u0022\u003E\n                                    \u003Cul\u003E\n                                        \u003Cli\u003EWindow: 60 seconds\u003C/li\u003E\n                                        \u003Cli\u003EQuota: 200 requests\u003C/li\u003E\n                                    \u003C/ul\u003E\n                                \u003C/div\u003E\n                            \u003C/div\u003E\n                        \u003C/div\u003E\n                    \u003C/div\u003E\n                \u003C/div\u003E\n            \u003C/div\u003E\n        \u003C/details\u003E\u003Cbr\u003E",
+        "operationId": "GetPostCreativeAssets",
+        "parameters": [
+          {
+            "name": "postId",
+            "in": "path",
+            "description": "The post ID.",
+            "required": true,
+            "schema": {
+              "pattern": "^t3_.*",
+              "type": "string",
+              "example": "t3_abc"
+            }
+          },
+          {
+            "description": "The token for the page to retrieve.",
+            "$ref": "#/components/parameters/components_parameters_page_token"
+          },
+          {
+            "description": "The number of items to be returned by page.",
+            "$ref": "#/components/parameters/components_parameters_page_size"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Post creative assets for the requested post.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentsSchemaListStructuredPostCreativeAssetsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "description": "No bearer token or a bad bearer token was provided.",
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "description": "Insufficient authentication scopes.",
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "The specified resource was not found.",
+            "$ref": "#/components/responses/NotFound"
+          },
+          "429": {
+            "description": "Too many requests. See [Rate Limiting](/docs/v3/guides/quick-start/rate-limiting) for header details and best practices.",
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "5XX": {
+            "description": "Server error.",
+            "$ref": "#/components/responses/ServerError"
+          }
+        },
+        "security": [
+          {
+            "RedditAPIKey": [
+              "adsread"
+            ]
+          }
+        ]
+      }
+    },
     "/product_catalogs/{catalogId}": {
       "get": {
         "tags": [
@@ -40031,6 +40105,185 @@
         },
         "additionalProperties": false
       },
+      "ComponentsEnumStructuredPostCreativeAssetRole": {
+        "enum": [
+          "HEADLINE",
+          "IMAGE",
+          "VIDEO",
+          "CTA",
+          "THUMBNAIL",
+          "CAROUSEL_ITEM",
+          "HERO",
+          "SECONDARY_IMAGE"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The role of a creative asset within a post.",
+        "x-ms-enum": {
+          "name": "ComponentsEnumStructuredPostCreativeAssetRole",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "HEADLINE",
+              "name": "Headline"
+            },
+            {
+              "value": "IMAGE",
+              "name": "Image"
+            },
+            {
+              "value": "VIDEO",
+              "name": "Video"
+            },
+            {
+              "value": "CTA",
+              "name": "Cta"
+            },
+            {
+              "value": "THUMBNAIL",
+              "name": "Thumbnail"
+            },
+            {
+              "value": "CAROUSEL_ITEM",
+              "name": "CarouselItem"
+            },
+            {
+              "value": "HERO",
+              "name": "Hero"
+            },
+            {
+              "value": "SECONDARY_IMAGE",
+              "name": "SecondaryImage"
+            }
+          ]
+        }
+      },
+      "ComponentsEnumImageCropAspectRatio": {
+        "enum": [
+          "4:3",
+          "1:1",
+          "4:5",
+          "16:9",
+          "1.91:1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The image crop aspect ratio.",
+        "readOnly": true,
+        "example": "1:1",
+        "x-ms-enum": {
+          "name": "ComponentsEnumImageCropAspectRatio",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "4:3",
+              "name": "Value4Colon3"
+            },
+            {
+              "value": "1:1",
+              "name": "Value1Colon1"
+            },
+            {
+              "value": "4:5",
+              "name": "Value4Colon5"
+            },
+            {
+              "value": "16:9",
+              "name": "Value16Colon9"
+            },
+            {
+              "value": "1.91:1",
+              "name": "Value191Colon1"
+            }
+          ]
+        }
+      },
+      "ComponentsEnumImageCropType": {
+        "enum": [
+          "MANUAL"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The image crop type.",
+        "example": "MANUAL",
+        "x-ms-enum": {
+          "name": "ComponentsEnumImageCropType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "MANUAL",
+              "name": "Manual"
+            }
+          ]
+        }
+      },
+      "ComponentsSchemaAssetLibraryImageCrop": {
+        "title": "ImageCrop",
+        "required": [
+          "top_left_coordinates",
+          "dimensions"
+        ],
+        "type": "object",
+        "properties": {
+          "top_left_coordinates": {
+            "$ref": "#/components/schemas/ComponentsSchemaAssetLibraryImageCropTopLeftCoordinates"
+          },
+          "dimensions": {
+            "$ref": "#/components/schemas/ComponentsSchemaAssetLibraryImageCropDimensions"
+          },
+          "aspect_ratio": {
+            "$ref": "#/components/schemas/ComponentsEnumImageCropAspectRatio"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ComponentsEnumImageCropType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A crop for the image."
+      },
+      "ComponentsSchemaStructuredPostCreativeAsset": {
+        "title": "StructuredPostCreativeAsset",
+        "required": [
+          "creative_asset",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "creative_asset": {
+            "$ref": "#/components/schemas/ComponentsSchemaAssetLibraryAssetResult"
+          },
+          "role": {
+            "$ref": "#/components/schemas/ComponentsEnumStructuredPostCreativeAssetRole"
+          },
+          "crop": {
+            "$ref": "#/components/schemas/ComponentsSchemaAssetLibraryImageCrop"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A creative asset relationship for a post."
+      },
+      "ComponentsSchemaListStructuredPostCreativeAssetsResponse": {
+        "title": "ListStructuredPostCreativeAssetsResponse",
+        "required": [
+          "data",
+          "pagination"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComponentsSchemaStructuredPostCreativeAsset"
+            },
+            "description": "Creative asset relationships for the post."
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/ComponentsSchemaPagination"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response containing creative assets for a post."
+      },
       "Status2": {
         "examples": [
           "PROCESSING"
@@ -41561,25 +41814,6 @@
           "media": {
             "$ref": "#/components/schemas/ComponentsSchemaPostCreativeAssetsMediaCreativeAssetMedia"
           }
-        }
-      },
-      "ComponentsEnumImageCropType": {
-        "enum": [
-          "MANUAL"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "The image crop type.",
-        "example": "MANUAL",
-        "x-ms-enum": {
-          "name": "ComponentsEnumImageCropType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "MANUAL",
-              "name": "Manual"
-            }
-          ]
         }
       },
       "ComponentsSchemaPostCreativeAssetsImageCreativeAsset": {
@@ -44774,6 +45008,60 @@
         },
         "additionalProperties": false
       },
+      "ComponentsSchemaAssetLibraryImageCropTopLeftCoordinates": {
+        "required": [
+          "x",
+          "y"
+        ],
+        "type": "object",
+        "properties": {
+          "x": {
+            "examples": [
+              10
+            ],
+            "minimum": 0,
+            "type": "integer",
+            "description": "The x coordinate of the top-left corner of the crop."
+          },
+          "y": {
+            "examples": [
+              20
+            ],
+            "minimum": 0,
+            "type": "integer",
+            "description": "The y coordinate of the top-left corner of the crop."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The top-left corner of the crop."
+      },
+      "ComponentsSchemaAssetLibraryImageCropDimensions": {
+        "required": [
+          "width",
+          "height"
+        ],
+        "type": "object",
+        "properties": {
+          "width": {
+            "examples": [
+              200
+            ],
+            "minimum": 1,
+            "type": "integer",
+            "description": "The width of the crop."
+          },
+          "height": {
+            "examples": [
+              200
+            ],
+            "minimum": 1,
+            "type": "integer",
+            "description": "The height of the crop."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The dimensions of the crop."
+      },
       "ComponentsSchemaCatalogImportSummary": {
         "type": [
           "null",
@@ -47558,6 +47846,459 @@
         },
         "description": "Input for poster generation jobs."
       },
+      "ProductsCreateResponseDataItemProduct": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ComponentsSchemaProduct"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "properties": {
+          "id": {
+            "examples": [
+              "reddit-best-product-42"
+            ],
+            "minLength": 1,
+            "type": "string",
+            "description": "The product ID."
+          },
+          "title": {
+            "examples": [
+              "Awesome title"
+            ],
+            "minLength": 1,
+            "type": "string",
+            "description": "The product\u0027s title."
+          },
+          "description": {
+            "examples": [
+              "Awesome description"
+            ],
+            "minLength": 1,
+            "type": "string",
+            "description": "The product\u0027s description."
+          },
+          "price": {
+            "examples": [
+              "100.00 USD"
+            ],
+            "minLength": 1,
+            "type": "string",
+            "description": "The product\u0027s price, including currency ([ISO 4217](https://www.iso.org/iso-4217-currency-codes.html))."
+          },
+          "link": {
+            "examples": [
+              "https://example.com/product"
+            ],
+            "type": "string",
+            "description": "The product\u0027s URL."
+          },
+          "image_link": {
+            "examples": [
+              "https://example.com/product_image.png"
+            ],
+            "type": "string",
+            "description": "The product\u0027s image URL."
+          },
+          "item_group_id": {
+            "examples": [
+              "012345"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s item group ID."
+          },
+          "sale_price": {
+            "examples": [
+              "99.99 USD"
+            ],
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s sale price, including currency ([ISO 4217](https://www.iso.org/iso-4217-currency-codes.html))."
+          },
+          "sale_price_effective_date": {
+            "examples": [
+              "2016-02-24T13:00-0800/2016-02-29T15:30-0800"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The date range when \u0060sale_price\u0060 is effective ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Provide 2 datetime values with time zone, separated by a forward slash (\u0060/\u0060)."
+          },
+          "cost_of_goods_sold": {
+            "examples": [
+              "50.00 USD"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The merchant\u0027s product cost, including currency ([ISO 4217](https://www.iso.org/iso-4217-currency-codes.html))."
+          },
+          "mobile_link": {
+            "examples": [
+              "https://example.com/product"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s mobile product landing page URL."
+          },
+          "platform_specific_link": {
+            "$ref": "#/components/schemas/ComponentsSchemaProductPlatformSpecificLink"
+          },
+          "lifestyle_image_link": {
+            "examples": [
+              "https://example.com/product_image.png"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s image URL."
+          },
+          "additional_image_links": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "examples": [
+                "https://example.com/product_image.png"
+              ],
+              "type": "string"
+            },
+            "description": "The product\u0027s additional image URLs."
+          },
+          "product_type": {
+            "examples": [
+              "apparel"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s merchant-defined category."
+          },
+          "product_detail": {
+            "examples": [
+              "buttons"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s details."
+          },
+          "product_highlight": {
+            "examples": [
+              "shiny"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s highlight."
+          },
+          "google_product_category": {
+            "examples": [
+              "Apparel \u0026 Accessories \u003E Clothing \u003E Dresses"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s Google product category. [See the full list of categories](https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt)."
+          },
+          "brand": {
+            "examples": [
+              "Acme"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The manufacturer brand."
+          },
+          "gtin": {
+            "examples": [
+              "1234567890123"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s Global Trade Item Number (GTIN)."
+          },
+          "mpn": {
+            "examples": [
+              "1234567890123"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s Manufacturer Part Number (MPN)."
+          },
+          "size": {
+            "examples": [
+              "L"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product size."
+          },
+          "size_type": {
+            "examples": [
+              "Regular T-Shirt sizing"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The size measurement system."
+          },
+          "condition": {
+            "examples": [
+              "new"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s condition."
+          },
+          "color": {
+            "examples": [
+              "red"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s color."
+          },
+          "gender": {
+            "examples": [
+              "unisex"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The gender for which the product is intended."
+          },
+          "material": {
+            "examples": [
+              "gold"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s dominant material."
+          },
+          "pattern": {
+            "examples": [
+              "solid"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s visible pattern."
+          },
+          "age_group": {
+            "examples": [
+              "kids"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The target age group."
+          },
+          "adult": {
+            "examples": [
+              false
+            ],
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "description": "Whether the product is intended for adults."
+          },
+          "is_bundle": {
+            "examples": [
+              false
+            ],
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "description": "Whether the product is a part of a bundle."
+          },
+          "custom_label_0": {
+            "examples": [
+              "label"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Custom text assigned to a product. Enables filtering and selection of products."
+          },
+          "custom_label_1": {
+            "examples": [
+              "label"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Custom text assigned to a product. Enables filtering and selection of products."
+          },
+          "custom_label_2": {
+            "examples": [
+              "label"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Custom text assigned to a product. Enables filtering and selection of products."
+          },
+          "custom_label_3": {
+            "examples": [
+              "label"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Custom text assigned to a product. Enables filtering and selection of products."
+          },
+          "custom_label_4": {
+            "examples": [
+              "label"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Custom text assigned to a product. Enables filtering and selection of products."
+          },
+          "custom_number_0": {
+            "examples": [
+              37
+            ],
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Custom integer assigned to a product. Enables filtering and selection of products."
+          },
+          "custom_number_1": {
+            "examples": [
+              37
+            ],
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Custom integer assigned to a product. Enables filtering and selection of products."
+          },
+          "custom_number_2": {
+            "examples": [
+              37
+            ],
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Custom integer assigned to a product. Enables filtering and selection of products."
+          },
+          "custom_number_3": {
+            "examples": [
+              37
+            ],
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Custom integer assigned to a product. Enables filtering and selection of products."
+          },
+          "custom_number_4": {
+            "examples": [
+              37
+            ],
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Custom integer assigned to a product. Enables filtering and selection of products."
+          },
+          "expiration_date": {
+            "examples": [
+              "2024-04-27T21:37:01Z"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The product\u0027s expiration date.",
+            "format": "date-time"
+          },
+          "average_review_rating": {
+            "examples": [
+              "4.5"
+            ],
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The average customer review rating."
+          },
+          "number_of_ratings": {
+            "examples": [
+              100
+            ],
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "The number of customer reviews."
+          },
+          "availability": {
+            "$ref": "#/components/schemas/ComponentsEnumsProductAvailabilityStatus"
+          },
+          "reddit": {
+            "$ref": "#/components/schemas/ComponentsSchemaProductReddit"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
+            "format": "date-time"
+          },
+          "modified_at": {
+            "type": "string",
+            "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
+            "format": "date-time"
+          }
+        }
+      },
       "ComponentsSchemaDeviceTargetLabelMapProperty": {
         "type": "object",
         "additionalProperties": {
@@ -48551,7 +49292,7 @@
             "$ref": "#/components/schemas/ProductsCreateResponseDataItemStatus"
           },
           "product": {
-            "$ref": "#/components/schemas/ComponentsSchemaProduct"
+            "$ref": "#/components/schemas/ProductsCreateResponseDataItemProduct"
           },
           "issues": {
             "type": [
@@ -50344,7 +51085,9 @@
         "enum": [
           "APP_INSTALLS",
           "CLICKS",
-          "CONVERSIONS"
+          "CONVERSIONS",
+          "LEAD_GENERATION",
+          "SALES"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -50364,6 +51107,14 @@
             {
               "value": "CONVERSIONS",
               "name": "Conversions"
+            },
+            {
+              "value": "LEAD_GENERATION",
+              "name": "LeadGeneration"
+            },
+            {
+              "value": "SALES",
+              "name": "Sales"
             }
           ]
         }

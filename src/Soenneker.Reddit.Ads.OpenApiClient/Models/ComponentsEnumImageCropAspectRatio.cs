@@ -3,29 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
-    /// <summary>The objective for the Reddit Max campaign.</summary>
+    /// <summary>The image crop aspect ratio.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum ComponentsSchemaCampaignCreateAutomatedObjective
+    public enum ComponentsEnumImageCropAspectRatio
     {
-        [EnumMember(Value = "APP_INSTALLS")]
+        [EnumMember(Value = "4:3")]
         #pragma warning disable CS1591
-        AppInstalls,
+        Value4Colon3,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CLICKS")]
+        [EnumMember(Value = "1:1")]
         #pragma warning disable CS1591
-        Clicks,
+        Value1Colon1,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CONVERSIONS")]
+        [EnumMember(Value = "4:5")]
         #pragma warning disable CS1591
-        Conversions,
+        Value4Colon5,
         #pragma warning restore CS1591
-        [EnumMember(Value = "LEAD_GENERATION")]
+        [EnumMember(Value = "16:9")]
         #pragma warning disable CS1591
-        LeadGeneration,
+        Value16Colon9,
         #pragma warning restore CS1591
-        [EnumMember(Value = "SALES")]
+        [EnumMember(Value = "1.91:1")]
         #pragma warning disable CS1591
-        Sales,
+        Value191Colon1,
         #pragma warning restore CS1591
     }
 }

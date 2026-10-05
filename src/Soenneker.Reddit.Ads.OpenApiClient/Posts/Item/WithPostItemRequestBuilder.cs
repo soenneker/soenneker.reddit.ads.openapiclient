@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Reddit.Ads.OpenApiClient.Models;
+using Soenneker.Reddit.Ads.OpenApiClient.Posts.Item.Creative_assets;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Posts.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPostItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The creative_assets property</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Posts.Item.Creative_assets.Creative_assetsRequestBuilder Creative_assets
+        {
+            get => new global::Soenneker.Reddit.Ads.OpenApiClient.Posts.Item.Creative_assets.Creative_assetsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Posts.Item.WithPostItemRequestBuilder"/> and sets the default values.
         /// </summary>
