@@ -14502,7 +14502,9 @@
         }
       },
       "ComponentsSchemaTargetingRmax": {
-        "unevaluatedProperties": false,
+        "unevaluatedProperties": {
+          "not": {}
+        },
         "title": "Reddit Max Ad Group Targeting",
         "type": "object",
         "properties": {
