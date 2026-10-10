@@ -2,7 +2,7 @@
   "descriptionHash": "19FF3FC3B5246132090D0F6CC80F43CA3E11DEAD900CC870D5C0BDA308B83894F5EECA22022B8ED7B8F4DEA97C3B74C4192E16F47F696F5AA99C4BF7BEF94010",
   "descriptionLocation": "../../openapi.fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.35.0",
+  "kiotaVersion": "1.36.0",
   "clientClassName": "RedditAdsOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Reddit.Ads.OpenApiClient",
