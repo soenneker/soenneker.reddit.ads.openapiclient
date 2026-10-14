@@ -12,7 +12,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     public partial class AudienceAndDeliveryEstimates200ResponseData : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Forecast ranges for the outcomes based on the provided campaign and ad group configurations. Only available outcomes are included. See [optimization goal options](/docs/v3/api/create-ad-group#optimization-goal-options) for how goals are grouped by campaign objective.</summary>
+        /// <summary>Forecast ranges for weekly outcomes based on the provided campaign and ad group configurations. Only available outcomes are included. See [optimization goal options](/docs/v3/api/create-ad-group#optimization-goal-options) for how goals are grouped by campaign objective.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AudienceAndDeliveryEstimates200ResponseDataDeliveryEstimates? DeliveryEstimates { get; set; }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
     /// <summary>
-    /// Forecast ranges for the outcomes based on the provided campaign and ad group configurations. Only available outcomes are included. See [optimization goal options](/docs/v3/api/create-ad-group#optimization-goal-options) for how goals are grouped by campaign objective.
+    /// Forecast ranges for weekly outcomes based on the provided campaign and ad group configurations. Only available outcomes are included. See [optimization goal options](/docs/v3/api/create-ad-group#optimization-goal-options) for how goals are grouped by campaign objective.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AudienceAndDeliveryEstimates200ResponseDataDeliveryEstimates : IParsable
