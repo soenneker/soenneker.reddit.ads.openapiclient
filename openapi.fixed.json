@@ -12445,6 +12445,18 @@
           },
           "spend_cap_type": {
             "$ref": "#/components/schemas/SpendCapType"
+          },
+          "ugc_addon_default_on": {
+            "examples": [
+              true,
+              false,
+              null
+            ],
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "description": "Whether clients should select\n[Redditor Highlights](https://business.reddithelp.com/s/article/redditor-highlights)\nby default for eligible new ads. If null, clients should use the platform\ndefault. This preference does not itself change ad selection, existing\nads, or eligibility.\n"
           }
         },
         "additionalProperties": false

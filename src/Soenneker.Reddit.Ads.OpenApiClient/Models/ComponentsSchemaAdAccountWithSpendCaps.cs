@@ -118,6 +118,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #endif
         /// <summary>The ad account type. Can only be changed by Reddit.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.TypeValue? Type { get; set; }
+        /// <summary>Whether clients should select[Redditor Highlights](https://business.reddithelp.com/s/article/redditor-highlights)by default for eligible new ads. If null, clients should use the platformdefault. This preference does not itself change ad selection, existingads, or eligibility.</summary>
+        public bool? UgcAddonDefaultOn { get; set; }
         /// <summary>The window for view attributions. Used in reporting.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewAttributionWindow? ViewAttributionWindow { get; set; }
         /// <summary>
@@ -158,6 +160,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "suspension_reason", n => { SuspensionReason = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SuspensionReason>(); } },
                 { "time_zone_id", n => { TimeZoneId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.TypeValue>(); } },
+                { "ugc_addon_default_on", n => { UgcAddonDefaultOn = n.GetBoolValue(); } },
                 { "view_attribution_window", n => { ViewAttributionWindow = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewAttributionWindow>(); } },
             };
         }
@@ -184,6 +187,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteStringValue("primary_contact_member_id", PrimaryContactMemberId);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SpendCapType>("spend_cap_type", SpendCapType);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.TypeValue>("type", Type);
+            writer.WriteBoolValue("ugc_addon_default_on", UgcAddonDefaultOn);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewAttributionWindow>("view_attribution_window", ViewAttributionWindow);
         }
     }
