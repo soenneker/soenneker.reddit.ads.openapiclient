@@ -18,6 +18,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Posts
         /// <summary>Gets an item from the Soenneker.Reddit.Ads.OpenApiClient.posts.item collection</summary>
         /// <param name="position">The post ID.</param>
         /// <returns>A <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Posts.Item.WithPostItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.Reddit.Ads.OpenApiClient.Posts.Item.WithPostItemRequestBuilder this[string position]
         {
             get
