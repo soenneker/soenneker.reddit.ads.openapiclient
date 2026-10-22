@@ -38,6 +38,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Product_feeds.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors400">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors401">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors403">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404">When receiving a 404 status code</exception>
@@ -55,6 +56,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Product_feeds.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors400.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors401.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors403.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404.CreateFromDiscriminatorValue },
@@ -69,6 +71,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Product_feeds.Item
         /// <returns>A <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetProductFeedResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors400">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors401">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors403">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404">When receiving a 404 status code</exception>
@@ -86,6 +89,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Product_feeds.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors400.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors401.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors403.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404.CreateFromDiscriminatorValue },

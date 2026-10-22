@@ -45,6 +45,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -709,6 +713,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -876,6 +884,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -1427,6 +1439,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -1817,6 +1833,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -1948,6 +1968,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -2090,6 +2114,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -2230,6 +2258,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -3071,6 +3103,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -3295,6 +3331,10 @@
           },
           "204": {
             "description": "The import was skipped because its feed contents did not change."
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -3734,6 +3774,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -3784,6 +3828,10 @@
         "responses": {
           "204": {
             "description": "No content."
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -4644,6 +4692,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -4703,6 +4755,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -4921,6 +4977,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -5043,6 +5103,10 @@
         "responses": {
           "204": {
             "description": "No content."
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -5203,6 +5267,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -5351,6 +5419,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -5743,6 +5815,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -5875,6 +5951,10 @@
           "204": {
             "description": "No content."
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -5934,6 +6014,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -6066,6 +6150,10 @@
         "responses": {
           "204": {
             "description": "No content."
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -6908,6 +6996,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -6975,6 +7067,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -7244,6 +7340,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -7302,6 +7402,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -7370,6 +7474,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -7447,6 +7555,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -7498,6 +7610,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -7568,6 +7684,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -7736,6 +7856,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -7866,6 +7990,10 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
             "$ref": "#/components/responses/Unauthorized"
@@ -7924,6 +8052,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -8024,6 +8156,10 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
           },
           "401": {
             "description": "No bearer token or a bad bearer token was provided.",
@@ -12465,6 +12601,18 @@
         },
         "additionalProperties": false
       },
+      "ComponentsErrors400": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ComponentsErrors400Error"
+          }
+        },
+        "additionalProperties": false
+      },
       "ComponentsErrors401": {
         "required": [
           "error"
@@ -12521,18 +12669,6 @@
         "properties": {
           "error": {
             "$ref": "#/components/schemas/ComponentsErrors500Error"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ComponentsErrors400": {
-        "required": [
-          "error"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "$ref": "#/components/schemas/ComponentsErrors400Error"
           }
         },
         "additionalProperties": false
@@ -44028,6 +44164,37 @@
           }
         }
       },
+      "ComponentsErrors400Error": {
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "examples": [
+              400
+            ],
+            "type": "integer",
+            "description": "The error code."
+          },
+          "message": {
+            "examples": [
+              "Bad request."
+            ],
+            "type": "string",
+            "description": "A human friendly error message."
+          },
+          "fields": {
+            "title": "FieldsList",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComponentsErrors400ErrorFieldsItem"
+            },
+            "description": "The fields that caused the error."
+          }
+        },
+        "additionalProperties": false
+      },
       "ComponentsErrors401Error": {
         "required": [
           "message"
@@ -44136,37 +44303,6 @@
             ],
             "type": "string",
             "description": "A human friendly error message."
-          }
-        },
-        "additionalProperties": false
-      },
-      "ComponentsErrors400Error": {
-        "required": [
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "code": {
-            "examples": [
-              400
-            ],
-            "type": "integer",
-            "description": "The error code."
-          },
-          "message": {
-            "examples": [
-              "Bad request."
-            ],
-            "type": "string",
-            "description": "A human friendly error message."
-          },
-          "fields": {
-            "title": "FieldsList",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ComponentsErrors400ErrorFieldsItem"
-            },
-            "description": "The fields that caused the error."
           }
         },
         "additionalProperties": false
@@ -55046,6 +55182,16 @@
       }
     },
     "responses": {
+      "BadRequest": {
+        "description": "Bad request.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ComponentsErrors400"
+            }
+          }
+        }
+      },
       "Unauthorized": {
         "description": "No bearer token or a bad bearer token was provided.",
         "content": {
@@ -55112,16 +55258,6 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/ComponentsErrors500"
-            }
-          }
-        }
-      },
-      "BadRequest": {
-        "description": "Bad request.",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ComponentsErrors400"
             }
           }
         }

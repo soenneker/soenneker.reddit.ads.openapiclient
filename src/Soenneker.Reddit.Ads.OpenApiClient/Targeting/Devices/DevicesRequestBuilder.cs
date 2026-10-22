@@ -39,6 +39,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Targeting.Devices
         /// <returns>A <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ListDevicesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors400">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors401">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500">When receiving a 5XX status code</exception>
@@ -54,6 +55,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Targeting.Devices
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors400.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors401.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
