@@ -7,38 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1"/>, <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ProductsCreateResponseDataItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ProductsCreateResponseDataItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The list of product validation issues.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemIssuesItem>? Issues { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1? ProductsCreateResponseDataItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemIssuesItem> Issues { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1 ProductsCreateResponseDataItemOneOf1 { get; set; }
 #endif
-        /// <summary>The product property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct? Product { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf2? ProductsCreateResponseDataItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct Product { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf2 ProductsCreateResponseDataItemOneOf2 { get; set; }
 #endif
-        /// <summary>The product creation status.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemStatus? Status { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItem"/> and sets the default values.
-        /// </summary>
-        public ProductsCreateResponseDataItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +37,17 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItem();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItem();
+            if("ProductsCreateResponseDataItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ProductsCreateResponseDataItemOneOf1 = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1();
+            }
+            else if("ProductsCreateResponseDataItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ProductsCreateResponseDataItemOneOf2 = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,12 +55,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ProductsCreateResponseDataItemOneOf1 != null)
             {
-                { "issues", n => { Issues = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemIssuesItem>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemIssuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "product", n => { Product = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemStatus>(); } },
-            };
+                return ProductsCreateResponseDataItemOneOf1.GetFieldDeserializers();
+            }
+            else if(ProductsCreateResponseDataItemOneOf2 != null)
+            {
+                return ProductsCreateResponseDataItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -69,10 +72,14 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemIssuesItem>("issues", Issues);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct>("product", Product);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemStatus>("status", Status);
-            writer.WriteAdditionalData(AdditionalData);
+            if(ProductsCreateResponseDataItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1>(null, ProductsCreateResponseDataItemOneOf1);
+            }
+            else if(ProductsCreateResponseDataItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf2>(null, ProductsCreateResponseDataItemOneOf2);
+            }
         }
     }
 }

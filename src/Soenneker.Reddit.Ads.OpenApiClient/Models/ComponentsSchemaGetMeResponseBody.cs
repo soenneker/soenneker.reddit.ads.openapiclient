@@ -31,10 +31,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The member&apos;s ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The member&apos;s last name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,18 +55,18 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The member&apos;s Reddit user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedditUserId { get; set; }
+        public string? RedditUserId { get; private set; }
 #nullable restore
 #else
-        public string RedditUserId { get; set; }
+        public string RedditUserId { get; private set; }
 #endif
         /// <summary>The member&apos;s username.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedditUsername { get; set; }
+        public string? RedditUsername { get; private set; }
 #nullable restore
 #else
-        public string RedditUsername { get; set; }
+        public string RedditUsername { get; private set; }
 #endif
         /// <summary>Indicates whether the access token belongs to a member or System User. System User responses do not contain human profile data.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGetMeResponseBodyType? Type { get; set; }
@@ -106,11 +106,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("firstname", Firstname);
-            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("lastname", Lastname);
             writer.WriteStringValue("phone", Phone);
-            writer.WriteStringValue("reddit_user_id", RedditUserId);
-            writer.WriteStringValue("reddit_username", RedditUsername);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGetMeResponseBodyType>("type", Type);
         }
     }

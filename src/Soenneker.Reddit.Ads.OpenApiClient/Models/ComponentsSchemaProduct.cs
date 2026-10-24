@@ -73,7 +73,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string CostOfGoodsSold { get; set; }
 #endif
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Custom text assigned to a product. Enables filtering and selection of products.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,7 +217,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string MobileLink { get; set; }
 #endif
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The product&apos;s Manufacturer Part Number (MPN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -408,7 +408,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("condition", Condition);
             writer.WriteStringValue("cost_of_goods_sold", CostOfGoodsSold);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("custom_label_0", CustomLabel0);
             writer.WriteStringValue("custom_label_1", CustomLabel1);
             writer.WriteStringValue("custom_label_2", CustomLabel2);
@@ -432,7 +431,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteStringValue("link", Link);
             writer.WriteStringValue("material", Material);
             writer.WriteStringValue("mobile_link", MobileLink);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("mpn", Mpn);
             writer.WriteIntValue("number_of_ratings", NumberOfRatings);
             writer.WriteStringValue("pattern", Pattern);

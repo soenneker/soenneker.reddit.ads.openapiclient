@@ -3,21 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
-    /// <summary>The max time to elapse between the start and end of a conversion.</summary>
+    /// <summary>The product creation status.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum ComponentsEnumsAttributionWindow
+    public enum ProductsCreateResponseDataItemOneOf1Status
     {
-        [EnumMember(Value = "DAY")]
+        [EnumMember(Value = "CREATED")]
         #pragma warning disable CS1591
-        Day,
+        Created,
         #pragma warning restore CS1591
-        [EnumMember(Value = "WEEK")]
+        [EnumMember(Value = "UPDATED")]
         #pragma warning disable CS1591
-        Week,
+        Updated,
         #pragma warning restore CS1591
-        [EnumMember(Value = "MONTH")]
+        [EnumMember(Value = "INVALID")]
         #pragma warning disable CS1591
-        Month,
+        Invalid,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UNCHANGED")]
+        #pragma warning disable CS1591
+        Unchanged,
         #pragma warning restore CS1591
     }
 }

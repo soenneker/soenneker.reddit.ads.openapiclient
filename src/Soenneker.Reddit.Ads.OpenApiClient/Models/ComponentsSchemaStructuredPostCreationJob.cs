@@ -16,7 +16,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The structured post creation job ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,7 +26,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The structured post creation job&apos;s status.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaStructuredPostCreationJobStatus? Status { get; private set; }
         /// <summary>
@@ -67,8 +67,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

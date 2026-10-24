@@ -5,7 +5,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
     /// <summary>The product creation status.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum ProductsCreateResponseDataItemStatus
+    public enum ProductsCreateResponseDataItemOneOf2Status
     {
         [EnumMember(Value = "CREATED")]
         #pragma warning disable CS1591

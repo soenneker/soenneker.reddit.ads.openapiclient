@@ -15,10 +15,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The ad account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdAccountId { get; set; }
+        public string? AdAccountId { get; private set; }
 #nullable restore
 #else
-        public string AdAccountId { get; set; }
+        public string AdAccountId { get; private set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -99,7 +99,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative ShoppingCreative { get; set; }
 #endif
         /// <summary>The ad type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.UnspecifiedType? Type { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandard"/> and sets the default values.
         /// </summary>
@@ -137,7 +137,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "products", n => { Products = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdProduct>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdProduct.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profile_id", n => { ProfileId = n.GetStringValue(); } },
                 { "shopping_creative", n => { ShoppingCreative = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UnspecifiedType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardType>(); } },
             };
         }
         /// <summary>
@@ -147,7 +147,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("ad_account_id", AdAccountId);
             writer.WriteStringValue("ad_group_id", AdGroupId);
             writer.WriteStringValue("click_url", ClickUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter>("click_url_query_parameters", ClickUrlQueryParameters);
@@ -159,7 +158,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdProduct>("products", Products);
             writer.WriteStringValue("profile_id", ProfileId);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative>("shopping_creative", ShoppingCreative);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UnspecifiedType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

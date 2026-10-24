@@ -15,10 +15,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The ad account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdAccountId { get; set; }
+        public string? AdAccountId { get; private set; }
 #nullable restore
 #else
-        public string AdAccountId { get; set; }
+        public string AdAccountId { get; private set; }
 #endif
         /// <summary>The Apple App Store or Google Play Store app ID. Used for `APP_INSTALLS` campaigns. See the [iOS App Install limits](https://ads-api.reddit.com/docs/v3/operations/Get%20SKAdNetwork%20Availability).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,7 +45,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string ConversionPixelId { get; set; }
 #endif
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The delivery statuses for this ad group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,7 +97,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>Indicates whether this is a Reddit Max campaign.</summary>
         public bool? IsMax { get; private set; }
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The entity name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -214,21 +214,18 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("ad_account_id", AdAccountId);
             writer.WriteStringValue("app_id", AppId);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignBidStrategy>("bid_strategy", BidStrategy);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignBidType>("bid_type", BidType);
             writer.WriteIntValue("bid_value", BidValue);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignConfiguredStatus>("configured_status", ConfiguredStatus);
             writer.WriteStringValue("conversion_pixel_id", ConversionPixelId);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("end_time", EndTime);
             writer.WriteStringValue("funding_instrument_id", FundingInstrumentId);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignGoalType>("goal_type", GoalType);
             writer.WriteIntValue("goal_value", GoalValue);
             writer.WriteStringValue("invoice_label", InvoiceLabel);
             writer.WriteBoolValue("is_campaign_budget_optimization", IsCampaignBudgetOptimization);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignObjective>("objective", Objective);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignOptimizationGoal>("optimization_goal", OptimizationGoal);

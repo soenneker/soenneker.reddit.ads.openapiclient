@@ -9,11 +9,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ShoppingTargeting2 : IAdditionalDataHolder, IParsable
+    public partial class ShoppingTargeting2 : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>[Conversion events](https://business.reddithelp.com/s/article/supported-conversion-events) to target. Used when `targeting_type` is `RETARGETING`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,13 +32,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public int? LookbackWindowDays { get; set; }
         /// <summary>The `CATALOG_SALES` ad&apos;s [audience type](https://business.reddithelp.com/s/article/dynamic-product-ads#2-create-your-ad-group).</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingTargetingTargetingType? TargetingType { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2"/> and sets the default values.
-        /// </summary>
-        public ShoppingTargeting2()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -76,7 +67,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType>("excluded_conversion_event_types", ExcludedConversionEventTypes);
             writer.WriteIntValue("lookback_window_days", LookbackWindowDays);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingTargetingTargetingType>("targeting_type", TargetingType);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

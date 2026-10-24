@@ -3,18 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
+    /// <summary>The warning severity.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public enum ComponentsEnumsCustomAudienceSupportedSchemasItem
-    #pragma warning restore CS1591
+    public enum ProductsCreateResponseDataItemOneOf2IssuesItemSeverity
     {
-        [EnumMember(Value = "EMAIL_SHA256")]
+        [EnumMember(Value = "WARNING")]
         #pragma warning disable CS1591
-        EmailSha256,
+        Warning,
         #pragma warning restore CS1591
-        [EnumMember(Value = "MAID_SHA256")]
+        [EnumMember(Value = "CRITICAL")]
         #pragma warning disable CS1591
-        MaidSha256,
+        Critical,
         #pragma warning restore CS1591
     }
 }

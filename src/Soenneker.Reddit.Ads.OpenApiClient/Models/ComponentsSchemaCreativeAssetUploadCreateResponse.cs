@@ -16,18 +16,18 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The creative asset upload ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Optional client-provided reference echoed from the upload request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceId { get; set; }
+        public string? ReferenceId { get; private set; }
 #nullable restore
 #else
-        public string ReferenceId { get; set; }
+        public string ReferenceId { get; private set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -58,8 +58,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("reference_id", ReferenceId);
         }
     }
 }

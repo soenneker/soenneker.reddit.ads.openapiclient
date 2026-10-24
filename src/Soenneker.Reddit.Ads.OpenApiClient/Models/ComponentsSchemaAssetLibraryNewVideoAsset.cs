@@ -47,8 +47,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public string ReferenceId { get; set; }
 #endif
-        /// <summary>The creative asset type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.VideoType? Type { get; set; }
+        /// <summary>The type of the asset.</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewVideoAssetType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewVideoAsset"/> and sets the default values.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "poster", n => { Poster = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsMediaCreativeAssetTypesMediaUrl>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsMediaCreativeAssetTypesMediaUrl.CreateFromDiscriminatorValue); } },
                 { "reference_id", n => { ReferenceId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.VideoType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewVideoAssetType>(); } },
             };
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsMediaCreativeAssetTypesMediaUrl>("poster", Poster);
             writer.WriteStringValue("reference_id", ReferenceId);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.VideoType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewVideoAssetType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

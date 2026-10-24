@@ -20,8 +20,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The job is still processing.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProcessingStatus? Status { get; set; }
+        /// <summary>Initial job status after create.</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.CreateGeneratedPostersJobResponseDataStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProcessingStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CreateGeneratedPostersJobResponseDataStatus>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProcessingStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CreateGeneratedPostersJobResponseDataStatus>("status", Status);
         }
     }
 }

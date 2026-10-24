@@ -24,7 +24,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string Country { get; set; }
 #endif
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The ID of the member that created the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,11 +34,11 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string CreatorId { get; set; }
 #endif
         /// <summary>The business ID.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get; private set; }
         /// <summary>The industry type.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsIndustryType? Industry { get; set; }
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The name of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,11 +111,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("agency_affiliated", AgencyAffiliated);
             writer.WriteStringValue("country", Country);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("creator_id", CreatorId);
-            writer.WriteGuidValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsIndustryType>("industry", Industry);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("phone", Phone);
             writer.WriteStringValue("primary_contact_id", PrimaryContactId);

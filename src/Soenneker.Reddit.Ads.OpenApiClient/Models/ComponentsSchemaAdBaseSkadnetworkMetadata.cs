@@ -7,22 +7,14 @@ using System.IO;
 using System;
 namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
+    /// <summary>
+    /// Metadata of the SKAdNetwork source ID.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ComponentsSchemaAdBaseSkadnetworkMetadata : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ComponentsSchemaAdBaseSkadnetworkMetadata : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The [SKAdNetwork source ID status](https://business.reddithelp.com/s/article/skadnetwork#skan-ids).</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkMetadataStatus? Status { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseSkadnetworkMetadata"/> and sets the default values.
-        /// </summary>
-        public ComponentsSchemaAdBaseSkadnetworkMetadata()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,7 +44,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkMetadataStatus>("status", Status);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

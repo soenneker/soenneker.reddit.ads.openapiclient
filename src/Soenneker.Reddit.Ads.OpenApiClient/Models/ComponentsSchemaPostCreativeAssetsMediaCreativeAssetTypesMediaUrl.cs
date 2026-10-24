@@ -14,8 +14,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type of destination.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.UrlType? Type { get; set; }
+        /// <summary>The type of field to retrieve the media from.</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsMediaCreativeAssetTypesMediaUrlType? Type { get; set; }
         /// <summary>The media&apos;s URL. During creation, this will be used to download the media before being set to the Reddit-hosted media URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UrlType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsMediaCreativeAssetTypesMediaUrlType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UrlType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsMediaCreativeAssetTypesMediaUrlType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

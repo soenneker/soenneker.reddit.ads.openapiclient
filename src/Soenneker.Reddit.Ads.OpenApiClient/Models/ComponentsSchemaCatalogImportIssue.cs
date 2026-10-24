@@ -15,7 +15,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The issue code encountered in the catalog import.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCatalogImportIssueCode? Code { get; set; }
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The field where the issue occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,7 +97,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCatalogImportIssueCode>("code", Code);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("field", Field);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("import_id", ImportId);

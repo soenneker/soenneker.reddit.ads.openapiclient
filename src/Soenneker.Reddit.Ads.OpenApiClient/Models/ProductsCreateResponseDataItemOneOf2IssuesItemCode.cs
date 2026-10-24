@@ -5,7 +5,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
     /// <summary>The validation error code.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum ProductsCreateResponseDataItemIssuesItemCode
+    public enum ProductsCreateResponseDataItemOneOf2IssuesItemCode
     {
         [EnumMember(Value = "INVALID_PRODUCT_ID")]
         #pragma warning disable CS1591

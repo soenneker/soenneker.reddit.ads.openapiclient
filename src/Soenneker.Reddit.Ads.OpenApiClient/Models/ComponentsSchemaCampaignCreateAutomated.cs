@@ -103,8 +103,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public string StartTime { get; set; }
 #endif
-        /// <summary>The `AUTOMATED` type identifies an ad group in a Reddit Max campaign.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AutomatedType? Type { get; set; }
+        /// <summary>The `AUTOMATED` type identifies a Reddit Max campaign.</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateAutomatedType? Type { get; set; }
         /// <summary>The conversion attribution window. Determines how conversions are counted after a user interacts with an ad. Only available when `is_campaign_budget_optimization` is `true`.&gt; **Important:** This cannot be changed after publishing the campaign.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType? ViewThroughConversionType { get; set; }
         /// <summary>
@@ -143,7 +143,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "special_ad_categories", n => { SpecialAdCategories = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateAutomatedSpecialAdCategoriesItem>()?.AsList(); } },
                 { "spend_cap", n => { SpendCap = n.GetIntValue(); } },
                 { "start_time", n => { StartTime = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AutomatedType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateAutomatedType>(); } },
                 { "view_through_conversion_type", n => { ViewThroughConversionType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType>(); } },
             };
         }
@@ -172,7 +172,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateAutomatedSpecialAdCategoriesItem>("special_ad_categories", SpecialAdCategories);
             writer.WriteIntValue("spend_cap", SpendCap);
             writer.WriteStringValue("start_time", StartTime);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AutomatedType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateAutomatedType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType>("view_through_conversion_type", ViewThroughConversionType);
         }
     }

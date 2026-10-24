@@ -23,7 +23,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The profile&apos;s Reddit username.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +73,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("business_id", BusinessId);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
         }
     }
 }

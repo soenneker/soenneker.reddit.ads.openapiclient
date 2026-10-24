@@ -24,18 +24,18 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The ad group ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdGroupId { get; set; }
+        public string? AdGroupId { get; private set; }
 #nullable restore
 #else
-        public string AdGroupId { get; set; }
+        public string AdGroupId { get; private set; }
 #endif
         /// <summary>The ad ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdId { get; set; }
+        public string? AdId { get; private set; }
 #nullable restore
 #else
-        public string AdId { get; set; }
+        public string AdId { get; private set; }
 #endif
         /// <summary>The user&apos;s age range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -598,10 +598,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The campaign ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CampaignId { get; set; }
+        public string? CampaignId { get; private set; }
 #nullable restore
 #else
-        public string CampaignId { get; set; }
+        public string CampaignId { get; private set; }
 #endif
         /// <summary>The [campaign objective](https://business.reddithelp.com/s/article/Ad-campaign-objectives).</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective? CampaignObjective { get; set; }
@@ -623,16 +623,16 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public string Community { get; set; }
 #endif
+        /// <summary>The average value of signup from app sources.</summary>
+        public float? Conversion_sign_up_avg_value_app { get; set; }
         /// <summary>The average value of signup from other sources.</summary>
         public float? Conversion_sign_up_avg_value_other { get; set; }
-        /// <summary>The total value of signups from offline sources.</summary>
-        public long? Conversion_sign_up_total_value_offline { get; set; }
-        /// <summary>The average value of signup from app sources.</summary>
-        public float? Conversion_signup_avg_value_app { get; set; }
+        /// <summary>The total value of signups from app sources.</summary>
+        public long? Conversion_sign_up_total_value_app { get; set; }
         /// <summary>The average value of signup from offline sources.</summary>
         public float? Conversion_signup_avg_value_offline { get; set; }
-        /// <summary>The total value of signups from app sources.</summary>
-        public long? Conversion_signup_total_value_app { get; set; }
+        /// <summary>The total value of signups from offline sources.</summary>
+        public long? Conversion_signup_total_value_offline { get; set; }
         /// <summary>The total value of signups from other sources.</summary>
         public long? Conversion_signup_total_value_other { get; set; }
         /// <summary>The average value of the shopping cart.</summary>
@@ -2240,10 +2240,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>Name-keyed (a.k.a. &quot;multi-pixel&quot;) conversion custom event results, returned as an object keyed by custom eventname when custom events are requested via `conversion_custom_events` on the report request. Use this structuregoing forward. Legacy slot-based custom event metrics (`conversion_custom_event_1_*` ..`conversion_custom_event_20_*`) remain available for backward compatibility, but are on a path to deprecation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaReportMetricConversionCustomEventsProperty? ConversionCustomEvents { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaReportMetricConversionCustomEventsProperty? ConversionCustomEvents { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaReportMetricConversionCustomEventsProperty ConversionCustomEvents { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaReportMetricConversionCustomEventsProperty ConversionCustomEvents { get; private set; }
 #endif
         /// <summary>The total items for this custom conversion event.</summary>
         public long? ConversionCustomTotalItems { get; set; }
@@ -2434,7 +2434,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The average value of a signup.</summary>
         public float? ConversionSignupAvgValue { get; set; }
         /// <summary>The average value of signup from app sources.</summary>
-        public float? ConversionSignUpAvgValueApp { get; set; }
+        public float? ConversionSignupAvgValueApp { get; set; }
         /// <summary>The average value of signup from offline sources.</summary>
         public float? ConversionSignUpAvgValueOffline { get; set; }
         /// <summary>The average value of signup from other sources.</summary>
@@ -2464,9 +2464,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The total value of signups.</summary>
         public long? ConversionSignupTotalValue { get; set; }
         /// <summary>The total value of signups from app sources.</summary>
-        public long? ConversionSignUpTotalValueApp { get; set; }
+        public long? ConversionSignupTotalValueApp { get; set; }
         /// <summary>The total value of signups from offline sources.</summary>
-        public long? ConversionSignupTotalValueOffline { get; set; }
+        public long? ConversionSignUpTotalValueOffline { get; set; }
         /// <summary>The total value of signups from other sources.</summary>
         public long? ConversionSignUpTotalValueOther { get; set; }
         /// <summary>The view-through conversions count.</summary>
@@ -2660,10 +2660,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The post ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostId { get; set; }
+        public string? PostId { get; private set; }
 #nullable restore
 #else
-        public string PostId { get; set; }
+        public string PostId { get; private set; }
 #endif
         /// <summary>The CM priority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -2684,10 +2684,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The profile ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileId { get; set; }
+        public string? ProfileId { get; private set; }
 #nullable restore
 #else
-        public string ProfileId { get; set; }
+        public string ProfileId { get; private set; }
 #endif
         /// <summary>The number of unique users who saw the ad.</summary>
         public long? Reach { get; set; }
@@ -3692,7 +3692,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "conversion_search_views_app", n => { ConversionSearchViewsApp = n.GetLongValue(); } },
                 { "conversion_search_views_offline", n => { ConversionSearchViewsOffline = n.GetLongValue(); } },
                 { "conversion_search_views_other", n => { ConversionSearchViewsOther = n.GetLongValue(); } },
-                { "conversion_sign_up_avg_value_app", n => { ConversionSignUpAvgValueApp = n.GetFloatValue(); } },
                 { "conversion_sign_up_avg_value_offline", n => { ConversionSignUpAvgValueOffline = n.GetFloatValue(); } },
                 { "conversion_sign_up_clicks", n => { ConversionSignUpClicks = n.GetLongValue(); } },
                 { "conversion_sign_up_clicks_app", n => { ConversionSignUpClicksApp = n.GetLongValue(); } },
@@ -3705,16 +3704,17 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "conversion_sign_up_total_items_app", n => { ConversionSignUpTotalItemsApp = n.GetLongValue(); } },
                 { "conversion_sign_up_total_items_offline", n => { ConversionSignUpTotalItemsOffline = n.GetLongValue(); } },
                 { "conversion_sign_up_total_items_other", n => { ConversionSignUpTotalItemsOther = n.GetLongValue(); } },
-                { "conversion_sign_up_total_value_app", n => { ConversionSignUpTotalValueApp = n.GetLongValue(); } },
+                { "conversion_sign_up_total_value_offline", n => { ConversionSignUpTotalValueOffline = n.GetLongValue(); } },
                 { "conversion_sign_up_total_value_other", n => { ConversionSignUpTotalValueOther = n.GetLongValue(); } },
                 { "conversion_sign_up_views", n => { ConversionSignUpViews = n.GetLongValue(); } },
                 { "conversion_sign_up_views_app", n => { ConversionSignUpViewsApp = n.GetLongValue(); } },
                 { "conversion_sign_up_views_offline", n => { ConversionSignUpViewsOffline = n.GetLongValue(); } },
                 { "conversion_sign_up_views_other", n => { ConversionSignUpViewsOther = n.GetLongValue(); } },
                 { "conversion_signup_avg_value", n => { ConversionSignupAvgValue = n.GetFloatValue(); } },
+                { "conversion_signup_avg_value_app", n => { ConversionSignupAvgValueApp = n.GetFloatValue(); } },
                 { "conversion_signup_avg_value_other", n => { ConversionSignupAvgValueOther = n.GetFloatValue(); } },
                 { "conversion_signup_total_value", n => { ConversionSignupTotalValue = n.GetLongValue(); } },
-                { "conversion_signup_total_value_offline", n => { ConversionSignupTotalValueOffline = n.GetLongValue(); } },
+                { "conversion_signup_total_value_app", n => { ConversionSignupTotalValueApp = n.GetLongValue(); } },
                 { "conversion_view_content_avg_value_app", n => { ConversionViewContentAvgValueApp = n.GetFloatValue(); } },
                 { "conversion_view_content_avg_value_offline", n => { ConversionViewContentAvgValueOffline = n.GetFloatValue(); } },
                 { "conversion_view_content_avg_value_other", n => { ConversionViewContentAvgValueOther = n.GetFloatValue(); } },
@@ -3798,11 +3798,11 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "video_watched_75_percent", n => { VideoWatched75Percent = n.GetLongValue(); } },
                 { "video_watched_95_percent", n => { VideoWatched95Percent = n.GetLongValue(); } },
                 { "viewable_impressions", n => { ViewableImpressions = n.GetLongValue(); } },
+                { "conversion_sign_up_avg_value_app", n => { Conversion_sign_up_avg_value_app = n.GetFloatValue(); } },
                 { "conversion_sign_up_avg_value_other", n => { Conversion_sign_up_avg_value_other = n.GetFloatValue(); } },
-                { "conversion_sign_up_total_value_offline", n => { Conversion_sign_up_total_value_offline = n.GetLongValue(); } },
-                { "conversion_signup_avg_value_app", n => { Conversion_signup_avg_value_app = n.GetFloatValue(); } },
+                { "conversion_sign_up_total_value_app", n => { Conversion_sign_up_total_value_app = n.GetLongValue(); } },
                 { "conversion_signup_avg_value_offline", n => { Conversion_signup_avg_value_offline = n.GetFloatValue(); } },
-                { "conversion_signup_total_value_app", n => { Conversion_signup_total_value_app = n.GetLongValue(); } },
+                { "conversion_signup_total_value_offline", n => { Conversion_signup_total_value_offline = n.GetLongValue(); } },
                 { "conversion_signup_total_value_other", n => { Conversion_signup_total_value_other = n.GetLongValue(); } },
             };
         }
@@ -3814,8 +3814,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteStringValue("ad_group_id", AdGroupId);
-            writer.WriteStringValue("ad_id", AdId);
             writer.WriteStringValue("age", Age);
             writer.WriteLongValue("app_install_add_payment_info_count", AppInstallAddPaymentInfoCount);
             writer.WriteFloatValue("app_install_add_payment_info_cvr", AppInstallAddPaymentInfoCvr);
@@ -4089,7 +4087,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteFloatValue("app_install_view_content_cvr", AppInstallViewContentCvr);
             writer.WriteFloatValue("app_install_view_content_ecpa", AppInstallViewContentEcpa);
             writer.WriteStringValue("asset_id", AssetId);
-            writer.WriteStringValue("campaign_id", CampaignId);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective>("campaign_objective", CampaignObjective);
             writer.WriteLongValue("clicks", Clicks);
             writer.WriteLongValue("comment_downvotes", CommentDownvotes);
@@ -4097,11 +4094,11 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteLongValue("comment_submissions", CommentSubmissions);
             writer.WriteLongValue("comment_upvotes", CommentUpvotes);
             writer.WriteStringValue("community", Community);
+            writer.WriteFloatValue("conversion_sign_up_avg_value_app", Conversion_sign_up_avg_value_app);
             writer.WriteFloatValue("conversion_sign_up_avg_value_other", Conversion_sign_up_avg_value_other);
-            writer.WriteLongValue("conversion_sign_up_total_value_offline", Conversion_sign_up_total_value_offline);
-            writer.WriteFloatValue("conversion_signup_avg_value_app", Conversion_signup_avg_value_app);
+            writer.WriteLongValue("conversion_sign_up_total_value_app", Conversion_sign_up_total_value_app);
             writer.WriteFloatValue("conversion_signup_avg_value_offline", Conversion_signup_avg_value_offline);
-            writer.WriteLongValue("conversion_signup_total_value_app", Conversion_signup_total_value_app);
+            writer.WriteLongValue("conversion_signup_total_value_offline", Conversion_signup_total_value_offline);
             writer.WriteLongValue("conversion_signup_total_value_other", Conversion_signup_total_value_other);
             writer.WriteFloatValue("conversion_add_to_cart_avg_value", ConversionAddToCartAvgValue);
             writer.WriteFloatValue("conversion_add_to_cart_avg_value_app", ConversionAddToCartAvgValueApp);
@@ -4654,7 +4651,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteLongValue("conversion_custom_event_9_views_app", ConversionCustomEvent9ViewsApp);
             writer.WriteLongValue("conversion_custom_event_9_views_offline", ConversionCustomEvent9ViewsOffline);
             writer.WriteLongValue("conversion_custom_event_9_views_other", ConversionCustomEvent9ViewsOther);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaReportMetricConversionCustomEventsProperty>("conversion_custom_events", ConversionCustomEvents);
             writer.WriteLongValue("conversion_custom_total_items", ConversionCustomTotalItems);
             writer.WriteLongValue("conversion_custom_total_value", ConversionCustomTotalValue);
             writer.WriteLongValue("conversion_custom_views", ConversionCustomViews);
@@ -4749,7 +4745,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteLongValue("conversion_search_views_offline", ConversionSearchViewsOffline);
             writer.WriteLongValue("conversion_search_views_other", ConversionSearchViewsOther);
             writer.WriteFloatValue("conversion_signup_avg_value", ConversionSignupAvgValue);
-            writer.WriteFloatValue("conversion_sign_up_avg_value_app", ConversionSignUpAvgValueApp);
+            writer.WriteFloatValue("conversion_signup_avg_value_app", ConversionSignupAvgValueApp);
             writer.WriteFloatValue("conversion_sign_up_avg_value_offline", ConversionSignUpAvgValueOffline);
             writer.WriteFloatValue("conversion_signup_avg_value_other", ConversionSignupAvgValueOther);
             writer.WriteLongValue("conversion_sign_up_clicks", ConversionSignUpClicks);
@@ -4764,8 +4760,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteLongValue("conversion_sign_up_total_items_offline", ConversionSignUpTotalItemsOffline);
             writer.WriteLongValue("conversion_sign_up_total_items_other", ConversionSignUpTotalItemsOther);
             writer.WriteLongValue("conversion_signup_total_value", ConversionSignupTotalValue);
-            writer.WriteLongValue("conversion_sign_up_total_value_app", ConversionSignUpTotalValueApp);
-            writer.WriteLongValue("conversion_signup_total_value_offline", ConversionSignupTotalValueOffline);
+            writer.WriteLongValue("conversion_signup_total_value_app", ConversionSignupTotalValueApp);
+            writer.WriteLongValue("conversion_sign_up_total_value_offline", ConversionSignUpTotalValueOffline);
             writer.WriteLongValue("conversion_sign_up_total_value_other", ConversionSignUpTotalValueOther);
             writer.WriteLongValue("conversion_sign_up_views", ConversionSignUpViews);
             writer.WriteLongValue("conversion_sign_up_views_app", ConversionSignUpViewsApp);
@@ -4825,10 +4821,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsOsType>("os_type", OsType);
             writer.WriteFloatValue("pacing", Pacing);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsPlacements>("placement", Placement);
-            writer.WriteStringValue("post_id", PostId);
             writer.WriteStringValue("priority", Priority);
             writer.WriteStringValue("product_id", ProductId);
-            writer.WriteStringValue("profile_id", ProfileId);
             writer.WriteLongValue("reach", Reach);
             writer.WriteLongValue("reddit_leads", RedditLeads);
             writer.WriteStringValue("region", Region);

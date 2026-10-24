@@ -25,8 +25,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public string ReferenceId { get; set; }
 #endif
-        /// <summary>The creative asset type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.CtaType? Type { get; set; }
+        /// <summary>The type of the asset.</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAssetType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAsset"/> and sets the default values.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             {
                 { "call_to_action", n => { CallToAction = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsNonNullCallToAction>(); } },
                 { "reference_id", n => { ReferenceId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CtaType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAssetType>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsNonNullCallToAction>("call_to_action", CallToAction);
             writer.WriteStringValue("reference_id", ReferenceId);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CtaType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAssetType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

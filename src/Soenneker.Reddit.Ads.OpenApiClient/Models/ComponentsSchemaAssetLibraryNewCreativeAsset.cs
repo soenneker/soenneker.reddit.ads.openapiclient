@@ -53,21 +53,21 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCreativeAsset CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCreativeAsset();
-            if("ComponentsSchemaAssetLibraryNewCtaAsset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CTA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaAssetLibraryNewCtaAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAsset();
             }
-            else if("ComponentsSchemaAssetLibraryNewHeadlineAsset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("HEADLINE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaAssetLibraryNewHeadlineAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewHeadlineAsset();
             }
-            else if("ComponentsSchemaAssetLibraryNewImageAsset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("IMAGE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaAssetLibraryNewImageAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewImageAsset();
             }
-            else if("ComponentsSchemaAssetLibraryNewVideoAsset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("VIDEO".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaAssetLibraryNewVideoAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewVideoAsset();
             }

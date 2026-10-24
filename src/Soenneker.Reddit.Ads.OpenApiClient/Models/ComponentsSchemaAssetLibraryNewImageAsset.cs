@@ -39,8 +39,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public string ReferenceId { get; set; }
 #endif
-        /// <summary>The creative asset type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ImageType? Type { get; set; }
+        /// <summary>The type of the asset.</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewImageAssetType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewImageAsset"/> and sets the default values.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "media", n => { Media = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsMediaCreativeAssetTypesMediaUrl>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsMediaCreativeAssetTypesMediaUrl.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "reference_id", n => { ReferenceId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ImageType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewImageAssetType>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsMediaCreativeAssetTypesMediaUrl>("media", Media);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("reference_id", ReferenceId);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ImageType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewImageAssetType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

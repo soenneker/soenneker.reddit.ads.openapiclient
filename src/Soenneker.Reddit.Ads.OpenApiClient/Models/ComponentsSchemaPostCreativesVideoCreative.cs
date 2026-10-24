@@ -62,13 +62,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string SupplementaryText { get; set; }
 #endif
         /// <summary>The format of `body`. For a non-null `body`, an omitted or `null` format defaults to `PLAIN_TEXT`. Responses use `PLAIN_TEXT` for the stored post body.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormatWrapper2? TextFormat { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormatWrapper2 TextFormat { get; set; }
-#endif
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormat? TextFormat { get; set; }
         /// <summary>The thumbnail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,8 +71,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsImageCreativeAsset Thumbnail { get; set; }
 #endif
-        /// <summary>The creative asset type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.VideoType? Type { get; set; }
+        /// <summary>The creative type.</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesVideoCreativeType? Type { get; set; }
         /// <summary>The video property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,9 +105,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "event", n => { Event = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEvent>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEvent.CreateFromDiscriminatorValue); } },
                 { "headline", n => { Headline = n.GetStringValue(); } },
                 { "supplementary_text", n => { SupplementaryText = n.GetStringValue(); } },
-                { "text_format", n => { TextFormat = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormatWrapper2>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormatWrapper2.CreateFromDiscriminatorValue); } },
+                { "text_format", n => { TextFormat = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormat>(); } },
                 { "thumbnail", n => { Thumbnail = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsImageCreativeAsset>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsImageCreativeAsset.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.VideoType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesVideoCreativeType>(); } },
                 { "video", n => { Video = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsVideoCreativeAsset>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsVideoCreativeAsset.CreateFromDiscriminatorValue); } },
             };
         }
@@ -130,9 +124,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEvent>("event", Event);
             writer.WriteStringValue("headline", Headline);
             writer.WriteStringValue("supplementary_text", SupplementaryText);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormatWrapper2>("text_format", TextFormat);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormat>("text_format", TextFormat);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsImageCreativeAsset>("thumbnail", Thumbnail);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.VideoType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesVideoCreativeType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsVideoCreativeAsset>("video", Video);
         }
     }

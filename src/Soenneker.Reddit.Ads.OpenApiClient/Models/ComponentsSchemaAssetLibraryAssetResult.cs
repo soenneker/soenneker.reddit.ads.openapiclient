@@ -55,19 +55,19 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetResult();
-            if("ComponentsSchemaAssetLibraryStoredCtaAsset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CTA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaAssetLibraryStoredCtaAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryStoredCtaAsset();
             }
-            else if("ComponentsSchemaAssetLibraryStoredHeadlineAsset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("HEADLINE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaAssetLibraryStoredHeadlineAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryStoredHeadlineAsset();
             }
-            else if("ComponentsSchemaAssetLibraryStoredImageAsset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("IMAGE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaAssetLibraryStoredImageAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryStoredImageAsset();
             }
-            else if("ComponentsSchemaAssetLibraryStoredVideoAsset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("VIDEO".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaAssetLibraryStoredVideoAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryStoredVideoAsset();
             }

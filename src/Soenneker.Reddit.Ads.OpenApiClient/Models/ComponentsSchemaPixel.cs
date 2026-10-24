@@ -21,16 +21,16 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAutomaticAdvancedMatchingConfig AutomaticMatchingConfig { get; set; }
 #endif
         /// <summary>The business ID.</summary>
-        public Guid? BusinessId { get; set; }
+        public Guid? BusinessId { get; private set; }
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The member&apos;s ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get; set; }
+        public string? CreatedBy { get; private set; }
 #nullable restore
 #else
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get; private set; }
 #endif
         /// <summary>The Pixel&apos;s enhanced signal collection settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,14 +49,14 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The member&apos;s ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedBy { get; set; }
+        public string? ModifiedBy { get; private set; }
 #nullable restore
 #else
-        public string ModifiedBy { get; set; }
+        public string ModifiedBy { get; private set; }
 #endif
         /// <summary>The Pixel&apos;s human-readable name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,12 +103,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAutomaticAdvancedMatchingConfig>("automatic_matching_config", AutomaticMatchingConfig);
-            writer.WriteGuidValue("business_id", BusinessId);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("created_by", CreatedBy);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEnhancedSignalCollectionConfig>("enhanced_signal_collection_config", EnhancedSignalCollectionConfig);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
-            writer.WriteStringValue("modified_by", ModifiedBy);
             writer.WriteStringValue("name", Name);
         }
     }

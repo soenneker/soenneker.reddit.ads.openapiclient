@@ -11,10 +11,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// Audience signals and controls for an automated Reddit Max ad group.At least one of `communities`, `interests`, `keywords`, or`custom_audience_ids` must be a non-empty array. Reddit uses those values asseed signals for automated targeting. Geolocations and exclusion fieldsremain hard controls. The service enforces the cross-field seed requirementand returns a `400` response when it is not met.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ComponentsSchemaTargetingRmax : IAdditionalDataHolder, IParsable
+    public partial class ComponentsSchemaTargetingRmax : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The [mobile carriers](https://ads-api.reddit.com/docs/v3/operations/List%20Carriers) to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,13 +155,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingViewModesItem?> ViewModes { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingRmax"/> and sets the default values.
-        /// </summary>
-        public ComponentsSchemaTargetingRmax()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingRmax"/></returns>
@@ -228,7 +219,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingPlatformsItem>("platforms", Platforms);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AllFeaturesItem>("suppression_event_types", SuppressionEventTypes);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingViewModesItem>("view_modes", ViewModes);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

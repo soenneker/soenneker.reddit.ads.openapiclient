@@ -15,10 +15,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The ad account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdAccountId { get; set; }
+        public string? AdAccountId { get; private set; }
 #nullable restore
 #else
-        public string AdAccountId { get; set; }
+        public string AdAccountId { get; private set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The ad&apos;s status set by the ad account. Can differ from `effective_status` depending on context, such as pending billing information.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseConfiguredStatus? ConfiguredStatus { get; set; }
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The delivery statuses for this ad group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +87,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The entity name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,13 +157,13 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative ShoppingCreative { get; set; }
 #endif
-        /// <summary>The skadnetwork_metadata property</summary>
+        /// <summary>Metadata of the SKAdNetwork source ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseSkadnetworkMetadata? SkadnetworkMetadata { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseSkadnetworkMetadata? SkadnetworkMetadata { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseSkadnetworkMetadata SkadnetworkMetadata { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseSkadnetworkMetadata SkadnetworkMetadata { get; private set; }
 #endif
         /// <summary>The ad type.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.UnspecifiedType? Type { get; set; }
@@ -226,15 +226,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("ad_account_id", AdAccountId);
             writer.WriteStringValue("ad_group_id", AdGroupId);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseCampaignObjectiveType>("campaign_objective_type", CampaignObjectiveType);
             writer.WriteStringValue("click_url", ClickUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter>("click_url_query_parameters", ClickUrlQueryParameters);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseConfiguredStatus>("configured_status", ConfiguredStatus);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseEventTrackersItem>("event_trackers", EventTrackers);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("post_id", PostId);
             writer.WriteDateTimeOffsetValue("preview_expiry", PreviewExpiry);
@@ -242,7 +239,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteStringValue("profile_id", ProfileId);
             writer.WriteStringValue("profile_username", ProfileUsername);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative>("shopping_creative", ShoppingCreative);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseSkadnetworkMetadata>("skadnetwork_metadata", SkadnetworkMetadata);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UnspecifiedType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

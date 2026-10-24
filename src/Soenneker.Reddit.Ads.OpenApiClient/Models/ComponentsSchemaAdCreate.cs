@@ -37,13 +37,13 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreate();
-            if("ComponentsSchemaAdCreateDynamicCreativeTemplate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("DYNAMIC_CREATIVE_AD_TEMPLATE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaAdCreateDynamicCreativeTemplate = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateDynamicCreativeTemplate();
             }
-            else if("ComponentsSchemaAdCreateStandard".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UNSPECIFIED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaAdCreateStandard = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandard();
             }

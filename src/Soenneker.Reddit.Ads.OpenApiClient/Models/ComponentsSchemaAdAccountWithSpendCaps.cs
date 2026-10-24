@@ -14,46 +14,22 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     {
         /// <summary>Describes the state of the account. Can only be changed by Reddit.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AdminApproval? AdminApproval { get; set; }
-        /// <summary>The attribution type for app install campaigns.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>The attribution conversion type. Valid for cost-per-action (CPA) bid types. Also configures the attribution type to query when calculating effective-cost-per-action (eCPA) fields.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppAttributionType? AppAttributionType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppAttributionType AppAttributionType { get; set; }
-#endif
-        /// <summary>The window for app install click attribution. Used for reporting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>The max time to elapse between the start and end of a conversion.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppClickAttributionWindow? AppClickAttributionWindow { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppClickAttributionWindow AppClickAttributionWindow { get; set; }
-#endif
-        /// <summary>The window for app install view attribution. Used for reporting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>The max time to elapse between the start and end of a conversion.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppViewAttributionWindow? AppViewAttributionWindow { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppViewAttributionWindow AppViewAttributionWindow { get; set; }
-#endif
         /// <summary>The attribution conversion type. Valid for cost-per-action (CPA) bid types. Also configures the attribution type to query when calculating effective-cost-per-action (eCPA) fields.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsAttributionType? AttributionType { get; set; }
         /// <summary>The business ID.</summary>
-        public Guid? BusinessId { get; set; }
+        public Guid? BusinessId { get; private set; }
         /// <summary>The window for click attributions. Used for reporting.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ClickAttributionWindow? ClickAttributionWindow { get; set; }
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The currency property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        public DateTimeOffset? CreatedAt { get; private set; }
+        /// <summary>The currency symbol used ([ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)).</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Currency? Currency { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Currency Currency { get; private set; }
-#endif
         /// <summary>The communities (&quot;subreddits&quot;) excluded at the ad account level. Ads won&apos;t be eligible for auctions in these communities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,13 +49,13 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The ad account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The entity name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,14 +84,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.SpendCapType? SpendCapType { get; set; }
         /// <summary>Why this ad account was suspended.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.SuspensionReason? SuspensionReason { get; private set; }
-        /// <summary>The time_zone_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TimeZoneId { get; private set; }
-#nullable restore
-#else
-        public string TimeZoneId { get; private set; }
-#endif
+        /// <summary>The entity&apos;s default time zone.</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.TimeZoneId? TimeZoneId { get; private set; }
         /// <summary>The ad account type. Can only be changed by Reddit.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.TypeValue? Type { get; set; }
         /// <summary>Whether clients should select[Redditor Highlights](https://business.reddithelp.com/s/article/redditor-highlights)by default for eligible new ads. If null, clients should use the platformdefault. This preference does not itself change ad selection, existingads, or eligibility.</summary>
@@ -141,14 +111,14 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "admin_approval", n => { AdminApproval = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AdminApproval>(); } },
-                { "app_attribution_type", n => { AppAttributionType = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppAttributionType>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppAttributionType.CreateFromDiscriminatorValue); } },
-                { "app_click_attribution_window", n => { AppClickAttributionWindow = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppClickAttributionWindow>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppClickAttributionWindow.CreateFromDiscriminatorValue); } },
-                { "app_view_attribution_window", n => { AppViewAttributionWindow = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppViewAttributionWindow>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppViewAttributionWindow.CreateFromDiscriminatorValue); } },
+                { "app_attribution_type", n => { AppAttributionType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppAttributionType>(); } },
+                { "app_click_attribution_window", n => { AppClickAttributionWindow = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppClickAttributionWindow>(); } },
+                { "app_view_attribution_window", n => { AppViewAttributionWindow = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppViewAttributionWindow>(); } },
                 { "attribution_type", n => { AttributionType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsAttributionType>(); } },
                 { "business_id", n => { BusinessId = n.GetGuidValue(); } },
                 { "click_attribution_window", n => { ClickAttributionWindow = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ClickAttributionWindow>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Currency>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.Currency.CreateFromDiscriminatorValue); } },
+                { "currency", n => { Currency = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Currency>(); } },
                 { "excluded_communities", n => { ExcludedCommunities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "excluded_keywords", n => { ExcludedKeywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -158,7 +128,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "primary_contact_member_id", n => { PrimaryContactMemberId = n.GetStringValue(); } },
                 { "spend_cap_type", n => { SpendCapType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SpendCapType>(); } },
                 { "suspension_reason", n => { SuspensionReason = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SuspensionReason>(); } },
-                { "time_zone_id", n => { TimeZoneId = n.GetStringValue(); } },
+                { "time_zone_id", n => { TimeZoneId = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.TimeZoneId>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.TypeValue>(); } },
                 { "ugc_addon_default_on", n => { UgcAddonDefaultOn = n.GetBoolValue(); } },
                 { "view_attribution_window", n => { ViewAttributionWindow = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewAttributionWindow>(); } },
@@ -172,17 +142,13 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AdminApproval>("admin_approval", AdminApproval);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppAttributionType>("app_attribution_type", AppAttributionType);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppClickAttributionWindow>("app_click_attribution_window", AppClickAttributionWindow);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppViewAttributionWindow>("app_view_attribution_window", AppViewAttributionWindow);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppAttributionType>("app_attribution_type", AppAttributionType);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppClickAttributionWindow>("app_click_attribution_window", AppClickAttributionWindow);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppViewAttributionWindow>("app_view_attribution_window", AppViewAttributionWindow);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsAttributionType>("attribution_type", AttributionType);
-            writer.WriteGuidValue("business_id", BusinessId);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ClickAttributionWindow>("click_attribution_window", ClickAttributionWindow);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_communities", ExcludedCommunities);
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_keywords", ExcludedKeywords);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("primary_contact_member_id", PrimaryContactMemberId);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SpendCapType>("spend_cap_type", SpendCapType);

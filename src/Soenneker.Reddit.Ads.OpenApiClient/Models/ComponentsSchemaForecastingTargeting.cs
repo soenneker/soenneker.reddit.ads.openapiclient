@@ -23,10 +23,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The [mobile carriers](https://ads-api.reddit.com/docs/v3/api/list-carriers) to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CarriersItem?>? Carriers { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargetingCarriersItem?>? Carriers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CarriersItem?> Carriers { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargetingCarriersItem?> Carriers { get; set; }
 #endif
         /// <summary>The [Reddit communities (&quot;subreddits&quot;)](https://ads-api.reddit.com/docs/v3/api/list-communities) to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,10 +123,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The platforms to show the advertisement on. At least 1 mobile type must be targeted for `APP_INSTALLS` campaigns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.PlatformsItem?>? Platforms { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargetingPlatformsItem?>? Platforms { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.PlatformsItem?> Platforms { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargetingPlatformsItem?> Platforms { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -147,7 +147,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "age", n => { Age = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Age>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.Age.CreateFromDiscriminatorValue); } },
-                { "carriers", n => { Carriers = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CarriersItem>()?.AsList(); } },
+                { "carriers", n => { Carriers = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargetingCarriersItem>()?.AsList(); } },
                 { "communities", n => { Communities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "custom_audience_ids", n => { CustomAudienceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "devices", n => { Devices = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTarget>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTarget.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -161,7 +161,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "languages", n => { Languages = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumTargetingLanguageCodes>()?.AsList(); } },
                 { "locations", n => { Locations = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsPlacements>()?.AsList(); } },
-                { "platforms", n => { Platforms = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.PlatformsItem>()?.AsList(); } },
+                { "platforms", n => { Platforms = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargetingPlatformsItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -172,7 +172,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Age>("age", Age);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CarriersItem>("carriers", Carriers);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargetingCarriersItem>("carriers", Carriers);
             writer.WriteCollectionOfPrimitiveValues<string>("communities", Communities);
             writer.WriteCollectionOfPrimitiveValues<string>("custom_audience_ids", CustomAudienceIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTarget>("devices", Devices);
@@ -186,7 +186,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumTargetingLanguageCodes>("languages", Languages);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsPlacements>("locations", Locations);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.PlatformsItem>("platforms", Platforms);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargetingPlatformsItem>("platforms", Platforms);
         }
     }
 }

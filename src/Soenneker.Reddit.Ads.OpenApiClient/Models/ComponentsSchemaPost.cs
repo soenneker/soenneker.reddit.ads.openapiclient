@@ -31,7 +31,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostContentItem> Content { get; set; }
 #endif
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The post&apos;s title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +117,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteBoolValue("allow_comments", AllowComments);
             writer.WriteStringValue("body", Body);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostContentItem>("content", Content);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("headline", Headline);
             writer.WriteBoolValue("is_richtext", IsRichtext);
             writer.WriteStringValue("thumbnail_url", ThumbnailUrl);

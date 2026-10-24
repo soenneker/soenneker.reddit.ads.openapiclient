@@ -15,10 +15,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The ID of the ad account that owns this custom audience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdAccountId { get; set; }
+        public string? AdAccountId { get; private set; }
 #nullable restore
 #else
-        public string AdAccountId { get; set; }
+        public string AdAccountId { get; private set; }
 #endif
         /// <summary>The ID of the business that owns this custom audience.</summary>
         public Guid? BusinessId { get; private set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Cost Cost { get; private set; }
 #endif
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Details for the [customer list audience](https://business.reddithelp.com/s/article/custom-audiences#customer-lists).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,13 +51,13 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The custom audience ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The entity name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,9 +67,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The lower bound of the estimated matched users for this audience.</summary>
-        public int? SizeRangeLower { get; set; }
+        public int? SizeRangeLower { get; private set; }
         /// <summary>The upper bound of the estimated matched users for this audience.</summary>
-        public int? SizeRangeUpper { get; set; }
+        public int? SizeRangeUpper { get; private set; }
         /// <summary>The custom audience&apos;s processing status.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Status? Status { get; private set; }
         /// <summary>The custom audience type, which must be `CUSTOMER_LIST`.</summary>
@@ -114,14 +114,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("ad_account_id", AdAccountId);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomerListConfig>("customer_list_config", CustomerListConfig);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("size_range_lower", SizeRangeLower);
-            writer.WriteIntValue("size_range_upper", SizeRangeUpper);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CustomerListType>("type", Type);
         }
     }

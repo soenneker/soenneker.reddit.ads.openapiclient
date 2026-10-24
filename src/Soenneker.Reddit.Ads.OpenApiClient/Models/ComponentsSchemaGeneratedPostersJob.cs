@@ -47,15 +47,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
             var result = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJob();
-            if("ComponentsSchemaGeneratedPostersJobFailed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("FAILED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaGeneratedPostersJobFailed = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobFailed();
             }
-            else if("ComponentsSchemaGeneratedPostersJobProcessing".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PROCESSING".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaGeneratedPostersJobProcessing = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobProcessing();
             }
-            else if("ComponentsSchemaGeneratedPostersJobSuccess".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SUCCESS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaGeneratedPostersJobSuccess = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobSuccess();
             }

@@ -70,13 +70,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string SupplementaryText { get; set; }
 #endif
         /// <summary>The format of `body`. For a non-null `body`, an omitted or `null` format defaults to `PLAIN_TEXT`. Responses use `PLAIN_TEXT` for the stored post body.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormatWrapper? TextFormat { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormatWrapper TextFormat { get; set; }
-#endif
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormat? TextFormat { get; set; }
         /// <summary>The image post&apos;s [thumbnail](https://business.reddithelp.com/s/article/image-ad-specifications#thumbnail).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,8 +79,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesImageCreativeThumbnail Thumbnail { get; set; }
 #endif
-        /// <summary>The creative asset type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ImageType? Type { get; set; }
+        /// <summary>The creative type.</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesImageCreativeType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -112,9 +106,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "headline", n => { Headline = n.GetStringValue(); } },
                 { "image", n => { Image = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsImageCreativeAsset>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsImageCreativeAsset.CreateFromDiscriminatorValue); } },
                 { "supplementary_text", n => { SupplementaryText = n.GetStringValue(); } },
-                { "text_format", n => { TextFormat = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormatWrapper>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormatWrapper.CreateFromDiscriminatorValue); } },
+                { "text_format", n => { TextFormat = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormat>(); } },
                 { "thumbnail", n => { Thumbnail = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesImageCreativeThumbnail>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesImageCreativeThumbnail.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ImageType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesImageCreativeType>(); } },
             };
         }
         /// <summary>
@@ -131,9 +125,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteStringValue("headline", Headline);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativeAssetsImageCreativeAsset>("image", Image);
             writer.WriteStringValue("supplementary_text", SupplementaryText);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormatWrapper>("text_format", TextFormat);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormat>("text_format", TextFormat);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesImageCreativeThumbnail>("thumbnail", Thumbnail);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ImageType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesImageCreativeType>("type", Type);
         }
     }
 }

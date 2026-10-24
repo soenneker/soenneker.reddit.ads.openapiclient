@@ -16,18 +16,18 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>Critical issues and how many products are affected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductSetSummaryIssuesCriticalProperty? Critical { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductSetSummaryIssuesCriticalProperty? Critical { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductSetSummaryIssuesCriticalProperty Critical { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductSetSummaryIssuesCriticalProperty Critical { get; private set; }
 #endif
         /// <summary>Warning issues and how many products are affected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductSetSummaryIssuesWarningProperty? Warning { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductSetSummaryIssuesWarningProperty? Warning { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductSetSummaryIssuesWarningProperty Warning { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductSetSummaryIssuesWarningProperty Warning { get; private set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -58,8 +58,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductSetSummaryIssuesCriticalProperty>("critical", Critical);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductSetSummaryIssuesWarningProperty>("warning", Warning);
         }
     }
 }

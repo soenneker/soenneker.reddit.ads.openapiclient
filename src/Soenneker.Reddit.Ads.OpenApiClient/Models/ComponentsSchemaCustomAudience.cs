@@ -45,17 +45,17 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomAudience CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomAudience();
-            if("ComponentsSchemaCustomerListCustomAudience".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CUSTOMER_LIST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaCustomerListCustomAudience = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomerListCustomAudience();
             }
-            else if("ComponentsSchemaEngagementRetargetingCustomAudience".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ENGAGEMENT_RETARGETING".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaEngagementRetargetingCustomAudience = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEngagementRetargetingCustomAudience();
             }
-            else if("ComponentsSchemaPixelRetargetingCustomAudience".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PIXEL_RETARGETING".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaPixelRetargetingCustomAudience = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelRetargetingCustomAudience();
             }

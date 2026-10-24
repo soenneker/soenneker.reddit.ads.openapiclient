@@ -31,8 +31,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>The creative asset type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.HeadlineType? Type { get; set; }
+        /// <summary>The type of the asset.</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewHeadlineAssetType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewHeadlineAsset"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             {
                 { "reference_id", n => { ReferenceId = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.HeadlineType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewHeadlineAssetType>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("reference_id", ReferenceId);
             writer.WriteStringValue("text", Text);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.HeadlineType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewHeadlineAssetType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

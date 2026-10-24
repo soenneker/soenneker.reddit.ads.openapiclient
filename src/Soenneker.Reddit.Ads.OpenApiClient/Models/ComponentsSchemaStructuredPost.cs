@@ -18,7 +18,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>Whether comments are allowed on the post. See how to [manage comments](https://business.reddithelp.com/s/article/Managing-ads-with-comments-on).</summary>
         public bool? AllowComments { get; set; }
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The creative property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,7 +93,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allow_comments", AllowComments);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCreative>("creative", Creative);
             writer.WriteAdditionalData(AdditionalData);
         }

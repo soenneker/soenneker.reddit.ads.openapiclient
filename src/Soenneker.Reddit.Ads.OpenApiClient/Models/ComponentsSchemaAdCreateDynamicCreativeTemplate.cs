@@ -16,10 +16,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The ad account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdAccountId { get; set; }
+        public string? AdAccountId { get; private set; }
 #nullable restore
 #else
-        public string AdAccountId { get; set; }
+        public string AdAccountId { get; private set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -108,7 +108,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaRmaxAssetId> ThumbnailAssetIdentifiers { get; set; }
 #endif
         /// <summary>The ad type used for a Reddit Max creative template.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.DynamicCreativeAdTemplateType? Type { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateDynamicCreativeTemplateType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateDynamicCreativeTemplate"/> and sets the default values.
         /// </summary>
@@ -147,7 +147,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "profile_id", n => { ProfileId = n.GetStringValue(); } },
                 { "supplementary_text", n => { SupplementaryText = n.GetStringValue(); } },
                 { "thumbnail_asset_identifiers", n => { ThumbnailAssetIdentifiers = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaRmaxAssetId>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaRmaxAssetId.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.DynamicCreativeAdTemplateType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateDynamicCreativeTemplateType>(); } },
             };
         }
         /// <summary>
@@ -157,7 +157,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("ad_account_id", AdAccountId);
             writer.WriteStringValue("ad_group_id", AdGroupId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaRmaxAssetId>("asset_identifiers", AssetIdentifiers);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter>("click_url_query_parameters", ClickUrlQueryParameters);
@@ -170,7 +169,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteStringValue("profile_id", ProfileId);
             writer.WriteStringValue("supplementary_text", SupplementaryText);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaRmaxAssetId>("thumbnail_asset_identifiers", ThumbnailAssetIdentifiers);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.DynamicCreativeAdTemplateType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateDynamicCreativeTemplateType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

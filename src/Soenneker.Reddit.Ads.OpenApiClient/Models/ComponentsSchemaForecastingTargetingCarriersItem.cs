@@ -5,7 +5,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum CarriersItem
+    public enum ComponentsSchemaForecastingTargetingCarriersItem
     #pragma warning restore CS1591
     {
         [EnumMember(Value = "ATT_WIRELESS_US")]

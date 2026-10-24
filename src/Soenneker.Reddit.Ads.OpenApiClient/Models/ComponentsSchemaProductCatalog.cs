@@ -13,9 +13,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The business ID.</summary>
-        public Guid? BusinessId { get; set; }
+        public Guid? BusinessId { get; private set; }
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The catalog data sources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,7 +45,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The product catalog&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,14 +99,11 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("business_id", BusinessId);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductCatalogDataSourcesItem>("data_sources", DataSources);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductCatalogDefaultCurrency>("default_currency", DefaultCurrency);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductCatalogDefaultLanguage>("default_language", DefaultLanguage);
             writer.WriteCollectionOfPrimitiveValues<string>("event_sources", EventSources);
             writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProductCatalogSummary>("summary", Summary);
         }

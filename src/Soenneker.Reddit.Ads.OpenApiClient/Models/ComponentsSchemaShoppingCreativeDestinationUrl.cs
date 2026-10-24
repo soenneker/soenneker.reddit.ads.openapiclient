@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreativeDestinationUrlMember1"/>, <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreativeDestinationUrlOneOf2"/>, <see cref="string"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreativeDestinationUrlMember1"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaShoppingCreativeDestinationUrl : IComposedTypeWrapper, IParsable
@@ -20,14 +20,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreativeDestinationUrlMember1 ComponentsSchemaShoppingCreativeDestinationUrlMember1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreativeDestinationUrlOneOf2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreativeDestinationUrlOneOf2? ComponentsSchemaShoppingCreativeDestinationUrlOneOf2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreativeDestinationUrlOneOf2 ComponentsSchemaShoppingCreativeDestinationUrlOneOf2 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,10 +55,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             {
                 return ComponentsSchemaShoppingCreativeDestinationUrlMember1.GetFieldDeserializers();
             }
-            else if(ComponentsSchemaShoppingCreativeDestinationUrlOneOf2 != null)
-            {
-                return ComponentsSchemaShoppingCreativeDestinationUrlOneOf2.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -79,10 +67,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ComponentsSchemaShoppingCreativeDestinationUrlMember1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreativeDestinationUrlMember1>(null, ComponentsSchemaShoppingCreativeDestinationUrlMember1);
-            }
-            else if(ComponentsSchemaShoppingCreativeDestinationUrlOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreativeDestinationUrlOneOf2>(null, ComponentsSchemaShoppingCreativeDestinationUrlOneOf2);
             }
             else if(String != null)
             {

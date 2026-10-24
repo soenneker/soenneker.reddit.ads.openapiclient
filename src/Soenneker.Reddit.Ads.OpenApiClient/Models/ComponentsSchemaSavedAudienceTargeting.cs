@@ -72,6 +72,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public List<string> ExcludedGeolocations { get; set; }
 #endif
         /// <summary>The interests to exclude from targeting.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ExcludedInterests { get; set; }
@@ -126,18 +127,18 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The suppression event types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AllFeaturesItem?>? SuppressionEventTypes { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem?>? SuppressionEventTypes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AllFeaturesItem?> SuppressionEventTypes { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem?> SuppressionEventTypes { get; set; }
 #endif
         /// <summary>The layouts the ad can be placed in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewModesItem?>? ViewModes { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingViewModesItem?>? ViewModes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewModesItem?> ViewModes { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingViewModesItem?> ViewModes { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargeting"/> and sets the default values.
@@ -179,8 +180,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "interests", n => { Interests = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "languages", n => { Languages = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumTargetingLanguageCodes>()?.AsList(); } },
-                { "suppression_event_types", n => { SuppressionEventTypes = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AllFeaturesItem>()?.AsList(); } },
-                { "view_modes", n => { ViewModes = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewModesItem>()?.AsList(); } },
+                { "suppression_event_types", n => { SuppressionEventTypes = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem>()?.AsList(); } },
+                { "view_modes", n => { ViewModes = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingViewModesItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -205,8 +206,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("interests", Interests);
             writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumTargetingLanguageCodes>("languages", Languages);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AllFeaturesItem>("suppression_event_types", SuppressionEventTypes);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewModesItem>("view_modes", ViewModes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem>("suppression_event_types", SuppressionEventTypes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingViewModesItem>("view_modes", ViewModes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

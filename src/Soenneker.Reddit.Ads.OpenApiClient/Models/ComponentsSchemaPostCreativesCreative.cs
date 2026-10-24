@@ -61,25 +61,25 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCreative CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCreative();
-            if("ComponentsSchemaPostCreativesCarouselCreative".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CAROUSEL".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaPostCreativesCarouselCreative = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreative();
             }
-            else if("ComponentsSchemaPostCreativesImageCreative".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("IMAGE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaPostCreativesImageCreative = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesImageCreative();
             }
-            else if("ComponentsSchemaPostCreativesPromotedPostCreative".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PROMOTED_POST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaPostCreativesPromotedPostCreative = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesPromotedPostCreative();
             }
-            else if("ComponentsSchemaPostCreativesTextCreative".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TEXT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaPostCreativesTextCreative = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesTextCreative();
             }
-            else if("ComponentsSchemaPostCreativesVideoCreative".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("VIDEO".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ComponentsSchemaPostCreativesVideoCreative = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesVideoCreative();
             }

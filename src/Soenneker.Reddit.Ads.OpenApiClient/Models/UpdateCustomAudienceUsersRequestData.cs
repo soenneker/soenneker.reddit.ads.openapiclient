@@ -17,10 +17,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The column_order property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCustomAudienceSupportedSchemasItem?>? ColumnOrder { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestDataColumnOrderItem?>? ColumnOrder { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCustomAudienceSupportedSchemasItem?> ColumnOrder { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestDataColumnOrderItem?> ColumnOrder { get; set; }
 #endif
         /// <summary>Rows of user identifiers. Each row must match `column_order`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +49,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action_type", n => { ActionType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCustomAudienceUpdateAction>(); } },
-                { "column_order", n => { ColumnOrder = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCustomAudienceSupportedSchemasItem>()?.AsList(); } },
+                { "column_order", n => { ColumnOrder = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestDataColumnOrderItem>()?.AsList(); } },
                 { "user_data", n => { UserData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCustomAudienceUpdateAction>("action_type", ActionType);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCustomAudienceSupportedSchemasItem>("column_order", ColumnOrder);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestDataColumnOrderItem>("column_order", ColumnOrder);
             writer.WriteObjectValue<UntypedNode>("user_data", UserData);
         }
     }
