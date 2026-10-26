@@ -25,7 +25,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The ad group&apos;s bid strategy. For CBO campaigns, this must match the campaign&apos;s bid strategy.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy? BidStrategy { get; set; }
         /// <summary>The ad group&apos;s [bidding strategy](https://business.reddithelp.com/s/article/How-much-do-Reddit-Ads-cost#bidding-strategies).</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3? BidType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2? BidType { get; set; }
         /// <summary>The [campaign objective](https://business.reddithelp.com/s/article/Ad-campaign-objectives).</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective? CampaignObjective { get; set; }
         /// <summary>The currency symbol used ([ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)).</summary>
@@ -85,7 +85,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "ad_account_id", n => { AdAccountId = n.GetStringValue(); } },
                 { "attribution_type", n => { AttributionType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsAttributionType>(); } },
                 { "bid_strategy", n => { BidStrategy = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy>(); } },
-                { "bid_type", n => { BidType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3>(); } },
+                { "bid_type", n => { BidType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2>(); } },
                 { "campaign_objective", n => { CampaignObjective = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective>(); } },
                 { "currency", n => { Currency = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCurrency>(); } },
                 { "duration", n => { Duration = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SuggestBidRequestDataDuration>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.SuggestBidRequestDataDuration.CreateFromDiscriminatorValue); } },
@@ -110,7 +110,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteStringValue("ad_account_id", AdAccountId);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsAttributionType>("attribution_type", AttributionType);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy>("bid_strategy", BidStrategy);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3>("bid_type", BidType);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2>("bid_type", BidType);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective>("campaign_objective", CampaignObjective);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCurrency>("currency", Currency);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SuggestBidRequestDataDuration>("duration", Duration);

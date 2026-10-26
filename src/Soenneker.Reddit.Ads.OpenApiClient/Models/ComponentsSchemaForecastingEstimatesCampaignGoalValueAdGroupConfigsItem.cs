@@ -13,9 +13,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The ad group&apos;s bid strategy.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3? BidStrategy { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy2? BidStrategy { get; set; }
         /// <summary>The ad group&apos;s [bidding strategy](https://business.reddithelp.com/s/article/How-much-do-Reddit-Ads-cost#bidding-strategies).</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3? BidType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2? BidType { get; set; }
         /// <summary>The amount to pay per bidding event (microcurrency).</summary>
         public int? BidValue { get; set; }
         /// <summary>When the ad group will stop delivering ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
@@ -27,9 +27,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string EndTime { get; set; }
 #endif
         /// <summary>The ad group&apos;s goal type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType3? GoalType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType2? GoalType { get; set; }
         /// <summary>The event to optimize for. This must be compatible with the campaign objective. See the [goal options](/docs/v3/api/create-ad-group#optimization-goal-options).&gt; **Important:** This can&apos;t be changed later.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal3? OptimizationGoal { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal2? OptimizationGoal { get; set; }
         /// <summary>The shopping_targeting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargeting Targeting { get; set; }
 #endif
         /// <summary>The conversion attribution window. This determines how conversions are counted after a user interacts with an ad.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType2? ViewThroughConversionType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType? ViewThroughConversionType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -76,17 +76,17 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bid_strategy", n => { BidStrategy = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3>(); } },
-                { "bid_type", n => { BidType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3>(); } },
+                { "bid_strategy", n => { BidStrategy = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy2>(); } },
+                { "bid_type", n => { BidType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2>(); } },
                 { "bid_value", n => { BidValue = n.GetIntValue(); } },
                 { "end_time", n => { EndTime = n.GetStringValue(); } },
-                { "goal_type", n => { GoalType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType3>(); } },
-                { "optimization_goal", n => { OptimizationGoal = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal3>(); } },
+                { "goal_type", n => { GoalType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType2>(); } },
+                { "optimization_goal", n => { OptimizationGoal = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal2>(); } },
                 { "shopping_targeting", n => { ShoppingTargeting = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2.CreateFromDiscriminatorValue); } },
                 { "shopping_type", n => { ShoppingType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingType2>(); } },
                 { "start_time", n => { StartTime = n.GetStringValue(); } },
                 { "targeting", n => { Targeting = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargeting>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargeting.CreateFromDiscriminatorValue); } },
-                { "view_through_conversion_type", n => { ViewThroughConversionType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType2>(); } },
+                { "view_through_conversion_type", n => { ViewThroughConversionType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType>(); } },
             };
         }
         /// <summary>
@@ -96,17 +96,17 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3>("bid_strategy", BidStrategy);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3>("bid_type", BidType);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy2>("bid_strategy", BidStrategy);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2>("bid_type", BidType);
             writer.WriteIntValue("bid_value", BidValue);
             writer.WriteStringValue("end_time", EndTime);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType3>("goal_type", GoalType);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal3>("optimization_goal", OptimizationGoal);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType2>("goal_type", GoalType);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal2>("optimization_goal", OptimizationGoal);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2>("shopping_targeting", ShoppingTargeting);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingType2>("shopping_type", ShoppingType);
             writer.WriteStringValue("start_time", StartTime);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargeting>("targeting", Targeting);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType2>("view_through_conversion_type", ViewThroughConversionType);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType>("view_through_conversion_type", ViewThroughConversionType);
         }
     }
 }

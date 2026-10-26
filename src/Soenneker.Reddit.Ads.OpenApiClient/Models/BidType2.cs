@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
-    /// <summary>The campaign&apos;s bid type. Required when `is_campaign_budget_optimization` is `true`.</summary>
+    /// <summary>The ad group&apos;s [bidding strategy](https://business.reddithelp.com/s/article/How-much-do-Reddit-Ads-cost#bidding-strategies).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BidType2
     {
@@ -15,6 +15,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         #pragma warning disable CS1591
         Cpm,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CPV")]
+        #pragma warning disable CS1591
+        Cpv,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CPV6")]
         #pragma warning disable CS1591
         Cpv6,
@@ -22,10 +26,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         [EnumMember(Value = "CPV15")]
         #pragma warning disable CS1591
         Cpv15,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        #pragma warning disable CS1591
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

@@ -14,9 +14,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     public partial class ComponentsSchemaCampaignPatch : IParsable
     {
         /// <summary>The campaign&apos;s bid strategy. Required when `is_campaign_budget_optimization` is `true`.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy2? BidStrategy { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3? BidStrategy { get; set; }
         /// <summary>The campaign&apos;s bid type. Required when `is_campaign_budget_optimization` is `true`.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2? BidType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3? BidType { get; set; }
         /// <summary>The amount to pay per bidding event (microcurrency). Used when `is_campaign_budget_optimization` is `true`. Optional when `bid_strategy` is `MAXIMIZE_VOLUME`. If set at campaign level, it **can&apos;t be set** at ad group level.</summary>
         public int? BidValue { get; set; }
         /// <summary>The campaign&apos;s status set by the ad account. Can differ from `effective_status` depending on context, such as pending billing information.</summary>
@@ -95,8 +95,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bid_strategy", n => { BidStrategy = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy2>(); } },
-                { "bid_type", n => { BidType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2>(); } },
+                { "bid_strategy", n => { BidStrategy = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3>(); } },
+                { "bid_type", n => { BidType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3>(); } },
                 { "bid_value", n => { BidValue = n.GetIntValue(); } },
                 { "configured_status", n => { ConfiguredStatus = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus3>(); } },
                 { "end_time", n => { EndTime = n.GetStringValue(); } },
@@ -118,8 +118,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy2>("bid_strategy", BidStrategy);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2>("bid_type", BidType);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3>("bid_strategy", BidStrategy);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3>("bid_type", BidType);
             writer.WriteIntValue("bid_value", BidValue);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus3>("configured_status", ConfiguredStatus);
             writer.WriteStringValue("end_time", EndTime);

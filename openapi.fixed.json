@@ -106,7 +106,7 @@
                 "type": "object",
                 "properties": {
                   "data": {
-                    "$ref": "#/components/schemas/ComponentsSchemaAdAccountWithSpendCaps"
+                    "$ref": "#/components/schemas/ComponentsSchemaAdAccountUpdateRequest"
                   }
                 },
                 "additionalProperties": false
@@ -623,6 +623,89 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ListAppsByAdAccountResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "description": "No bearer token or a bad bearer token was provided.",
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "description": "Insufficient authentication scopes.",
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "The specified resource was not found.",
+            "$ref": "#/components/responses/NotFound"
+          },
+          "429": {
+            "description": "Too many requests. See [Rate Limiting](/docs/v3/guides/quick-start/rate-limiting) for header details and best practices.",
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "5XX": {
+            "description": "Server error.",
+            "$ref": "#/components/responses/ServerError"
+          }
+        },
+        "security": [
+          {
+            "RedditAPIKey": [
+              "adsread"
+            ]
+          }
+        ]
+      }
+    },
+    "/ad_accounts/{adAccountId}/campaign_planning/forecasts": {
+      "post": {
+        "tags": [
+          "Forecasting"
+        ],
+        "summary": "Plan Forecasts",
+        "description": "Retrieve audience and delivery forecasts for a campaign plan configuration. Learn about the [Campaign Planner](https://business.reddithelp.com/s/article/campaign-planner).\u003Ch2\u003ERate Limit\u003C/h2\u003E\n        \u003Cdiv\u003E\u003Ca href=\u0022/ratelimits/Forecasting\u0022\u003ESee the rate limits for \u003Cstrong\u003EForecasting\u003C/strong\u003E\u003C/a\u003E\u003C/div\u003E\u003Cbr\u003E\n        \u003Cdetails class=\u0022sl-panel sl-outline-none sl-w-full sl-rounded-lg sl-border\u0022\u003E\n            \u003Csummary\n                class=\u0022sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-font-medium sl-pr-4 sl-pl-3 sl-border-input focus:sl-border-primary sl-cursor-pointer sl-select-none\u0022\u003E\n                \u003Cdiv class=\u0022sl-flex sl-flex-1 sl-items-center sl-h-lg\u0022\u003E\n                    \u003Cdiv class=\u0022sl-flex sl-items-center sl-mr-1.5\u0022\u003E\n                        \u003Csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022chevron-down\u0022\n                            class=\u0022svg-inline--fa fa-chevron-down fa-fw fa-sm sl-icon\u0022 role=\u0022img\u0022\n                            xmlns=\u0022http://www.w3.org/2000/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003E\n                            \u003Cpath fill=\u0022currentColor\u0022\n                                d=\u0022M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\u0022\u003E\n                            \u003C/path\u003E\n                        \u003C/svg\u003E\n                    \u003C/div\u003E\n                    Policy Slug: \u003Cspan class=\u0022sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border\u0022 style=\u0022font-size: 0.8125em;\u0022\u003E ads-forecasting\u003C/span\u003E\n                \u003C/div\u003E\n            \u003C/summary\u003E\n            \u003Cdiv class=\u0022sl-panel__content-wrapper sl-border-t\u0022 role=\u0022region\u0022\u003E\n                \u003Cdiv class=\u0022sl-panel__content sl-p-4\u0022\u003E\n                    \u003Cdiv class=\u0022sl--m-2\u0022\u003E\n                        \u003Cdiv\u003E\n                            \u003Cdiv class=\u0022sl-m-2 sl-p-2 sl-border\u0022\u003E\n                                \u003Cdiv class=\u0022sl-prose sl-markdown-viewer\u0022 style=\u0022font-size: 12px;\u0022\u003E\n                                    \u003Cul\u003E\n                                        \u003Cli\u003EWindow: 60 seconds\u003C/li\u003E\n                                        \u003Cli\u003EQuota: 30 requests\u003C/li\u003E\n                                    \u003C/ul\u003E\n                                \u003C/div\u003E\n                            \u003C/div\u003E\n                        \u003C/div\u003E\n                    \u003C/div\u003E\n                \u003C/div\u003E\n            \u003C/div\u003E\n        \u003C/details\u003E\u003Cbr\u003E",
+        "operationId": "CampaignPlanningForecast",
+        "parameters": [
+          {
+            "name": "adAccountId",
+            "in": "path",
+            "description": "The ad account ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "data"
+                ],
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/ComponentsSchemaPlanningConfigs"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The audience and delivery forecasts for the campaign plan configuration.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignPlanningForecast200Response"
                 }
               }
             }
@@ -16539,6 +16622,116 @@
         },
         "additionalProperties": false
       },
+      "UgcAddonDefaultOn": {
+        "examples": [
+          true,
+          false,
+          null
+        ],
+        "type": [
+          "null",
+          "boolean"
+        ],
+        "description": "Whether clients should select\n[Redditor Highlights](https://business.reddithelp.com/s/article/redditor-highlights)\nby default for eligible new ads. If null, clients should use the platform\ndefault. This preference does not itself change ad selection, existing\nads, or eligibility.\n"
+      },
+      "ComponentsSchemaAdAccountUpdateRequest": {
+        "title": "Ad Account Update Request",
+        "type": "object",
+        "properties": {
+          "admin_approval": {
+            "$ref": "#/components/schemas/AdminApproval"
+          },
+          "attribution_type": {
+            "$ref": "#/components/schemas/ComponentsEnumsAttributionType"
+          },
+          "app_attribution_type": {
+            "$ref": "#/components/schemas/AppAttributionType"
+          },
+          "app_click_attribution_window": {
+            "$ref": "#/components/schemas/AppClickAttributionWindow"
+          },
+          "app_view_attribution_window": {
+            "$ref": "#/components/schemas/AppViewAttributionWindow"
+          },
+          "business_id": {
+            "type": "string",
+            "description": "The business ID.",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "click_attribution_window": {
+            "$ref": "#/components/schemas/ClickAttributionWindow"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
+            "format": "date-time",
+            "readOnly": true,
+            "example": "2023-03-27T21:18:39Z"
+          },
+          "currency": {
+            "$ref": "#/components/schemas/Currency"
+          },
+          "id": {
+            "examples": [
+              "t2_123456"
+            ],
+            "pattern": "^(t2|a2)_.*",
+            "type": "string",
+            "description": "The ad account ID.",
+            "readOnly": true
+          },
+          "modified_at": {
+            "title": "Modified At",
+            "type": "string",
+            "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
+            "format": "date-time",
+            "readOnly": true,
+            "example": "2023-03-27T21:18:39Z"
+          },
+          "name": {
+            "maxLength": 500,
+            "minLength": 3,
+            "type": "string",
+            "description": "The entity name."
+          },
+          "pixel_partner_preferences": {
+            "$ref": "#/components/schemas/PixelPartnerPreferences"
+          },
+          "primary_contact_member_id": {
+            "examples": [
+              "t2_123456"
+            ],
+            "type": "string",
+            "description": "The primary contact member\u0027s ID."
+          },
+          "suspension_reason": {
+            "$ref": "#/components/schemas/SuspensionReason"
+          },
+          "time_zone_id": {
+            "$ref": "#/components/schemas/TimeZoneId"
+          },
+          "type": {
+            "$ref": "#/components/schemas/TypeValue"
+          },
+          "view_attribution_window": {
+            "$ref": "#/components/schemas/ViewAttributionWindow"
+          },
+          "excluded_communities": {
+            "$ref": "#/components/schemas/ExcludedCommunities"
+          },
+          "excluded_keywords": {
+            "$ref": "#/components/schemas/ExcludedKeywords"
+          },
+          "spend_cap_type": {
+            "$ref": "#/components/schemas/SpendCapType"
+          },
+          "ugc_addon_default_on": {
+            "$ref": "#/components/schemas/UgcAddonDefaultOn"
+          }
+        },
+        "additionalProperties": false
+      },
       "Type2": {
         "enum": [
           "MANUAL",
@@ -20538,6 +20731,1352 @@
         },
         "additionalProperties": false
       },
+      "StartTime2": {
+        "examples": [
+          "2019-02-18T22:27:10Z"
+        ],
+        "type": "string",
+        "description": "When the ad group will begin to deliver ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Required if \u0060end_time\u0060 is set. For ad groups in a campaign with a start time in the future, this must match or be later than the campaign start time."
+      },
+      "EndTime2": {
+        "examples": [
+          "2019-02-18T22:27:10Z"
+        ],
+        "type": "string",
+        "description": "When the ad group will stop delivering ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html))."
+      },
+      "ShoppingTargeting2": {
+        "type": "object",
+        "properties": {
+          "conversion_event_types": {
+            "examples": [
+              [
+                "VIEW_CONTENT",
+                "SEARCH"
+              ]
+            ],
+            "maxItems": 5,
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComponentsEnumsConversionEventType"
+            },
+            "description": "[Conversion events](https://business.reddithelp.com/s/article/supported-conversion-events) to target. Used when \u0060targeting_type\u0060 is \u0060RETARGETING\u0060.\n"
+          },
+          "excluded_conversion_event_types": {
+            "examples": [
+              [
+                "VIEW_CONTENT"
+              ]
+            ],
+            "maxItems": 5,
+            "minItems": 0,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ComponentsEnumsConversionEventType"
+            },
+            "description": "Conversion events to exclude from targeting."
+          },
+          "lookback_window_days": {
+            "examples": [
+              90
+            ],
+            "type": "integer",
+            "description": "How far back (in days) to look for user actions to include for targeting."
+          },
+          "targeting_type": {
+            "$ref": "#/components/schemas/ComponentsSchemaShoppingTargetingTargetingType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShoppingType2": {
+        "examples": [
+          "STATIC"
+        ],
+        "enum": [
+          "DYNAMIC",
+          "STATIC"
+        ],
+        "type": "string",
+        "description": "Indicates the catalog sale ad group\u0027s type.",
+        "x-enumDescriptions": {
+          "DYNAMIC": "**[Dynamic product ads](https://business.reddithelp.com/s/article/dynamic-product-ads):** Allows either the prospecting or retargeting targeting method.",
+          "STATIC": "**[Product ads](https://business.reddithelp.com/s/article/Product-Ads):** Ads appear regardless of whether the user has bought a product or interacted with your site."
+        },
+        "x-ms-enum": {
+          "name": "ShoppingType2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "DYNAMIC",
+              "name": "Dynamic"
+            },
+            {
+              "value": "STATIC",
+              "name": "StaticValue"
+            }
+          ]
+        }
+      },
+      "BidValue2": {
+        "examples": [
+          500000
+        ],
+        "minimum": 0,
+        "type": "integer",
+        "description": "The amount to pay per bidding event (microcurrency)."
+      },
+      "GoalValue2": {
+        "examples": [
+          75
+        ],
+        "minimum": 0,
+        "type": "integer",
+        "description": "The value used to determine if the goal has been met. Measured in microcurrency for monetary goal types. For \u0060PERCENTAGE\u0060 goals, this value must be between 0 and 100."
+      },
+      "GoalType2": {
+        "examples": [
+          "DAILY_SPEND"
+        ],
+        "enum": [
+          "DAILY_SPEND",
+          "LIFETIME_SPEND"
+        ],
+        "type": "string",
+        "description": "The ad group\u0027s goal type.",
+        "x-ms-enum": {
+          "name": "GoalType2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "DAILY_SPEND",
+              "name": "DailySpend"
+            },
+            {
+              "value": "LIFETIME_SPEND",
+              "name": "LifetimeSpend"
+            }
+          ]
+        }
+      },
+      "BidType2": {
+        "examples": [
+          "CPC"
+        ],
+        "enum": [
+          "CPC",
+          "CPM",
+          "CPV",
+          "CPV6",
+          "CPV15"
+        ],
+        "type": "string",
+        "description": "The ad group\u0027s [bidding strategy](https://business.reddithelp.com/s/article/How-much-do-Reddit-Ads-cost#bidding-strategies).",
+        "x-ms-enum": {
+          "name": "BidType2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "CPC",
+              "name": "Cpc"
+            },
+            {
+              "value": "CPM",
+              "name": "Cpm"
+            },
+            {
+              "value": "CPV",
+              "name": "Cpv"
+            },
+            {
+              "value": "CPV6",
+              "name": "Cpv6"
+            },
+            {
+              "value": "CPV15",
+              "name": "Cpv15"
+            }
+          ]
+        }
+      },
+      "BidStrategy2": {
+        "examples": [
+          "MAXIMIZE_VOLUME"
+        ],
+        "enum": [
+          "BIDLESS",
+          "MANUAL_BIDDING",
+          "MAXIMIZE_VOLUME",
+          "TARGET_CPX"
+        ],
+        "type": "string",
+        "description": "The ad group\u0027s bid strategy.",
+        "x-ms-enum": {
+          "name": "BidStrategy2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "BIDLESS",
+              "name": "Bidless"
+            },
+            {
+              "value": "MANUAL_BIDDING",
+              "name": "ManualBidding"
+            },
+            {
+              "value": "MAXIMIZE_VOLUME",
+              "name": "MaximizeVolume"
+            },
+            {
+              "value": "TARGET_CPX",
+              "name": "TargetCpx"
+            }
+          ]
+        }
+      },
+      "ComponentsEnumsOptimizationGoalNonNull": {
+        "enum": [
+          "ADD_TO_CART",
+          "ADD_TO_WISHLIST",
+          "CLICKS",
+          "LEAD",
+          "PAGE_VISIT",
+          "PURCHASE",
+          "SEARCH",
+          "SIGN_UP",
+          "UNKNOWN",
+          "VIEW_CONTENT",
+          "MOBILE_CONVERSION_INSTALL",
+          "MOBILE_CONVERSION_SIGN_UP",
+          "MOBILE_CONVERSION_ADD_PAYMENT_INFO",
+          "MOBILE_CONVERSION_ADD_TO_CART",
+          "MOBILE_CONVERSION_PURCHASE",
+          "MOBILE_CONVERSION_COMPLETED_TUTORIAL",
+          "MOBILE_CONVERSION_LEVEL_ACHIEVED",
+          "MOBILE_CONVERSION_SPEND_CREDITS",
+          "MOBILE_CONVERSION_REINSTALL",
+          "MOBILE_CONVERSION_UNLOCK_ACHIEVEMENT",
+          "MOBILE_CONVERSION_START_TRIAL",
+          "MOBILE_CONVERSION_SUBSCRIBE",
+          "MOBILE_CONVERSION_ONBOARD_STARTED",
+          "MOBILE_CONVERSION_FIRST_TIME_PURCHASE",
+          "LANDING_PAGE_VISIT",
+          "VIDEO_VIEW_6S",
+          "VIDEO_VIEW_15S"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "ComponentsEnumsOptimizationGoalNonNull",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ADD_TO_CART",
+              "name": "AddToCart"
+            },
+            {
+              "value": "ADD_TO_WISHLIST",
+              "name": "AddToWishlist"
+            },
+            {
+              "value": "CLICKS",
+              "name": "Clicks"
+            },
+            {
+              "value": "LEAD",
+              "name": "Lead"
+            },
+            {
+              "value": "PAGE_VISIT",
+              "name": "PageVisit"
+            },
+            {
+              "value": "PURCHASE",
+              "name": "Purchase"
+            },
+            {
+              "value": "SEARCH",
+              "name": "Search"
+            },
+            {
+              "value": "SIGN_UP",
+              "name": "SignUp"
+            },
+            {
+              "value": "UNKNOWN",
+              "name": "Unknown"
+            },
+            {
+              "value": "VIEW_CONTENT",
+              "name": "ViewContent"
+            },
+            {
+              "value": "MOBILE_CONVERSION_INSTALL",
+              "name": "MobileConversionInstall"
+            },
+            {
+              "value": "MOBILE_CONVERSION_SIGN_UP",
+              "name": "MobileConversionSignUp"
+            },
+            {
+              "value": "MOBILE_CONVERSION_ADD_PAYMENT_INFO",
+              "name": "MobileConversionAddPaymentInfo"
+            },
+            {
+              "value": "MOBILE_CONVERSION_ADD_TO_CART",
+              "name": "MobileConversionAddToCart"
+            },
+            {
+              "value": "MOBILE_CONVERSION_PURCHASE",
+              "name": "MobileConversionPurchase"
+            },
+            {
+              "value": "MOBILE_CONVERSION_COMPLETED_TUTORIAL",
+              "name": "MobileConversionCompletedTutorial"
+            },
+            {
+              "value": "MOBILE_CONVERSION_LEVEL_ACHIEVED",
+              "name": "MobileConversionLevelAchieved"
+            },
+            {
+              "value": "MOBILE_CONVERSION_SPEND_CREDITS",
+              "name": "MobileConversionSpendCredits"
+            },
+            {
+              "value": "MOBILE_CONVERSION_REINSTALL",
+              "name": "MobileConversionReinstall"
+            },
+            {
+              "value": "MOBILE_CONVERSION_UNLOCK_ACHIEVEMENT",
+              "name": "MobileConversionUnlockAchievement"
+            },
+            {
+              "value": "MOBILE_CONVERSION_START_TRIAL",
+              "name": "MobileConversionStartTrial"
+            },
+            {
+              "value": "MOBILE_CONVERSION_SUBSCRIBE",
+              "name": "MobileConversionSubscribe"
+            },
+            {
+              "value": "MOBILE_CONVERSION_ONBOARD_STARTED",
+              "name": "MobileConversionOnboardStarted"
+            },
+            {
+              "value": "MOBILE_CONVERSION_FIRST_TIME_PURCHASE",
+              "name": "MobileConversionFirstTimePurchase"
+            },
+            {
+              "value": "LANDING_PAGE_VISIT",
+              "name": "LandingPageVisit"
+            },
+            {
+              "value": "VIDEO_VIEW_6S",
+              "name": "VideoView6S"
+            },
+            {
+              "value": "VIDEO_VIEW_15S",
+              "name": "VideoView15S"
+            }
+          ]
+        }
+      },
+      "OptimizationGoal2": {
+        "examples": [
+          "PAGE_VISIT",
+          "ADD_TO_CART",
+          "PURCHASE",
+          "LEAD",
+          "SIGN_UP",
+          "CLICKS",
+          "MOBILE_CONVERSION_INSTALL",
+          "MOBILE_CONVERSION_SIGN_UP",
+          "MOBILE_CONVERSION_ADD_PAYMENT_INFO",
+          "MOBILE_CONVERSION_ADD_TO_CART",
+          "MOBILE_CONVERSION_PURCHASE",
+          "MOBILE_CONVERSION_COMPLETED_TUTORIAL",
+          "MOBILE_CONVERSION_LEVEL_ACHIEVED",
+          "MOBILE_CONVERSION_SPEND_CREDITS",
+          "MOBILE_CONVERSION_REINSTALL",
+          "MOBILE_CONVERSION_UNLOCK_ACHIEVEMENT",
+          "MOBILE_CONVERSION_START_TRIAL",
+          "MOBILE_CONVERSION_SUBSCRIBE",
+          "MOBILE_CONVERSION_ONBOARD_STARTED",
+          "MOBILE_CONVERSION_FIRST_TIME_PURCHASE",
+          "VIDEO_VIEW_6S",
+          "VIDEO_VIEW_15S"
+        ],
+        "enum": [
+          "ADD_TO_CART",
+          "ADD_TO_WISHLIST",
+          "CLICKS",
+          "LEAD",
+          "PAGE_VISIT",
+          "PURCHASE",
+          "SEARCH",
+          "SIGN_UP",
+          "UNKNOWN",
+          "VIEW_CONTENT",
+          "MOBILE_CONVERSION_INSTALL",
+          "MOBILE_CONVERSION_SIGN_UP",
+          "MOBILE_CONVERSION_ADD_PAYMENT_INFO",
+          "MOBILE_CONVERSION_ADD_TO_CART",
+          "MOBILE_CONVERSION_PURCHASE",
+          "MOBILE_CONVERSION_COMPLETED_TUTORIAL",
+          "MOBILE_CONVERSION_LEVEL_ACHIEVED",
+          "MOBILE_CONVERSION_SPEND_CREDITS",
+          "MOBILE_CONVERSION_REINSTALL",
+          "MOBILE_CONVERSION_UNLOCK_ACHIEVEMENT",
+          "MOBILE_CONVERSION_START_TRIAL",
+          "MOBILE_CONVERSION_SUBSCRIBE",
+          "MOBILE_CONVERSION_ONBOARD_STARTED",
+          "MOBILE_CONVERSION_FIRST_TIME_PURCHASE",
+          "LANDING_PAGE_VISIT",
+          "VIDEO_VIEW_6S",
+          "VIDEO_VIEW_15S"
+        ],
+        "type": "string",
+        "description": "The event to optimize for. This must be compatible with the campaign objective. See the [goal options](/docs/v3/api/create-ad-group#optimization-goal-options).\n\u003E **Important:** This can\u0027t be changed later.\n",
+        "x-ms-enum": {
+          "name": "OptimizationGoal2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ADD_TO_CART",
+              "name": "AddToCart"
+            },
+            {
+              "value": "ADD_TO_WISHLIST",
+              "name": "AddToWishlist"
+            },
+            {
+              "value": "CLICKS",
+              "name": "Clicks"
+            },
+            {
+              "value": "LEAD",
+              "name": "Lead"
+            },
+            {
+              "value": "PAGE_VISIT",
+              "name": "PageVisit"
+            },
+            {
+              "value": "PURCHASE",
+              "name": "Purchase"
+            },
+            {
+              "value": "SEARCH",
+              "name": "Search"
+            },
+            {
+              "value": "SIGN_UP",
+              "name": "SignUp"
+            },
+            {
+              "value": "UNKNOWN",
+              "name": "Unknown"
+            },
+            {
+              "value": "VIEW_CONTENT",
+              "name": "ViewContent"
+            },
+            {
+              "value": "MOBILE_CONVERSION_INSTALL",
+              "name": "MobileConversionInstall"
+            },
+            {
+              "value": "MOBILE_CONVERSION_SIGN_UP",
+              "name": "MobileConversionSignUp"
+            },
+            {
+              "value": "MOBILE_CONVERSION_ADD_PAYMENT_INFO",
+              "name": "MobileConversionAddPaymentInfo"
+            },
+            {
+              "value": "MOBILE_CONVERSION_ADD_TO_CART",
+              "name": "MobileConversionAddToCart"
+            },
+            {
+              "value": "MOBILE_CONVERSION_PURCHASE",
+              "name": "MobileConversionPurchase"
+            },
+            {
+              "value": "MOBILE_CONVERSION_COMPLETED_TUTORIAL",
+              "name": "MobileConversionCompletedTutorial"
+            },
+            {
+              "value": "MOBILE_CONVERSION_LEVEL_ACHIEVED",
+              "name": "MobileConversionLevelAchieved"
+            },
+            {
+              "value": "MOBILE_CONVERSION_SPEND_CREDITS",
+              "name": "MobileConversionSpendCredits"
+            },
+            {
+              "value": "MOBILE_CONVERSION_REINSTALL",
+              "name": "MobileConversionReinstall"
+            },
+            {
+              "value": "MOBILE_CONVERSION_UNLOCK_ACHIEVEMENT",
+              "name": "MobileConversionUnlockAchievement"
+            },
+            {
+              "value": "MOBILE_CONVERSION_START_TRIAL",
+              "name": "MobileConversionStartTrial"
+            },
+            {
+              "value": "MOBILE_CONVERSION_SUBSCRIBE",
+              "name": "MobileConversionSubscribe"
+            },
+            {
+              "value": "MOBILE_CONVERSION_ONBOARD_STARTED",
+              "name": "MobileConversionOnboardStarted"
+            },
+            {
+              "value": "MOBILE_CONVERSION_FIRST_TIME_PURCHASE",
+              "name": "MobileConversionFirstTimePurchase"
+            },
+            {
+              "value": "LANDING_PAGE_VISIT",
+              "name": "LandingPageVisit"
+            },
+            {
+              "value": "VIDEO_VIEW_6S",
+              "name": "VideoView6S"
+            },
+            {
+              "value": "VIDEO_VIEW_15S",
+              "name": "VideoView15S"
+            }
+          ]
+        }
+      },
+      "Carriers": {
+        "examples": [
+          [
+            "ATT_WIRELESS_US"
+          ]
+        ],
+        "maxItems": 100,
+        "minItems": 0,
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CarriersItem"
+        },
+        "description": "The [mobile carriers](https://ads-api.reddit.com/docs/v3/api/list-carriers) to target."
+      },
+      "Communities": {
+        "examples": [
+          [
+            "aww"
+          ]
+        ],
+        "minItems": 0,
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The [Reddit communities (\u0022subreddits\u0022)](https://ads-api.reddit.com/docs/v3/api/list-communities) to target."
+      },
+      "CustomAudienceIds": {
+        "examples": [
+          [
+            "67547345732543"
+          ]
+        ],
+        "minItems": 0,
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The [custom audiences](https://ads-api.reddit.com/docs/v3/api/list-user-custom-audiences) to target."
+      },
+      "Devices": {
+        "maxItems": 100,
+        "minItems": 0,
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ComponentsSchemaDeviceTarget"
+        },
+        "description": "The [devices](https://ads-api.reddit.com/docs/v3/api/list-devices) to target. Exactly one device must be targeted for \u0060APP_INSTALLS\u0060 campaigns."
+      },
+      "ExcludedCommunities2": {
+        "examples": [
+          [
+            "politics"
+          ]
+        ],
+        "minItems": 0,
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The communities (\u0022subreddits\u0022) to exclude from targeting. Ads won\u0027t be eligible for auctions in these communities."
+      },
+      "ExcludedCustomAudienceIds": {
+        "examples": [
+          [
+            "95423594327534"
+          ]
+        ],
+        "minItems": 0,
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The custom audiences to exclude from targeting."
+      },
+      "ExcludedGeolocations": {
+        "examples": [
+          [
+            "US",
+            "3852263",
+            "CA:6167865"
+          ]
+        ],
+        "maxItems": 20000,
+        "minItems": 0,
+        "type": "array",
+        "items": {
+          "examples": [
+            "US-VA",
+            "CA:6167865"
+          ],
+          "type": "string",
+          "description": "The geolocation ID.",
+          "readOnly": true
+        },
+        "description": "The geolocations to exclude from targeting."
+      },
+      "ExpandTargeting": {
+        "examples": [
+          true
+        ],
+        "type": "boolean",
+        "description": "Allow Reddit to expand your targeting options. Learn about [automated targeting](https://business.reddithelp.com/s/article/automated-targeting)."
+      },
+      "Gender": {
+        "examples": [
+          "MALE"
+        ],
+        "enum": [
+          "FEMALE",
+          "MALE"
+        ],
+        "type": "string",
+        "description": "The [gender group](https://business.reddithelp.com/s/article/demographics#gender-targeting) to target.",
+        "x-ms-enum": {
+          "name": "Gender",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "FEMALE",
+              "name": "Female"
+            },
+            {
+              "value": "MALE",
+              "name": "Male"
+            }
+          ]
+        }
+      },
+      "Geolocations": {
+        "examples": [
+          [
+            "US",
+            "CA:6167865"
+          ]
+        ],
+        "maxItems": 20000,
+        "minItems": 0,
+        "type": "array",
+        "items": {
+          "examples": [
+            "US-VA",
+            "CA:6167865"
+          ],
+          "type": "string",
+          "description": "The geolocation ID.",
+          "readOnly": true
+        },
+        "description": "The [geolocations](https://ads-api.reddit.com/docs/v3/api/list-geolocations) to target."
+      },
+      "Interests": {
+        "examples": [
+          [
+            "entertainment"
+          ]
+        ],
+        "maxItems": 200,
+        "minItems": 0,
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The [interests](https://ads-api.reddit.com/docs/v3/api/list-interests) to target."
+      },
+      "Keywords": {
+        "examples": [
+          [
+            "apple",
+            "computer"
+          ]
+        ],
+        "maxItems": 1000,
+        "minItems": 0,
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "A list of [keywords](https://ads-api.reddit.com/docs/v3/operations/Do%20Keyword%20Validations) to target."
+      },
+      "Locations": {
+        "examples": [
+          [
+            "FEED"
+          ]
+        ],
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ComponentsEnumsPlacements"
+        },
+        "description": "The client location to place the advertisement. For collections ads, only \u0060FEED\u0060 is supported."
+      },
+      "Platforms": {
+        "examples": [
+          [
+            "DESKTOP"
+          ]
+        ],
+        "maxItems": 7,
+        "minItems": 0,
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PlatformsItem"
+        },
+        "description": "The platforms to show the advertisement on. At least 1 mobile type must be targeted for \u0060APP_INSTALLS\u0060 campaigns."
+      },
+      "Age": {
+        "examples": [
+          {
+            "min_age": 18,
+            "max_age": 64
+          }
+        ],
+        "type": "object",
+        "properties": {
+          "min_age": {
+            "examples": [
+              18
+            ],
+            "type": "integer",
+            "description": "The minimum age to target (inclusive)."
+          },
+          "max_age": {
+            "examples": [
+              64
+            ],
+            "type": "integer",
+            "description": "The maximum age to target (inclusive)."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The age targeting settings for the ad group."
+      },
+      "Languages": {
+        "examples": [
+          [
+            "EN"
+          ]
+        ],
+        "uniqueItems": true,
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ComponentsEnumTargetingLanguageCodes"
+        },
+        "description": "The [languages](https://ads-api.reddit.com/docs/v3/api/list-languages) to target ([ISO 639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php))."
+      },
+      "ComponentsSchemaForecastingTargeting": {
+        "type": "object",
+        "properties": {
+          "carriers": {
+            "examples": [
+              [
+                "ATT_WIRELESS_US"
+              ]
+            ],
+            "maxItems": 100,
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComponentsSchemaForecastingTargetingCarriersItem"
+            },
+            "description": "The [mobile carriers](https://ads-api.reddit.com/docs/v3/api/list-carriers) to target."
+          },
+          "communities": {
+            "examples": [
+              [
+                "aww"
+              ]
+            ],
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The [Reddit communities (\u0022subreddits\u0022)](https://ads-api.reddit.com/docs/v3/api/list-communities) to target."
+          },
+          "custom_audience_ids": {
+            "examples": [
+              [
+                "67547345732543"
+              ]
+            ],
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The [custom audiences](https://ads-api.reddit.com/docs/v3/api/list-user-custom-audiences) to target."
+          },
+          "devices": {
+            "maxItems": 100,
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComponentsSchemaDeviceTarget"
+            },
+            "description": "The [devices](https://ads-api.reddit.com/docs/v3/api/list-devices) to target. Exactly one device must be targeted for \u0060APP_INSTALLS\u0060 campaigns."
+          },
+          "excluded_communities": {
+            "examples": [
+              [
+                "politics"
+              ]
+            ],
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The communities (\u0022subreddits\u0022) to exclude from targeting. Ads won\u0027t be eligible for auctions in these communities."
+          },
+          "excluded_custom_audience_ids": {
+            "examples": [
+              [
+                "95423594327534"
+              ]
+            ],
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The custom audiences to exclude from targeting."
+          },
+          "excluded_geolocations": {
+            "examples": [
+              [
+                "US",
+                "3852263",
+                "CA:6167865"
+              ]
+            ],
+            "maxItems": 20000,
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "examples": [
+                "US-VA",
+                "CA:6167865"
+              ],
+              "type": "string",
+              "description": "The geolocation ID.",
+              "readOnly": true
+            },
+            "description": "The geolocations to exclude from targeting."
+          },
+          "expand_targeting": {
+            "examples": [
+              true
+            ],
+            "type": "boolean",
+            "description": "Allow Reddit to expand your targeting options. Learn about [automated targeting](https://business.reddithelp.com/s/article/automated-targeting)."
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Gender"
+          },
+          "geolocations": {
+            "examples": [
+              [
+                "US",
+                "CA:6167865"
+              ]
+            ],
+            "maxItems": 20000,
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "examples": [
+                "US-VA",
+                "CA:6167865"
+              ],
+              "type": "string",
+              "description": "The geolocation ID.",
+              "readOnly": true
+            },
+            "description": "The [geolocations](https://ads-api.reddit.com/docs/v3/api/list-geolocations) to target."
+          },
+          "interests": {
+            "examples": [
+              [
+                "entertainment"
+              ]
+            ],
+            "maxItems": 200,
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The [interests](https://ads-api.reddit.com/docs/v3/api/list-interests) to target."
+          },
+          "keywords": {
+            "examples": [
+              [
+                "apple",
+                "computer"
+              ]
+            ],
+            "maxItems": 1000,
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of [keywords](https://ads-api.reddit.com/docs/v3/operations/Do%20Keyword%20Validations) to target."
+          },
+          "locations": {
+            "examples": [
+              [
+                "FEED"
+              ]
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComponentsEnumsPlacements"
+            },
+            "description": "The client location to place the advertisement. For collections ads, only \u0060FEED\u0060 is supported."
+          },
+          "platforms": {
+            "examples": [
+              [
+                "DESKTOP"
+              ]
+            ],
+            "maxItems": 7,
+            "minItems": 0,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComponentsSchemaForecastingTargetingPlatformsItem"
+            },
+            "description": "The platforms to show the advertisement on. At least 1 mobile type must be targeted for \u0060APP_INSTALLS\u0060 campaigns."
+          },
+          "age": {
+            "$ref": "#/components/schemas/Age"
+          },
+          "languages": {
+            "examples": [
+              [
+                "EN"
+              ]
+            ],
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComponentsEnumTargetingLanguageCodes"
+            },
+            "description": "The [languages](https://ads-api.reddit.com/docs/v3/api/list-languages) to target ([ISO 639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php))."
+          }
+        },
+        "additionalProperties": false
+      },
+      "ViewThroughConversionType": {
+        "examples": [
+          "SEVEN_DAY_CLICKS"
+        ],
+        "enum": [
+          "SEVEN_DAY_CLICKS",
+          "SEVEN_DAY_CLICKS_ONE_DAY_VIEW"
+        ],
+        "type": "string",
+        "description": "The conversion attribution window. This determines how conversions are counted after a user interacts with an ad.",
+        "x-enumDescriptions": {
+          "SEVEN_DAY_CLICKS_ONE_DAY_VIEW": "Required for \u0060CATALOG_SALES\u0060 campaigns with the \u0060PURCHASE\u0060 optimization goal."
+        },
+        "x-ms-enum": {
+          "name": "ViewThroughConversionType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SEVEN_DAY_CLICKS",
+              "name": "SevenDayClicks"
+            },
+            {
+              "value": "SEVEN_DAY_CLICKS_ONE_DAY_VIEW",
+              "name": "SevenDayClicksOneDayView"
+            }
+          ]
+        }
+      },
+      "ComponentsSchemaForecastingAdGroup": {
+        "title": "Forecasting Ad Group",
+        "type": "object",
+        "properties": {
+          "start_time": {
+            "examples": [
+              "2019-02-18T22:27:10Z"
+            ],
+            "type": "string",
+            "description": "When the ad group will begin to deliver ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Required if \u0060end_time\u0060 is set. For ad groups in a campaign with a start time in the future, this must match or be later than the campaign start time."
+          },
+          "end_time": {
+            "examples": [
+              "2019-02-18T22:27:10Z"
+            ],
+            "type": "string",
+            "description": "When the ad group will stop delivering ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html))."
+          },
+          "shopping_targeting": {
+            "$ref": "#/components/schemas/ShoppingTargeting2"
+          },
+          "shopping_type": {
+            "$ref": "#/components/schemas/ShoppingType2"
+          },
+          "bid_value": {
+            "examples": [
+              500000
+            ],
+            "minimum": 0,
+            "type": "integer",
+            "description": "The amount to pay per bidding event (microcurrency)."
+          },
+          "goal_value": {
+            "examples": [
+              75
+            ],
+            "minimum": 0,
+            "type": "integer",
+            "description": "The value used to determine if the goal has been met. Measured in microcurrency for monetary goal types. For \u0060PERCENTAGE\u0060 goals, this value must be between 0 and 100."
+          },
+          "goal_type": {
+            "$ref": "#/components/schemas/GoalType2"
+          },
+          "bid_type": {
+            "$ref": "#/components/schemas/BidType2"
+          },
+          "bid_strategy": {
+            "$ref": "#/components/schemas/BidStrategy2"
+          },
+          "optimization_goal": {
+            "$ref": "#/components/schemas/OptimizationGoal2"
+          },
+          "targeting": {
+            "$ref": "#/components/schemas/ComponentsSchemaForecastingTargeting"
+          },
+          "view_through_conversion_type": {
+            "$ref": "#/components/schemas/ViewThroughConversionType"
+          }
+        }
+      },
+      "Objective": {
+        "examples": [
+          "IMPRESSIONS"
+        ],
+        "enum": [
+          "APP_INSTALLS",
+          "BRAND_AWARENESS",
+          "CATALOG_SALES",
+          "CLICKS",
+          "CONVERSIONS",
+          "IMPRESSIONS",
+          "LEAD_GENERATION",
+          "SALES",
+          "VIDEO_VIEWABLE_IMPRESSIONS"
+        ],
+        "type": "string",
+        "description": "The [campaign objective](https://business.reddithelp.com/s/article/Ad-campaign-objectives).",
+        "x-ms-enum": {
+          "name": "Objective",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "APP_INSTALLS",
+              "name": "AppInstalls"
+            },
+            {
+              "value": "BRAND_AWARENESS",
+              "name": "BrandAwareness"
+            },
+            {
+              "value": "CATALOG_SALES",
+              "name": "CatalogSales"
+            },
+            {
+              "value": "CLICKS",
+              "name": "Clicks"
+            },
+            {
+              "value": "CONVERSIONS",
+              "name": "Conversions"
+            },
+            {
+              "value": "IMPRESSIONS",
+              "name": "Impressions"
+            },
+            {
+              "value": "LEAD_GENERATION",
+              "name": "LeadGeneration"
+            },
+            {
+              "value": "SALES",
+              "name": "Sales"
+            },
+            {
+              "value": "VIDEO_VIEWABLE_IMPRESSIONS",
+              "name": "VideoViewableImpressions"
+            }
+          ]
+        }
+      },
+      "UseCatalog": {
+        "examples": [
+          false
+        ],
+        "type": "boolean",
+        "description": "Whether the campaign uses a product catalog. It can be \u0060true\u0060 only when \u0060objective\u0060 is \u0060SALES\u0060. Omitted when unset. When \u0060true\u0060, all ad groups in the campaign must use a catalog.\n"
+      },
+      "ComponentsSchemaPlanningConfigs": {
+        "unevaluatedProperties": {
+          "not": {}
+        },
+        "title": "Plan Configurations",
+        "required": [
+          "goal_value",
+          "campaign_objective"
+        ],
+        "type": "object",
+        "properties": {
+          "start_time": {
+            "examples": [
+              "2019-02-18T22:27:10Z"
+            ],
+            "type": "string",
+            "description": "When the ad group will begin to deliver ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Required if \u0060end_time\u0060 is set. For ad groups in a campaign with a start time in the future, this must match or be later than the campaign start time."
+          },
+          "end_time": {
+            "examples": [
+              "2019-02-18T22:27:10Z"
+            ],
+            "type": "string",
+            "description": "When the ad group will stop delivering ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html))."
+          },
+          "shopping_targeting": {
+            "$ref": "#/components/schemas/ShoppingTargeting2"
+          },
+          "shopping_type": {
+            "$ref": "#/components/schemas/ShoppingType2"
+          },
+          "bid_value": {
+            "examples": [
+              500000
+            ],
+            "minimum": 0,
+            "type": "integer",
+            "description": "The amount to pay per bidding event (microcurrency)."
+          },
+          "goal_value": {
+            "examples": [
+              75
+            ],
+            "minimum": 0,
+            "type": "integer",
+            "description": "The value used to determine if the goal has been met. Measured in microcurrency for monetary goal types. For \u0060PERCENTAGE\u0060 goals, this value must be between 0 and 100."
+          },
+          "goal_type": {
+            "$ref": "#/components/schemas/GoalType2"
+          },
+          "bid_type": {
+            "$ref": "#/components/schemas/BidType2"
+          },
+          "bid_strategy": {
+            "$ref": "#/components/schemas/BidStrategy2"
+          },
+          "optimization_goal": {
+            "$ref": "#/components/schemas/OptimizationGoal2"
+          },
+          "targeting": {
+            "$ref": "#/components/schemas/ComponentsSchemaForecastingTargeting"
+          },
+          "view_through_conversion_type": {
+            "$ref": "#/components/schemas/ViewThroughConversionType"
+          },
+          "campaign_objective": {
+            "$ref": "#/components/schemas/Objective"
+          },
+          "use_catalog": {
+            "examples": [
+              false
+            ],
+            "type": "boolean",
+            "description": "Whether the campaign uses a product catalog. It can be \u0060true\u0060 only when \u0060objective\u0060 is \u0060SALES\u0060. Omitted when unset. When \u0060true\u0060, all ad groups in the campaign must use a catalog.\n"
+          }
+        }
+      },
+      "ComponentsSchemaDeliveryEstimateBoundsInteger": {
+        "required": [
+          "point_estimate",
+          "lower_bound",
+          "upper_bound"
+        ],
+        "type": "object",
+        "properties": {
+          "point_estimate": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "The point estimate value.",
+            "example": 20000
+          },
+          "lower_bound": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "The lower bound estimate.",
+            "example": 10000
+          },
+          "upper_bound": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "The upper bound estimate.",
+            "example": 30000
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComponentsSchemaAudienceAnalysis": {
+        "required": [
+          "target_size"
+        ],
+        "type": "object",
+        "properties": {
+          "target_size": {
+            "$ref": "#/components/schemas/ComponentsSchemaDeliveryEstimateBoundsInteger"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The estimated size of the available audience based on the plan\u0027s targeting settings."
+      },
+      "ComponentsSchemaPlanningMetricsDataPoint": {
+        "required": [
+          "budget",
+          "reach"
+        ],
+        "type": "object",
+        "properties": {
+          "budget": {
+            "type": "integer",
+            "description": "The budget size (microcurrency).",
+            "example": 100000000
+          },
+          "reach": {
+            "$ref": "#/components/schemas/ComponentsSchemaDeliveryEstimateBoundsInteger"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PointEstimate": {
+        "maximum": 100,
+        "minimum": 0,
+        "type": "number",
+        "description": "The point estimate value.",
+        "example": 1.8
+      },
+      "PointEstimate2": {
+        "minimum": 0,
+        "type": "integer",
+        "description": "The point estimate value.",
+        "example": 20000
+      },
+      "ComponentsSchemaPlanningMetricPointEstimate": {
+        "required": [
+          "point_estimate"
+        ],
+        "type": "object",
+        "properties": {
+          "point_estimate": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "The point estimate value.",
+            "example": 20000
+          }
+        },
+        "additionalProperties": false,
+        "description": "The point estimate for a campaign plan metric."
+      },
+      "PointEstimate3": {
+        "minimum": 0,
+        "type": "number",
+        "description": "The point estimate value.",
+        "example": 0.85
+      },
+      "ComponentsSchemaPlanningMetricsProjections": {
+        "required": [
+          "budget",
+          "impressions",
+          "reach_percentage",
+          "reach"
+        ],
+        "type": "object",
+        "properties": {
+          "budget": {
+            "type": "integer",
+            "description": "The budget size (microcurrency).",
+            "example": 100000000
+          },
+          "reach_percentage": {
+            "$ref": "#/components/schemas/ComponentsSchemaPlanningMetricsProjectionsReachPercentage"
+          },
+          "impressions": {
+            "$ref": "#/components/schemas/ComponentsSchemaPlanningMetricPointEstimate"
+          },
+          "clicks": {
+            "$ref": "#/components/schemas/ComponentsSchemaPlanningMetricPointEstimate"
+          },
+          "video_views": {
+            "$ref": "#/components/schemas/ComponentsSchemaPlanningMetricPointEstimate"
+          },
+          "reach": {
+            "$ref": "#/components/schemas/ComponentsSchemaPlanningMetricPointEstimate"
+          },
+          "frequency": {
+            "$ref": "#/components/schemas/ComponentsSchemaPlanningMetricsProjectionsFrequency"
+          },
+          "cpm": {
+            "$ref": "#/components/schemas/ComponentsSchemaPlanningMetricPointEstimate"
+          },
+          "cpc": {
+            "$ref": "#/components/schemas/ComponentsSchemaPlanningMetricPointEstimate"
+          },
+          "cpv": {
+            "$ref": "#/components/schemas/ComponentsSchemaPlanningMetricPointEstimate"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Projections for the performance and cost metrics."
+      },
       "Nullable": {
         "maxLength": 500,
         "minLength": 3,
@@ -20794,73 +22333,6 @@
           ]
         }
       },
-      "Objective": {
-        "examples": [
-          "IMPRESSIONS"
-        ],
-        "enum": [
-          "APP_INSTALLS",
-          "BRAND_AWARENESS",
-          "CATALOG_SALES",
-          "CLICKS",
-          "CONVERSIONS",
-          "IMPRESSIONS",
-          "LEAD_GENERATION",
-          "SALES",
-          "VIDEO_VIEWABLE_IMPRESSIONS"
-        ],
-        "type": "string",
-        "description": "The [campaign objective](https://business.reddithelp.com/s/article/Ad-campaign-objectives).",
-        "x-ms-enum": {
-          "name": "Objective",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "APP_INSTALLS",
-              "name": "AppInstalls"
-            },
-            {
-              "value": "BRAND_AWARENESS",
-              "name": "BrandAwareness"
-            },
-            {
-              "value": "CATALOG_SALES",
-              "name": "CatalogSales"
-            },
-            {
-              "value": "CLICKS",
-              "name": "Clicks"
-            },
-            {
-              "value": "CONVERSIONS",
-              "name": "Conversions"
-            },
-            {
-              "value": "IMPRESSIONS",
-              "name": "Impressions"
-            },
-            {
-              "value": "LEAD_GENERATION",
-              "name": "LeadGeneration"
-            },
-            {
-              "value": "SALES",
-              "name": "Sales"
-            },
-            {
-              "value": "VIDEO_VIEWABLE_IMPRESSIONS",
-              "name": "VideoViewableImpressions"
-            }
-          ]
-        }
-      },
-      "UseCatalog": {
-        "examples": [
-          false
-        ],
-        "type": "boolean",
-        "description": "Whether the campaign uses a product catalog. It can be \u0060true\u0060 only when \u0060objective\u0060 is \u0060SALES\u0060. Omitted when unset. When \u0060true\u0060, all ad groups in the campaign must use a catalog.\n"
-      },
       "FundingInstrumentId": {
         "examples": [
           "123"
@@ -20871,7 +22343,7 @@
         ],
         "description": "The campaign-level funding instrument ID."
       },
-      "GoalValue2": {
+      "GoalValue3": {
         "examples": [
           100000000
         ],
@@ -20902,7 +22374,7 @@
         ],
         "description": "Whether the campaign uses campaign budget optimization.\n\u003E **Important:** This can\u0027t be changed after publishing the campaign.\n"
       },
-      "GoalType2": {
+      "GoalType3": {
         "examples": [
           "LIFETIME_SPEND"
         ],
@@ -20917,7 +22389,7 @@
         ],
         "description": "The campaign goal type. Used when \u0060is_campaign_budget_optimization\u0060 is \u0060true\u0060.\n\u003E **Important:** This cannot be changed after publishing the campaign.\n",
         "x-ms-enum": {
-          "name": "GoalType2",
+          "name": "GoalType3",
           "modelAsString": false,
           "values": [
             {
@@ -20931,7 +22403,7 @@
           ]
         }
       },
-      "StartTime2": {
+      "StartTime3": {
         "examples": [
           "2020-01-01T00:00:00Z"
         ],
@@ -20941,7 +22413,7 @@
         ],
         "description": "When the campaign will begin to deliver ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Required and only available when \u0060is_campaign_budget_optimization\u0060 is \u0060true\u0060."
       },
-      "EndTime2": {
+      "EndTime3": {
         "examples": [
           "2020-01-01T00:00:00Z"
         ],
@@ -20962,7 +22434,7 @@
         },
         "description": "The recurring weekly window(s) when the campaign may deliver. Day values are \u00600\u0060 (Sunday) through \u00606\u0060 (Saturday); hour values are \u00600\u0060\u2013\u006023\u0060 on a 24-hour clock (in the campaign\u0027s time zone). An empty array or \u0060null\u0060 means the campaign may deliver at any time. Only available when \u0060is_campaign_budget_optimization\u0060 is \u0060true\u0060, in which case it replaces the schedule of every ad group in the campaign."
       },
-      "BidValue2": {
+      "BidValue3": {
         "examples": [
           100000000
         ],
@@ -20972,7 +22444,7 @@
         ],
         "description": "The amount to pay per bidding event (microcurrency). Used when \u0060is_campaign_budget_optimization\u0060 is \u0060true\u0060. Optional when \u0060bid_strategy\u0060 is \u0060MAXIMIZE_VOLUME\u0060. If set at campaign level, it **can\u0027t be set** at ad group level."
       },
-      "BidStrategy2": {
+      "BidStrategy3": {
         "examples": [
           "BIDLESS"
         ],
@@ -20993,7 +22465,7 @@
           "TARGET_CPX": "Optimize toward a target cost per action. Set \u0060bid_value\u0060 to the target cost in microcurrency."
         },
         "x-ms-enum": {
-          "name": "BidStrategy2",
+          "name": "BidStrategy3",
           "modelAsString": false,
           "values": [
             {
@@ -21011,7 +22483,7 @@
           ]
         }
       },
-      "BidType2": {
+      "BidType3": {
         "examples": [
           "CPC",
           "CPM",
@@ -21031,7 +22503,7 @@
         ],
         "description": "The campaign\u0027s bid type. Required when \u0060is_campaign_budget_optimization\u0060 is \u0060true\u0060.",
         "x-ms-enum": {
-          "name": "BidType2",
+          "name": "BidType3",
           "modelAsString": false,
           "values": [
             {
@@ -21053,7 +22525,7 @@
           ]
         }
       },
-      "OptimizationGoal2": {
+      "OptimizationGoal3": {
         "examples": [
           "ADD_TO_CART",
           "VIDEO_VIEW_6S",
@@ -21098,7 +22570,7 @@
           "ADD_TO_WISHLIST": "For conversion campaigns, this value is not supported starting May 5th, 2025."
         },
         "x-ms-enum": {
-          "name": "OptimizationGoal2",
+          "name": "OptimizationGoal3",
           "modelAsString": false,
           "values": [
             {
@@ -21202,7 +22674,7 @@
         ],
         "description": "Campaign lifetime spend cap (microcurrency). Available for non-CBO campaigns and when \u0060goal_type\u0060 is \u0060DAILY_SPEND\u0060 for CBO campaigns."
       },
-      "ViewThroughConversionType": {
+      "ViewThroughConversionType2": {
         "enum": [
           "SEVEN_DAY_CLICKS",
           "SEVEN_DAY_CLICKS_ONE_DAY_VIEW",
@@ -21219,7 +22691,7 @@
           "SEVEN_DAY_CLICKS_ONE_DAY_VIEW": "Counts conversions that occur within 7 days of a click or within 1 day of a view."
         },
         "x-ms-enum": {
-          "name": "ViewThroughConversionType",
+          "name": "ViewThroughConversionType2",
           "modelAsString": false,
           "values": [
             {
@@ -21285,7 +22757,7 @@
             "$ref": "#/components/schemas/FundingInstrumentId"
           },
           "goal_value": {
-            "$ref": "#/components/schemas/GoalValue2"
+            "$ref": "#/components/schemas/GoalValue3"
           },
           "special_ad_categories": {
             "$ref": "#/components/schemas/SpecialAdCategories"
@@ -21294,28 +22766,28 @@
             "$ref": "#/components/schemas/IsCampaignBudgetOptimization2"
           },
           "goal_type": {
-            "$ref": "#/components/schemas/GoalType2"
+            "$ref": "#/components/schemas/GoalType3"
           },
           "start_time": {
-            "$ref": "#/components/schemas/StartTime2"
+            "$ref": "#/components/schemas/StartTime3"
           },
           "end_time": {
-            "$ref": "#/components/schemas/EndTime2"
+            "$ref": "#/components/schemas/EndTime3"
           },
           "schedule": {
             "$ref": "#/components/schemas/Schedule2"
           },
           "bid_value": {
-            "$ref": "#/components/schemas/BidValue2"
+            "$ref": "#/components/schemas/BidValue3"
           },
           "bid_strategy": {
-            "$ref": "#/components/schemas/BidStrategy2"
+            "$ref": "#/components/schemas/BidStrategy3"
           },
           "bid_type": {
-            "$ref": "#/components/schemas/BidType2"
+            "$ref": "#/components/schemas/BidType3"
           },
           "optimization_goal": {
-            "$ref": "#/components/schemas/OptimizationGoal2"
+            "$ref": "#/components/schemas/OptimizationGoal3"
           },
           "spend_cap": {
             "$ref": "#/components/schemas/SpendCap"
@@ -21324,7 +22796,7 @@
             "$ref": "#/components/schemas/AppId"
           },
           "view_through_conversion_type": {
-            "$ref": "#/components/schemas/ViewThroughConversionType"
+            "$ref": "#/components/schemas/ViewThroughConversionType2"
           },
           "invoice_label": {
             "$ref": "#/components/schemas/InvoiceLabel"
@@ -21380,31 +22852,31 @@
             "$ref": "#/components/schemas/FundingInstrumentId"
           },
           "goal_value": {
-            "$ref": "#/components/schemas/GoalValue2"
+            "$ref": "#/components/schemas/GoalValue3"
           },
           "goal_type": {
-            "$ref": "#/components/schemas/GoalType2"
+            "$ref": "#/components/schemas/GoalType3"
           },
           "start_time": {
-            "$ref": "#/components/schemas/StartTime2"
+            "$ref": "#/components/schemas/StartTime3"
           },
           "end_time": {
-            "$ref": "#/components/schemas/EndTime2"
+            "$ref": "#/components/schemas/EndTime3"
           },
           "schedule": {
             "$ref": "#/components/schemas/Schedule2"
           },
           "bid_value": {
-            "$ref": "#/components/schemas/BidValue2"
+            "$ref": "#/components/schemas/BidValue3"
           },
           "bid_strategy": {
-            "$ref": "#/components/schemas/BidStrategy2"
+            "$ref": "#/components/schemas/BidStrategy3"
           },
           "bid_type": {
-            "$ref": "#/components/schemas/BidType2"
+            "$ref": "#/components/schemas/BidType3"
           },
           "optimization_goal": {
-            "$ref": "#/components/schemas/OptimizationGoal2"
+            "$ref": "#/components/schemas/OptimizationGoal3"
           },
           "spend_cap": {
             "$ref": "#/components/schemas/SpendCap"
@@ -21413,7 +22885,7 @@
             "$ref": "#/components/schemas/AppId"
           },
           "view_through_conversion_type": {
-            "$ref": "#/components/schemas/ViewThroughConversionType"
+            "$ref": "#/components/schemas/ViewThroughConversionType2"
           },
           "invoice_label": {
             "$ref": "#/components/schemas/InvoiceLabel"
@@ -22491,13 +23963,6 @@
         },
         "additionalProperties": false
       },
-      "StartTime3": {
-        "examples": [
-          "2019-02-18T22:27:10Z"
-        ],
-        "type": "string",
-        "description": "When the ad group will begin to deliver ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Required if \u0060end_time\u0060 is set. For ad groups in a campaign with a start time in the future, this must match or be later than the campaign start time."
-      },
       "StartTime4": {
         "examples": [
           "2019-02-18T22:27:10Z"
@@ -22505,999 +23970,12 @@
         "type": "string",
         "description": "When the ad group will begin to deliver ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Required if \u0060end_time\u0060 is set. For ad groups in a campaign with a start time in the future, this must match or be later than the campaign start time."
       },
-      "EndTime3": {
-        "examples": [
-          "2019-02-18T22:27:10Z"
-        ],
-        "type": "string",
-        "description": "When the ad group will stop delivering ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html))."
-      },
       "EndTime4": {
         "examples": [
           "2019-02-18T22:27:10Z"
         ],
         "type": "string",
         "description": "When the ad group will stop delivering ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html))."
-      },
-      "ShoppingTargeting2": {
-        "type": "object",
-        "properties": {
-          "conversion_event_types": {
-            "examples": [
-              [
-                "VIEW_CONTENT",
-                "SEARCH"
-              ]
-            ],
-            "maxItems": 5,
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ComponentsEnumsConversionEventType"
-            },
-            "description": "[Conversion events](https://business.reddithelp.com/s/article/supported-conversion-events) to target. Used when \u0060targeting_type\u0060 is \u0060RETARGETING\u0060.\n"
-          },
-          "excluded_conversion_event_types": {
-            "examples": [
-              [
-                "VIEW_CONTENT"
-              ]
-            ],
-            "maxItems": 5,
-            "minItems": 0,
-            "type": [
-              "null",
-              "array"
-            ],
-            "items": {
-              "$ref": "#/components/schemas/ComponentsEnumsConversionEventType"
-            },
-            "description": "Conversion events to exclude from targeting."
-          },
-          "lookback_window_days": {
-            "examples": [
-              90
-            ],
-            "type": "integer",
-            "description": "How far back (in days) to look for user actions to include for targeting."
-          },
-          "targeting_type": {
-            "$ref": "#/components/schemas/ComponentsSchemaShoppingTargetingTargetingType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ShoppingType2": {
-        "examples": [
-          "STATIC"
-        ],
-        "enum": [
-          "DYNAMIC",
-          "STATIC"
-        ],
-        "type": "string",
-        "description": "Indicates the catalog sale ad group\u0027s type.",
-        "x-enumDescriptions": {
-          "DYNAMIC": "**[Dynamic product ads](https://business.reddithelp.com/s/article/dynamic-product-ads):** Allows either the prospecting or retargeting targeting method.",
-          "STATIC": "**[Product ads](https://business.reddithelp.com/s/article/Product-Ads):** Ads appear regardless of whether the user has bought a product or interacted with your site."
-        },
-        "x-ms-enum": {
-          "name": "ShoppingType2",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "DYNAMIC",
-              "name": "Dynamic"
-            },
-            {
-              "value": "STATIC",
-              "name": "StaticValue"
-            }
-          ]
-        }
-      },
-      "BidValue3": {
-        "examples": [
-          500000
-        ],
-        "minimum": 0,
-        "type": "integer",
-        "description": "The amount to pay per bidding event (microcurrency)."
-      },
-      "GoalType3": {
-        "examples": [
-          "DAILY_SPEND"
-        ],
-        "enum": [
-          "DAILY_SPEND",
-          "LIFETIME_SPEND"
-        ],
-        "type": "string",
-        "description": "The ad group\u0027s goal type.",
-        "x-ms-enum": {
-          "name": "GoalType3",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "DAILY_SPEND",
-              "name": "DailySpend"
-            },
-            {
-              "value": "LIFETIME_SPEND",
-              "name": "LifetimeSpend"
-            }
-          ]
-        }
-      },
-      "BidType3": {
-        "examples": [
-          "CPC"
-        ],
-        "enum": [
-          "CPC",
-          "CPM",
-          "CPV",
-          "CPV6",
-          "CPV15"
-        ],
-        "type": "string",
-        "description": "The ad group\u0027s [bidding strategy](https://business.reddithelp.com/s/article/How-much-do-Reddit-Ads-cost#bidding-strategies).",
-        "x-ms-enum": {
-          "name": "BidType3",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "CPC",
-              "name": "Cpc"
-            },
-            {
-              "value": "CPM",
-              "name": "Cpm"
-            },
-            {
-              "value": "CPV",
-              "name": "Cpv"
-            },
-            {
-              "value": "CPV6",
-              "name": "Cpv6"
-            },
-            {
-              "value": "CPV15",
-              "name": "Cpv15"
-            }
-          ]
-        }
-      },
-      "BidStrategy3": {
-        "examples": [
-          "MAXIMIZE_VOLUME"
-        ],
-        "enum": [
-          "BIDLESS",
-          "MANUAL_BIDDING",
-          "MAXIMIZE_VOLUME",
-          "TARGET_CPX"
-        ],
-        "type": "string",
-        "description": "The ad group\u0027s bid strategy.",
-        "x-ms-enum": {
-          "name": "BidStrategy3",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "BIDLESS",
-              "name": "Bidless"
-            },
-            {
-              "value": "MANUAL_BIDDING",
-              "name": "ManualBidding"
-            },
-            {
-              "value": "MAXIMIZE_VOLUME",
-              "name": "MaximizeVolume"
-            },
-            {
-              "value": "TARGET_CPX",
-              "name": "TargetCpx"
-            }
-          ]
-        }
-      },
-      "ComponentsEnumsOptimizationGoalNonNull": {
-        "enum": [
-          "ADD_TO_CART",
-          "ADD_TO_WISHLIST",
-          "CLICKS",
-          "LEAD",
-          "PAGE_VISIT",
-          "PURCHASE",
-          "SEARCH",
-          "SIGN_UP",
-          "UNKNOWN",
-          "VIEW_CONTENT",
-          "MOBILE_CONVERSION_INSTALL",
-          "MOBILE_CONVERSION_SIGN_UP",
-          "MOBILE_CONVERSION_ADD_PAYMENT_INFO",
-          "MOBILE_CONVERSION_ADD_TO_CART",
-          "MOBILE_CONVERSION_PURCHASE",
-          "MOBILE_CONVERSION_COMPLETED_TUTORIAL",
-          "MOBILE_CONVERSION_LEVEL_ACHIEVED",
-          "MOBILE_CONVERSION_SPEND_CREDITS",
-          "MOBILE_CONVERSION_REINSTALL",
-          "MOBILE_CONVERSION_UNLOCK_ACHIEVEMENT",
-          "MOBILE_CONVERSION_START_TRIAL",
-          "MOBILE_CONVERSION_SUBSCRIBE",
-          "MOBILE_CONVERSION_ONBOARD_STARTED",
-          "MOBILE_CONVERSION_FIRST_TIME_PURCHASE",
-          "LANDING_PAGE_VISIT",
-          "VIDEO_VIEW_6S",
-          "VIDEO_VIEW_15S"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "ComponentsEnumsOptimizationGoalNonNull",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "ADD_TO_CART",
-              "name": "AddToCart"
-            },
-            {
-              "value": "ADD_TO_WISHLIST",
-              "name": "AddToWishlist"
-            },
-            {
-              "value": "CLICKS",
-              "name": "Clicks"
-            },
-            {
-              "value": "LEAD",
-              "name": "Lead"
-            },
-            {
-              "value": "PAGE_VISIT",
-              "name": "PageVisit"
-            },
-            {
-              "value": "PURCHASE",
-              "name": "Purchase"
-            },
-            {
-              "value": "SEARCH",
-              "name": "Search"
-            },
-            {
-              "value": "SIGN_UP",
-              "name": "SignUp"
-            },
-            {
-              "value": "UNKNOWN",
-              "name": "Unknown"
-            },
-            {
-              "value": "VIEW_CONTENT",
-              "name": "ViewContent"
-            },
-            {
-              "value": "MOBILE_CONVERSION_INSTALL",
-              "name": "MobileConversionInstall"
-            },
-            {
-              "value": "MOBILE_CONVERSION_SIGN_UP",
-              "name": "MobileConversionSignUp"
-            },
-            {
-              "value": "MOBILE_CONVERSION_ADD_PAYMENT_INFO",
-              "name": "MobileConversionAddPaymentInfo"
-            },
-            {
-              "value": "MOBILE_CONVERSION_ADD_TO_CART",
-              "name": "MobileConversionAddToCart"
-            },
-            {
-              "value": "MOBILE_CONVERSION_PURCHASE",
-              "name": "MobileConversionPurchase"
-            },
-            {
-              "value": "MOBILE_CONVERSION_COMPLETED_TUTORIAL",
-              "name": "MobileConversionCompletedTutorial"
-            },
-            {
-              "value": "MOBILE_CONVERSION_LEVEL_ACHIEVED",
-              "name": "MobileConversionLevelAchieved"
-            },
-            {
-              "value": "MOBILE_CONVERSION_SPEND_CREDITS",
-              "name": "MobileConversionSpendCredits"
-            },
-            {
-              "value": "MOBILE_CONVERSION_REINSTALL",
-              "name": "MobileConversionReinstall"
-            },
-            {
-              "value": "MOBILE_CONVERSION_UNLOCK_ACHIEVEMENT",
-              "name": "MobileConversionUnlockAchievement"
-            },
-            {
-              "value": "MOBILE_CONVERSION_START_TRIAL",
-              "name": "MobileConversionStartTrial"
-            },
-            {
-              "value": "MOBILE_CONVERSION_SUBSCRIBE",
-              "name": "MobileConversionSubscribe"
-            },
-            {
-              "value": "MOBILE_CONVERSION_ONBOARD_STARTED",
-              "name": "MobileConversionOnboardStarted"
-            },
-            {
-              "value": "MOBILE_CONVERSION_FIRST_TIME_PURCHASE",
-              "name": "MobileConversionFirstTimePurchase"
-            },
-            {
-              "value": "LANDING_PAGE_VISIT",
-              "name": "LandingPageVisit"
-            },
-            {
-              "value": "VIDEO_VIEW_6S",
-              "name": "VideoView6S"
-            },
-            {
-              "value": "VIDEO_VIEW_15S",
-              "name": "VideoView15S"
-            }
-          ]
-        }
-      },
-      "OptimizationGoal3": {
-        "examples": [
-          "PAGE_VISIT",
-          "ADD_TO_CART",
-          "PURCHASE",
-          "LEAD",
-          "SIGN_UP",
-          "CLICKS",
-          "MOBILE_CONVERSION_INSTALL",
-          "MOBILE_CONVERSION_SIGN_UP",
-          "MOBILE_CONVERSION_ADD_PAYMENT_INFO",
-          "MOBILE_CONVERSION_ADD_TO_CART",
-          "MOBILE_CONVERSION_PURCHASE",
-          "MOBILE_CONVERSION_COMPLETED_TUTORIAL",
-          "MOBILE_CONVERSION_LEVEL_ACHIEVED",
-          "MOBILE_CONVERSION_SPEND_CREDITS",
-          "MOBILE_CONVERSION_REINSTALL",
-          "MOBILE_CONVERSION_UNLOCK_ACHIEVEMENT",
-          "MOBILE_CONVERSION_START_TRIAL",
-          "MOBILE_CONVERSION_SUBSCRIBE",
-          "MOBILE_CONVERSION_ONBOARD_STARTED",
-          "MOBILE_CONVERSION_FIRST_TIME_PURCHASE",
-          "VIDEO_VIEW_6S",
-          "VIDEO_VIEW_15S"
-        ],
-        "enum": [
-          "ADD_TO_CART",
-          "ADD_TO_WISHLIST",
-          "CLICKS",
-          "LEAD",
-          "PAGE_VISIT",
-          "PURCHASE",
-          "SEARCH",
-          "SIGN_UP",
-          "UNKNOWN",
-          "VIEW_CONTENT",
-          "MOBILE_CONVERSION_INSTALL",
-          "MOBILE_CONVERSION_SIGN_UP",
-          "MOBILE_CONVERSION_ADD_PAYMENT_INFO",
-          "MOBILE_CONVERSION_ADD_TO_CART",
-          "MOBILE_CONVERSION_PURCHASE",
-          "MOBILE_CONVERSION_COMPLETED_TUTORIAL",
-          "MOBILE_CONVERSION_LEVEL_ACHIEVED",
-          "MOBILE_CONVERSION_SPEND_CREDITS",
-          "MOBILE_CONVERSION_REINSTALL",
-          "MOBILE_CONVERSION_UNLOCK_ACHIEVEMENT",
-          "MOBILE_CONVERSION_START_TRIAL",
-          "MOBILE_CONVERSION_SUBSCRIBE",
-          "MOBILE_CONVERSION_ONBOARD_STARTED",
-          "MOBILE_CONVERSION_FIRST_TIME_PURCHASE",
-          "LANDING_PAGE_VISIT",
-          "VIDEO_VIEW_6S",
-          "VIDEO_VIEW_15S"
-        ],
-        "type": "string",
-        "description": "The event to optimize for. This must be compatible with the campaign objective. See the [goal options](/docs/v3/api/create-ad-group#optimization-goal-options).\n\u003E **Important:** This can\u0027t be changed later.\n",
-        "x-ms-enum": {
-          "name": "OptimizationGoal3",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "ADD_TO_CART",
-              "name": "AddToCart"
-            },
-            {
-              "value": "ADD_TO_WISHLIST",
-              "name": "AddToWishlist"
-            },
-            {
-              "value": "CLICKS",
-              "name": "Clicks"
-            },
-            {
-              "value": "LEAD",
-              "name": "Lead"
-            },
-            {
-              "value": "PAGE_VISIT",
-              "name": "PageVisit"
-            },
-            {
-              "value": "PURCHASE",
-              "name": "Purchase"
-            },
-            {
-              "value": "SEARCH",
-              "name": "Search"
-            },
-            {
-              "value": "SIGN_UP",
-              "name": "SignUp"
-            },
-            {
-              "value": "UNKNOWN",
-              "name": "Unknown"
-            },
-            {
-              "value": "VIEW_CONTENT",
-              "name": "ViewContent"
-            },
-            {
-              "value": "MOBILE_CONVERSION_INSTALL",
-              "name": "MobileConversionInstall"
-            },
-            {
-              "value": "MOBILE_CONVERSION_SIGN_UP",
-              "name": "MobileConversionSignUp"
-            },
-            {
-              "value": "MOBILE_CONVERSION_ADD_PAYMENT_INFO",
-              "name": "MobileConversionAddPaymentInfo"
-            },
-            {
-              "value": "MOBILE_CONVERSION_ADD_TO_CART",
-              "name": "MobileConversionAddToCart"
-            },
-            {
-              "value": "MOBILE_CONVERSION_PURCHASE",
-              "name": "MobileConversionPurchase"
-            },
-            {
-              "value": "MOBILE_CONVERSION_COMPLETED_TUTORIAL",
-              "name": "MobileConversionCompletedTutorial"
-            },
-            {
-              "value": "MOBILE_CONVERSION_LEVEL_ACHIEVED",
-              "name": "MobileConversionLevelAchieved"
-            },
-            {
-              "value": "MOBILE_CONVERSION_SPEND_CREDITS",
-              "name": "MobileConversionSpendCredits"
-            },
-            {
-              "value": "MOBILE_CONVERSION_REINSTALL",
-              "name": "MobileConversionReinstall"
-            },
-            {
-              "value": "MOBILE_CONVERSION_UNLOCK_ACHIEVEMENT",
-              "name": "MobileConversionUnlockAchievement"
-            },
-            {
-              "value": "MOBILE_CONVERSION_START_TRIAL",
-              "name": "MobileConversionStartTrial"
-            },
-            {
-              "value": "MOBILE_CONVERSION_SUBSCRIBE",
-              "name": "MobileConversionSubscribe"
-            },
-            {
-              "value": "MOBILE_CONVERSION_ONBOARD_STARTED",
-              "name": "MobileConversionOnboardStarted"
-            },
-            {
-              "value": "MOBILE_CONVERSION_FIRST_TIME_PURCHASE",
-              "name": "MobileConversionFirstTimePurchase"
-            },
-            {
-              "value": "LANDING_PAGE_VISIT",
-              "name": "LandingPageVisit"
-            },
-            {
-              "value": "VIDEO_VIEW_6S",
-              "name": "VideoView6S"
-            },
-            {
-              "value": "VIDEO_VIEW_15S",
-              "name": "VideoView15S"
-            }
-          ]
-        }
-      },
-      "Carriers": {
-        "examples": [
-          [
-            "ATT_WIRELESS_US"
-          ]
-        ],
-        "maxItems": 100,
-        "minItems": 0,
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/CarriersItem"
-        },
-        "description": "The [mobile carriers](https://ads-api.reddit.com/docs/v3/api/list-carriers) to target."
-      },
-      "Communities": {
-        "examples": [
-          [
-            "aww"
-          ]
-        ],
-        "minItems": 0,
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "The [Reddit communities (\u0022subreddits\u0022)](https://ads-api.reddit.com/docs/v3/api/list-communities) to target."
-      },
-      "CustomAudienceIds": {
-        "examples": [
-          [
-            "67547345732543"
-          ]
-        ],
-        "minItems": 0,
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "The [custom audiences](https://ads-api.reddit.com/docs/v3/api/list-user-custom-audiences) to target."
-      },
-      "Devices": {
-        "maxItems": 100,
-        "minItems": 0,
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ComponentsSchemaDeviceTarget"
-        },
-        "description": "The [devices](https://ads-api.reddit.com/docs/v3/api/list-devices) to target. Exactly one device must be targeted for \u0060APP_INSTALLS\u0060 campaigns."
-      },
-      "ExcludedCommunities2": {
-        "examples": [
-          [
-            "politics"
-          ]
-        ],
-        "minItems": 0,
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "The communities (\u0022subreddits\u0022) to exclude from targeting. Ads won\u0027t be eligible for auctions in these communities."
-      },
-      "ExcludedCustomAudienceIds": {
-        "examples": [
-          [
-            "95423594327534"
-          ]
-        ],
-        "minItems": 0,
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "The custom audiences to exclude from targeting."
-      },
-      "ExcludedGeolocations": {
-        "examples": [
-          [
-            "US",
-            "3852263",
-            "CA:6167865"
-          ]
-        ],
-        "maxItems": 20000,
-        "minItems": 0,
-        "type": "array",
-        "items": {
-          "examples": [
-            "US-VA",
-            "CA:6167865"
-          ],
-          "type": "string",
-          "description": "The geolocation ID.",
-          "readOnly": true
-        },
-        "description": "The geolocations to exclude from targeting."
-      },
-      "ExpandTargeting": {
-        "examples": [
-          true
-        ],
-        "type": "boolean",
-        "description": "Allow Reddit to expand your targeting options. Learn about [automated targeting](https://business.reddithelp.com/s/article/automated-targeting)."
-      },
-      "Gender": {
-        "examples": [
-          "MALE"
-        ],
-        "enum": [
-          "FEMALE",
-          "MALE"
-        ],
-        "type": "string",
-        "description": "The [gender group](https://business.reddithelp.com/s/article/demographics#gender-targeting) to target.",
-        "x-ms-enum": {
-          "name": "Gender",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "FEMALE",
-              "name": "Female"
-            },
-            {
-              "value": "MALE",
-              "name": "Male"
-            }
-          ]
-        }
-      },
-      "Geolocations": {
-        "examples": [
-          [
-            "US",
-            "CA:6167865"
-          ]
-        ],
-        "maxItems": 20000,
-        "minItems": 0,
-        "type": "array",
-        "items": {
-          "examples": [
-            "US-VA",
-            "CA:6167865"
-          ],
-          "type": "string",
-          "description": "The geolocation ID.",
-          "readOnly": true
-        },
-        "description": "The [geolocations](https://ads-api.reddit.com/docs/v3/api/list-geolocations) to target."
-      },
-      "Interests": {
-        "examples": [
-          [
-            "entertainment"
-          ]
-        ],
-        "maxItems": 200,
-        "minItems": 0,
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "The [interests](https://ads-api.reddit.com/docs/v3/api/list-interests) to target."
-      },
-      "Keywords": {
-        "examples": [
-          [
-            "apple",
-            "computer"
-          ]
-        ],
-        "maxItems": 1000,
-        "minItems": 0,
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "A list of [keywords](https://ads-api.reddit.com/docs/v3/operations/Do%20Keyword%20Validations) to target."
-      },
-      "Locations": {
-        "examples": [
-          [
-            "FEED"
-          ]
-        ],
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ComponentsEnumsPlacements"
-        },
-        "description": "The client location to place the advertisement. For collections ads, only \u0060FEED\u0060 is supported."
-      },
-      "Platforms": {
-        "examples": [
-          [
-            "DESKTOP"
-          ]
-        ],
-        "maxItems": 7,
-        "minItems": 0,
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/PlatformsItem"
-        },
-        "description": "The platforms to show the advertisement on. At least 1 mobile type must be targeted for \u0060APP_INSTALLS\u0060 campaigns."
-      },
-      "Age": {
-        "examples": [
-          {
-            "min_age": 18,
-            "max_age": 64
-          }
-        ],
-        "type": "object",
-        "properties": {
-          "min_age": {
-            "examples": [
-              18
-            ],
-            "type": "integer",
-            "description": "The minimum age to target (inclusive)."
-          },
-          "max_age": {
-            "examples": [
-              64
-            ],
-            "type": "integer",
-            "description": "The maximum age to target (inclusive)."
-          }
-        },
-        "additionalProperties": false,
-        "description": "The age targeting settings for the ad group."
-      },
-      "Languages": {
-        "examples": [
-          [
-            "EN"
-          ]
-        ],
-        "uniqueItems": true,
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ComponentsEnumTargetingLanguageCodes"
-        },
-        "description": "The [languages](https://ads-api.reddit.com/docs/v3/api/list-languages) to target ([ISO 639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php))."
-      },
-      "ComponentsSchemaForecastingTargeting": {
-        "type": "object",
-        "properties": {
-          "carriers": {
-            "examples": [
-              [
-                "ATT_WIRELESS_US"
-              ]
-            ],
-            "maxItems": 100,
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ComponentsSchemaForecastingTargetingCarriersItem"
-            },
-            "description": "The [mobile carriers](https://ads-api.reddit.com/docs/v3/api/list-carriers) to target."
-          },
-          "communities": {
-            "examples": [
-              [
-                "aww"
-              ]
-            ],
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The [Reddit communities (\u0022subreddits\u0022)](https://ads-api.reddit.com/docs/v3/api/list-communities) to target."
-          },
-          "custom_audience_ids": {
-            "examples": [
-              [
-                "67547345732543"
-              ]
-            ],
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The [custom audiences](https://ads-api.reddit.com/docs/v3/api/list-user-custom-audiences) to target."
-          },
-          "devices": {
-            "maxItems": 100,
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ComponentsSchemaDeviceTarget"
-            },
-            "description": "The [devices](https://ads-api.reddit.com/docs/v3/api/list-devices) to target. Exactly one device must be targeted for \u0060APP_INSTALLS\u0060 campaigns."
-          },
-          "excluded_communities": {
-            "examples": [
-              [
-                "politics"
-              ]
-            ],
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The communities (\u0022subreddits\u0022) to exclude from targeting. Ads won\u0027t be eligible for auctions in these communities."
-          },
-          "excluded_custom_audience_ids": {
-            "examples": [
-              [
-                "95423594327534"
-              ]
-            ],
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The custom audiences to exclude from targeting."
-          },
-          "excluded_geolocations": {
-            "examples": [
-              [
-                "US",
-                "3852263",
-                "CA:6167865"
-              ]
-            ],
-            "maxItems": 20000,
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "examples": [
-                "US-VA",
-                "CA:6167865"
-              ],
-              "type": "string",
-              "description": "The geolocation ID.",
-              "readOnly": true
-            },
-            "description": "The geolocations to exclude from targeting."
-          },
-          "expand_targeting": {
-            "examples": [
-              true
-            ],
-            "type": "boolean",
-            "description": "Allow Reddit to expand your targeting options. Learn about [automated targeting](https://business.reddithelp.com/s/article/automated-targeting)."
-          },
-          "gender": {
-            "$ref": "#/components/schemas/Gender"
-          },
-          "geolocations": {
-            "examples": [
-              [
-                "US",
-                "CA:6167865"
-              ]
-            ],
-            "maxItems": 20000,
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "examples": [
-                "US-VA",
-                "CA:6167865"
-              ],
-              "type": "string",
-              "description": "The geolocation ID.",
-              "readOnly": true
-            },
-            "description": "The [geolocations](https://ads-api.reddit.com/docs/v3/api/list-geolocations) to target."
-          },
-          "interests": {
-            "examples": [
-              [
-                "entertainment"
-              ]
-            ],
-            "maxItems": 200,
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The [interests](https://ads-api.reddit.com/docs/v3/api/list-interests) to target."
-          },
-          "keywords": {
-            "examples": [
-              [
-                "apple",
-                "computer"
-              ]
-            ],
-            "maxItems": 1000,
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of [keywords](https://ads-api.reddit.com/docs/v3/operations/Do%20Keyword%20Validations) to target."
-          },
-          "locations": {
-            "examples": [
-              [
-                "FEED"
-              ]
-            ],
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ComponentsEnumsPlacements"
-            },
-            "description": "The client location to place the advertisement. For collections ads, only \u0060FEED\u0060 is supported."
-          },
-          "platforms": {
-            "examples": [
-              [
-                "DESKTOP"
-              ]
-            ],
-            "maxItems": 7,
-            "minItems": 0,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ComponentsSchemaForecastingTargetingPlatformsItem"
-            },
-            "description": "The platforms to show the advertisement on. At least 1 mobile type must be targeted for \u0060APP_INSTALLS\u0060 campaigns."
-          },
-          "age": {
-            "$ref": "#/components/schemas/Age"
-          },
-          "languages": {
-            "examples": [
-              [
-                "EN"
-              ]
-            ],
-            "uniqueItems": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ComponentsEnumTargetingLanguageCodes"
-            },
-            "description": "The [languages](https://ads-api.reddit.com/docs/v3/api/list-languages) to target ([ISO 639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php))."
-          }
-        },
-        "additionalProperties": false
-      },
-      "ViewThroughConversionType2": {
-        "examples": [
-          "SEVEN_DAY_CLICKS"
-        ],
-        "enum": [
-          "SEVEN_DAY_CLICKS",
-          "SEVEN_DAY_CLICKS_ONE_DAY_VIEW"
-        ],
-        "type": "string",
-        "description": "The conversion attribution window. This determines how conversions are counted after a user interacts with an ad.",
-        "x-enumDescriptions": {
-          "SEVEN_DAY_CLICKS_ONE_DAY_VIEW": "Required for \u0060CATALOG_SALES\u0060 campaigns with the \u0060PURCHASE\u0060 optimization goal."
-        },
-        "x-ms-enum": {
-          "name": "ViewThroughConversionType2",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "SEVEN_DAY_CLICKS",
-              "name": "SevenDayClicks"
-            },
-            {
-              "value": "SEVEN_DAY_CLICKS_ONE_DAY_VIEW",
-              "name": "SevenDayClicksOneDayView"
-            }
-          ]
-        }
       },
       "ComponentsSchemaForecastingEstimatesCampaignGoalValue": {
         "title": "With Campaign Goal Values",
@@ -23535,14 +24013,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "GoalValue3": {
-        "examples": [
-          75
-        ],
-        "minimum": 0,
-        "type": "integer",
-        "description": "The value used to determine if the goal has been met. Measured in microcurrency for monetary goal types. For \u0060PERCENTAGE\u0060 goals, this value must be between 0 and 100."
       },
       "ComponentsSchemaForecastingEstimatesAdGroupGoalValue": {
         "title": "With Ad Group Goal Values",
@@ -41754,7 +42224,7 @@
             "$ref": "#/components/schemas/ConfiguredStatus3"
           },
           "goal_value": {
-            "$ref": "#/components/schemas/GoalValue2"
+            "$ref": "#/components/schemas/GoalValue3"
           },
           "funding_instrument_id": {
             "$ref": "#/components/schemas/FundingInstrumentId"
@@ -41763,19 +42233,19 @@
             "$ref": "#/components/schemas/SpendCap"
           },
           "bid_strategy": {
-            "$ref": "#/components/schemas/BidStrategy2"
+            "$ref": "#/components/schemas/BidStrategy3"
           },
           "bid_type": {
-            "$ref": "#/components/schemas/BidType2"
+            "$ref": "#/components/schemas/BidType3"
           },
           "bid_value": {
-            "$ref": "#/components/schemas/BidValue2"
+            "$ref": "#/components/schemas/BidValue3"
           },
           "end_time": {
-            "$ref": "#/components/schemas/EndTime2"
+            "$ref": "#/components/schemas/EndTime3"
           },
           "start_time": {
-            "$ref": "#/components/schemas/StartTime2"
+            "$ref": "#/components/schemas/StartTime3"
           },
           "schedule": {
             "$ref": "#/components/schemas/Schedule2"
@@ -46951,6 +47421,21 @@
         ],
         "description": "The non-negative numeric version of the asset."
       },
+      "ComponentsSchemaPlanningConfigsAllOf2": {
+        "type": "object",
+        "properties": {
+          "campaign_objective": {
+            "$ref": "#/components/schemas/Objective"
+          },
+          "use_catalog": {
+            "examples": [
+              false
+            ],
+            "type": "boolean",
+            "description": "Whether the campaign uses a product catalog. It can be \u0060true\u0060 only when \u0060objective\u0060 is \u0060SALES\u0060. Omitted when unset. When \u0060true\u0060, all ad groups in the campaign must use a catalog.\n"
+          }
+        }
+      },
       "ComponentsSchemaCampaignOptimizationGoal": {
         "examples": [
           "ADD_TO_CART",
@@ -51453,6 +51938,39 @@
         },
         "additionalProperties": false
       },
+      "ComponentsSchemaPlanningMetricsProjectionsReachPercentage": {
+        "required": [
+          "point_estimate"
+        ],
+        "type": "object",
+        "properties": {
+          "point_estimate": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "number",
+            "description": "The point estimate value.",
+            "example": 1.8
+          }
+        },
+        "additionalProperties": false,
+        "description": "The estimated percentage of the available audience the plan may reach."
+      },
+      "ComponentsSchemaPlanningMetricsProjectionsFrequency": {
+        "required": [
+          "point_estimate"
+        ],
+        "type": "object",
+        "properties": {
+          "point_estimate": {
+            "minimum": 0,
+            "type": "number",
+            "description": "The point estimate value.",
+            "example": 0.85
+          }
+        },
+        "additionalProperties": false,
+        "description": "The estimated average number of impressions per reached user per 7-day period over the campaign duration. This value can be less than \u00601.0\u0060 for long or low-delivery campaigns."
+      },
       "ComponentsSchemaForecastingEstimatesCampaignGoalValueAdGroupConfigsItem": {
         "type": "object",
         "properties": {
@@ -51485,22 +52003,22 @@
             "description": "The amount to pay per bidding event (microcurrency)."
           },
           "goal_type": {
-            "$ref": "#/components/schemas/GoalType3"
+            "$ref": "#/components/schemas/GoalType2"
           },
           "bid_type": {
-            "$ref": "#/components/schemas/BidType3"
+            "$ref": "#/components/schemas/BidType2"
           },
           "bid_strategy": {
-            "$ref": "#/components/schemas/BidStrategy3"
+            "$ref": "#/components/schemas/BidStrategy2"
           },
           "optimization_goal": {
-            "$ref": "#/components/schemas/OptimizationGoal3"
+            "$ref": "#/components/schemas/OptimizationGoal2"
           },
           "targeting": {
             "$ref": "#/components/schemas/ComponentsSchemaForecastingTargeting"
           },
           "view_through_conversion_type": {
-            "$ref": "#/components/schemas/ViewThroughConversionType2"
+            "$ref": "#/components/schemas/ViewThroughConversionType"
           }
         },
         "additionalProperties": false
@@ -51548,22 +52066,22 @@
             "description": "The value used to determine if the goal has been met. Measured in microcurrency for monetary goal types. For \u0060PERCENTAGE\u0060 goals, this value must be between 0 and 100."
           },
           "goal_type": {
-            "$ref": "#/components/schemas/GoalType3"
+            "$ref": "#/components/schemas/GoalType2"
           },
           "bid_type": {
-            "$ref": "#/components/schemas/BidType3"
+            "$ref": "#/components/schemas/BidType2"
           },
           "bid_strategy": {
-            "$ref": "#/components/schemas/BidStrategy3"
+            "$ref": "#/components/schemas/BidStrategy2"
           },
           "optimization_goal": {
-            "$ref": "#/components/schemas/OptimizationGoal3"
+            "$ref": "#/components/schemas/OptimizationGoal2"
           },
           "targeting": {
             "$ref": "#/components/schemas/ComponentsSchemaForecastingTargeting"
           },
           "view_through_conversion_type": {
-            "$ref": "#/components/schemas/ViewThroughConversionType2"
+            "$ref": "#/components/schemas/ViewThroughConversionType"
           }
         },
         "additionalProperties": false
@@ -53052,6 +53570,18 @@
           },
           "pagination": {
             "$ref": "#/components/schemas/ComponentsSchemaPagination"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CampaignPlanningForecast200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CampaignPlanningForecast200ResponseData"
           }
         },
         "additionalProperties": false
@@ -55161,6 +55691,30 @@
         "description": "Warning issues and how many products are affected.",
         "readOnly": true
       },
+      "CampaignPlanningForecast200ResponseData": {
+        "required": [
+          "audience",
+          "curves",
+          "current_plan_projections"
+        ],
+        "type": "object",
+        "properties": {
+          "audience": {
+            "$ref": "#/components/schemas/ComponentsSchemaAudienceAnalysis"
+          },
+          "curves": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComponentsSchemaPlanningMetricsDataPoint"
+            },
+            "description": "An array of efficiency data objects representing how metrics change per budget."
+          },
+          "current_plan_projections": {
+            "$ref": "#/components/schemas/ComponentsSchemaPlanningMetricsProjections"
+          }
+        },
+        "additionalProperties": false
+      },
       "AudienceAndDeliveryEstimates200ResponseData": {
         "required": [
           "total_audience_size",
@@ -55539,7 +56093,7 @@
         "type": "object",
         "properties": {
           "bid_type": {
-            "$ref": "#/components/schemas/BidType3"
+            "$ref": "#/components/schemas/BidType2"
           },
           "attribution_type": {
             "$ref": "#/components/schemas/ComponentsEnumsAttributionType"
@@ -57529,6 +58083,846 @@
           ]
         }
       },
+      "CarriersItem": {
+        "enum": [
+          "ATT_WIRELESS_US",
+          "SPRINT_US",
+          "TMOBILE_US",
+          "VERIZON_US",
+          "EE_UK",
+          "VODAFONE_UK",
+          "O2_UK",
+          "THREE_UK",
+          "SKY_MOBILE_UK",
+          "BT_MOBILE_UK",
+          "TALKTALK_UK",
+          "VIRGIN_MEDIA_UK",
+          "ROGERS_WIRELESS_CA",
+          "BELL_MOBILITY_CA",
+          "VIRGIN_MOBILE_CA",
+          "BELL_MTS_CA",
+          "TELUS_MOBILITY_CA",
+          "SHAW_MOBILE_CA",
+          "HI3G_ACCESS_AB_SE",
+          "BOUYGUES_TELECOM",
+          "FREE_MOBILE_SAS",
+          "TELE2_SWEDEN",
+          "SWISSCOM",
+          "SOUTHERN_PHONE_COMPANY",
+          "EXETEL",
+          "TDC_DANMARK",
+          "ODIDO_NETHERLANDS",
+          "TELENOR_SVERIGE",
+          "ICE_NORWAY",
+          "OPTUS",
+          "HI3G_ACCESS_AB_DK",
+          "BELONG",
+          "ORANGE_BELGIUM",
+          "O2_DEUTSCHLAND",
+          "BREDBAND2_AB",
+          "SFR",
+          "TELIA_NORGE_AS",
+          "TELIA_FINLAND",
+          "ELISA",
+          "VODAFONE_AUSTRALIA",
+          "ELISA_MOBILE",
+          "TELENOR_AS",
+          "PROXIMUS",
+          "DNA_OYJ",
+          "TELENOR_SVERIGE_AB",
+          "EWETEL",
+          "SPINTEL",
+          "AUSSIE_BROADBAND",
+          "ZIGGO",
+          "VODAFONE_GERMANY",
+          "IINET_LIMITED",
+          "WILHELMTEL",
+          "SUPERLOOP",
+          "TELIA_SE",
+          "TELSTRA_INTERNET",
+          "ORANGE",
+          "TELIA_DK",
+          "TMOBILE_NETHERLANDS",
+          "WIRELINE",
+          "TPG_INTERNET",
+          "SALT_MOBILE",
+          "VOO",
+          "TELIA_NORGE",
+          "TELENOR_NORGE",
+          "TELIA_MOBILE",
+          "TELENET",
+          "DEUTSCHE_TELEKOM_AG",
+          "SUNRISE",
+          "KPN",
+          "BOOST_MOBILE",
+          "COMCAST",
+          "US_CELLULAR"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "CarriersItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ATT_WIRELESS_US",
+              "name": "AttWirelessUs"
+            },
+            {
+              "value": "SPRINT_US",
+              "name": "SprintUs"
+            },
+            {
+              "value": "TMOBILE_US",
+              "name": "TmobileUs"
+            },
+            {
+              "value": "VERIZON_US",
+              "name": "VerizonUs"
+            },
+            {
+              "value": "EE_UK",
+              "name": "EeUk"
+            },
+            {
+              "value": "VODAFONE_UK",
+              "name": "VodafoneUk"
+            },
+            {
+              "value": "O2_UK",
+              "name": "O2Uk"
+            },
+            {
+              "value": "THREE_UK",
+              "name": "ThreeUk"
+            },
+            {
+              "value": "SKY_MOBILE_UK",
+              "name": "SkyMobileUk"
+            },
+            {
+              "value": "BT_MOBILE_UK",
+              "name": "BtMobileUk"
+            },
+            {
+              "value": "TALKTALK_UK",
+              "name": "TalktalkUk"
+            },
+            {
+              "value": "VIRGIN_MEDIA_UK",
+              "name": "VirginMediaUk"
+            },
+            {
+              "value": "ROGERS_WIRELESS_CA",
+              "name": "RogersWirelessCa"
+            },
+            {
+              "value": "BELL_MOBILITY_CA",
+              "name": "BellMobilityCa"
+            },
+            {
+              "value": "VIRGIN_MOBILE_CA",
+              "name": "VirginMobileCa"
+            },
+            {
+              "value": "BELL_MTS_CA",
+              "name": "BellMtsCa"
+            },
+            {
+              "value": "TELUS_MOBILITY_CA",
+              "name": "TelusMobilityCa"
+            },
+            {
+              "value": "SHAW_MOBILE_CA",
+              "name": "ShawMobileCa"
+            },
+            {
+              "value": "HI3G_ACCESS_AB_SE",
+              "name": "Hi3GAccessAbSe"
+            },
+            {
+              "value": "BOUYGUES_TELECOM",
+              "name": "BouyguesTelecom"
+            },
+            {
+              "value": "FREE_MOBILE_SAS",
+              "name": "FreeMobileSas"
+            },
+            {
+              "value": "TELE2_SWEDEN",
+              "name": "Tele2Sweden"
+            },
+            {
+              "value": "SWISSCOM",
+              "name": "Swisscom"
+            },
+            {
+              "value": "SOUTHERN_PHONE_COMPANY",
+              "name": "SouthernPhoneCompany"
+            },
+            {
+              "value": "EXETEL",
+              "name": "Exetel"
+            },
+            {
+              "value": "TDC_DANMARK",
+              "name": "TdcDanmark"
+            },
+            {
+              "value": "ODIDO_NETHERLANDS",
+              "name": "OdidoNetherlands"
+            },
+            {
+              "value": "TELENOR_SVERIGE",
+              "name": "TelenorSverige"
+            },
+            {
+              "value": "ICE_NORWAY",
+              "name": "IceNorway"
+            },
+            {
+              "value": "OPTUS",
+              "name": "Optus"
+            },
+            {
+              "value": "HI3G_ACCESS_AB_DK",
+              "name": "Hi3GAccessAbDk"
+            },
+            {
+              "value": "BELONG",
+              "name": "Belong"
+            },
+            {
+              "value": "ORANGE_BELGIUM",
+              "name": "OrangeBelgium"
+            },
+            {
+              "value": "O2_DEUTSCHLAND",
+              "name": "O2Deutschland"
+            },
+            {
+              "value": "BREDBAND2_AB",
+              "name": "Bredband2Ab"
+            },
+            {
+              "value": "SFR",
+              "name": "Sfr"
+            },
+            {
+              "value": "TELIA_NORGE_AS",
+              "name": "TeliaNorgeAs"
+            },
+            {
+              "value": "TELIA_FINLAND",
+              "name": "TeliaFinland"
+            },
+            {
+              "value": "ELISA",
+              "name": "Elisa"
+            },
+            {
+              "value": "VODAFONE_AUSTRALIA",
+              "name": "VodafoneAustralia"
+            },
+            {
+              "value": "ELISA_MOBILE",
+              "name": "ElisaMobile"
+            },
+            {
+              "value": "TELENOR_AS",
+              "name": "TelenorAs"
+            },
+            {
+              "value": "PROXIMUS",
+              "name": "Proximus"
+            },
+            {
+              "value": "DNA_OYJ",
+              "name": "DnaOyj"
+            },
+            {
+              "value": "TELENOR_SVERIGE_AB",
+              "name": "TelenorSverigeAb"
+            },
+            {
+              "value": "EWETEL",
+              "name": "Ewetel"
+            },
+            {
+              "value": "SPINTEL",
+              "name": "Spintel"
+            },
+            {
+              "value": "AUSSIE_BROADBAND",
+              "name": "AussieBroadband"
+            },
+            {
+              "value": "ZIGGO",
+              "name": "Ziggo"
+            },
+            {
+              "value": "VODAFONE_GERMANY",
+              "name": "VodafoneGermany"
+            },
+            {
+              "value": "IINET_LIMITED",
+              "name": "IinetLimited"
+            },
+            {
+              "value": "WILHELMTEL",
+              "name": "Wilhelmtel"
+            },
+            {
+              "value": "SUPERLOOP",
+              "name": "Superloop"
+            },
+            {
+              "value": "TELIA_SE",
+              "name": "TeliaSe"
+            },
+            {
+              "value": "TELSTRA_INTERNET",
+              "name": "TelstraInternet"
+            },
+            {
+              "value": "ORANGE",
+              "name": "Orange"
+            },
+            {
+              "value": "TELIA_DK",
+              "name": "TeliaDk"
+            },
+            {
+              "value": "TMOBILE_NETHERLANDS",
+              "name": "TmobileNetherlands"
+            },
+            {
+              "value": "WIRELINE",
+              "name": "Wireline"
+            },
+            {
+              "value": "TPG_INTERNET",
+              "name": "TpgInternet"
+            },
+            {
+              "value": "SALT_MOBILE",
+              "name": "SaltMobile"
+            },
+            {
+              "value": "VOO",
+              "name": "Voo"
+            },
+            {
+              "value": "TELIA_NORGE",
+              "name": "TeliaNorge"
+            },
+            {
+              "value": "TELENOR_NORGE",
+              "name": "TelenorNorge"
+            },
+            {
+              "value": "TELIA_MOBILE",
+              "name": "TeliaMobile"
+            },
+            {
+              "value": "TELENET",
+              "name": "Telenet"
+            },
+            {
+              "value": "DEUTSCHE_TELEKOM_AG",
+              "name": "DeutscheTelekomAg"
+            },
+            {
+              "value": "SUNRISE",
+              "name": "Sunrise"
+            },
+            {
+              "value": "KPN",
+              "name": "Kpn"
+            },
+            {
+              "value": "BOOST_MOBILE",
+              "name": "BoostMobile"
+            },
+            {
+              "value": "COMCAST",
+              "name": "Comcast"
+            },
+            {
+              "value": "US_CELLULAR",
+              "name": "UsCellular"
+            }
+          ]
+        }
+      },
+      "PlatformsItem": {
+        "enum": [
+          "ALL",
+          "DESKTOP",
+          "DESKTOP_LEGACY",
+          "MOBILE_NATIVE",
+          "MOBILE_WEB",
+          "MOBILE_WEB_3X",
+          "SHREDTOP"
+        ],
+        "type": "string",
+        "x-enumDescriptions": {
+          "DESKTOP_LEGACY": "Legacy desktop; deprecated and no longer supported."
+        },
+        "x-ms-enum": {
+          "name": "PlatformsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ALL",
+              "name": "All"
+            },
+            {
+              "value": "DESKTOP",
+              "name": "Desktop"
+            },
+            {
+              "value": "DESKTOP_LEGACY",
+              "name": "DesktopLegacy"
+            },
+            {
+              "value": "MOBILE_NATIVE",
+              "name": "MobileNative"
+            },
+            {
+              "value": "MOBILE_WEB",
+              "name": "MobileWeb"
+            },
+            {
+              "value": "MOBILE_WEB_3X",
+              "name": "MobileWeb3X"
+            },
+            {
+              "value": "SHREDTOP",
+              "name": "Shredtop"
+            }
+          ]
+        }
+      },
+      "ComponentsSchemaForecastingTargetingCarriersItem": {
+        "enum": [
+          "ATT_WIRELESS_US",
+          "SPRINT_US",
+          "TMOBILE_US",
+          "VERIZON_US",
+          "EE_UK",
+          "VODAFONE_UK",
+          "O2_UK",
+          "THREE_UK",
+          "SKY_MOBILE_UK",
+          "BT_MOBILE_UK",
+          "TALKTALK_UK",
+          "VIRGIN_MEDIA_UK",
+          "ROGERS_WIRELESS_CA",
+          "BELL_MOBILITY_CA",
+          "VIRGIN_MOBILE_CA",
+          "BELL_MTS_CA",
+          "TELUS_MOBILITY_CA",
+          "SHAW_MOBILE_CA",
+          "HI3G_ACCESS_AB_SE",
+          "BOUYGUES_TELECOM",
+          "FREE_MOBILE_SAS",
+          "TELE2_SWEDEN",
+          "SWISSCOM",
+          "SOUTHERN_PHONE_COMPANY",
+          "EXETEL",
+          "TDC_DANMARK",
+          "ODIDO_NETHERLANDS",
+          "TELENOR_SVERIGE",
+          "ICE_NORWAY",
+          "OPTUS",
+          "HI3G_ACCESS_AB_DK",
+          "BELONG",
+          "ORANGE_BELGIUM",
+          "O2_DEUTSCHLAND",
+          "BREDBAND2_AB",
+          "SFR",
+          "TELIA_NORGE_AS",
+          "TELIA_FINLAND",
+          "ELISA",
+          "VODAFONE_AUSTRALIA",
+          "ELISA_MOBILE",
+          "TELENOR_AS",
+          "PROXIMUS",
+          "DNA_OYJ",
+          "TELENOR_SVERIGE_AB",
+          "EWETEL",
+          "SPINTEL",
+          "AUSSIE_BROADBAND",
+          "ZIGGO",
+          "VODAFONE_GERMANY",
+          "IINET_LIMITED",
+          "WILHELMTEL",
+          "SUPERLOOP",
+          "TELIA_SE",
+          "TELSTRA_INTERNET",
+          "ORANGE",
+          "TELIA_DK",
+          "TMOBILE_NETHERLANDS",
+          "WIRELINE",
+          "TPG_INTERNET",
+          "SALT_MOBILE",
+          "VOO",
+          "TELIA_NORGE",
+          "TELENOR_NORGE",
+          "TELIA_MOBILE",
+          "TELENET",
+          "DEUTSCHE_TELEKOM_AG",
+          "SUNRISE",
+          "KPN",
+          "BOOST_MOBILE",
+          "COMCAST",
+          "US_CELLULAR"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "ComponentsSchemaForecastingTargetingCarriersItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ATT_WIRELESS_US",
+              "name": "AttWirelessUs"
+            },
+            {
+              "value": "SPRINT_US",
+              "name": "SprintUs"
+            },
+            {
+              "value": "TMOBILE_US",
+              "name": "TmobileUs"
+            },
+            {
+              "value": "VERIZON_US",
+              "name": "VerizonUs"
+            },
+            {
+              "value": "EE_UK",
+              "name": "EeUk"
+            },
+            {
+              "value": "VODAFONE_UK",
+              "name": "VodafoneUk"
+            },
+            {
+              "value": "O2_UK",
+              "name": "O2Uk"
+            },
+            {
+              "value": "THREE_UK",
+              "name": "ThreeUk"
+            },
+            {
+              "value": "SKY_MOBILE_UK",
+              "name": "SkyMobileUk"
+            },
+            {
+              "value": "BT_MOBILE_UK",
+              "name": "BtMobileUk"
+            },
+            {
+              "value": "TALKTALK_UK",
+              "name": "TalktalkUk"
+            },
+            {
+              "value": "VIRGIN_MEDIA_UK",
+              "name": "VirginMediaUk"
+            },
+            {
+              "value": "ROGERS_WIRELESS_CA",
+              "name": "RogersWirelessCa"
+            },
+            {
+              "value": "BELL_MOBILITY_CA",
+              "name": "BellMobilityCa"
+            },
+            {
+              "value": "VIRGIN_MOBILE_CA",
+              "name": "VirginMobileCa"
+            },
+            {
+              "value": "BELL_MTS_CA",
+              "name": "BellMtsCa"
+            },
+            {
+              "value": "TELUS_MOBILITY_CA",
+              "name": "TelusMobilityCa"
+            },
+            {
+              "value": "SHAW_MOBILE_CA",
+              "name": "ShawMobileCa"
+            },
+            {
+              "value": "HI3G_ACCESS_AB_SE",
+              "name": "Hi3GAccessAbSe"
+            },
+            {
+              "value": "BOUYGUES_TELECOM",
+              "name": "BouyguesTelecom"
+            },
+            {
+              "value": "FREE_MOBILE_SAS",
+              "name": "FreeMobileSas"
+            },
+            {
+              "value": "TELE2_SWEDEN",
+              "name": "Tele2Sweden"
+            },
+            {
+              "value": "SWISSCOM",
+              "name": "Swisscom"
+            },
+            {
+              "value": "SOUTHERN_PHONE_COMPANY",
+              "name": "SouthernPhoneCompany"
+            },
+            {
+              "value": "EXETEL",
+              "name": "Exetel"
+            },
+            {
+              "value": "TDC_DANMARK",
+              "name": "TdcDanmark"
+            },
+            {
+              "value": "ODIDO_NETHERLANDS",
+              "name": "OdidoNetherlands"
+            },
+            {
+              "value": "TELENOR_SVERIGE",
+              "name": "TelenorSverige"
+            },
+            {
+              "value": "ICE_NORWAY",
+              "name": "IceNorway"
+            },
+            {
+              "value": "OPTUS",
+              "name": "Optus"
+            },
+            {
+              "value": "HI3G_ACCESS_AB_DK",
+              "name": "Hi3GAccessAbDk"
+            },
+            {
+              "value": "BELONG",
+              "name": "Belong"
+            },
+            {
+              "value": "ORANGE_BELGIUM",
+              "name": "OrangeBelgium"
+            },
+            {
+              "value": "O2_DEUTSCHLAND",
+              "name": "O2Deutschland"
+            },
+            {
+              "value": "BREDBAND2_AB",
+              "name": "Bredband2Ab"
+            },
+            {
+              "value": "SFR",
+              "name": "Sfr"
+            },
+            {
+              "value": "TELIA_NORGE_AS",
+              "name": "TeliaNorgeAs"
+            },
+            {
+              "value": "TELIA_FINLAND",
+              "name": "TeliaFinland"
+            },
+            {
+              "value": "ELISA",
+              "name": "Elisa"
+            },
+            {
+              "value": "VODAFONE_AUSTRALIA",
+              "name": "VodafoneAustralia"
+            },
+            {
+              "value": "ELISA_MOBILE",
+              "name": "ElisaMobile"
+            },
+            {
+              "value": "TELENOR_AS",
+              "name": "TelenorAs"
+            },
+            {
+              "value": "PROXIMUS",
+              "name": "Proximus"
+            },
+            {
+              "value": "DNA_OYJ",
+              "name": "DnaOyj"
+            },
+            {
+              "value": "TELENOR_SVERIGE_AB",
+              "name": "TelenorSverigeAb"
+            },
+            {
+              "value": "EWETEL",
+              "name": "Ewetel"
+            },
+            {
+              "value": "SPINTEL",
+              "name": "Spintel"
+            },
+            {
+              "value": "AUSSIE_BROADBAND",
+              "name": "AussieBroadband"
+            },
+            {
+              "value": "ZIGGO",
+              "name": "Ziggo"
+            },
+            {
+              "value": "VODAFONE_GERMANY",
+              "name": "VodafoneGermany"
+            },
+            {
+              "value": "IINET_LIMITED",
+              "name": "IinetLimited"
+            },
+            {
+              "value": "WILHELMTEL",
+              "name": "Wilhelmtel"
+            },
+            {
+              "value": "SUPERLOOP",
+              "name": "Superloop"
+            },
+            {
+              "value": "TELIA_SE",
+              "name": "TeliaSe"
+            },
+            {
+              "value": "TELSTRA_INTERNET",
+              "name": "TelstraInternet"
+            },
+            {
+              "value": "ORANGE",
+              "name": "Orange"
+            },
+            {
+              "value": "TELIA_DK",
+              "name": "TeliaDk"
+            },
+            {
+              "value": "TMOBILE_NETHERLANDS",
+              "name": "TmobileNetherlands"
+            },
+            {
+              "value": "WIRELINE",
+              "name": "Wireline"
+            },
+            {
+              "value": "TPG_INTERNET",
+              "name": "TpgInternet"
+            },
+            {
+              "value": "SALT_MOBILE",
+              "name": "SaltMobile"
+            },
+            {
+              "value": "VOO",
+              "name": "Voo"
+            },
+            {
+              "value": "TELIA_NORGE",
+              "name": "TeliaNorge"
+            },
+            {
+              "value": "TELENOR_NORGE",
+              "name": "TelenorNorge"
+            },
+            {
+              "value": "TELIA_MOBILE",
+              "name": "TeliaMobile"
+            },
+            {
+              "value": "TELENET",
+              "name": "Telenet"
+            },
+            {
+              "value": "DEUTSCHE_TELEKOM_AG",
+              "name": "DeutscheTelekomAg"
+            },
+            {
+              "value": "SUNRISE",
+              "name": "Sunrise"
+            },
+            {
+              "value": "KPN",
+              "name": "Kpn"
+            },
+            {
+              "value": "BOOST_MOBILE",
+              "name": "BoostMobile"
+            },
+            {
+              "value": "COMCAST",
+              "name": "Comcast"
+            },
+            {
+              "value": "US_CELLULAR",
+              "name": "UsCellular"
+            }
+          ]
+        }
+      },
+      "ComponentsSchemaForecastingTargetingPlatformsItem": {
+        "enum": [
+          "ALL",
+          "DESKTOP",
+          "DESKTOP_LEGACY",
+          "MOBILE_NATIVE",
+          "MOBILE_WEB",
+          "MOBILE_WEB_3X",
+          "SHREDTOP"
+        ],
+        "type": "string",
+        "x-enumDescriptions": {
+          "DESKTOP_LEGACY": "Legacy desktop; deprecated and no longer supported."
+        },
+        "x-ms-enum": {
+          "name": "ComponentsSchemaForecastingTargetingPlatformsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ALL",
+              "name": "All"
+            },
+            {
+              "value": "DESKTOP",
+              "name": "Desktop"
+            },
+            {
+              "value": "DESKTOP_LEGACY",
+              "name": "DesktopLegacy"
+            },
+            {
+              "value": "MOBILE_NATIVE",
+              "name": "MobileNative"
+            },
+            {
+              "value": "MOBILE_WEB",
+              "name": "MobileWeb"
+            },
+            {
+              "value": "MOBILE_WEB_3X",
+              "name": "MobileWeb3X"
+            },
+            {
+              "value": "SHREDTOP",
+              "name": "Shredtop"
+            }
+          ]
+        }
+      },
       "ComponentsSchemaCampaignConfiguredStatus": {
         "examples": [
           "ACTIVE"
@@ -58450,846 +59844,6 @@
             {
               "value": "FAILED",
               "name": "Failed"
-            }
-          ]
-        }
-      },
-      "CarriersItem": {
-        "enum": [
-          "ATT_WIRELESS_US",
-          "SPRINT_US",
-          "TMOBILE_US",
-          "VERIZON_US",
-          "EE_UK",
-          "VODAFONE_UK",
-          "O2_UK",
-          "THREE_UK",
-          "SKY_MOBILE_UK",
-          "BT_MOBILE_UK",
-          "TALKTALK_UK",
-          "VIRGIN_MEDIA_UK",
-          "ROGERS_WIRELESS_CA",
-          "BELL_MOBILITY_CA",
-          "VIRGIN_MOBILE_CA",
-          "BELL_MTS_CA",
-          "TELUS_MOBILITY_CA",
-          "SHAW_MOBILE_CA",
-          "HI3G_ACCESS_AB_SE",
-          "BOUYGUES_TELECOM",
-          "FREE_MOBILE_SAS",
-          "TELE2_SWEDEN",
-          "SWISSCOM",
-          "SOUTHERN_PHONE_COMPANY",
-          "EXETEL",
-          "TDC_DANMARK",
-          "ODIDO_NETHERLANDS",
-          "TELENOR_SVERIGE",
-          "ICE_NORWAY",
-          "OPTUS",
-          "HI3G_ACCESS_AB_DK",
-          "BELONG",
-          "ORANGE_BELGIUM",
-          "O2_DEUTSCHLAND",
-          "BREDBAND2_AB",
-          "SFR",
-          "TELIA_NORGE_AS",
-          "TELIA_FINLAND",
-          "ELISA",
-          "VODAFONE_AUSTRALIA",
-          "ELISA_MOBILE",
-          "TELENOR_AS",
-          "PROXIMUS",
-          "DNA_OYJ",
-          "TELENOR_SVERIGE_AB",
-          "EWETEL",
-          "SPINTEL",
-          "AUSSIE_BROADBAND",
-          "ZIGGO",
-          "VODAFONE_GERMANY",
-          "IINET_LIMITED",
-          "WILHELMTEL",
-          "SUPERLOOP",
-          "TELIA_SE",
-          "TELSTRA_INTERNET",
-          "ORANGE",
-          "TELIA_DK",
-          "TMOBILE_NETHERLANDS",
-          "WIRELINE",
-          "TPG_INTERNET",
-          "SALT_MOBILE",
-          "VOO",
-          "TELIA_NORGE",
-          "TELENOR_NORGE",
-          "TELIA_MOBILE",
-          "TELENET",
-          "DEUTSCHE_TELEKOM_AG",
-          "SUNRISE",
-          "KPN",
-          "BOOST_MOBILE",
-          "COMCAST",
-          "US_CELLULAR"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "CarriersItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "ATT_WIRELESS_US",
-              "name": "AttWirelessUs"
-            },
-            {
-              "value": "SPRINT_US",
-              "name": "SprintUs"
-            },
-            {
-              "value": "TMOBILE_US",
-              "name": "TmobileUs"
-            },
-            {
-              "value": "VERIZON_US",
-              "name": "VerizonUs"
-            },
-            {
-              "value": "EE_UK",
-              "name": "EeUk"
-            },
-            {
-              "value": "VODAFONE_UK",
-              "name": "VodafoneUk"
-            },
-            {
-              "value": "O2_UK",
-              "name": "O2Uk"
-            },
-            {
-              "value": "THREE_UK",
-              "name": "ThreeUk"
-            },
-            {
-              "value": "SKY_MOBILE_UK",
-              "name": "SkyMobileUk"
-            },
-            {
-              "value": "BT_MOBILE_UK",
-              "name": "BtMobileUk"
-            },
-            {
-              "value": "TALKTALK_UK",
-              "name": "TalktalkUk"
-            },
-            {
-              "value": "VIRGIN_MEDIA_UK",
-              "name": "VirginMediaUk"
-            },
-            {
-              "value": "ROGERS_WIRELESS_CA",
-              "name": "RogersWirelessCa"
-            },
-            {
-              "value": "BELL_MOBILITY_CA",
-              "name": "BellMobilityCa"
-            },
-            {
-              "value": "VIRGIN_MOBILE_CA",
-              "name": "VirginMobileCa"
-            },
-            {
-              "value": "BELL_MTS_CA",
-              "name": "BellMtsCa"
-            },
-            {
-              "value": "TELUS_MOBILITY_CA",
-              "name": "TelusMobilityCa"
-            },
-            {
-              "value": "SHAW_MOBILE_CA",
-              "name": "ShawMobileCa"
-            },
-            {
-              "value": "HI3G_ACCESS_AB_SE",
-              "name": "Hi3GAccessAbSe"
-            },
-            {
-              "value": "BOUYGUES_TELECOM",
-              "name": "BouyguesTelecom"
-            },
-            {
-              "value": "FREE_MOBILE_SAS",
-              "name": "FreeMobileSas"
-            },
-            {
-              "value": "TELE2_SWEDEN",
-              "name": "Tele2Sweden"
-            },
-            {
-              "value": "SWISSCOM",
-              "name": "Swisscom"
-            },
-            {
-              "value": "SOUTHERN_PHONE_COMPANY",
-              "name": "SouthernPhoneCompany"
-            },
-            {
-              "value": "EXETEL",
-              "name": "Exetel"
-            },
-            {
-              "value": "TDC_DANMARK",
-              "name": "TdcDanmark"
-            },
-            {
-              "value": "ODIDO_NETHERLANDS",
-              "name": "OdidoNetherlands"
-            },
-            {
-              "value": "TELENOR_SVERIGE",
-              "name": "TelenorSverige"
-            },
-            {
-              "value": "ICE_NORWAY",
-              "name": "IceNorway"
-            },
-            {
-              "value": "OPTUS",
-              "name": "Optus"
-            },
-            {
-              "value": "HI3G_ACCESS_AB_DK",
-              "name": "Hi3GAccessAbDk"
-            },
-            {
-              "value": "BELONG",
-              "name": "Belong"
-            },
-            {
-              "value": "ORANGE_BELGIUM",
-              "name": "OrangeBelgium"
-            },
-            {
-              "value": "O2_DEUTSCHLAND",
-              "name": "O2Deutschland"
-            },
-            {
-              "value": "BREDBAND2_AB",
-              "name": "Bredband2Ab"
-            },
-            {
-              "value": "SFR",
-              "name": "Sfr"
-            },
-            {
-              "value": "TELIA_NORGE_AS",
-              "name": "TeliaNorgeAs"
-            },
-            {
-              "value": "TELIA_FINLAND",
-              "name": "TeliaFinland"
-            },
-            {
-              "value": "ELISA",
-              "name": "Elisa"
-            },
-            {
-              "value": "VODAFONE_AUSTRALIA",
-              "name": "VodafoneAustralia"
-            },
-            {
-              "value": "ELISA_MOBILE",
-              "name": "ElisaMobile"
-            },
-            {
-              "value": "TELENOR_AS",
-              "name": "TelenorAs"
-            },
-            {
-              "value": "PROXIMUS",
-              "name": "Proximus"
-            },
-            {
-              "value": "DNA_OYJ",
-              "name": "DnaOyj"
-            },
-            {
-              "value": "TELENOR_SVERIGE_AB",
-              "name": "TelenorSverigeAb"
-            },
-            {
-              "value": "EWETEL",
-              "name": "Ewetel"
-            },
-            {
-              "value": "SPINTEL",
-              "name": "Spintel"
-            },
-            {
-              "value": "AUSSIE_BROADBAND",
-              "name": "AussieBroadband"
-            },
-            {
-              "value": "ZIGGO",
-              "name": "Ziggo"
-            },
-            {
-              "value": "VODAFONE_GERMANY",
-              "name": "VodafoneGermany"
-            },
-            {
-              "value": "IINET_LIMITED",
-              "name": "IinetLimited"
-            },
-            {
-              "value": "WILHELMTEL",
-              "name": "Wilhelmtel"
-            },
-            {
-              "value": "SUPERLOOP",
-              "name": "Superloop"
-            },
-            {
-              "value": "TELIA_SE",
-              "name": "TeliaSe"
-            },
-            {
-              "value": "TELSTRA_INTERNET",
-              "name": "TelstraInternet"
-            },
-            {
-              "value": "ORANGE",
-              "name": "Orange"
-            },
-            {
-              "value": "TELIA_DK",
-              "name": "TeliaDk"
-            },
-            {
-              "value": "TMOBILE_NETHERLANDS",
-              "name": "TmobileNetherlands"
-            },
-            {
-              "value": "WIRELINE",
-              "name": "Wireline"
-            },
-            {
-              "value": "TPG_INTERNET",
-              "name": "TpgInternet"
-            },
-            {
-              "value": "SALT_MOBILE",
-              "name": "SaltMobile"
-            },
-            {
-              "value": "VOO",
-              "name": "Voo"
-            },
-            {
-              "value": "TELIA_NORGE",
-              "name": "TeliaNorge"
-            },
-            {
-              "value": "TELENOR_NORGE",
-              "name": "TelenorNorge"
-            },
-            {
-              "value": "TELIA_MOBILE",
-              "name": "TeliaMobile"
-            },
-            {
-              "value": "TELENET",
-              "name": "Telenet"
-            },
-            {
-              "value": "DEUTSCHE_TELEKOM_AG",
-              "name": "DeutscheTelekomAg"
-            },
-            {
-              "value": "SUNRISE",
-              "name": "Sunrise"
-            },
-            {
-              "value": "KPN",
-              "name": "Kpn"
-            },
-            {
-              "value": "BOOST_MOBILE",
-              "name": "BoostMobile"
-            },
-            {
-              "value": "COMCAST",
-              "name": "Comcast"
-            },
-            {
-              "value": "US_CELLULAR",
-              "name": "UsCellular"
-            }
-          ]
-        }
-      },
-      "PlatformsItem": {
-        "enum": [
-          "ALL",
-          "DESKTOP",
-          "DESKTOP_LEGACY",
-          "MOBILE_NATIVE",
-          "MOBILE_WEB",
-          "MOBILE_WEB_3X",
-          "SHREDTOP"
-        ],
-        "type": "string",
-        "x-enumDescriptions": {
-          "DESKTOP_LEGACY": "Legacy desktop; deprecated and no longer supported."
-        },
-        "x-ms-enum": {
-          "name": "PlatformsItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "ALL",
-              "name": "All"
-            },
-            {
-              "value": "DESKTOP",
-              "name": "Desktop"
-            },
-            {
-              "value": "DESKTOP_LEGACY",
-              "name": "DesktopLegacy"
-            },
-            {
-              "value": "MOBILE_NATIVE",
-              "name": "MobileNative"
-            },
-            {
-              "value": "MOBILE_WEB",
-              "name": "MobileWeb"
-            },
-            {
-              "value": "MOBILE_WEB_3X",
-              "name": "MobileWeb3X"
-            },
-            {
-              "value": "SHREDTOP",
-              "name": "Shredtop"
-            }
-          ]
-        }
-      },
-      "ComponentsSchemaForecastingTargetingCarriersItem": {
-        "enum": [
-          "ATT_WIRELESS_US",
-          "SPRINT_US",
-          "TMOBILE_US",
-          "VERIZON_US",
-          "EE_UK",
-          "VODAFONE_UK",
-          "O2_UK",
-          "THREE_UK",
-          "SKY_MOBILE_UK",
-          "BT_MOBILE_UK",
-          "TALKTALK_UK",
-          "VIRGIN_MEDIA_UK",
-          "ROGERS_WIRELESS_CA",
-          "BELL_MOBILITY_CA",
-          "VIRGIN_MOBILE_CA",
-          "BELL_MTS_CA",
-          "TELUS_MOBILITY_CA",
-          "SHAW_MOBILE_CA",
-          "HI3G_ACCESS_AB_SE",
-          "BOUYGUES_TELECOM",
-          "FREE_MOBILE_SAS",
-          "TELE2_SWEDEN",
-          "SWISSCOM",
-          "SOUTHERN_PHONE_COMPANY",
-          "EXETEL",
-          "TDC_DANMARK",
-          "ODIDO_NETHERLANDS",
-          "TELENOR_SVERIGE",
-          "ICE_NORWAY",
-          "OPTUS",
-          "HI3G_ACCESS_AB_DK",
-          "BELONG",
-          "ORANGE_BELGIUM",
-          "O2_DEUTSCHLAND",
-          "BREDBAND2_AB",
-          "SFR",
-          "TELIA_NORGE_AS",
-          "TELIA_FINLAND",
-          "ELISA",
-          "VODAFONE_AUSTRALIA",
-          "ELISA_MOBILE",
-          "TELENOR_AS",
-          "PROXIMUS",
-          "DNA_OYJ",
-          "TELENOR_SVERIGE_AB",
-          "EWETEL",
-          "SPINTEL",
-          "AUSSIE_BROADBAND",
-          "ZIGGO",
-          "VODAFONE_GERMANY",
-          "IINET_LIMITED",
-          "WILHELMTEL",
-          "SUPERLOOP",
-          "TELIA_SE",
-          "TELSTRA_INTERNET",
-          "ORANGE",
-          "TELIA_DK",
-          "TMOBILE_NETHERLANDS",
-          "WIRELINE",
-          "TPG_INTERNET",
-          "SALT_MOBILE",
-          "VOO",
-          "TELIA_NORGE",
-          "TELENOR_NORGE",
-          "TELIA_MOBILE",
-          "TELENET",
-          "DEUTSCHE_TELEKOM_AG",
-          "SUNRISE",
-          "KPN",
-          "BOOST_MOBILE",
-          "COMCAST",
-          "US_CELLULAR"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "ComponentsSchemaForecastingTargetingCarriersItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "ATT_WIRELESS_US",
-              "name": "AttWirelessUs"
-            },
-            {
-              "value": "SPRINT_US",
-              "name": "SprintUs"
-            },
-            {
-              "value": "TMOBILE_US",
-              "name": "TmobileUs"
-            },
-            {
-              "value": "VERIZON_US",
-              "name": "VerizonUs"
-            },
-            {
-              "value": "EE_UK",
-              "name": "EeUk"
-            },
-            {
-              "value": "VODAFONE_UK",
-              "name": "VodafoneUk"
-            },
-            {
-              "value": "O2_UK",
-              "name": "O2Uk"
-            },
-            {
-              "value": "THREE_UK",
-              "name": "ThreeUk"
-            },
-            {
-              "value": "SKY_MOBILE_UK",
-              "name": "SkyMobileUk"
-            },
-            {
-              "value": "BT_MOBILE_UK",
-              "name": "BtMobileUk"
-            },
-            {
-              "value": "TALKTALK_UK",
-              "name": "TalktalkUk"
-            },
-            {
-              "value": "VIRGIN_MEDIA_UK",
-              "name": "VirginMediaUk"
-            },
-            {
-              "value": "ROGERS_WIRELESS_CA",
-              "name": "RogersWirelessCa"
-            },
-            {
-              "value": "BELL_MOBILITY_CA",
-              "name": "BellMobilityCa"
-            },
-            {
-              "value": "VIRGIN_MOBILE_CA",
-              "name": "VirginMobileCa"
-            },
-            {
-              "value": "BELL_MTS_CA",
-              "name": "BellMtsCa"
-            },
-            {
-              "value": "TELUS_MOBILITY_CA",
-              "name": "TelusMobilityCa"
-            },
-            {
-              "value": "SHAW_MOBILE_CA",
-              "name": "ShawMobileCa"
-            },
-            {
-              "value": "HI3G_ACCESS_AB_SE",
-              "name": "Hi3GAccessAbSe"
-            },
-            {
-              "value": "BOUYGUES_TELECOM",
-              "name": "BouyguesTelecom"
-            },
-            {
-              "value": "FREE_MOBILE_SAS",
-              "name": "FreeMobileSas"
-            },
-            {
-              "value": "TELE2_SWEDEN",
-              "name": "Tele2Sweden"
-            },
-            {
-              "value": "SWISSCOM",
-              "name": "Swisscom"
-            },
-            {
-              "value": "SOUTHERN_PHONE_COMPANY",
-              "name": "SouthernPhoneCompany"
-            },
-            {
-              "value": "EXETEL",
-              "name": "Exetel"
-            },
-            {
-              "value": "TDC_DANMARK",
-              "name": "TdcDanmark"
-            },
-            {
-              "value": "ODIDO_NETHERLANDS",
-              "name": "OdidoNetherlands"
-            },
-            {
-              "value": "TELENOR_SVERIGE",
-              "name": "TelenorSverige"
-            },
-            {
-              "value": "ICE_NORWAY",
-              "name": "IceNorway"
-            },
-            {
-              "value": "OPTUS",
-              "name": "Optus"
-            },
-            {
-              "value": "HI3G_ACCESS_AB_DK",
-              "name": "Hi3GAccessAbDk"
-            },
-            {
-              "value": "BELONG",
-              "name": "Belong"
-            },
-            {
-              "value": "ORANGE_BELGIUM",
-              "name": "OrangeBelgium"
-            },
-            {
-              "value": "O2_DEUTSCHLAND",
-              "name": "O2Deutschland"
-            },
-            {
-              "value": "BREDBAND2_AB",
-              "name": "Bredband2Ab"
-            },
-            {
-              "value": "SFR",
-              "name": "Sfr"
-            },
-            {
-              "value": "TELIA_NORGE_AS",
-              "name": "TeliaNorgeAs"
-            },
-            {
-              "value": "TELIA_FINLAND",
-              "name": "TeliaFinland"
-            },
-            {
-              "value": "ELISA",
-              "name": "Elisa"
-            },
-            {
-              "value": "VODAFONE_AUSTRALIA",
-              "name": "VodafoneAustralia"
-            },
-            {
-              "value": "ELISA_MOBILE",
-              "name": "ElisaMobile"
-            },
-            {
-              "value": "TELENOR_AS",
-              "name": "TelenorAs"
-            },
-            {
-              "value": "PROXIMUS",
-              "name": "Proximus"
-            },
-            {
-              "value": "DNA_OYJ",
-              "name": "DnaOyj"
-            },
-            {
-              "value": "TELENOR_SVERIGE_AB",
-              "name": "TelenorSverigeAb"
-            },
-            {
-              "value": "EWETEL",
-              "name": "Ewetel"
-            },
-            {
-              "value": "SPINTEL",
-              "name": "Spintel"
-            },
-            {
-              "value": "AUSSIE_BROADBAND",
-              "name": "AussieBroadband"
-            },
-            {
-              "value": "ZIGGO",
-              "name": "Ziggo"
-            },
-            {
-              "value": "VODAFONE_GERMANY",
-              "name": "VodafoneGermany"
-            },
-            {
-              "value": "IINET_LIMITED",
-              "name": "IinetLimited"
-            },
-            {
-              "value": "WILHELMTEL",
-              "name": "Wilhelmtel"
-            },
-            {
-              "value": "SUPERLOOP",
-              "name": "Superloop"
-            },
-            {
-              "value": "TELIA_SE",
-              "name": "TeliaSe"
-            },
-            {
-              "value": "TELSTRA_INTERNET",
-              "name": "TelstraInternet"
-            },
-            {
-              "value": "ORANGE",
-              "name": "Orange"
-            },
-            {
-              "value": "TELIA_DK",
-              "name": "TeliaDk"
-            },
-            {
-              "value": "TMOBILE_NETHERLANDS",
-              "name": "TmobileNetherlands"
-            },
-            {
-              "value": "WIRELINE",
-              "name": "Wireline"
-            },
-            {
-              "value": "TPG_INTERNET",
-              "name": "TpgInternet"
-            },
-            {
-              "value": "SALT_MOBILE",
-              "name": "SaltMobile"
-            },
-            {
-              "value": "VOO",
-              "name": "Voo"
-            },
-            {
-              "value": "TELIA_NORGE",
-              "name": "TeliaNorge"
-            },
-            {
-              "value": "TELENOR_NORGE",
-              "name": "TelenorNorge"
-            },
-            {
-              "value": "TELIA_MOBILE",
-              "name": "TeliaMobile"
-            },
-            {
-              "value": "TELENET",
-              "name": "Telenet"
-            },
-            {
-              "value": "DEUTSCHE_TELEKOM_AG",
-              "name": "DeutscheTelekomAg"
-            },
-            {
-              "value": "SUNRISE",
-              "name": "Sunrise"
-            },
-            {
-              "value": "KPN",
-              "name": "Kpn"
-            },
-            {
-              "value": "BOOST_MOBILE",
-              "name": "BoostMobile"
-            },
-            {
-              "value": "COMCAST",
-              "name": "Comcast"
-            },
-            {
-              "value": "US_CELLULAR",
-              "name": "UsCellular"
-            }
-          ]
-        }
-      },
-      "ComponentsSchemaForecastingTargetingPlatformsItem": {
-        "enum": [
-          "ALL",
-          "DESKTOP",
-          "DESKTOP_LEGACY",
-          "MOBILE_NATIVE",
-          "MOBILE_WEB",
-          "MOBILE_WEB_3X",
-          "SHREDTOP"
-        ],
-        "type": "string",
-        "x-enumDescriptions": {
-          "DESKTOP_LEGACY": "Legacy desktop; deprecated and no longer supported."
-        },
-        "x-ms-enum": {
-          "name": "ComponentsSchemaForecastingTargetingPlatformsItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "ALL",
-              "name": "All"
-            },
-            {
-              "value": "DESKTOP",
-              "name": "Desktop"
-            },
-            {
-              "value": "DESKTOP_LEGACY",
-              "name": "DesktopLegacy"
-            },
-            {
-              "value": "MOBILE_NATIVE",
-              "name": "MobileNative"
-            },
-            {
-              "value": "MOBILE_WEB",
-              "name": "MobileWeb"
-            },
-            {
-              "value": "MOBILE_WEB_3X",
-              "name": "MobileWeb3X"
-            },
-            {
-              "value": "SHREDTOP",
-              "name": "Shredtop"
             }
           ]
         }

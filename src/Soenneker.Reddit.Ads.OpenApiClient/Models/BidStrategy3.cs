@@ -3,17 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
-    /// <summary>The ad group&apos;s bid strategy.</summary>
+    /// <summary>The campaign&apos;s bid strategy. Required when `is_campaign_budget_optimization` is `true`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BidStrategy3
     {
         [EnumMember(Value = "BIDLESS")]
         #pragma warning disable CS1591
         Bidless,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MANUAL_BIDDING")]
-        #pragma warning disable CS1591
-        ManualBidding,
         #pragma warning restore CS1591
         [EnumMember(Value = "MAXIMIZE_VOLUME")]
         #pragma warning disable CS1591
@@ -22,6 +18,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         [EnumMember(Value = "TARGET_CPX")]
         #pragma warning disable CS1591
         TargetCpx,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        #pragma warning disable CS1591
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

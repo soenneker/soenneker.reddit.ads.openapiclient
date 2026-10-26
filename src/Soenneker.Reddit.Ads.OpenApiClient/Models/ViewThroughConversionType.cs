@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
-    /// <summary>The conversion attribution window. Determines how conversions are counted after a user interacts with an ad. Only available when `is_campaign_budget_optimization` is `true`.&gt; **Important:** This cannot be changed after publishing the campaign.</summary>
+    /// <summary>The conversion attribution window. This determines how conversions are counted after a user interacts with an ad.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ViewThroughConversionType
     {
@@ -14,10 +14,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         [EnumMember(Value = "SEVEN_DAY_CLICKS_ONE_DAY_VIEW")]
         #pragma warning disable CS1591
         SevenDayClicksOneDayView,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        #pragma warning disable CS1591
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

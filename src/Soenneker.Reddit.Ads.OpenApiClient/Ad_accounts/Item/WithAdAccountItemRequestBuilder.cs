@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Ad_groups;
 using Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Ads;
 using Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Apps;
+using Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Campaign_planning;
 using Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Campaigns;
 using Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Custom_audiences;
 using Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Data_deletion_jobs;
@@ -45,6 +46,11 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item
         public global::Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Apps.AppsRequestBuilder Apps
         {
             get => new global::Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The campaign_planning property</summary>
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Campaign_planning.Campaign_planningRequestBuilder Campaign_planning
+        {
+            get => new global::Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Campaign_planning.Campaign_planningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The campaigns property</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Campaigns.CampaignsRequestBuilder Campaigns
