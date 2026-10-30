@@ -17,7 +17,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("keyword_suggestions") is { } nullNodeKeywordSuggestions && nullNodeKeywordSuggestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordSuggestions = null;
+            if (parseNode.GetChildNode("keyword_suggestions") is null) { _explicitNullValueKeywordSuggestions = default!; _explicitNullProperties?.Remove("keyword_suggestions"); }
+            else if (parseNode.GetChildNode("keyword_suggestions") is { } nullNodeKeywordSuggestions && nullNodeKeywordSuggestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeywordSuggestions = null;
         }
 
         /// <summary>Keyword suggestions and their monthly view counts.</summary>

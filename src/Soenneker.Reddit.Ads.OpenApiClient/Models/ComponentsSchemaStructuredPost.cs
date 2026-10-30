@@ -18,25 +18,27 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_comments") is { } nullNodeAllowComments && nullNodeAllowComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowComments = null;
-            if (parseNode.GetChildNode("creative") is { } nullNodeCreative && nullNodeCreative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creative = null;
+            if (parseNode.GetChildNode("allow_comments") is null) { _explicitNullValueAllowComments = default!; _explicitNullProperties?.Remove("allow_comments"); }
+            else if (parseNode.GetChildNode("allow_comments") is { } nullNodeAllowComments && nullNodeAllowComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowComments = null;
+            if (parseNode.GetChildNode("creative") is null) { _explicitNullValueCreative = default!; _explicitNullProperties?.Remove("creative"); }
+            else if (parseNode.GetChildNode("creative") is { } nullNodeCreative && nullNodeCreative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creative = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether comments are allowed on the post. See how to [manage comments](https://business.reddithelp.com/s/article/Managing-ads-with-comments-on).</summary>
-        public bool? AllowComments { get => _explicitNullValueAllowComments; set { _explicitNullValueAllowComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_comments"); else _explicitNullProperties?.Remove("allow_comments"); } }
+        public bool? AllowComments { get => _explicitNullValueAllowComments; set { _explicitNullValueAllowComments = value; AdditionalData?.Remove("allow_comments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_comments"); else _explicitNullProperties?.Remove("allow_comments"); } }
         private bool? _explicitNullValueAllowComments = default!;
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The creative property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCreative? Creative { get => _explicitNullValueCreative; set { _explicitNullValueCreative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creative"); else _explicitNullProperties?.Remove("creative"); } }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCreative? Creative { get => _explicitNullValueCreative; set { _explicitNullValueCreative = value; AdditionalData?.Remove("creative"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creative"); else _explicitNullProperties?.Remove("creative"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCreative? _explicitNullValueCreative = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCreative Creative { get => _explicitNullValueCreative; set { _explicitNullValueCreative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creative"); else _explicitNullProperties?.Remove("creative"); } }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCreative Creative { get => _explicitNullValueCreative; set { _explicitNullValueCreative = value; AdditionalData?.Remove("creative"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creative"); else _explicitNullProperties?.Remove("creative"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCreative _explicitNullValueCreative = default!;
 #endif
         /// <summary>The post ID.</summary>

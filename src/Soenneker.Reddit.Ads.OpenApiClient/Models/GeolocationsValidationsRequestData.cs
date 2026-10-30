@@ -54,10 +54,14 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("geolocation_ids") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("cities") != null))();
-            if (result.GeolocationsValidationsRequestDataCities == null && result.GeolocationsValidationsRequestDataGeolocationIds == null && matchesUnionBranch0 && !matchesUnionBranch1) result.GeolocationsValidationsRequestDataGeolocationIds = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIds(), parseNode);
-            if (result.GeolocationsValidationsRequestDataCities == null && result.GeolocationsValidationsRequestDataGeolocationIds == null && matchesUnionBranch1 && !matchesUnionBranch0) result.GeolocationsValidationsRequestDataCities = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataCities(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("geolocation_ids") && (!shapeMembers1.ContainsKey("geolocation_ids") || (((shapeMembers1["geolocation_ids"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "geolocation_ids"))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("cities") && (!shapeMembers1.ContainsKey("cities") || (((shapeMembers1["cities"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "cities"))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.GeolocationsValidationsRequestDataCities == null && result.GeolocationsValidationsRequestDataGeolocationIds == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.GeolocationsValidationsRequestDataGeolocationIds = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIds(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.GeolocationsValidationsRequestDataCities = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataCities(), parseNode);
             if (result.GeolocationsValidationsRequestDataCities == null && result.GeolocationsValidationsRequestDataGeolocationIds == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -67,6 +71,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(GeolocationsValidationsRequestDataCities != null)
             {
                 return GeolocationsValidationsRequestDataCities.GetFieldDeserializers();
@@ -85,8 +91,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (GeolocationsValidationsRequestDataCities == null && GeolocationsValidationsRequestDataGeolocationIds == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (GeolocationsValidationsRequestDataCities != null && GeolocationsValidationsRequestDataGeolocationIds == null) { if (GeolocationsValidationsRequestDataCities is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeolocationsValidationsRequestDataCities); return; }
-            if (GeolocationsValidationsRequestDataGeolocationIds != null && GeolocationsValidationsRequestDataCities == null) { if (GeolocationsValidationsRequestDataGeolocationIds is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeolocationsValidationsRequestDataGeolocationIds); return; }
+            int selectedUnionBranches = 0;
+            if (GeolocationsValidationsRequestDataCities != null) selectedUnionBranches++;
+            if (GeolocationsValidationsRequestDataGeolocationIds != null) selectedUnionBranches++;
+            if (GeolocationsValidationsRequestDataCities != null && selectedUnionBranches == 1) { if (GeolocationsValidationsRequestDataCities is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeolocationsValidationsRequestDataCities); return; }
+            if (GeolocationsValidationsRequestDataGeolocationIds != null && selectedUnionBranches == 1) { if (GeolocationsValidationsRequestDataGeolocationIds is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeolocationsValidationsRequestDataGeolocationIds); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(GeolocationsValidationsRequestDataCities != null)

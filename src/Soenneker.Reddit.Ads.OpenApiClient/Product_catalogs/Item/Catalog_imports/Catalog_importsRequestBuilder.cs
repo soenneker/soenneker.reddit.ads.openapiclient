@@ -81,7 +81,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Product_catalogs.Item.Catalog_impor
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Reddit.Ads.OpenApiClient.Product_catalogs.Item.Catalog_imports.Catalog_importsRequestBuilder.Catalog_importsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://ads-api.reddit.com/api/v3", "/product_catalogs/{catalogId}/catalog_imports", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

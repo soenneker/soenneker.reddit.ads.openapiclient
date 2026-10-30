@@ -17,7 +17,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cities") is { } nullNodeCities && nullNodeCities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cities = null;
+            if (parseNode.GetChildNode("cities") is null) { _explicitNullValueCities = default!; _explicitNullProperties?.Remove("cities"); }
+            else if (parseNode.GetChildNode("cities") is { } nullNodeCities && nullNodeCities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cities = null;
         }
 
         /// <summary>The cities property</summary>

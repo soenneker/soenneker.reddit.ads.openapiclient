@@ -18,9 +18,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("campaign_ids") is { } nullNodeCampaignIds && nullNodeCampaignIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignIds = null;
-            if (parseNode.GetChildNode("lookback_window_days") is { } nullNodeLookbackWindowDays && nullNodeLookbackWindowDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookbackWindowDays = null;
-            if (parseNode.GetChildNode("tracking_types") is { } nullNodeTrackingTypes && nullNodeTrackingTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackingTypes = null;
+            if (parseNode.GetChildNode("campaign_ids") is null) { _explicitNullValueCampaignIds = default!; _explicitNullProperties?.Remove("campaign_ids"); }
+            else if (parseNode.GetChildNode("campaign_ids") is { } nullNodeCampaignIds && nullNodeCampaignIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignIds = null;
+            if (parseNode.GetChildNode("lookback_window_days") is null) { _explicitNullValueLookbackWindowDays = default!; _explicitNullProperties?.Remove("lookback_window_days"); }
+            else if (parseNode.GetChildNode("lookback_window_days") is { } nullNodeLookbackWindowDays && nullNodeLookbackWindowDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookbackWindowDays = null;
+            if (parseNode.GetChildNode("tracking_types") is null) { _explicitNullValueTrackingTypes = default!; _explicitNullProperties?.Remove("tracking_types"); }
+            else if (parseNode.GetChildNode("tracking_types") is { } nullNodeTrackingTypes && nullNodeTrackingTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackingTypes = null;
         }
 
         /// <summary>The IDs of the campaigns to include in this audience.</summary>

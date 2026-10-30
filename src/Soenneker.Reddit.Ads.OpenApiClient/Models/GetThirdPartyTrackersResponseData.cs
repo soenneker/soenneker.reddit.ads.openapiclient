@@ -17,8 +17,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("click_tracker_domains") is { } nullNodeClickTrackerDomains && nullNodeClickTrackerDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickTrackerDomains = null;
-            if (parseNode.GetChildNode("impression_tracker_domains") is { } nullNodeImpressionTrackerDomains && nullNodeImpressionTrackerDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImpressionTrackerDomains = null;
+            if (parseNode.GetChildNode("click_tracker_domains") is null) { _explicitNullValueClickTrackerDomains = default!; _explicitNullProperties?.Remove("click_tracker_domains"); }
+            else if (parseNode.GetChildNode("click_tracker_domains") is { } nullNodeClickTrackerDomains && nullNodeClickTrackerDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickTrackerDomains = null;
+            if (parseNode.GetChildNode("impression_tracker_domains") is null) { _explicitNullValueImpressionTrackerDomains = default!; _explicitNullProperties?.Remove("impression_tracker_domains"); }
+            else if (parseNode.GetChildNode("impression_tracker_domains") is { } nullNodeImpressionTrackerDomains && nullNodeImpressionTrackerDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImpressionTrackerDomains = null;
         }
 
         /// <summary>Domains recognized for click tracking.</summary>

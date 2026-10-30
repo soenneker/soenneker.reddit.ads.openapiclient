@@ -18,8 +18,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("collect_email") is { } nullNodeCollectEmail && nullNodeCollectEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectEmail = null;
-            if (parseNode.GetChildNode("collect_phone_number") is { } nullNodeCollectPhoneNumber && nullNodeCollectPhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectPhoneNumber = null;
+            if (parseNode.GetChildNode("collect_email") is null) { _explicitNullValueCollectEmail = default!; _explicitNullProperties?.Remove("collect_email"); }
+            else if (parseNode.GetChildNode("collect_email") is { } nullNodeCollectEmail && nullNodeCollectEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectEmail = null;
+            if (parseNode.GetChildNode("collect_phone_number") is null) { _explicitNullValueCollectPhoneNumber = default!; _explicitNullProperties?.Remove("collect_phone_number"); }
+            else if (parseNode.GetChildNode("collect_phone_number") is { } nullNodeCollectPhoneNumber && nullNodeCollectPhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectPhoneNumber = null;
         }
 
         /// <summary>Whether to automatically collect email addresses.</summary>

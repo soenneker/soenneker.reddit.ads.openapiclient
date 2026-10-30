@@ -17,7 +17,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("seed_keywords") is { } nullNodeSeedKeywords && nullNodeSeedKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeedKeywords = null;
+            if (parseNode.GetChildNode("seed_keywords") is null) { _explicitNullValueSeedKeywords = default!; _explicitNullProperties?.Remove("seed_keywords"); }
+            else if (parseNode.GetChildNode("seed_keywords") is { } nullNodeSeedKeywords && nullNodeSeedKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeedKeywords = null;
         }
 
         /// <summary>An array of terms to base keywords on.</summary>

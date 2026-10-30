@@ -18,7 +18,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("user_generated_content") is { } nullNodeUserGeneratedContent && nullNodeUserGeneratedContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserGeneratedContent = null;
+            if (parseNode.GetChildNode("user_generated_content") is null) { _explicitNullValueUserGeneratedContent = default!; _explicitNullProperties?.Remove("user_generated_content"); }
+            else if (parseNode.GetChildNode("user_generated_content") is { } nullNodeUserGeneratedContent && nullNodeUserGeneratedContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserGeneratedContent = null;
         }
 
         /// <summary>The [Redditor Highlights](https://business.reddithelp.com/s/article/redditor-highlights) enhancement setting for this creative.</summary>

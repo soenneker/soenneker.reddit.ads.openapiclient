@@ -18,8 +18,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_age") is { } nullNodeMaxAge && nullNodeMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAge = null;
-            if (parseNode.GetChildNode("min_age") is { } nullNodeMinAge && nullNodeMinAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinAge = null;
+            if (parseNode.GetChildNode("max_age") is null) { _explicitNullValueMaxAge = default!; _explicitNullProperties?.Remove("max_age"); }
+            else if (parseNode.GetChildNode("max_age") is { } nullNodeMaxAge && nullNodeMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAge = null;
+            if (parseNode.GetChildNode("min_age") is null) { _explicitNullValueMinAge = default!; _explicitNullProperties?.Remove("min_age"); }
+            else if (parseNode.GetChildNode("min_age") is { } nullNodeMinAge && nullNodeMinAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinAge = null;
         }
 
         /// <summary>The maximum age to target (inclusive).</summary>

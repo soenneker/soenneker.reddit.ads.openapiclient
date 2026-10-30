@@ -17,8 +17,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("budget") is { } nullNodeBudget && nullNodeBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Budget = null;
-            if (parseNode.GetChildNode("reach") is { } nullNodeReach && nullNodeReach.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reach = null;
+            if (parseNode.GetChildNode("budget") is null) { _explicitNullValueBudget = default!; _explicitNullProperties?.Remove("budget"); }
+            else if (parseNode.GetChildNode("budget") is { } nullNodeBudget && nullNodeBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Budget = null;
+            if (parseNode.GetChildNode("reach") is null) { _explicitNullValueReach = default!; _explicitNullProperties?.Remove("reach"); }
+            else if (parseNode.GetChildNode("reach") is { } nullNodeReach && nullNodeReach.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reach = null;
         }
 
         /// <summary>The budget size (microcurrency).</summary>

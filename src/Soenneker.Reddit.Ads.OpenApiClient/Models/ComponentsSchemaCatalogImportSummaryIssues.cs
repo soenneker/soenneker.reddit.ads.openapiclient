@@ -18,8 +18,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("critical") is { } nullNodeCritical && nullNodeCritical.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Critical = null;
-            if (parseNode.GetChildNode("warning") is { } nullNodeWarning && nullNodeWarning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warning = null;
+            if (parseNode.GetChildNode("critical") is null) { _explicitNullValueCritical = default!; _explicitNullProperties?.Remove("critical"); }
+            else if (parseNode.GetChildNode("critical") is { } nullNodeCritical && nullNodeCritical.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Critical = null;
+            if (parseNode.GetChildNode("warning") is null) { _explicitNullValueWarning = default!; _explicitNullProperties?.Remove("warning"); }
+            else if (parseNode.GetChildNode("warning") is { } nullNodeWarning && nullNodeWarning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warning = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>Critical issue and how many products are having this issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesCriticalProperty? Critical { get => _explicitNullValueCritical; set { _explicitNullValueCritical = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("critical"); else _explicitNullProperties?.Remove("critical"); } }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesCriticalProperty? Critical { get => _explicitNullValueCritical; set { _explicitNullValueCritical = value; AdditionalData?.Remove("critical"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("critical"); else _explicitNullProperties?.Remove("critical"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesCriticalProperty? _explicitNullValueCritical = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesCriticalProperty Critical { get => _explicitNullValueCritical; set { _explicitNullValueCritical = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("critical"); else _explicitNullProperties?.Remove("critical"); } }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesCriticalProperty Critical { get => _explicitNullValueCritical; set { _explicitNullValueCritical = value; AdditionalData?.Remove("critical"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("critical"); else _explicitNullProperties?.Remove("critical"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesCriticalProperty _explicitNullValueCritical = default!;
 #endif
         /// <summary>Warning issues and how many products are having this issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesWarningProperty? Warning { get => _explicitNullValueWarning; set { _explicitNullValueWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning"); else _explicitNullProperties?.Remove("warning"); } }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesWarningProperty? Warning { get => _explicitNullValueWarning; set { _explicitNullValueWarning = value; AdditionalData?.Remove("warning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning"); else _explicitNullProperties?.Remove("warning"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesWarningProperty? _explicitNullValueWarning = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesWarningProperty Warning { get => _explicitNullValueWarning; set { _explicitNullValueWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning"); else _explicitNullProperties?.Remove("warning"); } }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesWarningProperty Warning { get => _explicitNullValueWarning; set { _explicitNullValueWarning = value; AdditionalData?.Remove("warning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning"); else _explicitNullProperties?.Remove("warning"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCatalogImportSummaryIssuesWarningProperty _explicitNullValueWarning = default!;
 #endif
         /// <summary>

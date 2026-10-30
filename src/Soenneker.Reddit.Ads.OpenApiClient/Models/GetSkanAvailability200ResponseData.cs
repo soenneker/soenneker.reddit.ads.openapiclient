@@ -17,9 +17,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ad_group_quota") is { } nullNodeAdGroupQuota && nullNodeAdGroupQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdGroupQuota = null;
-            if (parseNode.GetChildNode("ad_quota") is { } nullNodeAdQuota && nullNodeAdQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdQuota = null;
-            if (parseNode.GetChildNode("campaign_quota") is { } nullNodeCampaignQuota && nullNodeCampaignQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignQuota = null;
+            if (parseNode.GetChildNode("ad_group_quota") is null) { _explicitNullValueAdGroupQuota = default!; _explicitNullProperties?.Remove("ad_group_quota"); }
+            else if (parseNode.GetChildNode("ad_group_quota") is { } nullNodeAdGroupQuota && nullNodeAdGroupQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdGroupQuota = null;
+            if (parseNode.GetChildNode("ad_quota") is null) { _explicitNullValueAdQuota = default!; _explicitNullProperties?.Remove("ad_quota"); }
+            else if (parseNode.GetChildNode("ad_quota") is { } nullNodeAdQuota && nullNodeAdQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdQuota = null;
+            if (parseNode.GetChildNode("campaign_quota") is null) { _explicitNullValueCampaignQuota = default!; _explicitNullProperties?.Remove("campaign_quota"); }
+            else if (parseNode.GetChildNode("campaign_quota") is { } nullNodeCampaignQuota && nullNodeCampaignQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignQuota = null;
         }
 
         /// <summary>The ad_group_quota property</summary>

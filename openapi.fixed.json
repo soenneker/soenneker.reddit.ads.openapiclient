@@ -20193,7 +20193,7 @@
             "deprecated": true
           },
           "shopping_creative": {
-            "$ref": "#/components/schemas/ComponentsSchemaAdUnspecifiedAllOf3ShoppingCreative"
+            "$ref": "#/components/schemas/ComponentsSchemaAdCreateStandardShoppingCreative"
           }
         }
       },
@@ -41130,7 +41130,7 @@
             "description": "Products associated with the ad. Up to 6 products."
           },
           "shopping_creative": {
-            "$ref": "#/components/schemas/ComponentsSchemaAdPatchShoppingCreative"
+            "$ref": "#/components/schemas/ComponentsSchemaAdCreateStandardShoppingCreative"
           },
           "asset_identifiers": {
             "maxItems": 45,
@@ -45467,7 +45467,7 @@
             "description": "The minute of the hour to fetch the product feed."
           },
           "timezone": {
-            "$ref": "#/components/schemas/Schedule3Timezone"
+            "$ref": "#/components/schemas/ComponentsSchemaProductFeedScheduleTimezone"
           },
           "next_import_at": {
             "examples": [
@@ -45921,7 +45921,7 @@
             "description": "The post\u0027s text content. Omit or set to \u0060null\u0060 to create a post without a body."
           },
           "text_format": {
-            "$ref": "#/components/schemas/ComponentsSchemaPostCreativesImageCreativeTextFormat"
+            "$ref": "#/components/schemas/ComponentsSchemaPostCreativesCarouselCreativeTextFormat"
           },
           "destination": {
             "$ref": "#/components/schemas/ComponentsSchemaPostCreativesDestinationsDestination"
@@ -46053,7 +46053,7 @@
             "description": "The post\u0027s text content. Omit or set to \u0060null\u0060 to create a post without a body."
           },
           "text_format": {
-            "$ref": "#/components/schemas/ComponentsSchemaPostCreativesVideoCreativeTextFormat"
+            "$ref": "#/components/schemas/ComponentsSchemaPostCreativesCarouselCreativeTextFormat"
           },
           "destination": {
             "$ref": "#/components/schemas/ComponentsSchemaPostCreativesDestinationsDestination"
@@ -47275,12 +47275,22 @@
             "format": "uri"
           },
           {
-            "const": null,
             "title": "Empty String",
             "enum": [
               ""
             ],
-            "type": "string"
+            "type": "string",
+            "x-client-original-const": "",
+            "x-ms-enum": {
+              "name": "ComponentsSchemaShoppingCreativeDestinationUrl",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "",
+                  "name": "EnumValue"
+                }
+              ]
+            }
           },
           {
             "title": "Null",
@@ -47359,7 +47369,7 @@
             "deprecated": true
           },
           "shopping_creative": {
-            "$ref": "#/components/schemas/ComponentsSchemaAdUnspecifiedAllOf3ShoppingCreative"
+            "$ref": "#/components/schemas/ComponentsSchemaAdCreateStandardShoppingCreative"
           }
         }
       },
@@ -55882,13 +55892,13 @@
         "type": "object",
         "properties": {
           "campaign_quota": {
-            "$ref": "#/components/schemas/GetSkanAvailability200ResponseDataCampaignQuota"
+            "$ref": "#/components/schemas/GetSkanAvailability200ResponseDataAdGroupQuota"
           },
           "ad_group_quota": {
             "$ref": "#/components/schemas/GetSkanAvailability200ResponseDataAdGroupQuota"
           },
           "ad_quota": {
-            "$ref": "#/components/schemas/GetSkanAvailability200ResponseDataAdQuota"
+            "$ref": "#/components/schemas/GetSkanAvailability200ResponseDataAdGroupQuota"
           }
         },
         "additionalProperties": false
@@ -57520,11 +57530,11 @@
         }
       },
       "AllFeaturesItem": {
-        "const": null,
         "enum": [
           "ALL_FEATURES"
         ],
         "type": "string",
+        "x-client-original-const": "ALL_FEATURES",
         "x-ms-enum": {
           "name": "AllFeaturesItem",
           "modelAsString": false,
@@ -57626,7 +57636,6 @@
         }
       },
       "UrlType": {
-        "const": null,
         "examples": [
           "URL"
         ],
@@ -57635,6 +57644,7 @@
         ],
         "type": "string",
         "description": "The type of destination.",
+        "x-client-original-const": "URL",
         "x-ms-enum": {
           "name": "UrlType",
           "modelAsString": false,
@@ -57716,7 +57726,6 @@
         }
       },
       "AutomatedType": {
-        "const": null,
         "examples": [
           "AUTOMATED"
         ],
@@ -57725,6 +57734,7 @@
         ],
         "type": "string",
         "description": "The \u0060AUTOMATED\u0060 type identifies an ad group in a Reddit Max campaign.",
+        "x-client-original-const": "AUTOMATED",
         "x-ms-enum": {
           "name": "AutomatedType",
           "modelAsString": false,
@@ -58029,12 +58039,12 @@
         }
       },
       "ComponentsSchemaAdCreateStandardType": {
-        "const": null,
         "enum": [
           "UNSPECIFIED"
         ],
         "type": "string",
         "description": "The ad type.",
+        "x-client-original-const": "UNSPECIFIED",
         "x-ms-enum": {
           "name": "ComponentsSchemaAdCreateStandardType",
           "modelAsString": false,
@@ -58047,7 +58057,6 @@
         }
       },
       "ComponentsSchemaAdCreateDynamicCreativeTemplateType": {
-        "const": null,
         "examples": [
           "DYNAMIC_CREATIVE_AD_TEMPLATE"
         ],
@@ -58056,6 +58065,7 @@
         ],
         "type": "string",
         "description": "The ad type used for a Reddit Max creative template.",
+        "x-client-original-const": "DYNAMIC_CREATIVE_AD_TEMPLATE",
         "x-ms-enum": {
           "name": "ComponentsSchemaAdCreateDynamicCreativeTemplateType",
           "modelAsString": false,
@@ -59291,7 +59301,6 @@
         }
       },
       "ComponentsSchemaCampaignCreateAutomatedType": {
-        "const": null,
         "examples": [
           "AUTOMATED"
         ],
@@ -59300,6 +59309,7 @@
         ],
         "type": "string",
         "description": "The \u0060AUTOMATED\u0060 type identifies a Reddit Max campaign.",
+        "x-client-original-const": "AUTOMATED",
         "x-ms-enum": {
           "name": "ComponentsSchemaCampaignCreateAutomatedType",
           "modelAsString": false,
@@ -59711,13 +59721,13 @@
         }
       },
       "CustomerListType": {
-        "const": null,
         "enum": [
           "CUSTOMER_LIST"
         ],
         "type": "string",
         "description": "The custom audience type, which must be \u0060CUSTOMER_LIST\u0060.",
         "example": "CUSTOMER_LIST",
+        "x-client-original-const": "CUSTOMER_LIST",
         "x-ms-enum": {
           "name": "CustomerListType",
           "modelAsString": false,
@@ -59730,13 +59740,13 @@
         }
       },
       "PixelRetargetingType": {
-        "const": null,
         "enum": [
           "PIXEL_RETARGETING"
         ],
         "type": "string",
         "description": "Type of the custom audience. For website retargeting audiences, this API uses the value \u0060PIXEL_RETARGETING\u0060.",
         "example": "PIXEL_RETARGETING",
+        "x-client-original-const": "PIXEL_RETARGETING",
         "x-ms-enum": {
           "name": "PixelRetargetingType",
           "modelAsString": false,
@@ -59749,13 +59759,13 @@
         }
       },
       "EngagementRetargetingType": {
-        "const": null,
         "enum": [
           "ENGAGEMENT_RETARGETING"
         ],
         "type": "string",
         "description": "Type of the custom audience. For engagement retargeting audiences, this value is always ENGAGEMENT_RETARGETING.",
         "example": "ENGAGEMENT_RETARGETING",
+        "x-client-original-const": "ENGAGEMENT_RETARGETING",
         "x-ms-enum": {
           "name": "EngagementRetargetingType",
           "modelAsString": false,
@@ -59768,13 +59778,13 @@
         }
       },
       "ComponentsSchemaPixelRetargetingCustomAudienceType": {
-        "const": null,
         "enum": [
           "PIXEL_RETARGETING"
         ],
         "type": "string",
         "description": "Type of the custom audience. For website retargeting audiences, this API uses the value \u0060PIXEL_RETARGETING\u0060.",
         "example": "PIXEL_RETARGETING",
+        "x-client-original-const": "PIXEL_RETARGETING",
         "x-ms-enum": {
           "name": "ComponentsSchemaPixelRetargetingCustomAudienceType",
           "modelAsString": false,
@@ -59787,13 +59797,13 @@
         }
       },
       "ComponentsSchemaEngagementRetargetingCustomAudienceType": {
-        "const": null,
         "enum": [
           "ENGAGEMENT_RETARGETING"
         ],
         "type": "string",
         "description": "Type of the custom audience. For engagement retargeting audiences, this value is always ENGAGEMENT_RETARGETING.",
         "example": "ENGAGEMENT_RETARGETING",
+        "x-client-original-const": "ENGAGEMENT_RETARGETING",
         "x-ms-enum": {
           "name": "ComponentsSchemaEngagementRetargetingCustomAudienceType",
           "modelAsString": false,
@@ -60442,11 +60452,11 @@
         }
       },
       "SuppressionEventTypesItem": {
-        "const": null,
         "enum": [
           "ALL_FEATURES"
         ],
         "type": "string",
+        "x-client-original-const": "ALL_FEATURES",
         "x-ms-enum": {
           "name": "SuppressionEventTypesItem",
           "modelAsString": false,
@@ -60580,11 +60590,11 @@
         }
       },
       "Targeting2SuppressionEventTypesItem": {
-        "const": null,
         "enum": [
           "ALL_FEATURES"
         ],
         "type": "string",
+        "x-client-original-const": "ALL_FEATURES",
         "x-ms-enum": {
           "name": "Targeting2SuppressionEventTypesItem",
           "modelAsString": false,
@@ -61159,13 +61169,13 @@
         }
       },
       "ProcessingMediaStatus": {
-        "const": null,
         "enum": [
           "PROCESSING_MEDIA"
         ],
         "type": "string",
         "description": "The upload processing status.",
         "readOnly": true,
+        "x-client-original-const": "PROCESSING_MEDIA",
         "x-ms-enum": {
           "name": "ProcessingMediaStatus",
           "modelAsString": false,
@@ -61178,13 +61188,13 @@
         }
       },
       "ImageType": {
-        "const": null,
         "enum": [
           "IMAGE"
         ],
         "type": "string",
         "description": "The creative asset type.",
         "example": "IMAGE",
+        "x-client-original-const": "IMAGE",
         "x-ms-enum": {
           "name": "ImageType",
           "modelAsString": false,
@@ -61197,13 +61207,13 @@
         }
       },
       "VideoType": {
-        "const": null,
         "enum": [
           "VIDEO"
         ],
         "type": "string",
         "description": "The creative asset type.",
         "example": "VIDEO",
+        "x-client-original-const": "VIDEO",
         "x-ms-enum": {
           "name": "VideoType",
           "modelAsString": false,
@@ -61216,13 +61226,13 @@
         }
       },
       "HeadlineType": {
-        "const": null,
         "enum": [
           "HEADLINE"
         ],
         "type": "string",
         "description": "The creative asset type.",
         "example": "HEADLINE",
+        "x-client-original-const": "HEADLINE",
         "x-ms-enum": {
           "name": "HeadlineType",
           "modelAsString": false,
@@ -61235,13 +61245,13 @@
         }
       },
       "CtaType": {
-        "const": null,
         "enum": [
           "CTA"
         ],
         "type": "string",
         "description": "The creative asset type.",
         "example": "CTA",
+        "x-client-original-const": "CTA",
         "x-ms-enum": {
           "name": "CtaType",
           "modelAsString": false,
@@ -61298,12 +61308,12 @@
         }
       },
       "ProcessingStatus": {
-        "const": null,
         "enum": [
           "PROCESSING"
         ],
         "type": "string",
         "description": "The job is still processing.",
+        "x-client-original-const": "PROCESSING",
         "x-ms-enum": {
           "name": "ProcessingStatus",
           "modelAsString": false,
@@ -61316,12 +61326,12 @@
         }
       },
       "SuccessStatus": {
-        "const": null,
         "enum": [
           "SUCCESS"
         ],
         "type": "string",
         "description": "The job completed successfully.",
+        "x-client-original-const": "SUCCESS",
         "x-ms-enum": {
           "name": "SuccessStatus",
           "modelAsString": false,
@@ -61373,12 +61383,12 @@
         }
       },
       "FailedStatus": {
-        "const": null,
         "enum": [
           "FAILED"
         ],
         "type": "string",
         "description": "The job failed.",
+        "x-client-original-const": "FAILED",
         "x-ms-enum": {
           "name": "FailedStatus",
           "modelAsString": false,
@@ -61671,7 +61681,6 @@
         }
       },
       "ComponentsSchemaPostCreativeAssetsMediaCreativeAssetTypesMediaUrlType": {
-        "const": null,
         "examples": [
           "URL"
         ],
@@ -61680,6 +61689,7 @@
         ],
         "type": "string",
         "description": "The type of field to retrieve the media from.",
+        "x-client-original-const": "URL",
         "x-ms-enum": {
           "name": "ComponentsSchemaPostCreativeAssetsMediaCreativeAssetTypesMediaUrlType",
           "modelAsString": false,
@@ -61692,13 +61702,13 @@
         }
       },
       "ComponentsSchemaAssetLibraryNewImageAssetType": {
-        "const": null,
         "enum": [
           "IMAGE"
         ],
         "type": "string",
         "description": "The type of the asset.",
         "example": "IMAGE",
+        "x-client-original-const": "IMAGE",
         "x-ms-enum": {
           "name": "ComponentsSchemaAssetLibraryNewImageAssetType",
           "modelAsString": false,
@@ -61711,13 +61721,13 @@
         }
       },
       "ComponentsSchemaAssetLibraryNewVideoAssetType": {
-        "const": null,
         "enum": [
           "VIDEO"
         ],
         "type": "string",
         "description": "The type of the asset.",
         "example": "VIDEO",
+        "x-client-original-const": "VIDEO",
         "x-ms-enum": {
           "name": "ComponentsSchemaAssetLibraryNewVideoAssetType",
           "modelAsString": false,
@@ -61730,13 +61740,13 @@
         }
       },
       "ComponentsSchemaAssetLibraryNewHeadlineAssetType": {
-        "const": null,
         "enum": [
           "HEADLINE"
         ],
         "type": "string",
         "description": "The type of the asset.",
         "example": "HEADLINE",
+        "x-client-original-const": "HEADLINE",
         "x-ms-enum": {
           "name": "ComponentsSchemaAssetLibraryNewHeadlineAssetType",
           "modelAsString": false,
@@ -61749,13 +61759,13 @@
         }
       },
       "ComponentsSchemaAssetLibraryNewCtaAssetType": {
-        "const": null,
         "enum": [
           "CTA"
         ],
         "type": "string",
         "description": "The type of the asset.",
         "example": "CTA",
+        "x-client-original-const": "CTA",
         "x-ms-enum": {
           "name": "ComponentsSchemaAssetLibraryNewCtaAssetType",
           "modelAsString": false,
@@ -61768,7 +61778,6 @@
         }
       },
       "ReminderType": {
-        "const": null,
         "examples": [
           "REMINDER"
         ],
@@ -61777,6 +61786,7 @@
         ],
         "type": "string",
         "description": "The event type. Use \u0060REMINDER\u0060 for reminder ads.",
+        "x-client-original-const": "REMINDER",
         "x-ms-enum": {
           "name": "ReminderType",
           "modelAsString": false,
@@ -61789,7 +61799,6 @@
         }
       },
       "ComponentsSchemaPostCreativesImageCreativeType": {
-        "const": null,
         "examples": [
           "IMAGE"
         ],
@@ -61798,6 +61807,7 @@
         ],
         "type": "string",
         "description": "The creative type.",
+        "x-client-original-const": "IMAGE",
         "x-ms-enum": {
           "name": "ComponentsSchemaPostCreativesImageCreativeType",
           "modelAsString": false,
@@ -61810,7 +61820,6 @@
         }
       },
       "TextType": {
-        "const": null,
         "examples": [
           "TEXT"
         ],
@@ -61819,6 +61828,7 @@
         ],
         "type": "string",
         "description": "The creative type.",
+        "x-client-original-const": "TEXT",
         "x-ms-enum": {
           "name": "TextType",
           "modelAsString": false,
@@ -61831,7 +61841,6 @@
         }
       },
       "ComponentsSchemaPostCreativesVideoCreativeType": {
-        "const": null,
         "examples": [
           "VIDEO"
         ],
@@ -61840,6 +61849,7 @@
         ],
         "type": "string",
         "description": "The creative type.",
+        "x-client-original-const": "VIDEO",
         "x-ms-enum": {
           "name": "ComponentsSchemaPostCreativesVideoCreativeType",
           "modelAsString": false,
@@ -61852,7 +61862,6 @@
         }
       },
       "CarouselType": {
-        "const": null,
         "examples": [
           "CAROUSEL"
         ],
@@ -61861,6 +61870,7 @@
         ],
         "type": "string",
         "description": "The creative type.",
+        "x-client-original-const": "CAROUSEL",
         "x-ms-enum": {
           "name": "CarouselType",
           "modelAsString": false,
@@ -61873,7 +61883,6 @@
         }
       },
       "PromotedCommunityPostType": {
-        "const": null,
         "examples": [
           "PROMOTED_COMMUNITY_POST"
         ],
@@ -61882,6 +61891,7 @@
         ],
         "type": "string",
         "description": "The creative type.",
+        "x-client-original-const": "PROMOTED_COMMUNITY_POST",
         "x-ms-enum": {
           "name": "PromotedCommunityPostType",
           "modelAsString": false,
@@ -61894,7 +61904,6 @@
         }
       },
       "PromotedPostType": {
-        "const": null,
         "examples": [
           "PROMOTED_POST"
         ],
@@ -61903,6 +61912,7 @@
         ],
         "type": "string",
         "description": "The creative type.",
+        "x-client-original-const": "PROMOTED_POST",
         "x-ms-enum": {
           "name": "PromotedPostType",
           "modelAsString": false,
@@ -61956,12 +61966,22 @@
         }
       },
       "ComponentsSchemaShoppingCreativeDestinationUrlOneOf2": {
-        "const": null,
         "title": "Empty String",
         "enum": [
           ""
         ],
-        "type": "string"
+        "type": "string",
+        "x-client-original-const": "",
+        "x-ms-enum": {
+          "name": "ComponentsSchemaShoppingCreativeDestinationUrlOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "EventTrackersItemType": {
         "examples": [
@@ -62179,11 +62199,11 @@
         }
       },
       "ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem": {
-        "const": null,
         "enum": [
           "ALL_FEATURES"
         ],
         "type": "string",
+        "x-client-original-const": "ALL_FEATURES",
         "x-ms-enum": {
           "name": "ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem",
           "modelAsString": false,
@@ -62447,7 +62467,6 @@
         }
       },
       "RedditAudienceType": {
-        "const": null,
         "examples": [
           "REDDIT_AUDIENCE"
         ],
@@ -62456,6 +62475,7 @@
         ],
         "type": "string",
         "description": "The saved audience type.",
+        "x-client-original-const": "REDDIT_AUDIENCE",
         "x-ms-enum": {
           "name": "RedditAudienceType",
           "modelAsString": false,
@@ -62649,12 +62669,12 @@
         }
       },
       "CreateGeneratedPostersJobResponseDataStatus": {
-        "const": null,
         "enum": [
           "PROCESSING"
         ],
         "type": "string",
         "description": "Initial job status after create.",
+        "x-client-original-const": "PROCESSING",
         "x-ms-enum": {
           "name": "CreateGeneratedPostersJobResponseDataStatus",
           "modelAsString": false,

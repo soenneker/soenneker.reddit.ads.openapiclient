@@ -17,7 +17,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("geolocation_ids") is { } nullNodeGeolocationIds && nullNodeGeolocationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeolocationIds = null;
+            if (parseNode.GetChildNode("geolocation_ids") is null) { _explicitNullValueGeolocationIds = default!; _explicitNullProperties?.Remove("geolocation_ids"); }
+            else if (parseNode.GetChildNode("geolocation_ids") is { } nullNodeGeolocationIds && nullNodeGeolocationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeolocationIds = null;
         }
 
         /// <summary>The geolocation_ids property</summary>

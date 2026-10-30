@@ -18,28 +18,31 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("call_to_action") is { } nullNodeCallToAction && nullNodeCallToAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallToAction = null;
-            if (parseNode.GetChildNode("reference_id") is { } nullNodeReferenceId && nullNodeReferenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceId = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("call_to_action") is null) { _explicitNullValueCallToAction = default!; _explicitNullProperties?.Remove("call_to_action"); }
+            else if (parseNode.GetChildNode("call_to_action") is { } nullNodeCallToAction && nullNodeCallToAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallToAction = null;
+            if (parseNode.GetChildNode("reference_id") is null) { _explicitNullValueReferenceId = default!; _explicitNullProperties?.Remove("reference_id"); }
+            else if (parseNode.GetChildNode("reference_id") is { } nullNodeReferenceId && nullNodeReferenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceId = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The call to action text.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsNonNullCallToAction? CallToAction { get => _explicitNullValueCallToAction; set { _explicitNullValueCallToAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_to_action"); else _explicitNullProperties?.Remove("call_to_action"); } }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsNonNullCallToAction? CallToAction { get => _explicitNullValueCallToAction; set { _explicitNullValueCallToAction = value; AdditionalData?.Remove("call_to_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_to_action"); else _explicitNullProperties?.Remove("call_to_action"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsNonNullCallToAction? _explicitNullValueCallToAction = default!;
         /// <summary>A caller-defined identifier used to correlate the asset upload with its result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceId { get => _explicitNullValueReferenceId; set { _explicitNullValueReferenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_id"); else _explicitNullProperties?.Remove("reference_id"); } }
+        public string? ReferenceId { get => _explicitNullValueReferenceId; set { _explicitNullValueReferenceId = value; AdditionalData?.Remove("reference_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_id"); else _explicitNullProperties?.Remove("reference_id"); } }
         private string? _explicitNullValueReferenceId = default!;
 #nullable restore
 #else
-        public string ReferenceId { get => _explicitNullValueReferenceId; set { _explicitNullValueReferenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_id"); else _explicitNullProperties?.Remove("reference_id"); } }
+        public string ReferenceId { get => _explicitNullValueReferenceId; set { _explicitNullValueReferenceId = value; AdditionalData?.Remove("reference_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_id"); else _explicitNullProperties?.Remove("reference_id"); } }
         private string _explicitNullValueReferenceId = default!;
 #endif
         /// <summary>The type of the asset.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAssetType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAssetType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAssetType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAsset"/> and sets the default values.
@@ -66,9 +69,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "call_to_action", n => { CallToAction = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsNonNullCallToAction>(); } },
+                { "call_to_action", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsNonNullCallToAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCallToAction = default; _explicitNullProperties?.Remove("call_to_action"); AdditionalData["call_to_action"] = unknown; } else { CallToAction = parsed; AdditionalData.Remove("call_to_action"); } } },
                 { "reference_id", n => { ReferenceId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAssetType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAssetType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

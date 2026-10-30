@@ -17,7 +17,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_comments") is { } nullNodeAllowComments && nullNodeAllowComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowComments = null;
+            if (parseNode.GetChildNode("allow_comments") is null) { _explicitNullValueAllowComments = default!; _explicitNullProperties?.Remove("allow_comments"); }
+            else if (parseNode.GetChildNode("allow_comments") is { } nullNodeAllowComments && nullNodeAllowComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowComments = null;
         }
 
         /// <summary>Enable comments on the post, manageable in the [Ads Manager](https://business.reddithelp.com/s/article/Managing-ads-with-comments-on).</summary>

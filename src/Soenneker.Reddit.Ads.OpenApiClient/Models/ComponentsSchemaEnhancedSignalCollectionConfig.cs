@@ -18,7 +18,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("collect_page_metadata") is { } nullNodeCollectPageMetadata && nullNodeCollectPageMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectPageMetadata = null;
+            if (parseNode.GetChildNode("collect_page_metadata") is null) { _explicitNullValueCollectPageMetadata = default!; _explicitNullProperties?.Remove("collect_page_metadata"); }
+            else if (parseNode.GetChildNode("collect_page_metadata") is { } nullNodeCollectPageMetadata && nullNodeCollectPageMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectPageMetadata = null;
         }
 
         /// <summary>Whether the advertiser has opted in to automatically collecting page metadata for this pixel.`true` means the advertiser opted in to the feature, `false` means the advertiser opted out, and`null` means the advertiser has not made a selection yet.</summary>

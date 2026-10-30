@@ -17,9 +17,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lower_bound") is { } nullNodeLowerBound && nullNodeLowerBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LowerBound = null;
-            if (parseNode.GetChildNode("point_estimate") is { } nullNodePointEstimate && nullNodePointEstimate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PointEstimate = null;
-            if (parseNode.GetChildNode("upper_bound") is { } nullNodeUpperBound && nullNodeUpperBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpperBound = null;
+            if (parseNode.GetChildNode("lower_bound") is null) { _explicitNullValueLowerBound = default!; _explicitNullProperties?.Remove("lower_bound"); }
+            else if (parseNode.GetChildNode("lower_bound") is { } nullNodeLowerBound && nullNodeLowerBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LowerBound = null;
+            if (parseNode.GetChildNode("point_estimate") is null) { _explicitNullValuePointEstimate = default!; _explicitNullProperties?.Remove("point_estimate"); }
+            else if (parseNode.GetChildNode("point_estimate") is { } nullNodePointEstimate && nullNodePointEstimate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PointEstimate = null;
+            if (parseNode.GetChildNode("upper_bound") is null) { _explicitNullValueUpperBound = default!; _explicitNullProperties?.Remove("upper_bound"); }
+            else if (parseNode.GetChildNode("upper_bound") is { } nullNodeUpperBound && nullNodeUpperBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpperBound = null;
         }
 
         /// <summary>The lower bound estimate.</summary>

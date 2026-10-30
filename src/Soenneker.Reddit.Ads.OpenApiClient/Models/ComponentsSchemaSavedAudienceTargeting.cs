@@ -18,23 +18,40 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("carriers") is { } nullNodeCarriers && nullNodeCarriers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Carriers = null;
-            if (parseNode.GetChildNode("communities") is { } nullNodeCommunities && nullNodeCommunities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Communities = null;
-            if (parseNode.GetChildNode("custom_audience_ids") is { } nullNodeCustomAudienceIds && nullNodeCustomAudienceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomAudienceIds = null;
-            if (parseNode.GetChildNode("devices") is { } nullNodeDevices && nullNodeDevices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Devices = null;
-            if (parseNode.GetChildNode("excluded_communities") is { } nullNodeExcludedCommunities && nullNodeExcludedCommunities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCommunities = null;
-            if (parseNode.GetChildNode("excluded_custom_audience_ids") is { } nullNodeExcludedCustomAudienceIds && nullNodeExcludedCustomAudienceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCustomAudienceIds = null;
-            if (parseNode.GetChildNode("excluded_geolocations") is { } nullNodeExcludedGeolocations && nullNodeExcludedGeolocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedGeolocations = null;
-            if (parseNode.GetChildNode("excluded_interests") is { } nullNodeExcludedInterests && nullNodeExcludedInterests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedInterests = null;
-            if (parseNode.GetChildNode("excluded_keywords") is { } nullNodeExcludedKeywords && nullNodeExcludedKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedKeywords = null;
-            if (parseNode.GetChildNode("expand_targeting") is { } nullNodeExpandTargeting && nullNodeExpandTargeting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpandTargeting = null;
-            if (parseNode.GetChildNode("gender") is { } nullNodeGender && nullNodeGender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gender = null;
-            if (parseNode.GetChildNode("geolocations") is { } nullNodeGeolocations && nullNodeGeolocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geolocations = null;
-            if (parseNode.GetChildNode("interests") is { } nullNodeInterests && nullNodeInterests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interests = null;
-            if (parseNode.GetChildNode("keywords") is { } nullNodeKeywords && nullNodeKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keywords = null;
-            if (parseNode.GetChildNode("languages") is { } nullNodeLanguages && nullNodeLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Languages = null;
-            if (parseNode.GetChildNode("suppression_event_types") is { } nullNodeSuppressionEventTypes && nullNodeSuppressionEventTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuppressionEventTypes = null;
-            if (parseNode.GetChildNode("view_modes") is { } nullNodeViewModes && nullNodeViewModes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewModes = null;
+            if (parseNode.GetChildNode("carriers") is null) { _explicitNullValueCarriers = default!; _explicitNullProperties?.Remove("carriers"); }
+            else if (parseNode.GetChildNode("carriers") is { } nullNodeCarriers && nullNodeCarriers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Carriers = null;
+            if (parseNode.GetChildNode("communities") is null) { _explicitNullValueCommunities = default!; _explicitNullProperties?.Remove("communities"); }
+            else if (parseNode.GetChildNode("communities") is { } nullNodeCommunities && nullNodeCommunities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Communities = null;
+            if (parseNode.GetChildNode("custom_audience_ids") is null) { _explicitNullValueCustomAudienceIds = default!; _explicitNullProperties?.Remove("custom_audience_ids"); }
+            else if (parseNode.GetChildNode("custom_audience_ids") is { } nullNodeCustomAudienceIds && nullNodeCustomAudienceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomAudienceIds = null;
+            if (parseNode.GetChildNode("devices") is null) { _explicitNullValueDevices = default!; _explicitNullProperties?.Remove("devices"); }
+            else if (parseNode.GetChildNode("devices") is { } nullNodeDevices && nullNodeDevices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Devices = null;
+            if (parseNode.GetChildNode("excluded_communities") is null) { _explicitNullValueExcludedCommunities = default!; _explicitNullProperties?.Remove("excluded_communities"); }
+            else if (parseNode.GetChildNode("excluded_communities") is { } nullNodeExcludedCommunities && nullNodeExcludedCommunities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCommunities = null;
+            if (parseNode.GetChildNode("excluded_custom_audience_ids") is null) { _explicitNullValueExcludedCustomAudienceIds = default!; _explicitNullProperties?.Remove("excluded_custom_audience_ids"); }
+            else if (parseNode.GetChildNode("excluded_custom_audience_ids") is { } nullNodeExcludedCustomAudienceIds && nullNodeExcludedCustomAudienceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCustomAudienceIds = null;
+            if (parseNode.GetChildNode("excluded_geolocations") is null) { _explicitNullValueExcludedGeolocations = default!; _explicitNullProperties?.Remove("excluded_geolocations"); }
+            else if (parseNode.GetChildNode("excluded_geolocations") is { } nullNodeExcludedGeolocations && nullNodeExcludedGeolocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedGeolocations = null;
+            if (parseNode.GetChildNode("excluded_interests") is null) { _explicitNullValueExcludedInterests = default!; _explicitNullProperties?.Remove("excluded_interests"); }
+            else if (parseNode.GetChildNode("excluded_interests") is { } nullNodeExcludedInterests && nullNodeExcludedInterests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedInterests = null;
+            if (parseNode.GetChildNode("excluded_keywords") is null) { _explicitNullValueExcludedKeywords = default!; _explicitNullProperties?.Remove("excluded_keywords"); }
+            else if (parseNode.GetChildNode("excluded_keywords") is { } nullNodeExcludedKeywords && nullNodeExcludedKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedKeywords = null;
+            if (parseNode.GetChildNode("expand_targeting") is null) { _explicitNullValueExpandTargeting = default!; _explicitNullProperties?.Remove("expand_targeting"); }
+            else if (parseNode.GetChildNode("expand_targeting") is { } nullNodeExpandTargeting && nullNodeExpandTargeting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpandTargeting = null;
+            if (parseNode.GetChildNode("gender") is null) { _explicitNullValueGender = default!; _explicitNullProperties?.Remove("gender"); }
+            else if (parseNode.GetChildNode("gender") is { } nullNodeGender && nullNodeGender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gender = null;
+            if (parseNode.GetChildNode("geolocations") is null) { _explicitNullValueGeolocations = default!; _explicitNullProperties?.Remove("geolocations"); }
+            else if (parseNode.GetChildNode("geolocations") is { } nullNodeGeolocations && nullNodeGeolocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geolocations = null;
+            if (parseNode.GetChildNode("interests") is null) { _explicitNullValueInterests = default!; _explicitNullProperties?.Remove("interests"); }
+            else if (parseNode.GetChildNode("interests") is { } nullNodeInterests && nullNodeInterests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interests = null;
+            if (parseNode.GetChildNode("keywords") is null) { _explicitNullValueKeywords = default!; _explicitNullProperties?.Remove("keywords"); }
+            else if (parseNode.GetChildNode("keywords") is { } nullNodeKeywords && nullNodeKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keywords = null;
+            if (parseNode.GetChildNode("languages") is null) { _explicitNullValueLanguages = default!; _explicitNullProperties?.Remove("languages"); }
+            else if (parseNode.GetChildNode("languages") is { } nullNodeLanguages && nullNodeLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Languages = null;
+            if (parseNode.GetChildNode("suppression_event_types") is null) { _explicitNullValueSuppressionEventTypes = default!; _explicitNullProperties?.Remove("suppression_event_types"); }
+            else if (parseNode.GetChildNode("suppression_event_types") is { } nullNodeSuppressionEventTypes && nullNodeSuppressionEventTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuppressionEventTypes = null;
+            if (parseNode.GetChildNode("view_modes") is null) { _explicitNullValueViewModes = default!; _explicitNullProperties?.Remove("view_modes"); }
+            else if (parseNode.GetChildNode("view_modes") is { } nullNodeViewModes && nullNodeViewModes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewModes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -42,158 +59,158 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The [mobile carriers](https://ads-api.reddit.com/docs/v3/operations/List%20Carriers) to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Carriers2Item?>? Carriers { get => _explicitNullValueCarriers; set { _explicitNullValueCarriers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carriers"); else _explicitNullProperties?.Remove("carriers"); } }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Carriers2Item?>? Carriers { get => _explicitNullValueCarriers; set { _explicitNullValueCarriers = value; AdditionalData?.Remove("carriers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carriers"); else _explicitNullProperties?.Remove("carriers"); } }
         private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Carriers2Item?>? _explicitNullValueCarriers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Carriers2Item?> Carriers { get => _explicitNullValueCarriers; set { _explicitNullValueCarriers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carriers"); else _explicitNullProperties?.Remove("carriers"); } }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Carriers2Item?> Carriers { get => _explicitNullValueCarriers; set { _explicitNullValueCarriers = value; AdditionalData?.Remove("carriers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carriers"); else _explicitNullProperties?.Remove("carriers"); } }
         private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Carriers2Item?> _explicitNullValueCarriers = default!;
 #endif
         /// <summary>The [Reddit communities (&quot;subreddits&quot;)](https://ads-api.reddit.com/docs/v3/operations/List%20Communities) to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Communities { get => _explicitNullValueCommunities; set { _explicitNullValueCommunities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("communities"); else _explicitNullProperties?.Remove("communities"); } }
+        public List<string>? Communities { get => _explicitNullValueCommunities; set { _explicitNullValueCommunities = value; AdditionalData?.Remove("communities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("communities"); else _explicitNullProperties?.Remove("communities"); } }
         private List<string>? _explicitNullValueCommunities = default!;
 #nullable restore
 #else
-        public List<string> Communities { get => _explicitNullValueCommunities; set { _explicitNullValueCommunities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("communities"); else _explicitNullProperties?.Remove("communities"); } }
+        public List<string> Communities { get => _explicitNullValueCommunities; set { _explicitNullValueCommunities = value; AdditionalData?.Remove("communities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("communities"); else _explicitNullProperties?.Remove("communities"); } }
         private List<string> _explicitNullValueCommunities = default!;
 #endif
         /// <summary>The [custom audiences](https://ads-api.reddit.com/docs/v3/operations/List%20User%20Custom%20Audiences) to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomAudienceIds { get => _explicitNullValueCustomAudienceIds; set { _explicitNullValueCustomAudienceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_audience_ids"); else _explicitNullProperties?.Remove("custom_audience_ids"); } }
+        public List<string>? CustomAudienceIds { get => _explicitNullValueCustomAudienceIds; set { _explicitNullValueCustomAudienceIds = value; AdditionalData?.Remove("custom_audience_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_audience_ids"); else _explicitNullProperties?.Remove("custom_audience_ids"); } }
         private List<string>? _explicitNullValueCustomAudienceIds = default!;
 #nullable restore
 #else
-        public List<string> CustomAudienceIds { get => _explicitNullValueCustomAudienceIds; set { _explicitNullValueCustomAudienceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_audience_ids"); else _explicitNullProperties?.Remove("custom_audience_ids"); } }
+        public List<string> CustomAudienceIds { get => _explicitNullValueCustomAudienceIds; set { _explicitNullValueCustomAudienceIds = value; AdditionalData?.Remove("custom_audience_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_audience_ids"); else _explicitNullProperties?.Remove("custom_audience_ids"); } }
         private List<string> _explicitNullValueCustomAudienceIds = default!;
 #endif
         /// <summary>The [devices](https://ads-api.reddit.com/docs/v3/operations/List%20Devices) to target. Exactly one device must be targeted for `APP_INSTALLS` campaigns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTarget>? Devices { get => _explicitNullValueDevices; set { _explicitNullValueDevices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devices"); else _explicitNullProperties?.Remove("devices"); } }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTarget>? Devices { get => _explicitNullValueDevices; set { _explicitNullValueDevices = value; AdditionalData?.Remove("devices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devices"); else _explicitNullProperties?.Remove("devices"); } }
         private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTarget>? _explicitNullValueDevices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTarget> Devices { get => _explicitNullValueDevices; set { _explicitNullValueDevices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devices"); else _explicitNullProperties?.Remove("devices"); } }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTarget> Devices { get => _explicitNullValueDevices; set { _explicitNullValueDevices = value; AdditionalData?.Remove("devices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devices"); else _explicitNullProperties?.Remove("devices"); } }
         private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTarget> _explicitNullValueDevices = default!;
 #endif
         /// <summary>The [Reddit communities (&quot;subreddits&quot;)](https://ads-api.reddit.com/docs/v3/operations/List%20Communities) to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedCommunities { get => _explicitNullValueExcludedCommunities; set { _explicitNullValueExcludedCommunities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_communities"); else _explicitNullProperties?.Remove("excluded_communities"); } }
+        public List<string>? ExcludedCommunities { get => _explicitNullValueExcludedCommunities; set { _explicitNullValueExcludedCommunities = value; AdditionalData?.Remove("excluded_communities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_communities"); else _explicitNullProperties?.Remove("excluded_communities"); } }
         private List<string>? _explicitNullValueExcludedCommunities = default!;
 #nullable restore
 #else
-        public List<string> ExcludedCommunities { get => _explicitNullValueExcludedCommunities; set { _explicitNullValueExcludedCommunities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_communities"); else _explicitNullProperties?.Remove("excluded_communities"); } }
+        public List<string> ExcludedCommunities { get => _explicitNullValueExcludedCommunities; set { _explicitNullValueExcludedCommunities = value; AdditionalData?.Remove("excluded_communities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_communities"); else _explicitNullProperties?.Remove("excluded_communities"); } }
         private List<string> _explicitNullValueExcludedCommunities = default!;
 #endif
         /// <summary>The custom audiences to exclude from targeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedCustomAudienceIds { get => _explicitNullValueExcludedCustomAudienceIds; set { _explicitNullValueExcludedCustomAudienceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_custom_audience_ids"); else _explicitNullProperties?.Remove("excluded_custom_audience_ids"); } }
+        public List<string>? ExcludedCustomAudienceIds { get => _explicitNullValueExcludedCustomAudienceIds; set { _explicitNullValueExcludedCustomAudienceIds = value; AdditionalData?.Remove("excluded_custom_audience_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_custom_audience_ids"); else _explicitNullProperties?.Remove("excluded_custom_audience_ids"); } }
         private List<string>? _explicitNullValueExcludedCustomAudienceIds = default!;
 #nullable restore
 #else
-        public List<string> ExcludedCustomAudienceIds { get => _explicitNullValueExcludedCustomAudienceIds; set { _explicitNullValueExcludedCustomAudienceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_custom_audience_ids"); else _explicitNullProperties?.Remove("excluded_custom_audience_ids"); } }
+        public List<string> ExcludedCustomAudienceIds { get => _explicitNullValueExcludedCustomAudienceIds; set { _explicitNullValueExcludedCustomAudienceIds = value; AdditionalData?.Remove("excluded_custom_audience_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_custom_audience_ids"); else _explicitNullProperties?.Remove("excluded_custom_audience_ids"); } }
         private List<string> _explicitNullValueExcludedCustomAudienceIds = default!;
 #endif
         /// <summary>The geolocations to exclude from targeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedGeolocations { get => _explicitNullValueExcludedGeolocations; set { _explicitNullValueExcludedGeolocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_geolocations"); else _explicitNullProperties?.Remove("excluded_geolocations"); } }
+        public List<string>? ExcludedGeolocations { get => _explicitNullValueExcludedGeolocations; set { _explicitNullValueExcludedGeolocations = value; AdditionalData?.Remove("excluded_geolocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_geolocations"); else _explicitNullProperties?.Remove("excluded_geolocations"); } }
         private List<string>? _explicitNullValueExcludedGeolocations = default!;
 #nullable restore
 #else
-        public List<string> ExcludedGeolocations { get => _explicitNullValueExcludedGeolocations; set { _explicitNullValueExcludedGeolocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_geolocations"); else _explicitNullProperties?.Remove("excluded_geolocations"); } }
+        public List<string> ExcludedGeolocations { get => _explicitNullValueExcludedGeolocations; set { _explicitNullValueExcludedGeolocations = value; AdditionalData?.Remove("excluded_geolocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_geolocations"); else _explicitNullProperties?.Remove("excluded_geolocations"); } }
         private List<string> _explicitNullValueExcludedGeolocations = default!;
 #endif
         /// <summary>The interests to exclude from targeting.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedInterests { get => _explicitNullValueExcludedInterests; set { _explicitNullValueExcludedInterests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_interests"); else _explicitNullProperties?.Remove("excluded_interests"); } }
+        public List<string>? ExcludedInterests { get => _explicitNullValueExcludedInterests; set { _explicitNullValueExcludedInterests = value; AdditionalData?.Remove("excluded_interests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_interests"); else _explicitNullProperties?.Remove("excluded_interests"); } }
         private List<string>? _explicitNullValueExcludedInterests = default!;
 #nullable restore
 #else
-        public List<string> ExcludedInterests { get => _explicitNullValueExcludedInterests; set { _explicitNullValueExcludedInterests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_interests"); else _explicitNullProperties?.Remove("excluded_interests"); } }
+        public List<string> ExcludedInterests { get => _explicitNullValueExcludedInterests; set { _explicitNullValueExcludedInterests = value; AdditionalData?.Remove("excluded_interests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_interests"); else _explicitNullProperties?.Remove("excluded_interests"); } }
         private List<string> _explicitNullValueExcludedInterests = default!;
 #endif
         /// <summary>The keywords to exclude from targeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedKeywords { get => _explicitNullValueExcludedKeywords; set { _explicitNullValueExcludedKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_keywords"); else _explicitNullProperties?.Remove("excluded_keywords"); } }
+        public List<string>? ExcludedKeywords { get => _explicitNullValueExcludedKeywords; set { _explicitNullValueExcludedKeywords = value; AdditionalData?.Remove("excluded_keywords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_keywords"); else _explicitNullProperties?.Remove("excluded_keywords"); } }
         private List<string>? _explicitNullValueExcludedKeywords = default!;
 #nullable restore
 #else
-        public List<string> ExcludedKeywords { get => _explicitNullValueExcludedKeywords; set { _explicitNullValueExcludedKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_keywords"); else _explicitNullProperties?.Remove("excluded_keywords"); } }
+        public List<string> ExcludedKeywords { get => _explicitNullValueExcludedKeywords; set { _explicitNullValueExcludedKeywords = value; AdditionalData?.Remove("excluded_keywords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_keywords"); else _explicitNullProperties?.Remove("excluded_keywords"); } }
         private List<string> _explicitNullValueExcludedKeywords = default!;
 #endif
         /// <summary>Allow Reddit to expand your targeting options. Learn about [automated targeting](https://business.reddithelp.com/s/article/automated-targeting).</summary>
-        public bool? ExpandTargeting { get => _explicitNullValueExpandTargeting; set { _explicitNullValueExpandTargeting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expand_targeting"); else _explicitNullProperties?.Remove("expand_targeting"); } }
+        public bool? ExpandTargeting { get => _explicitNullValueExpandTargeting; set { _explicitNullValueExpandTargeting = value; AdditionalData?.Remove("expand_targeting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expand_targeting"); else _explicitNullProperties?.Remove("expand_targeting"); } }
         private bool? _explicitNullValueExpandTargeting = default!;
         /// <summary>The gender group to target.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Gender2? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Gender2? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; AdditionalData?.Remove("gender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.Gender2? _explicitNullValueGender = default!;
         /// <summary>The [geolocations](https://ads-api.reddit.com/docs/v3/operations/List%20Geolocations) to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Geolocations { get => _explicitNullValueGeolocations; set { _explicitNullValueGeolocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocations"); else _explicitNullProperties?.Remove("geolocations"); } }
+        public List<string>? Geolocations { get => _explicitNullValueGeolocations; set { _explicitNullValueGeolocations = value; AdditionalData?.Remove("geolocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocations"); else _explicitNullProperties?.Remove("geolocations"); } }
         private List<string>? _explicitNullValueGeolocations = default!;
 #nullable restore
 #else
-        public List<string> Geolocations { get => _explicitNullValueGeolocations; set { _explicitNullValueGeolocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocations"); else _explicitNullProperties?.Remove("geolocations"); } }
+        public List<string> Geolocations { get => _explicitNullValueGeolocations; set { _explicitNullValueGeolocations = value; AdditionalData?.Remove("geolocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geolocations"); else _explicitNullProperties?.Remove("geolocations"); } }
         private List<string> _explicitNullValueGeolocations = default!;
 #endif
         /// <summary>The [interests](https://ads-api.reddit.com/docs/v3/operations/List%20Interests) to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Interests { get => _explicitNullValueInterests; set { _explicitNullValueInterests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interests"); else _explicitNullProperties?.Remove("interests"); } }
+        public List<string>? Interests { get => _explicitNullValueInterests; set { _explicitNullValueInterests = value; AdditionalData?.Remove("interests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interests"); else _explicitNullProperties?.Remove("interests"); } }
         private List<string>? _explicitNullValueInterests = default!;
 #nullable restore
 #else
-        public List<string> Interests { get => _explicitNullValueInterests; set { _explicitNullValueInterests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interests"); else _explicitNullProperties?.Remove("interests"); } }
+        public List<string> Interests { get => _explicitNullValueInterests; set { _explicitNullValueInterests = value; AdditionalData?.Remove("interests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interests"); else _explicitNullProperties?.Remove("interests"); } }
         private List<string> _explicitNullValueInterests = default!;
 #endif
         /// <summary>The keywords to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
+        public List<string>? Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; AdditionalData?.Remove("keywords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
         private List<string>? _explicitNullValueKeywords = default!;
 #nullable restore
 #else
-        public List<string> Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
+        public List<string> Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; AdditionalData?.Remove("keywords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
         private List<string> _explicitNullValueKeywords = default!;
 #endif
         /// <summary>The [languages](https://ads-api.reddit.com/docs/v3/operations/List%20Languages) to target ([ISO 639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php)).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumTargetingLanguageCodes?>? Languages { get => _explicitNullValueLanguages; set { _explicitNullValueLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("languages"); else _explicitNullProperties?.Remove("languages"); } }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumTargetingLanguageCodes?>? Languages { get => _explicitNullValueLanguages; set { _explicitNullValueLanguages = value; AdditionalData?.Remove("languages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("languages"); else _explicitNullProperties?.Remove("languages"); } }
         private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumTargetingLanguageCodes?>? _explicitNullValueLanguages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumTargetingLanguageCodes?> Languages { get => _explicitNullValueLanguages; set { _explicitNullValueLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("languages"); else _explicitNullProperties?.Remove("languages"); } }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumTargetingLanguageCodes?> Languages { get => _explicitNullValueLanguages; set { _explicitNullValueLanguages = value; AdditionalData?.Remove("languages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("languages"); else _explicitNullProperties?.Remove("languages"); } }
         private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumTargetingLanguageCodes?> _explicitNullValueLanguages = default!;
 #endif
         /// <summary>The suppression event types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem?>? SuppressionEventTypes { get => _explicitNullValueSuppressionEventTypes; set { _explicitNullValueSuppressionEventTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppression_event_types"); else _explicitNullProperties?.Remove("suppression_event_types"); } }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem?>? SuppressionEventTypes { get => _explicitNullValueSuppressionEventTypes; set { _explicitNullValueSuppressionEventTypes = value; AdditionalData?.Remove("suppression_event_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppression_event_types"); else _explicitNullProperties?.Remove("suppression_event_types"); } }
         private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem?>? _explicitNullValueSuppressionEventTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem?> SuppressionEventTypes { get => _explicitNullValueSuppressionEventTypes; set { _explicitNullValueSuppressionEventTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppression_event_types"); else _explicitNullProperties?.Remove("suppression_event_types"); } }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem?> SuppressionEventTypes { get => _explicitNullValueSuppressionEventTypes; set { _explicitNullValueSuppressionEventTypes = value; AdditionalData?.Remove("suppression_event_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppression_event_types"); else _explicitNullProperties?.Remove("suppression_event_types"); } }
         private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingSuppressionEventTypesItem?> _explicitNullValueSuppressionEventTypes = default!;
 #endif
         /// <summary>The layouts the ad can be placed in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingViewModesItem?>? ViewModes { get => _explicitNullValueViewModes; set { _explicitNullValueViewModes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_modes"); else _explicitNullProperties?.Remove("view_modes"); } }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingViewModesItem?>? ViewModes { get => _explicitNullValueViewModes; set { _explicitNullValueViewModes = value; AdditionalData?.Remove("view_modes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_modes"); else _explicitNullProperties?.Remove("view_modes"); } }
         private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingViewModesItem?>? _explicitNullValueViewModes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingViewModesItem?> ViewModes { get => _explicitNullValueViewModes; set { _explicitNullValueViewModes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_modes"); else _explicitNullProperties?.Remove("view_modes"); } }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingViewModesItem?> ViewModes { get => _explicitNullValueViewModes; set { _explicitNullValueViewModes = value; AdditionalData?.Remove("view_modes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_modes"); else _explicitNullProperties?.Remove("view_modes"); } }
         private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSavedAudienceTargetingViewModesItem?> _explicitNullValueViewModes = default!;
 #endif
         /// <summary>
@@ -231,7 +248,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "excluded_interests", n => { ExcludedInterests = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "excluded_keywords", n => { ExcludedKeywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "expand_targeting", n => { ExpandTargeting = n.GetBoolValue(); } },
-                { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Gender2>(); } },
+                { "gender", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Gender2>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGender = default; _explicitNullProperties?.Remove("gender"); AdditionalData["gender"] = unknown; } else { Gender = parsed; AdditionalData.Remove("gender"); } } },
                 { "geolocations", n => { Geolocations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "interests", n => { Interests = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

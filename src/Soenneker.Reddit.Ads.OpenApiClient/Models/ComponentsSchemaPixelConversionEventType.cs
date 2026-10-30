@@ -18,8 +18,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_event_name") is { } nullNodeCustomEventName && nullNodeCustomEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomEventName = null;
-            if (parseNode.GetChildNode("tracking_type") is { } nullNodeTrackingType && nullNodeTrackingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackingType = null;
+            if (parseNode.GetChildNode("custom_event_name") is null) { _explicitNullValueCustomEventName = default!; _explicitNullProperties?.Remove("custom_event_name"); }
+            else if (parseNode.GetChildNode("custom_event_name") is { } nullNodeCustomEventName && nullNodeCustomEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomEventName = null;
+            if (parseNode.GetChildNode("tracking_type") is null) { _explicitNullValueTrackingType = default!; _explicitNullProperties?.Remove("tracking_type"); }
+            else if (parseNode.GetChildNode("tracking_type") is { } nullNodeTrackingType && nullNodeTrackingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackingType = null;
         }
 
         /// <summary>A custom event name to pass when `tracking_type` is set to `CUSTOM`. This free-form and case-sensitive string may use any UTF-8 character and can have up to 64 characters, including spaces. For example, `Promotion Event` and `PromotionEvent` will be considered two distinct events. We recommend setting this to a value that doesn&apos;t match a standard event.</summary>

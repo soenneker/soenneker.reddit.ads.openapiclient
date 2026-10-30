@@ -18,8 +18,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("android") is { } nullNodeAndroid && nullNodeAndroid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Android = null;
-            if (parseNode.GetChildNode("ios") is { } nullNodeIos && nullNodeIos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ios = null;
+            if (parseNode.GetChildNode("android") is null) { _explicitNullValueAndroid = default!; _explicitNullProperties?.Remove("android"); }
+            else if (parseNode.GetChildNode("android") is { } nullNodeAndroid && nullNodeAndroid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Android = null;
+            if (parseNode.GetChildNode("ios") is null) { _explicitNullValueIos = default!; _explicitNullProperties?.Remove("ios"); }
+            else if (parseNode.GetChildNode("ios") is { } nullNodeIos && nullNodeIos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ios = null;
         }
 
         /// <summary>The URL of the product for Android.</summary>

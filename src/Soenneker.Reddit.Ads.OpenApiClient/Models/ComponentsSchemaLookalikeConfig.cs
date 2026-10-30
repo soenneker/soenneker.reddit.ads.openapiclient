@@ -18,8 +18,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audience_size") is { } nullNodeAudienceSize && nullNodeAudienceSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceSize = null;
-            if (parseNode.GetChildNode("source_audience_id") is { } nullNodeSourceAudienceId && nullNodeSourceAudienceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAudienceId = null;
+            if (parseNode.GetChildNode("audience_size") is null) { _explicitNullValueAudienceSize = default!; _explicitNullProperties?.Remove("audience_size"); }
+            else if (parseNode.GetChildNode("audience_size") is { } nullNodeAudienceSize && nullNodeAudienceSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceSize = null;
+            if (parseNode.GetChildNode("source_audience_id") is null) { _explicitNullValueSourceAudienceId = default!; _explicitNullProperties?.Remove("source_audience_id"); }
+            else if (parseNode.GetChildNode("source_audience_id") is { } nullNodeSourceAudienceId && nullNodeSourceAudienceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAudienceId = null;
         }
 
         /// <summary>The audience size type.</summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("point_estimate") is { } nullNodePointEstimate && nullNodePointEstimate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PointEstimate = null;
+            if (parseNode.GetChildNode("point_estimate") is null) { _explicitNullValuePointEstimate = default!; _explicitNullProperties?.Remove("point_estimate"); }
+            else if (parseNode.GetChildNode("point_estimate") is { } nullNodePointEstimate && nullNodePointEstimate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PointEstimate = null;
         }
 
         /// <summary>The point estimate value.</summary>

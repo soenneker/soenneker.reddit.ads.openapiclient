@@ -17,8 +17,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("is_brand_safe") is { } nullNodeIsBrandSafe && nullNodeIsBrandSafe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBrandSafe = null;
-            if (parseNode.GetChildNode("keyword") is { } nullNodeKeyword && nullNodeKeyword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keyword = null;
+            if (parseNode.GetChildNode("is_brand_safe") is null) { _explicitNullValueIsBrandSafe = default!; _explicitNullProperties?.Remove("is_brand_safe"); }
+            else if (parseNode.GetChildNode("is_brand_safe") is { } nullNodeIsBrandSafe && nullNodeIsBrandSafe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBrandSafe = null;
+            if (parseNode.GetChildNode("keyword") is null) { _explicitNullValueKeyword = default!; _explicitNullProperties?.Remove("keyword"); }
+            else if (parseNode.GetChildNode("keyword") is { } nullNodeKeyword && nullNodeKeyword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keyword = null;
         }
 
         /// <summary>Whether the keyword is targetable based on [Reddit&apos;s brand safety guidelines](https://business.reddithelp.com/s/article/Reddit-Ads-Brand-Safety).</summary>

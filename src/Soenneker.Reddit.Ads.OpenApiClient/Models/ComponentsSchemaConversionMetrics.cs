@@ -18,8 +18,10 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action_sources") is { } nullNodeActionSources && nullNodeActionSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSources = null;
-            if (parseNode.GetChildNode("conversion_field") is { } nullNodeConversionField && nullNodeConversionField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionField = null;
+            if (parseNode.GetChildNode("action_sources") is null) { _explicitNullValueActionSources = default!; _explicitNullProperties?.Remove("action_sources"); }
+            else if (parseNode.GetChildNode("action_sources") is { } nullNodeActionSources && nullNodeActionSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSources = null;
+            if (parseNode.GetChildNode("conversion_field") is null) { _explicitNullValueConversionField = default!; _explicitNullProperties?.Remove("conversion_field"); }
+            else if (parseNode.GetChildNode("conversion_field") is { } nullNodeConversionField && nullNodeConversionField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionField = null;
         }
 
         /// <summary>Filter by channels used for [conversion events](https://ads-api.reddit.com/docs/v3/operations/Post%20Conversion%20Events). Learn about [action source](https://business.reddithelp.com/s/article/Conversions-API#measure-impact-across-channels).</summary>
