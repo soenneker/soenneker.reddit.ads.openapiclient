@@ -12,6 +12,14 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     public partial class ComponentsSchemaAdGroupCreateManual : global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdGroupManual, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            base.CaptureExplicitNulls(parseNode);
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
@@ -29,7 +37,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdGroupCreateManual CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdGroupCreateManual();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdGroupCreateManual(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,6 +57,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

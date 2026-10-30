@@ -12,37 +12,64 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Cost : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("currency_conversion_rate_to_usd") is { } nullNodeCurrencyConversionRateToUsd && nullNodeCurrencyConversionRateToUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyConversionRateToUsd = null;
+            if (parseNode.GetChildNode("is_cost_exempted") is { } nullNodeIsCostExempted && nullNodeIsCostExempted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCostExempted = null;
+            if (parseNode.GetChildNode("partner") is { } nullNodePartner && nullNodePartner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Partner = null;
+            if (parseNode.GetChildNode("partner_segment_id") is { } nullNodePartnerSegmentId && nullNodePartnerSegmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerSegmentId = null;
+            if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("rate_type") is { } nullNodeRateType && nullNodeRateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateType = null;
+            if (parseNode.GetChildNode("reddit_audience_id") is { } nullNodeRedditAudienceId && nullNodeRedditAudienceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedditAudienceId = null;
+            if (parseNode.GetChildNode("update_timestamp") is { } nullNodeUpdateTimestamp && nullNodeUpdateTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateTimestamp = null;
+        }
+
         /// <summary>The currency symbol used ([ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)).</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCurrency? Currency { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCurrency? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCurrency? _explicitNullValueCurrency = default!;
         /// <summary>The conversion rate from local currency to USD (micro units). Omitted if currency is already USD or unavailable.</summary>
-        public int? CurrencyConversionRateToUsd { get; set; }
+        public int? CurrencyConversionRateToUsd { get => _explicitNullValueCurrencyConversionRateToUsd; set { _explicitNullValueCurrencyConversionRateToUsd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_conversion_rate_to_usd"); else _explicitNullProperties?.Remove("currency_conversion_rate_to_usd"); } }
+        private int? _explicitNullValueCurrencyConversionRateToUsd = default!;
         /// <summary>Whether this cost is exempted from being passed to the advertiser.</summary>
-        public bool? IsCostExempted { get; set; }
+        public bool? IsCostExempted { get => _explicitNullValueIsCostExempted; set { _explicitNullValueIsCostExempted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_cost_exempted"); else _explicitNullProperties?.Remove("is_cost_exempted"); } }
+        private bool? _explicitNullValueIsCostExempted = default!;
         /// <summary>The audience&apos;s data provider.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaThirdPartyDataCostPartner? Partner { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaThirdPartyDataCostPartner? Partner { get => _explicitNullValuePartner; set { _explicitNullValuePartner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partner"); else _explicitNullProperties?.Remove("partner"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaThirdPartyDataCostPartner? _explicitNullValuePartner = default!;
         /// <summary>The data provider&apos;s segment ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerSegmentId { get; set; }
+        public string? PartnerSegmentId { get => _explicitNullValuePartnerSegmentId; set { _explicitNullValuePartnerSegmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partner_segment_id"); else _explicitNullProperties?.Remove("partner_segment_id"); } }
+        private string? _explicitNullValuePartnerSegmentId = default!;
 #nullable restore
 #else
-        public string PartnerSegmentId { get; set; }
+        public string PartnerSegmentId { get => _explicitNullValuePartnerSegmentId; set { _explicitNullValuePartnerSegmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partner_segment_id"); else _explicitNullProperties?.Remove("partner_segment_id"); } }
+        private string _explicitNullValuePartnerSegmentId = default!;
 #endif
         /// <summary>The data&apos;s cost (local microcurrency). For example, `2750000` is $2.75 for CPM pricing.</summary>
-        public int? Price { get; set; }
+        public int? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private int? _explicitNullValuePrice = default!;
         /// <summary>The data&apos;s pricing model.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.CpmRateType? RateType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.CpmRateType? RateType { get => _explicitNullValueRateType; set { _explicitNullValueRateType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_type"); else _explicitNullProperties?.Remove("rate_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.CpmRateType? _explicitNullValueRateType = default!;
         /// <summary>The Reddit audience ID. Populated for custom audiences, omitted for third-party audiences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedditAudienceId { get; set; }
+        public string? RedditAudienceId { get => _explicitNullValueRedditAudienceId; set { _explicitNullValueRedditAudienceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reddit_audience_id"); else _explicitNullProperties?.Remove("reddit_audience_id"); } }
+        private string? _explicitNullValueRedditAudienceId = default!;
 #nullable restore
 #else
-        public string RedditAudienceId { get; set; }
+        public string RedditAudienceId { get => _explicitNullValueRedditAudienceId; set { _explicitNullValueRedditAudienceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reddit_audience_id"); else _explicitNullProperties?.Remove("reddit_audience_id"); } }
+        private string _explicitNullValueRedditAudienceId = default!;
 #endif
         /// <summary>When the cost was last updated (Unix timestamp in milliseconds). Omitted for third-party audiences when unavailable.</summary>
-        public long? UpdateTimestamp { get; set; }
+        public long? UpdateTimestamp { get => _explicitNullValueUpdateTimestamp; set { _explicitNullValueUpdateTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_timestamp"); else _explicitNullProperties?.Remove("update_timestamp"); } }
+        private long? _explicitNullValueUpdateTimestamp = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,7 +78,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.Cost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.Cost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.Cost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,7 +114,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteIntValue("price", Price);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CpmRateType>("rate_type", RateType);
             writer.WriteStringValue("reddit_audience_id", RedditAudienceId);
-            writer.WriteLongValue("update_timestamp", UpdateTimestamp);
+            writer.WriteLongValue("update_timestamp", UpdateTimestamp);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

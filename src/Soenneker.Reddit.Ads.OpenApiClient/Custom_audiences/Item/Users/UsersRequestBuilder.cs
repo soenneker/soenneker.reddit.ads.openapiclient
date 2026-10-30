@@ -64,6 +64,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Custom_audiences.Item.Users
                 { "404", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

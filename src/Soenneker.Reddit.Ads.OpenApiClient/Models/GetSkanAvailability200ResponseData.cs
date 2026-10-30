@@ -11,30 +11,46 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetSkanAvailability200ResponseData : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ad_group_quota") is { } nullNodeAdGroupQuota && nullNodeAdGroupQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdGroupQuota = null;
+            if (parseNode.GetChildNode("ad_quota") is { } nullNodeAdQuota && nullNodeAdQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdQuota = null;
+            if (parseNode.GetChildNode("campaign_quota") is { } nullNodeCampaignQuota && nullNodeCampaignQuota.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignQuota = null;
+        }
+
         /// <summary>The ad_group_quota property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota? AdGroupQuota { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota? AdGroupQuota { get => _explicitNullValueAdGroupQuota; set { _explicitNullValueAdGroupQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ad_group_quota"); else _explicitNullProperties?.Remove("ad_group_quota"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota? _explicitNullValueAdGroupQuota = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota AdGroupQuota { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota AdGroupQuota { get => _explicitNullValueAdGroupQuota; set { _explicitNullValueAdGroupQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ad_group_quota"); else _explicitNullProperties?.Remove("ad_group_quota"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota _explicitNullValueAdGroupQuota = default!;
 #endif
         /// <summary>The ad_quota property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota? AdQuota { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota? AdQuota { get => _explicitNullValueAdQuota; set { _explicitNullValueAdQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ad_quota"); else _explicitNullProperties?.Remove("ad_quota"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota? _explicitNullValueAdQuota = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota AdQuota { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota AdQuota { get => _explicitNullValueAdQuota; set { _explicitNullValueAdQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ad_quota"); else _explicitNullProperties?.Remove("ad_quota"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota _explicitNullValueAdQuota = default!;
 #endif
         /// <summary>The campaign_quota property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota? CampaignQuota { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota? CampaignQuota { get => _explicitNullValueCampaignQuota; set { _explicitNullValueCampaignQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_quota"); else _explicitNullProperties?.Remove("campaign_quota"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota? _explicitNullValueCampaignQuota = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota CampaignQuota { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota CampaignQuota { get => _explicitNullValueCampaignQuota; set { _explicitNullValueCampaignQuota = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_quota"); else _explicitNullProperties?.Remove("campaign_quota"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota _explicitNullValueCampaignQuota = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +60,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetSkanAvailability200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetSkanAvailability200ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetSkanAvailability200ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +84,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota>("ad_group_quota", AdGroupQuota);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota>("ad_quota", AdQuota);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota>("campaign_quota", CampaignQuota);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaSkadnetworkIdQuota>("campaign_quota", CampaignQuota);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

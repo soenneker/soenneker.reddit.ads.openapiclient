@@ -59,6 +59,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Targeting.Devices
                 { "401", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors401.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ListDevicesResponse>(requestInfo, global::Soenneker.Reddit.Ads.OpenApiClient.Models.ListDevicesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

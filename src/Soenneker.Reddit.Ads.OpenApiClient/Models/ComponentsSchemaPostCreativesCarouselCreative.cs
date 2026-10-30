@@ -12,51 +12,77 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaPostCreativesCarouselCreative : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
+            if (parseNode.GetChildNode("carousel") is { } nullNodeCarousel && nullNodeCarousel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Carousel = null;
+            if (parseNode.GetChildNode("headline") is { } nullNodeHeadline && nullNodeHeadline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headline = null;
+            if (parseNode.GetChildNode("supplementary_text") is { } nullNodeSupplementaryText && nullNodeSupplementaryText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupplementaryText = null;
+            if (parseNode.GetChildNode("text_format") is { } nullNodeTextFormat && nullNodeTextFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextFormat = null;
+            if (parseNode.GetChildNode("thumbnail") is { } nullNodeThumbnail && nullNodeThumbnail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Thumbnail = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The post&apos;s text content. Omit or set to `null` to create a post without a body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Body { get; set; }
+        public string? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private string? _explicitNullValueBody = default!;
 #nullable restore
 #else
-        public string Body { get; set; }
+        public string Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private string _explicitNullValueBody = default!;
 #endif
         /// <summary>Used as the post&apos;s content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselElementCreative>? Carousel { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselElementCreative>? Carousel { get => _explicitNullValueCarousel; set { _explicitNullValueCarousel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carousel"); else _explicitNullProperties?.Remove("carousel"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselElementCreative>? _explicitNullValueCarousel = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselElementCreative> Carousel { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselElementCreative> Carousel { get => _explicitNullValueCarousel; set { _explicitNullValueCarousel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carousel"); else _explicitNullProperties?.Remove("carousel"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselElementCreative> _explicitNullValueCarousel = default!;
 #endif
         /// <summary>The post&apos;s title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Headline { get; set; }
+        public string? Headline { get => _explicitNullValueHeadline; set { _explicitNullValueHeadline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headline"); else _explicitNullProperties?.Remove("headline"); } }
+        private string? _explicitNullValueHeadline = default!;
 #nullable restore
 #else
-        public string Headline { get; set; }
+        public string Headline { get => _explicitNullValueHeadline; set { _explicitNullValueHeadline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headline"); else _explicitNullProperties?.Remove("headline"); } }
+        private string _explicitNullValueHeadline = default!;
 #endif
         /// <summary>The supplementary text for the post. Used commonly as disclaimer text. **This is only available for select advertisers.** [Reach out](https://www.business.reddit.com/speak-with-a-reddit-ads-expert) for more details.&gt; **Tip:** Limit to 100 characters for optimal display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupplementaryText { get; set; }
+        public string? SupplementaryText { get => _explicitNullValueSupplementaryText; set { _explicitNullValueSupplementaryText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supplementary_text"); else _explicitNullProperties?.Remove("supplementary_text"); } }
+        private string? _explicitNullValueSupplementaryText = default!;
 #nullable restore
 #else
-        public string SupplementaryText { get; set; }
+        public string SupplementaryText { get => _explicitNullValueSupplementaryText; set { _explicitNullValueSupplementaryText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supplementary_text"); else _explicitNullProperties?.Remove("supplementary_text"); } }
+        private string _explicitNullValueSupplementaryText = default!;
 #endif
         /// <summary>The format of `body`. For a non-null `body`, an omitted or `null` format defaults to `PLAIN_TEXT`. Responses use `PLAIN_TEXT` for the stored post body.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormat? TextFormat { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormat? TextFormat { get => _explicitNullValueTextFormat; set { _explicitNullValueTextFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_format"); else _explicitNullProperties?.Remove("text_format"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormat? _explicitNullValueTextFormat = default!;
         /// <summary>The carousel post&apos;s [thumbnail](https://business.reddithelp.com/s/article/carousel-ad-specifications#thumbnail-for-compact-view).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreativeThumbnail? Thumbnail { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreativeThumbnail? Thumbnail { get => _explicitNullValueThumbnail; set { _explicitNullValueThumbnail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnail"); else _explicitNullProperties?.Remove("thumbnail"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreativeThumbnail? _explicitNullValueThumbnail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreativeThumbnail Thumbnail { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreativeThumbnail Thumbnail { get => _explicitNullValueThumbnail; set { _explicitNullValueThumbnail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnail"); else _explicitNullProperties?.Remove("thumbnail"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreativeThumbnail _explicitNullValueThumbnail = default!;
 #endif
         /// <summary>The creative type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.CarouselType? Type { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.CarouselType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.CarouselType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,7 +91,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreative CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreative();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreative(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,7 +123,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteStringValue("supplementary_text", SupplementaryText);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTextFormat>("text_format", TextFormat);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreativeThumbnail>("thumbnail", Thumbnail);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CarouselType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CarouselType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

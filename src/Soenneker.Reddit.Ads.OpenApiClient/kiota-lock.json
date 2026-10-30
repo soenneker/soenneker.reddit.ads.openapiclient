@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "85BC33824633005EA8BD4384826E4E73FDDEA605D1C990B3E2637D4D9AF1F49B1B8ECDCA71C004119B602AE5C43FBB74DB503A1B6B75233AC46673ED30037E6E",
+  "descriptionHash": "5A2AD938AA0143400E26FA0FC023BF0D2D58DD450F759DFDEBE70C03C7FCFB4452FC703DF9FB2DD26DD31842F779FFF295036C44DE76B39BA602C5F28AE1DC8F",
   "descriptionLocation": "../../openapi.fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.36.1",
+  "kiotaVersion": "1.37.0",
   "clientClassName": "RedditAdsOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Reddit.Ads.OpenApiClient",

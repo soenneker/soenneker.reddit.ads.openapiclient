@@ -12,71 +12,112 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaCampaignPatch : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bid_strategy") is { } nullNodeBidStrategy && nullNodeBidStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BidStrategy = null;
+            if (parseNode.GetChildNode("bid_type") is { } nullNodeBidType && nullNodeBidType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BidType = null;
+            if (parseNode.GetChildNode("bid_value") is { } nullNodeBidValue && nullNodeBidValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BidValue = null;
+            if (parseNode.GetChildNode("configured_status") is { } nullNodeConfiguredStatus && nullNodeConfiguredStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfiguredStatus = null;
+            if (parseNode.GetChildNode("end_time") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
+            if (parseNode.GetChildNode("funding_instrument_id") is { } nullNodeFundingInstrumentId && nullNodeFundingInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundingInstrumentId = null;
+            if (parseNode.GetChildNode("goal_value") is { } nullNodeGoalValue && nullNodeGoalValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoalValue = null;
+            if (parseNode.GetChildNode("invoice_label") is { } nullNodeInvoiceLabel && nullNodeInvoiceLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvoiceLabel = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("objective") is { } nullNodeObjective && nullNodeObjective.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Objective = null;
+            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("spend_cap") is { } nullNodeSpendCap && nullNodeSpendCap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpendCap = null;
+            if (parseNode.GetChildNode("start_time") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+            if (parseNode.GetChildNode("use_catalog") is { } nullNodeUseCatalog && nullNodeUseCatalog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseCatalog = null;
+        }
+
         /// <summary>The campaign&apos;s bid strategy. Required when `is_campaign_budget_optimization` is `true`.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3? BidStrategy { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3? BidStrategy { get => _explicitNullValueBidStrategy; set { _explicitNullValueBidStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_strategy"); else _explicitNullProperties?.Remove("bid_strategy"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3? _explicitNullValueBidStrategy = default!;
         /// <summary>The campaign&apos;s bid type. Required when `is_campaign_budget_optimization` is `true`.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3? BidType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3? BidType { get => _explicitNullValueBidType; set { _explicitNullValueBidType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_type"); else _explicitNullProperties?.Remove("bid_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3? _explicitNullValueBidType = default!;
         /// <summary>The amount to pay per bidding event (microcurrency). Used when `is_campaign_budget_optimization` is `true`. Optional when `bid_strategy` is `MAXIMIZE_VOLUME`. If set at campaign level, it **can&apos;t be set** at ad group level.</summary>
-        public int? BidValue { get; set; }
+        public int? BidValue { get => _explicitNullValueBidValue; set { _explicitNullValueBidValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_value"); else _explicitNullProperties?.Remove("bid_value"); } }
+        private int? _explicitNullValueBidValue = default!;
         /// <summary>The campaign&apos;s status set by the ad account. Can differ from `effective_status` depending on context, such as pending billing information.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus3? ConfiguredStatus { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus3? ConfiguredStatus { get => _explicitNullValueConfiguredStatus; set { _explicitNullValueConfiguredStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configured_status"); else _explicitNullProperties?.Remove("configured_status"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus3? _explicitNullValueConfiguredStatus = default!;
         /// <summary>When the campaign will stop delivering ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). A non-null value is required if `goal_type` is `LIFETIME_SPEND`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndTime { get; set; }
+        public string? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private string? _explicitNullValueEndTime = default!;
 #nullable restore
 #else
-        public string EndTime { get; set; }
+        public string EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private string _explicitNullValueEndTime = default!;
 #endif
         /// <summary>The campaign-level funding instrument ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FundingInstrumentId { get; set; }
+        public string? FundingInstrumentId { get => _explicitNullValueFundingInstrumentId; set { _explicitNullValueFundingInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funding_instrument_id"); else _explicitNullProperties?.Remove("funding_instrument_id"); } }
+        private string? _explicitNullValueFundingInstrumentId = default!;
 #nullable restore
 #else
-        public string FundingInstrumentId { get; set; }
+        public string FundingInstrumentId { get => _explicitNullValueFundingInstrumentId; set { _explicitNullValueFundingInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funding_instrument_id"); else _explicitNullProperties?.Remove("funding_instrument_id"); } }
+        private string _explicitNullValueFundingInstrumentId = default!;
 #endif
         /// <summary>Campaign-level goal value (microcurrency). Only works when `is_campaign_budget_optimization` is `true`.</summary>
-        public int? GoalValue { get; set; }
+        public int? GoalValue { get => _explicitNullValueGoalValue; set { _explicitNullValueGoalValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_value"); else _explicitNullProperties?.Remove("goal_value"); } }
+        private int? _explicitNullValueGoalValue = default!;
         /// <summary>A free-form label agencies can use for tracking and reconciliation purposes on the resulting invoice. Only settable on campaigns whose funding instrument is **not** a credit card; attempts to set this field on credit-card-funded campaigns are ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceLabel { get; set; }
+        public string? InvoiceLabel { get => _explicitNullValueInvoiceLabel; set { _explicitNullValueInvoiceLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_label"); else _explicitNullProperties?.Remove("invoice_label"); } }
+        private string? _explicitNullValueInvoiceLabel = default!;
 #nullable restore
 #else
-        public string InvoiceLabel { get; set; }
+        public string InvoiceLabel { get => _explicitNullValueInvoiceLabel; set { _explicitNullValueInvoiceLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_label"); else _explicitNullProperties?.Remove("invoice_label"); } }
+        private string _explicitNullValueInvoiceLabel = default!;
 #endif
         /// <summary>The entity name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The [campaign objective](https://business.reddithelp.com/s/article/Ad-campaign-objectives).</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective? Objective { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective? Objective { get => _explicitNullValueObjective; set { _explicitNullValueObjective = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objective"); else _explicitNullProperties?.Remove("objective"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective? _explicitNullValueObjective = default!;
         /// <summary>The recurring weekly window(s) when the campaign may deliver. Day values are `0` (Sunday) through `6` (Saturday); hour values are `0`–`23` on a 24-hour clock (in the campaign&apos;s time zone). An empty array or `null` means the campaign may deliver at any time. Only available when `is_campaign_budget_optimization` is `true`, in which case it replaces the schedule of every ad group in the campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock>? Schedule { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock>? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock>? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock> Schedule { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock> Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock> _explicitNullValueSchedule = default!;
 #endif
         /// <summary>Campaign lifetime spend cap (microcurrency). Available for non-CBO campaigns and when `goal_type` is `DAILY_SPEND` for CBO campaigns.</summary>
-        public int? SpendCap { get; set; }
+        public int? SpendCap { get => _explicitNullValueSpendCap; set { _explicitNullValueSpendCap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spend_cap"); else _explicitNullProperties?.Remove("spend_cap"); } }
+        private int? _explicitNullValueSpendCap = default!;
         /// <summary>When the campaign will begin to deliver ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Required and only available when `is_campaign_budget_optimization` is `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartTime { get; set; }
+        public string? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private string? _explicitNullValueStartTime = default!;
 #nullable restore
 #else
-        public string StartTime { get; set; }
+        public string StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private string _explicitNullValueStartTime = default!;
 #endif
         /// <summary>Whether the campaign uses a product catalog. It can be `true` only when `objective` is `SALES`. Omitted when unset. When `true`, all ad groups in the campaign must use a catalog.</summary>
-        public bool? UseCatalog { get; set; }
+        public bool? UseCatalog { get => _explicitNullValueUseCatalog; set { _explicitNullValueUseCatalog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_catalog"); else _explicitNullProperties?.Remove("use_catalog"); } }
+        private bool? _explicitNullValueUseCatalog = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,7 +126,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignPatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignPatch();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignPatch(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,7 +172,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock>("schedule", Schedule);
             writer.WriteIntValue("spend_cap", SpendCap);
             writer.WriteStringValue("start_time", StartTime);
-            writer.WriteBoolValue("use_catalog", UseCatalog);
+            writer.WriteBoolValue("use_catalog", UseCatalog);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

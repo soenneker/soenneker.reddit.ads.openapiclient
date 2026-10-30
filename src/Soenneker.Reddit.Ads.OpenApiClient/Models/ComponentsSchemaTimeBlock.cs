@@ -11,15 +11,30 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ComponentsSchemaTimeBlock : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end_day") is { } nullNodeEndDay && nullNodeEndDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDay = null;
+            if (parseNode.GetChildNode("end_hour") is { } nullNodeEndHour && nullNodeEndHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndHour = null;
+            if (parseNode.GetChildNode("start_day") is { } nullNodeStartDay && nullNodeStartDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDay = null;
+            if (parseNode.GetChildNode("start_hour") is { } nullNodeStartHour && nullNodeStartHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartHour = null;
+        }
+
         /// <summary>Day of the week when this window ends (`0`–`6`; `0` = Sunday).</summary>
-        public int? EndDay { get; set; }
+        public int? EndDay { get => _explicitNullValueEndDay; set { _explicitNullValueEndDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_day"); else _explicitNullProperties?.Remove("end_day"); } }
+        private int? _explicitNullValueEndDay = default!;
         /// <summary>Hour on `end_day` when this window ends (`0`–`23`).</summary>
-        public int? EndHour { get; set; }
+        public int? EndHour { get => _explicitNullValueEndHour; set { _explicitNullValueEndHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_hour"); else _explicitNullProperties?.Remove("end_hour"); } }
+        private int? _explicitNullValueEndHour = default!;
         /// <summary>Day of the week when this window starts (`0`–`6`; `0` = Sunday).</summary>
-        public int? StartDay { get; set; }
+        public int? StartDay { get => _explicitNullValueStartDay; set { _explicitNullValueStartDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_day"); else _explicitNullProperties?.Remove("start_day"); } }
+        private int? _explicitNullValueStartDay = default!;
         /// <summary>Hour on `start_day` when this window starts (`0`–`23`).</summary>
-        public int? StartHour { get; set; }
+        public int? StartHour { get => _explicitNullValueStartHour; set { _explicitNullValueStartHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_hour"); else _explicitNullProperties?.Remove("start_hour"); } }
+        private int? _explicitNullValueStartHour = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -28,7 +43,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTimeBlock(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,7 +69,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteIntValue("end_day", EndDay);
             writer.WriteIntValue("end_hour", EndHour);
             writer.WriteIntValue("start_day", StartDay);
-            writer.WriteIntValue("start_hour", StartHour);
+            writer.WriteIntValue("start_hour", StartHour);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

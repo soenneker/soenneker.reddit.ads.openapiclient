@@ -19,7 +19,6 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Posts.Item
     public partial class WithPostItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The creative_assets property</summary>
-        [Obsolete("")]
         public global::Soenneker.Reddit.Ads.OpenApiClient.Posts.Item.Creative_assets.Creative_assetsRequestBuilder Creative_assets
         {
             get => new global::Soenneker.Reddit.Ads.OpenApiClient.Posts.Item.Creative_assets.Creative_assetsRequestBuilder(PathParameters, RequestAdapter);
@@ -71,6 +70,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Posts.Item
                 { "404", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetPostResponse>(requestInfo, global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,6 +107,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Posts.Item
                 { "404", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdatePostResponse>(requestInfo, global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdatePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

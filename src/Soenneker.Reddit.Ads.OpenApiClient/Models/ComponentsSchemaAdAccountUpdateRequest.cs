@@ -11,21 +11,48 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ComponentsSchemaAdAccountUpdateRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("admin_approval") is { } nullNodeAdminApproval && nullNodeAdminApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdminApproval = null;
+            if (parseNode.GetChildNode("app_attribution_type") is { } nullNodeAppAttributionType && nullNodeAppAttributionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppAttributionType = null;
+            if (parseNode.GetChildNode("app_click_attribution_window") is { } nullNodeAppClickAttributionWindow && nullNodeAppClickAttributionWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppClickAttributionWindow = null;
+            if (parseNode.GetChildNode("app_view_attribution_window") is { } nullNodeAppViewAttributionWindow && nullNodeAppViewAttributionWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppViewAttributionWindow = null;
+            if (parseNode.GetChildNode("attribution_type") is { } nullNodeAttributionType && nullNodeAttributionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributionType = null;
+            if (parseNode.GetChildNode("click_attribution_window") is { } nullNodeClickAttributionWindow && nullNodeClickAttributionWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickAttributionWindow = null;
+            if (parseNode.GetChildNode("excluded_communities") is { } nullNodeExcludedCommunities && nullNodeExcludedCommunities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCommunities = null;
+            if (parseNode.GetChildNode("excluded_keywords") is { } nullNodeExcludedKeywords && nullNodeExcludedKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedKeywords = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("primary_contact_member_id") is { } nullNodePrimaryContactMemberId && nullNodePrimaryContactMemberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryContactMemberId = null;
+            if (parseNode.GetChildNode("spend_cap_type") is { } nullNodeSpendCapType && nullNodeSpendCapType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpendCapType = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("ugc_addon_default_on") is { } nullNodeUgcAddonDefaultOn && nullNodeUgcAddonDefaultOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UgcAddonDefaultOn = null;
+            if (parseNode.GetChildNode("view_attribution_window") is { } nullNodeViewAttributionWindow && nullNodeViewAttributionWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewAttributionWindow = null;
+        }
+
         /// <summary>Describes the state of the account. Can only be changed by Reddit.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AdminApproval? AdminApproval { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AdminApproval? AdminApproval { get => _explicitNullValueAdminApproval; set { _explicitNullValueAdminApproval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("admin_approval"); else _explicitNullProperties?.Remove("admin_approval"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.AdminApproval? _explicitNullValueAdminApproval = default!;
         /// <summary>The attribution conversion type. Valid for cost-per-action (CPA) bid types. Also configures the attribution type to query when calculating effective-cost-per-action (eCPA) fields.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppAttributionType? AppAttributionType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppAttributionType? AppAttributionType { get => _explicitNullValueAppAttributionType; set { _explicitNullValueAppAttributionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_attribution_type"); else _explicitNullProperties?.Remove("app_attribution_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppAttributionType? _explicitNullValueAppAttributionType = default!;
         /// <summary>The max time to elapse between the start and end of a conversion.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppClickAttributionWindow? AppClickAttributionWindow { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppClickAttributionWindow? AppClickAttributionWindow { get => _explicitNullValueAppClickAttributionWindow; set { _explicitNullValueAppClickAttributionWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_click_attribution_window"); else _explicitNullProperties?.Remove("app_click_attribution_window"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppClickAttributionWindow? _explicitNullValueAppClickAttributionWindow = default!;
         /// <summary>The max time to elapse between the start and end of a conversion.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppViewAttributionWindow? AppViewAttributionWindow { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppViewAttributionWindow? AppViewAttributionWindow { get => _explicitNullValueAppViewAttributionWindow; set { _explicitNullValueAppViewAttributionWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_view_attribution_window"); else _explicitNullProperties?.Remove("app_view_attribution_window"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppViewAttributionWindow? _explicitNullValueAppViewAttributionWindow = default!;
         /// <summary>The attribution conversion type. Valid for cost-per-action (CPA) bid types. Also configures the attribution type to query when calculating effective-cost-per-action (eCPA) fields.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsAttributionType? AttributionType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsAttributionType? AttributionType { get => _explicitNullValueAttributionType; set { _explicitNullValueAttributionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribution_type"); else _explicitNullProperties?.Remove("attribution_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsAttributionType? _explicitNullValueAttributionType = default!;
         /// <summary>The business ID.</summary>
         public Guid? BusinessId { get; private set; }
         /// <summary>The window for click attributions. Used for reporting.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ClickAttributionWindow? ClickAttributionWindow { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ClickAttributionWindow? ClickAttributionWindow { get => _explicitNullValueClickAttributionWindow; set { _explicitNullValueClickAttributionWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_attribution_window"); else _explicitNullProperties?.Remove("click_attribution_window"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ClickAttributionWindow? _explicitNullValueClickAttributionWindow = default!;
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The currency symbol used ([ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)).</summary>
@@ -33,18 +60,22 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The communities (&quot;subreddits&quot;) excluded at the ad account level. Ads won&apos;t be eligible for auctions in these communities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedCommunities { get; set; }
+        public List<string>? ExcludedCommunities { get => _explicitNullValueExcludedCommunities; set { _explicitNullValueExcludedCommunities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_communities"); else _explicitNullProperties?.Remove("excluded_communities"); } }
+        private List<string>? _explicitNullValueExcludedCommunities = default!;
 #nullable restore
 #else
-        public List<string> ExcludedCommunities { get; set; }
+        public List<string> ExcludedCommunities { get => _explicitNullValueExcludedCommunities; set { _explicitNullValueExcludedCommunities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_communities"); else _explicitNullProperties?.Remove("excluded_communities"); } }
+        private List<string> _explicitNullValueExcludedCommunities = default!;
 #endif
         /// <summary>The keywords excluded at the ad account level. Ads won&apos;t be eligible for auctions if they contain these keywords.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedKeywords { get; set; }
+        public List<string>? ExcludedKeywords { get => _explicitNullValueExcludedKeywords; set { _explicitNullValueExcludedKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_keywords"); else _explicitNullProperties?.Remove("excluded_keywords"); } }
+        private List<string>? _explicitNullValueExcludedKeywords = default!;
 #nullable restore
 #else
-        public List<string> ExcludedKeywords { get; set; }
+        public List<string> ExcludedKeywords { get => _explicitNullValueExcludedKeywords; set { _explicitNullValueExcludedKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_keywords"); else _explicitNullProperties?.Remove("excluded_keywords"); } }
+        private List<string> _explicitNullValueExcludedKeywords = default!;
 #endif
         /// <summary>The ad account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,10 +90,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The entity name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Pixel partners allowed by the advertiser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,23 +108,31 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The primary contact member&apos;s ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryContactMemberId { get; set; }
+        public string? PrimaryContactMemberId { get => _explicitNullValuePrimaryContactMemberId; set { _explicitNullValuePrimaryContactMemberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_contact_member_id"); else _explicitNullProperties?.Remove("primary_contact_member_id"); } }
+        private string? _explicitNullValuePrimaryContactMemberId = default!;
 #nullable restore
 #else
-        public string PrimaryContactMemberId { get; set; }
+        public string PrimaryContactMemberId { get => _explicitNullValuePrimaryContactMemberId; set { _explicitNullValuePrimaryContactMemberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_contact_member_id"); else _explicitNullProperties?.Remove("primary_contact_member_id"); } }
+        private string _explicitNullValuePrimaryContactMemberId = default!;
 #endif
         /// <summary>The spend cap period applied to the ad account.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.SpendCapType? SpendCapType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.SpendCapType? SpendCapType { get => _explicitNullValueSpendCapType; set { _explicitNullValueSpendCapType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spend_cap_type"); else _explicitNullProperties?.Remove("spend_cap_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.SpendCapType? _explicitNullValueSpendCapType = default!;
         /// <summary>Why this ad account was suspended.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.SuspensionReason? SuspensionReason { get; private set; }
         /// <summary>The entity&apos;s default time zone.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.TimeZoneId? TimeZoneId { get; private set; }
+#nullable enable
+        public string? TimeZoneId { get; private set; }
+#nullable restore
         /// <summary>The ad account type. Can only be changed by Reddit.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.TypeValue? Type { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.TypeValue? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.TypeValue? _explicitNullValueType = default!;
         /// <summary>Whether clients should select[Redditor Highlights](https://business.reddithelp.com/s/article/redditor-highlights)by default for eligible new ads. If null, clients should use the platformdefault. This preference does not itself change ad selection, existingads, or eligibility.</summary>
-        public bool? UgcAddonDefaultOn { get; set; }
+        public bool? UgcAddonDefaultOn { get => _explicitNullValueUgcAddonDefaultOn; set { _explicitNullValueUgcAddonDefaultOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ugc_addon_default_on"); else _explicitNullProperties?.Remove("ugc_addon_default_on"); } }
+        private bool? _explicitNullValueUgcAddonDefaultOn = default!;
         /// <summary>The window for view attributions. Used in reporting.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewAttributionWindow? ViewAttributionWindow { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewAttributionWindow? ViewAttributionWindow { get => _explicitNullValueViewAttributionWindow; set { _explicitNullValueViewAttributionWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_attribution_window"); else _explicitNullProperties?.Remove("view_attribution_window"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewAttributionWindow? _explicitNullValueViewAttributionWindow = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -100,7 +141,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountUpdateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountUpdateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,7 +169,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "primary_contact_member_id", n => { PrimaryContactMemberId = n.GetStringValue(); } },
                 { "spend_cap_type", n => { SpendCapType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SpendCapType>(); } },
                 { "suspension_reason", n => { SuspensionReason = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SuspensionReason>(); } },
-                { "time_zone_id", n => { TimeZoneId = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.TimeZoneId>(); } },
+                { "time_zone_id", n => { TimeZoneId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.TypeValue>(); } },
                 { "ugc_addon_default_on", n => { UgcAddonDefaultOn = n.GetBoolValue(); } },
                 { "view_attribution_window", n => { ViewAttributionWindow = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewAttributionWindow>(); } },
@@ -154,7 +195,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SpendCapType>("spend_cap_type", SpendCapType);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.TypeValue>("type", Type);
             writer.WriteBoolValue("ugc_addon_default_on", UgcAddonDefaultOn);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewAttributionWindow>("view_attribution_window", ViewAttributionWindow);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewAttributionWindow>("view_attribution_window", ViewAttributionWindow);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

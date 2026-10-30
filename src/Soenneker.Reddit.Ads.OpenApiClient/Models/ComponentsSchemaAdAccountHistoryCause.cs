@@ -12,48 +12,72 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaAdAccountHistoryCause : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("changed_at") is { } nullNodeChangedAt && nullNodeChangedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedAt = null;
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("fullname") is { } nullNodeFullname && nullNodeFullname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fullname = null;
+            if (parseNode.GetChildNode("member_id") is { } nullNodeMemberId && nullNodeMemberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberId = null;
+            if (parseNode.GetChildNode("partner_business_name") is { } nullNodePartnerBusinessName && nullNodePartnerBusinessName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerBusinessName = null;
+            if (parseNode.GetChildNode("reddit_username") is { } nullNodeRedditUsername && nullNodeRedditUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedditUsername = null;
+        }
+
         /// <summary>When the change happened.</summary>
-        public DateTimeOffset? ChangedAt { get; set; }
+        public DateTimeOffset? ChangedAt { get => _explicitNullValueChangedAt; set { _explicitNullValueChangedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_at"); else _explicitNullProperties?.Remove("changed_at"); } }
+        private DateTimeOffset? _explicitNullValueChangedAt = default!;
         /// <summary>The member&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>The member&apos;s full name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fullname { get; set; }
+        public string? Fullname { get => _explicitNullValueFullname; set { _explicitNullValueFullname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullname"); else _explicitNullProperties?.Remove("fullname"); } }
+        private string? _explicitNullValueFullname = default!;
 #nullable restore
 #else
-        public string Fullname { get; set; }
+        public string Fullname { get => _explicitNullValueFullname; set { _explicitNullValueFullname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullname"); else _explicitNullProperties?.Remove("fullname"); } }
+        private string _explicitNullValueFullname = default!;
 #endif
         /// <summary>The member&apos;s member ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MemberId { get; set; }
+        public string? MemberId { get => _explicitNullValueMemberId; set { _explicitNullValueMemberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_id"); else _explicitNullProperties?.Remove("member_id"); } }
+        private string? _explicitNullValueMemberId = default!;
 #nullable restore
 #else
-        public string MemberId { get; set; }
+        public string MemberId { get => _explicitNullValueMemberId; set { _explicitNullValueMemberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_id"); else _explicitNullProperties?.Remove("member_id"); } }
+        private string _explicitNullValueMemberId = default!;
 #endif
         /// <summary>The name of the [partner business](https://business.reddithelp.com/s/article/partner-sharing) the user belongs to, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerBusinessName { get; set; }
+        public string? PartnerBusinessName { get => _explicitNullValuePartnerBusinessName; set { _explicitNullValuePartnerBusinessName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partner_business_name"); else _explicitNullProperties?.Remove("partner_business_name"); } }
+        private string? _explicitNullValuePartnerBusinessName = default!;
 #nullable restore
 #else
-        public string PartnerBusinessName { get; set; }
+        public string PartnerBusinessName { get => _explicitNullValuePartnerBusinessName; set { _explicitNullValuePartnerBusinessName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partner_business_name"); else _explicitNullProperties?.Remove("partner_business_name"); } }
+        private string _explicitNullValuePartnerBusinessName = default!;
 #endif
         /// <summary>The member&apos;s Reddit username.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedditUsername { get; set; }
+        public string? RedditUsername { get => _explicitNullValueRedditUsername; set { _explicitNullValueRedditUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reddit_username"); else _explicitNullProperties?.Remove("reddit_username"); } }
+        private string? _explicitNullValueRedditUsername = default!;
 #nullable restore
 #else
-        public string RedditUsername { get; set; }
+        public string RedditUsername { get => _explicitNullValueRedditUsername; set { _explicitNullValueRedditUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reddit_username"); else _explicitNullProperties?.Remove("reddit_username"); } }
+        private string _explicitNullValueRedditUsername = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,7 +87,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryCause CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryCause();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryCause(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,7 +117,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteStringValue("fullname", Fullname);
             writer.WriteStringValue("member_id", MemberId);
             writer.WriteStringValue("partner_business_name", PartnerBusinessName);
-            writer.WriteStringValue("reddit_username", RedditUsername);
+            writer.WriteStringValue("reddit_username", RedditUsername);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -12,32 +12,50 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaPixelAudienceConfig : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_targetings") is { } nullNodeCustomTargetings && nullNodeCustomTargetings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomTargetings = null;
+            if (parseNode.GetChildNode("lookback_window_days") is { } nullNodeLookbackWindowDays && nullNodeLookbackWindowDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookbackWindowDays = null;
+            if (parseNode.GetChildNode("pixel_ids") is { } nullNodePixelIds && nullNodePixelIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PixelIds = null;
+            if (parseNode.GetChildNode("targetings") is { } nullNodeTargetings && nullNodeTargetings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Targetings = null;
+        }
+
         /// <summary>The custom conversion events to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomTargetings { get; set; }
+        public List<string>? CustomTargetings { get => _explicitNullValueCustomTargetings; set { _explicitNullValueCustomTargetings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_targetings"); else _explicitNullProperties?.Remove("custom_targetings"); } }
+        private List<string>? _explicitNullValueCustomTargetings = default!;
 #nullable restore
 #else
-        public List<string> CustomTargetings { get; set; }
+        public List<string> CustomTargetings { get => _explicitNullValueCustomTargetings; set { _explicitNullValueCustomTargetings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_targetings"); else _explicitNullProperties?.Remove("custom_targetings"); } }
+        private List<string> _explicitNullValueCustomTargetings = default!;
 #endif
         /// <summary>Determine how long ago a user&apos;s action can be to be included in the audience.</summary>
-        public int? LookbackWindowDays { get; set; }
+        public int? LookbackWindowDays { get => _explicitNullValueLookbackWindowDays; set { _explicitNullValueLookbackWindowDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookback_window_days"); else _explicitNullProperties?.Remove("lookback_window_days"); } }
+        private int? _explicitNullValueLookbackWindowDays = default!;
         /// <summary>The Pixel IDs to associate with this audience. Find your ID on the [Events Manager](https://ads.reddit.com/events-manager).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PixelIds { get; set; }
+        public List<string>? PixelIds { get => _explicitNullValuePixelIds; set { _explicitNullValuePixelIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pixel_ids"); else _explicitNullProperties?.Remove("pixel_ids"); } }
+        private List<string>? _explicitNullValuePixelIds = default!;
 #nullable restore
 #else
-        public List<string> PixelIds { get; set; }
+        public List<string> PixelIds { get => _explicitNullValuePixelIds; set { _explicitNullValuePixelIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pixel_ids"); else _explicitNullProperties?.Remove("pixel_ids"); } }
+        private List<string> _explicitNullValuePixelIds = default!;
 #endif
         /// <summary>The [conversion events](https://business.reddithelp.com/s/article/supported-conversion-events) to target. At a minimum, `PAGE_VISIT` should be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfigTargetingsItem?>? Targetings { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfigTargetingsItem?>? Targetings { get => _explicitNullValueTargetings; set { _explicitNullValueTargetings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetings"); else _explicitNullProperties?.Remove("targetings"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfigTargetingsItem?>? _explicitNullValueTargetings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfigTargetingsItem?> Targetings { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfigTargetingsItem?> Targetings { get => _explicitNullValueTargetings; set { _explicitNullValueTargetings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetings"); else _explicitNullProperties?.Remove("targetings"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfigTargetingsItem?> _explicitNullValueTargetings = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +65,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +91,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("custom_targetings", CustomTargetings);
             writer.WriteIntValue("lookback_window_days", LookbackWindowDays);
             writer.WriteCollectionOfPrimitiveValues<string>("pixel_ids", PixelIds);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfigTargetingsItem>("targetings", Targetings);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfigTargetingsItem>("targetings", Targetings);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

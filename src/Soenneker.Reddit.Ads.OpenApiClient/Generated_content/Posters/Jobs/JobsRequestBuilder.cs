@@ -76,6 +76,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Generated_content.Posters.Jobs
                 { "403", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors403.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CreateGeneratedPostersJobResponse>(requestInfo, global::Soenneker.Reddit.Ads.OpenApiClient.Models.CreateGeneratedPostersJobResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

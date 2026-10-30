@@ -11,13 +11,26 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ComponentsSchemaDeliveryEstimateBoundsInteger : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("lower_bound") is { } nullNodeLowerBound && nullNodeLowerBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LowerBound = null;
+            if (parseNode.GetChildNode("point_estimate") is { } nullNodePointEstimate && nullNodePointEstimate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PointEstimate = null;
+            if (parseNode.GetChildNode("upper_bound") is { } nullNodeUpperBound && nullNodeUpperBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpperBound = null;
+        }
+
         /// <summary>The lower bound estimate.</summary>
-        public int? LowerBound { get; set; }
+        public int? LowerBound { get => _explicitNullValueLowerBound; set { _explicitNullValueLowerBound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lower_bound"); else _explicitNullProperties?.Remove("lower_bound"); } }
+        private int? _explicitNullValueLowerBound = default!;
         /// <summary>The point estimate value.</summary>
-        public int? PointEstimate { get; set; }
+        public int? PointEstimate { get => _explicitNullValuePointEstimate; set { _explicitNullValuePointEstimate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("point_estimate"); else _explicitNullProperties?.Remove("point_estimate"); } }
+        private int? _explicitNullValuePointEstimate = default!;
         /// <summary>The upper bound estimate.</summary>
-        public int? UpperBound { get; set; }
+        public int? UpperBound { get => _explicitNullValueUpperBound; set { _explicitNullValueUpperBound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upper_bound"); else _explicitNullProperties?.Remove("upper_bound"); } }
+        private int? _explicitNullValueUpperBound = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -26,7 +39,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeliveryEstimateBoundsInteger CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeliveryEstimateBoundsInteger();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeliveryEstimateBoundsInteger(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +63,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("lower_bound", LowerBound);
             writer.WriteIntValue("point_estimate", PointEstimate);
-            writer.WriteIntValue("upper_bound", UpperBound);
+            writer.WriteIntValue("upper_bound", UpperBound);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

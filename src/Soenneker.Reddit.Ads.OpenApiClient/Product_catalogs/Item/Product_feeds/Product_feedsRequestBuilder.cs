@@ -63,6 +63,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Product_catalogs.Item.Product_feeds
                 { "404", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ListProductFeedsResponse>(requestInfo, global::Soenneker.Reddit.Ads.OpenApiClient.Models.ListProductFeedsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -98,6 +99,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Product_catalogs.Item.Product_feeds
                 { "404", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CreateProductFeedResponse>(requestInfo, global::Soenneker.Reddit.Ads.OpenApiClient.Models.CreateProductFeedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

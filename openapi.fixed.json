@@ -43117,9 +43117,6 @@
       },
       "ComponentsSchemaAssetLibraryAssetResult": {
         "title": "AssetResult",
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/ComponentsSchemaAssetLibraryStoredImageAsset"
@@ -43134,13 +43131,8 @@
             "$ref": "#/components/schemas/ComponentsSchemaAssetLibraryStoredCtaAsset"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
         "description": "Stored creative asset returned by the asset library.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
             "IMAGE": "#/components/schemas/ComponentsSchemaAssetLibraryStoredImageAsset",
@@ -43576,9 +43568,6 @@
       },
       "ComponentsSchemaGeneratedPostersJob": {
         "title": "Generated Posters Job",
-        "required": [
-          "status"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/ComponentsSchemaGeneratedPostersJobProcessing"
@@ -43590,13 +43579,8 @@
             "$ref": "#/components/schemas/ComponentsSchemaGeneratedPostersJobFailed"
           }
         ],
-        "properties": {
-          "status": {
-            "type": "string"
-          }
-        },
         "description": "Poster generation job state selected by \u0060status\u0060.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "status",
           "mapping": {
             "PROCESSING": "#/components/schemas/ComponentsSchemaGeneratedPostersJobProcessing",

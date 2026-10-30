@@ -12,7 +12,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaCampaignCreate : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateAutomated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             var result = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreate();
             if("ComponentsSchemaCampaignCreateAutomated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaCampaignCreateAutomated = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateAutomated();
+                
             }
             else if("ComponentsSchemaCampaignCreateManual".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaCampaignCreateManual = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateManual();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("configured_status") != null && (parseNode.GetChildNode("configured_status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("ACTIVE".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "ARCHIVED".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "DELETED".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "PAUSED".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("objective") != null && (parseNode.GetChildNode("objective")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("APP_INSTALLS".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "BRAND_AWARENESS".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "CATALOG_SALES".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "CLICKS".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "CONVERSIONS".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "IMPRESSIONS".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "LEAD_GENERATION".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "SALES".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "VIDEO_VIEWABLE_IMPRESSIONS".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("AUTOMATED".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("configured_status") != null && (parseNode.GetChildNode("configured_status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("ACTIVE".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "ARCHIVED".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "DELETED".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "PAUSED".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("objective") != null && (parseNode.GetChildNode("objective")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("APP_INSTALLS".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "CLICKS".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "CONVERSIONS".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "LEAD_GENERATION".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "SALES".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.ComponentsSchemaCampaignCreateAutomated == null && result.ComponentsSchemaCampaignCreateManual == null && matchesUnionBranch0 && !matchesUnionBranch1) result.ComponentsSchemaCampaignCreateManual = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateManual(), parseNode);
+            if (result.ComponentsSchemaCampaignCreateAutomated == null && result.ComponentsSchemaCampaignCreateManual == null && matchesUnionBranch1 && !matchesUnionBranch0) result.ComponentsSchemaCampaignCreateAutomated = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateAutomated(), parseNode);
+            if (result.ComponentsSchemaCampaignCreateAutomated == null && result.ComponentsSchemaCampaignCreateManual == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ComponentsSchemaCampaignCreateAutomated == null && ComponentsSchemaCampaignCreateManual == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ComponentsSchemaCampaignCreateAutomated != null && ComponentsSchemaCampaignCreateManual == null) { if (ComponentsSchemaCampaignCreateAutomated is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaCampaignCreateAutomated); return; }
+            if (ComponentsSchemaCampaignCreateManual != null && ComponentsSchemaCampaignCreateAutomated == null) { if (ComponentsSchemaCampaignCreateManual is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaCampaignCreateManual); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ComponentsSchemaCampaignCreateAutomated != null)
             {
+                if (ComponentsSchemaCampaignCreateAutomated is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateAutomated>(null, ComponentsSchemaCampaignCreateAutomated);
             }
             else if(ComponentsSchemaCampaignCreateManual != null)
             {
+                if (ComponentsSchemaCampaignCreateManual is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCampaignCreateManual>(null, ComponentsSchemaCampaignCreateManual);
             }
         }

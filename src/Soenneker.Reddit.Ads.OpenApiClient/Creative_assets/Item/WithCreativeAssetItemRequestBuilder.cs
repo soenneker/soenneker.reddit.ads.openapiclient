@@ -62,6 +62,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Creative_assets.Item
                 { "404", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -95,6 +96,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Creative_assets.Item
                 { "404", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetCreativeAssetsResponse>(requestInfo, global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetCreativeAssetsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -130,6 +132,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Creative_assets.Item
                 { "404", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCreativeAssetResponse>(requestInfo, global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCreativeAssetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

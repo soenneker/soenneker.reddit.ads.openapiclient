@@ -12,7 +12,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaAssetLibraryNewCreativeAsset : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAsset"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,32 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             var result = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCreativeAsset();
             if("CTA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaAssetLibraryNewCtaAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAsset();
+                
             }
             else if("HEADLINE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaAssetLibraryNewHeadlineAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewHeadlineAsset();
+                
             }
             else if("IMAGE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaAssetLibraryNewImageAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewImageAsset();
+                
             }
             else if("VIDEO".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaAssetLibraryNewVideoAsset = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewVideoAsset();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("IMAGE".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("media") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("VIDEO".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("media") != null && parseNode.GetChildNode("poster") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("HEADLINE".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("text") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("CTA".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("call_to_action") != null && (parseNode.GetChildNode("call_to_action")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("Apply Now".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Contact Us".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Download".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Get a Quote".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Get Showtimes".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Install".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Learn More".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Order Now".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Play Now".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Pre-order Now".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "See Menu".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Shop Now".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Sign Up".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "View More".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Watch Now".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Book Now".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Buy Tickets".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Get Directions".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Listen Now".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Read More".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Subscribe".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Visit Store".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Donate Now".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "Remind Me".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.ComponentsSchemaAssetLibraryNewCtaAsset == null && result.ComponentsSchemaAssetLibraryNewHeadlineAsset == null && result.ComponentsSchemaAssetLibraryNewImageAsset == null && result.ComponentsSchemaAssetLibraryNewVideoAsset == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ComponentsSchemaAssetLibraryNewImageAsset = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewImageAsset(), parseNode);
+            if (result.ComponentsSchemaAssetLibraryNewCtaAsset == null && result.ComponentsSchemaAssetLibraryNewHeadlineAsset == null && result.ComponentsSchemaAssetLibraryNewImageAsset == null && result.ComponentsSchemaAssetLibraryNewVideoAsset == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ComponentsSchemaAssetLibraryNewVideoAsset = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewVideoAsset(), parseNode);
+            if (result.ComponentsSchemaAssetLibraryNewCtaAsset == null && result.ComponentsSchemaAssetLibraryNewHeadlineAsset == null && result.ComponentsSchemaAssetLibraryNewImageAsset == null && result.ComponentsSchemaAssetLibraryNewVideoAsset == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.ComponentsSchemaAssetLibraryNewHeadlineAsset = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewHeadlineAsset(), parseNode);
+            if (result.ComponentsSchemaAssetLibraryNewCtaAsset == null && result.ComponentsSchemaAssetLibraryNewHeadlineAsset == null && result.ComponentsSchemaAssetLibraryNewImageAsset == null && result.ComponentsSchemaAssetLibraryNewVideoAsset == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.ComponentsSchemaAssetLibraryNewCtaAsset = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAsset(), parseNode);
+            if (result.ComponentsSchemaAssetLibraryNewCtaAsset == null && result.ComponentsSchemaAssetLibraryNewHeadlineAsset == null && result.ComponentsSchemaAssetLibraryNewImageAsset == null && result.ComponentsSchemaAssetLibraryNewVideoAsset == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ComponentsSchemaAssetLibraryNewCtaAsset == null && ComponentsSchemaAssetLibraryNewHeadlineAsset == null && ComponentsSchemaAssetLibraryNewImageAsset == null && ComponentsSchemaAssetLibraryNewVideoAsset == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ComponentsSchemaAssetLibraryNewCtaAsset != null && ComponentsSchemaAssetLibraryNewHeadlineAsset == null && ComponentsSchemaAssetLibraryNewImageAsset == null && ComponentsSchemaAssetLibraryNewVideoAsset == null) { if (ComponentsSchemaAssetLibraryNewCtaAsset is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaAssetLibraryNewCtaAsset); return; }
+            if (ComponentsSchemaAssetLibraryNewHeadlineAsset != null && ComponentsSchemaAssetLibraryNewCtaAsset == null && ComponentsSchemaAssetLibraryNewImageAsset == null && ComponentsSchemaAssetLibraryNewVideoAsset == null) { if (ComponentsSchemaAssetLibraryNewHeadlineAsset is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaAssetLibraryNewHeadlineAsset); return; }
+            if (ComponentsSchemaAssetLibraryNewImageAsset != null && ComponentsSchemaAssetLibraryNewCtaAsset == null && ComponentsSchemaAssetLibraryNewHeadlineAsset == null && ComponentsSchemaAssetLibraryNewVideoAsset == null) { if (ComponentsSchemaAssetLibraryNewImageAsset is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaAssetLibraryNewImageAsset); return; }
+            if (ComponentsSchemaAssetLibraryNewVideoAsset != null && ComponentsSchemaAssetLibraryNewCtaAsset == null && ComponentsSchemaAssetLibraryNewHeadlineAsset == null && ComponentsSchemaAssetLibraryNewImageAsset == null) { if (ComponentsSchemaAssetLibraryNewVideoAsset is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaAssetLibraryNewVideoAsset); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ComponentsSchemaAssetLibraryNewCtaAsset != null)
             {
+                if (ComponentsSchemaAssetLibraryNewCtaAsset is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewCtaAsset>(null, ComponentsSchemaAssetLibraryNewCtaAsset);
             }
             else if(ComponentsSchemaAssetLibraryNewHeadlineAsset != null)
             {
+                if (ComponentsSchemaAssetLibraryNewHeadlineAsset is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewHeadlineAsset>(null, ComponentsSchemaAssetLibraryNewHeadlineAsset);
             }
             else if(ComponentsSchemaAssetLibraryNewImageAsset != null)
             {
+                if (ComponentsSchemaAssetLibraryNewImageAsset is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewImageAsset>(null, ComponentsSchemaAssetLibraryNewImageAsset);
             }
             else if(ComponentsSchemaAssetLibraryNewVideoAsset != null)
             {
+                if (ComponentsSchemaAssetLibraryNewVideoAsset is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryNewVideoAsset>(null, ComponentsSchemaAssetLibraryNewVideoAsset);
             }
         }

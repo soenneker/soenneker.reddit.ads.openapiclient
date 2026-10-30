@@ -26,6 +26,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Profiles.Item
             get => new global::Soenneker.Reddit.Ads.OpenApiClient.Profiles.Item.Creative_assets.Creative_assetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The posts property</summary>
+        [Obsolete("")]
         public global::Soenneker.Reddit.Ads.OpenApiClient.Profiles.Item.Posts.PostsRequestBuilder Posts
         {
             get => new global::Soenneker.Reddit.Ads.OpenApiClient.Profiles.Item.Posts.PostsRequestBuilder(PathParameters, RequestAdapter);
@@ -81,6 +82,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Profiles.Item
                 { "404", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors404.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetProfileResponse>(requestInfo, global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetProfileResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -59,6 +59,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Targeting.Third_party_audiences
                 { "401", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors401.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors429.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsErrors500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ListThirdPartyAudiencesResponse>(requestInfo, global::Soenneker.Reddit.Ads.OpenApiClient.Models.ListThirdPartyAudiencesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

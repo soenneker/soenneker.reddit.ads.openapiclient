@@ -11,52 +11,78 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ComponentsSchemaAdAccountHistoryFilter : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("change_types") is { } nullNodeChangeTypes && nullNodeChangeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangeTypes = null;
+            if (parseNode.GetChildNode("end_time") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
+            if (parseNode.GetChildNode("entity_field_filters") is { } nullNodeEntityFieldFilters && nullNodeEntityFieldFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityFieldFilters = null;
+            if (parseNode.GetChildNode("entity_id_filters") is { } nullNodeEntityIdFilters && nullNodeEntityIdFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityIdFilters = null;
+            if (parseNode.GetChildNode("entity_name_filters") is { } nullNodeEntityNameFilters && nullNodeEntityNameFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityNameFilters = null;
+            if (parseNode.GetChildNode("member_ids") is { } nullNodeMemberIds && nullNodeMemberIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberIds = null;
+            if (parseNode.GetChildNode("start_time") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+        }
+
         /// <summary>Filter by change types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterChangeTypesItem?>? ChangeTypes { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterChangeTypesItem?>? ChangeTypes { get => _explicitNullValueChangeTypes; set { _explicitNullValueChangeTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_types"); else _explicitNullProperties?.Remove("change_types"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterChangeTypesItem?>? _explicitNullValueChangeTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterChangeTypesItem?> ChangeTypes { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterChangeTypesItem?> ChangeTypes { get => _explicitNullValueChangeTypes; set { _explicitNullValueChangeTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_types"); else _explicitNullProperties?.Remove("change_types"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterChangeTypesItem?> _explicitNullValueChangeTypes = default!;
 #endif
         /// <summary>End of the time window for filtering changes.</summary>
-        public DateTimeOffset? EndTime { get; set; }
+        public DateTimeOffset? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private DateTimeOffset? _explicitNullValueEndTime = default!;
         /// <summary>This filter is deprecated and no longer used for history filtering. It is ignored if provided. Use `change_types` to filter history by entity field changes.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityFieldFiltersItem>? EntityFieldFilters { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityFieldFiltersItem>? EntityFieldFilters { get => _explicitNullValueEntityFieldFilters; set { _explicitNullValueEntityFieldFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_field_filters"); else _explicitNullProperties?.Remove("entity_field_filters"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityFieldFiltersItem>? _explicitNullValueEntityFieldFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityFieldFiltersItem> EntityFieldFilters { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityFieldFiltersItem> EntityFieldFilters { get => _explicitNullValueEntityFieldFilters; set { _explicitNullValueEntityFieldFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_field_filters"); else _explicitNullProperties?.Remove("entity_field_filters"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityFieldFiltersItem> _explicitNullValueEntityFieldFilters = default!;
 #endif
         /// <summary>Expanded ID filters for specific campaigns, ad groups, or ads.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityIdFiltersItem>? EntityIdFilters { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityIdFiltersItem>? EntityIdFilters { get => _explicitNullValueEntityIdFilters; set { _explicitNullValueEntityIdFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id_filters"); else _explicitNullProperties?.Remove("entity_id_filters"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityIdFiltersItem>? _explicitNullValueEntityIdFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityIdFiltersItem> EntityIdFilters { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityIdFiltersItem> EntityIdFilters { get => _explicitNullValueEntityIdFilters; set { _explicitNullValueEntityIdFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id_filters"); else _explicitNullProperties?.Remove("entity_id_filters"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityIdFiltersItem> _explicitNullValueEntityIdFilters = default!;
 #endif
         /// <summary>Expanded name filters for specific campaigns, ad groups, or ads.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityNameFiltersItem>? EntityNameFilters { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityNameFiltersItem>? EntityNameFilters { get => _explicitNullValueEntityNameFilters; set { _explicitNullValueEntityNameFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_name_filters"); else _explicitNullProperties?.Remove("entity_name_filters"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityNameFiltersItem>? _explicitNullValueEntityNameFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityNameFiltersItem> EntityNameFilters { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityNameFiltersItem> EntityNameFilters { get => _explicitNullValueEntityNameFilters; set { _explicitNullValueEntityNameFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_name_filters"); else _explicitNullProperties?.Remove("entity_name_filters"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityNameFiltersItem> _explicitNullValueEntityNameFilters = default!;
 #endif
         /// <summary>Filter by the member IDs who made the changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MemberIds { get; set; }
+        public List<string>? MemberIds { get => _explicitNullValueMemberIds; set { _explicitNullValueMemberIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_ids"); else _explicitNullProperties?.Remove("member_ids"); } }
+        private List<string>? _explicitNullValueMemberIds = default!;
 #nullable restore
 #else
-        public List<string> MemberIds { get; set; }
+        public List<string> MemberIds { get => _explicitNullValueMemberIds; set { _explicitNullValueMemberIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member_ids"); else _explicitNullProperties?.Remove("member_ids"); } }
+        private List<string> _explicitNullValueMemberIds = default!;
 #endif
         /// <summary>Start of the time window for filtering changes.</summary>
-        public DateTimeOffset? StartTime { get; set; }
+        public DateTimeOffset? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private DateTimeOffset? _explicitNullValueStartTime = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,7 +91,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilter();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilter(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,7 +123,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityIdFiltersItem>("entity_id_filters", EntityIdFilters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountHistoryFilterEntityNameFiltersItem>("entity_name_filters", EntityNameFilters);
             writer.WriteCollectionOfPrimitiveValues<string>("member_ids", MemberIds);
-            writer.WriteDateTimeOffsetValue("start_time", StartTime);
+            writer.WriteDateTimeOffsetValue("start_time", StartTime);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

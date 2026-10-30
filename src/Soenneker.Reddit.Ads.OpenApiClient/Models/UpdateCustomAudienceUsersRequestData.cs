@@ -11,24 +11,39 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateCustomAudienceUsersRequestData : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action_type") is { } nullNodeActionType && nullNodeActionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionType = null;
+            if (parseNode.GetChildNode("column_order") is { } nullNodeColumnOrder && nullNodeColumnOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColumnOrder = null;
+            if (parseNode.GetChildNode("user_data") is { } nullNodeUserData && nullNodeUserData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserData = null;
+        }
+
         /// <summary>Operation to perform on the custom audience&apos;s users.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCustomAudienceUpdateAction? ActionType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCustomAudienceUpdateAction? ActionType { get => _explicitNullValueActionType; set { _explicitNullValueActionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_type"); else _explicitNullProperties?.Remove("action_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCustomAudienceUpdateAction? _explicitNullValueActionType = default!;
         /// <summary>The column_order property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestDataColumnOrderItem?>? ColumnOrder { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestDataColumnOrderItem?>? ColumnOrder { get => _explicitNullValueColumnOrder; set { _explicitNullValueColumnOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_order"); else _explicitNullProperties?.Remove("column_order"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestDataColumnOrderItem?>? _explicitNullValueColumnOrder = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestDataColumnOrderItem?> ColumnOrder { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestDataColumnOrderItem?> ColumnOrder { get => _explicitNullValueColumnOrder; set { _explicitNullValueColumnOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_order"); else _explicitNullProperties?.Remove("column_order"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestDataColumnOrderItem?> _explicitNullValueColumnOrder = default!;
 #endif
         /// <summary>Rows of user identifiers. Each row must match `column_order`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? UserData { get; set; }
+        public UntypedNode? UserData { get => _explicitNullValueUserData; set { _explicitNullValueUserData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_data"); else _explicitNullProperties?.Remove("user_data"); } }
+        private UntypedNode? _explicitNullValueUserData = default!;
 #nullable restore
 #else
-        public UntypedNode UserData { get; set; }
+        public UntypedNode UserData { get => _explicitNullValueUserData; set { _explicitNullValueUserData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_data"); else _explicitNullProperties?.Remove("user_data"); } }
+        private UntypedNode _explicitNullValueUserData = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +53,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +77,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCustomAudienceUpdateAction>("action_type", ActionType);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.UpdateCustomAudienceUsersRequestDataColumnOrderItem>("column_order", ColumnOrder);
-            writer.WriteObjectValue<UntypedNode>("user_data", UserData);
+            writer.WriteObjectValue<UntypedNode>("user_data", UserData);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

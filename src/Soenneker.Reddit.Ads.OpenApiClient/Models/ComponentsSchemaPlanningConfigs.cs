@@ -11,61 +11,100 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ComponentsSchemaPlanningConfigs : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bid_strategy") is { } nullNodeBidStrategy && nullNodeBidStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BidStrategy = null;
+            if (parseNode.GetChildNode("bid_type") is { } nullNodeBidType && nullNodeBidType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BidType = null;
+            if (parseNode.GetChildNode("bid_value") is { } nullNodeBidValue && nullNodeBidValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BidValue = null;
+            if (parseNode.GetChildNode("campaign_objective") is { } nullNodeCampaignObjective && nullNodeCampaignObjective.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignObjective = null;
+            if (parseNode.GetChildNode("end_time") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
+            if (parseNode.GetChildNode("goal_type") is { } nullNodeGoalType && nullNodeGoalType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoalType = null;
+            if (parseNode.GetChildNode("goal_value") is { } nullNodeGoalValue && nullNodeGoalValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoalValue = null;
+            if (parseNode.GetChildNode("optimization_goal") is { } nullNodeOptimizationGoal && nullNodeOptimizationGoal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptimizationGoal = null;
+            if (parseNode.GetChildNode("shopping_targeting") is { } nullNodeShoppingTargeting && nullNodeShoppingTargeting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShoppingTargeting = null;
+            if (parseNode.GetChildNode("shopping_type") is { } nullNodeShoppingType && nullNodeShoppingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShoppingType = null;
+            if (parseNode.GetChildNode("start_time") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+            if (parseNode.GetChildNode("targeting") is { } nullNodeTargeting && nullNodeTargeting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Targeting = null;
+            if (parseNode.GetChildNode("use_catalog") is { } nullNodeUseCatalog && nullNodeUseCatalog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseCatalog = null;
+            if (parseNode.GetChildNode("view_through_conversion_type") is { } nullNodeViewThroughConversionType && nullNodeViewThroughConversionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewThroughConversionType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ad group&apos;s bid strategy.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy2? BidStrategy { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy2? BidStrategy { get => _explicitNullValueBidStrategy; set { _explicitNullValueBidStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_strategy"); else _explicitNullProperties?.Remove("bid_strategy"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy2? _explicitNullValueBidStrategy = default!;
         /// <summary>The ad group&apos;s [bidding strategy](https://business.reddithelp.com/s/article/How-much-do-Reddit-Ads-cost#bidding-strategies).</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2? BidType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2? BidType { get => _explicitNullValueBidType; set { _explicitNullValueBidType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_type"); else _explicitNullProperties?.Remove("bid_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType2? _explicitNullValueBidType = default!;
         /// <summary>The amount to pay per bidding event (microcurrency).</summary>
-        public int? BidValue { get; set; }
+        public int? BidValue { get => _explicitNullValueBidValue; set { _explicitNullValueBidValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_value"); else _explicitNullProperties?.Remove("bid_value"); } }
+        private int? _explicitNullValueBidValue = default!;
         /// <summary>The [campaign objective](https://business.reddithelp.com/s/article/Ad-campaign-objectives).</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective? CampaignObjective { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective? CampaignObjective { get => _explicitNullValueCampaignObjective; set { _explicitNullValueCampaignObjective = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_objective"); else _explicitNullProperties?.Remove("campaign_objective"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.Objective? _explicitNullValueCampaignObjective = default!;
         /// <summary>When the ad group will stop delivering ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndTime { get; set; }
+        public string? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private string? _explicitNullValueEndTime = default!;
 #nullable restore
 #else
-        public string EndTime { get; set; }
+        public string EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private string _explicitNullValueEndTime = default!;
 #endif
         /// <summary>The ad group&apos;s goal type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType2? GoalType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType2? GoalType { get => _explicitNullValueGoalType; set { _explicitNullValueGoalType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_type"); else _explicitNullProperties?.Remove("goal_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType2? _explicitNullValueGoalType = default!;
         /// <summary>The value used to determine if the goal has been met. Measured in microcurrency for monetary goal types. For `PERCENTAGE` goals, this value must be between 0 and 100.</summary>
-        public int? GoalValue { get; set; }
+        public int? GoalValue { get => _explicitNullValueGoalValue; set { _explicitNullValueGoalValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_value"); else _explicitNullProperties?.Remove("goal_value"); } }
+        private int? _explicitNullValueGoalValue = default!;
         /// <summary>The event to optimize for. This must be compatible with the campaign objective. See the [goal options](/docs/v3/api/create-ad-group#optimization-goal-options).&gt; **Important:** This can&apos;t be changed later.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal2? OptimizationGoal { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal2? OptimizationGoal { get => _explicitNullValueOptimizationGoal; set { _explicitNullValueOptimizationGoal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimization_goal"); else _explicitNullProperties?.Remove("optimization_goal"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal2? _explicitNullValueOptimizationGoal = default!;
         /// <summary>The shopping_targeting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2? ShoppingTargeting { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2? ShoppingTargeting { get => _explicitNullValueShoppingTargeting; set { _explicitNullValueShoppingTargeting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopping_targeting"); else _explicitNullProperties?.Remove("shopping_targeting"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2? _explicitNullValueShoppingTargeting = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2 ShoppingTargeting { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2 ShoppingTargeting { get => _explicitNullValueShoppingTargeting; set { _explicitNullValueShoppingTargeting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopping_targeting"); else _explicitNullProperties?.Remove("shopping_targeting"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2 _explicitNullValueShoppingTargeting = default!;
 #endif
         /// <summary>Indicates the catalog sale ad group&apos;s type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingType2? ShoppingType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingType2? ShoppingType { get => _explicitNullValueShoppingType; set { _explicitNullValueShoppingType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopping_type"); else _explicitNullProperties?.Remove("shopping_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingType2? _explicitNullValueShoppingType = default!;
         /// <summary>When the ad group will begin to deliver ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Required if `end_time` is set. For ad groups in a campaign with a start time in the future, this must match or be later than the campaign start time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartTime { get; set; }
+        public string? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private string? _explicitNullValueStartTime = default!;
 #nullable restore
 #else
-        public string StartTime { get; set; }
+        public string StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private string _explicitNullValueStartTime = default!;
 #endif
         /// <summary>The targeting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargeting? Targeting { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargeting? Targeting { get => _explicitNullValueTargeting; set { _explicitNullValueTargeting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targeting"); else _explicitNullProperties?.Remove("targeting"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargeting? _explicitNullValueTargeting = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargeting Targeting { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargeting Targeting { get => _explicitNullValueTargeting; set { _explicitNullValueTargeting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targeting"); else _explicitNullProperties?.Remove("targeting"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargeting _explicitNullValueTargeting = default!;
 #endif
         /// <summary>Whether the campaign uses a product catalog. It can be `true` only when `objective` is `SALES`. Omitted when unset. When `true`, all ad groups in the campaign must use a catalog.</summary>
-        public bool? UseCatalog { get; set; }
+        public bool? UseCatalog { get => _explicitNullValueUseCatalog; set { _explicitNullValueUseCatalog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_catalog"); else _explicitNullProperties?.Remove("use_catalog"); } }
+        private bool? _explicitNullValueUseCatalog = default!;
         /// <summary>The conversion attribution window. This determines how conversions are counted after a user interacts with an ad.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType? ViewThroughConversionType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType? ViewThroughConversionType { get => _explicitNullValueViewThroughConversionType; set { _explicitNullValueViewThroughConversionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_through_conversion_type"); else _explicitNullProperties?.Remove("view_through_conversion_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType? _explicitNullValueViewThroughConversionType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPlanningConfigs"/> and sets the default values.
         /// </summary>
@@ -81,7 +120,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPlanningConfigs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPlanningConfigs();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPlanningConfigs(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,6 +167,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingTargeting>("targeting", Targeting);
             writer.WriteBoolValue("use_catalog", UseCatalog);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ViewThroughConversionType>("view_through_conversion_type", ViewThroughConversionType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaPostCreativesCreative : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreative"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,25 +70,38 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             var result = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCreative();
             if("CAROUSEL".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaPostCreativesCarouselCreative = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreative();
+                
             }
             else if("IMAGE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaPostCreativesImageCreative = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesImageCreative();
+                
             }
             else if("PROMOTED_POST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaPostCreativesPromotedPostCreative = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesPromotedPostCreative();
+                
             }
             else if("TEXT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaPostCreativesTextCreative = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesTextCreative();
+                
             }
             else if("VIDEO".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaPostCreativesVideoCreative = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesVideoCreative();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("IMAGE".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("destination") != null && parseNode.GetChildNode("headline") != null && parseNode.GetChildNode("image") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("TEXT".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("body") != null && parseNode.GetChildNode("headline") != null && parseNode.GetChildNode("text_format") != null && (parseNode.GetChildNode("text_format")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("PLAIN_TEXT".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "RICH_TEXT_JSON".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("video") != null && parseNode.GetChildNode("thumbnail") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("VIDEO".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("headline") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("carousel") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("CAROUSEL".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("headline") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("PROMOTED_POST".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("headline") != null && parseNode.GetChildNode("post") != null))();
+            if (result.ComponentsSchemaPostCreativesCarouselCreative == null && result.ComponentsSchemaPostCreativesImageCreative == null && result.ComponentsSchemaPostCreativesPromotedPostCreative == null && result.ComponentsSchemaPostCreativesTextCreative == null && result.ComponentsSchemaPostCreativesVideoCreative == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.ComponentsSchemaPostCreativesImageCreative = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesImageCreative(), parseNode);
+            if (result.ComponentsSchemaPostCreativesCarouselCreative == null && result.ComponentsSchemaPostCreativesImageCreative == null && result.ComponentsSchemaPostCreativesPromotedPostCreative == null && result.ComponentsSchemaPostCreativesTextCreative == null && result.ComponentsSchemaPostCreativesVideoCreative == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.ComponentsSchemaPostCreativesTextCreative = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesTextCreative(), parseNode);
+            if (result.ComponentsSchemaPostCreativesCarouselCreative == null && result.ComponentsSchemaPostCreativesImageCreative == null && result.ComponentsSchemaPostCreativesPromotedPostCreative == null && result.ComponentsSchemaPostCreativesTextCreative == null && result.ComponentsSchemaPostCreativesVideoCreative == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4) result.ComponentsSchemaPostCreativesVideoCreative = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesVideoCreative(), parseNode);
+            if (result.ComponentsSchemaPostCreativesCarouselCreative == null && result.ComponentsSchemaPostCreativesImageCreative == null && result.ComponentsSchemaPostCreativesPromotedPostCreative == null && result.ComponentsSchemaPostCreativesTextCreative == null && result.ComponentsSchemaPostCreativesVideoCreative == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4) result.ComponentsSchemaPostCreativesCarouselCreative = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreative(), parseNode);
+            if (result.ComponentsSchemaPostCreativesCarouselCreative == null && result.ComponentsSchemaPostCreativesImageCreative == null && result.ComponentsSchemaPostCreativesPromotedPostCreative == null && result.ComponentsSchemaPostCreativesTextCreative == null && result.ComponentsSchemaPostCreativesVideoCreative == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ComponentsSchemaPostCreativesPromotedPostCreative = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesPromotedPostCreative(), parseNode);
+            if (result.ComponentsSchemaPostCreativesCarouselCreative == null && result.ComponentsSchemaPostCreativesImageCreative == null && result.ComponentsSchemaPostCreativesPromotedPostCreative == null && result.ComponentsSchemaPostCreativesTextCreative == null && result.ComponentsSchemaPostCreativesVideoCreative == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,25 +137,38 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ComponentsSchemaPostCreativesCarouselCreative == null && ComponentsSchemaPostCreativesImageCreative == null && ComponentsSchemaPostCreativesPromotedPostCreative == null && ComponentsSchemaPostCreativesTextCreative == null && ComponentsSchemaPostCreativesVideoCreative == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ComponentsSchemaPostCreativesCarouselCreative != null && ComponentsSchemaPostCreativesImageCreative == null && ComponentsSchemaPostCreativesPromotedPostCreative == null && ComponentsSchemaPostCreativesTextCreative == null && ComponentsSchemaPostCreativesVideoCreative == null) { if (ComponentsSchemaPostCreativesCarouselCreative is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaPostCreativesCarouselCreative); return; }
+            if (ComponentsSchemaPostCreativesImageCreative != null && ComponentsSchemaPostCreativesCarouselCreative == null && ComponentsSchemaPostCreativesPromotedPostCreative == null && ComponentsSchemaPostCreativesTextCreative == null && ComponentsSchemaPostCreativesVideoCreative == null) { if (ComponentsSchemaPostCreativesImageCreative is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaPostCreativesImageCreative); return; }
+            if (ComponentsSchemaPostCreativesPromotedPostCreative != null && ComponentsSchemaPostCreativesCarouselCreative == null && ComponentsSchemaPostCreativesImageCreative == null && ComponentsSchemaPostCreativesTextCreative == null && ComponentsSchemaPostCreativesVideoCreative == null) { if (ComponentsSchemaPostCreativesPromotedPostCreative is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaPostCreativesPromotedPostCreative); return; }
+            if (ComponentsSchemaPostCreativesTextCreative != null && ComponentsSchemaPostCreativesCarouselCreative == null && ComponentsSchemaPostCreativesImageCreative == null && ComponentsSchemaPostCreativesPromotedPostCreative == null && ComponentsSchemaPostCreativesVideoCreative == null) { if (ComponentsSchemaPostCreativesTextCreative is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaPostCreativesTextCreative); return; }
+            if (ComponentsSchemaPostCreativesVideoCreative != null && ComponentsSchemaPostCreativesCarouselCreative == null && ComponentsSchemaPostCreativesImageCreative == null && ComponentsSchemaPostCreativesPromotedPostCreative == null && ComponentsSchemaPostCreativesTextCreative == null) { if (ComponentsSchemaPostCreativesVideoCreative is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaPostCreativesVideoCreative); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ComponentsSchemaPostCreativesCarouselCreative != null)
             {
+                if (ComponentsSchemaPostCreativesCarouselCreative is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesCarouselCreative>(null, ComponentsSchemaPostCreativesCarouselCreative);
             }
             else if(ComponentsSchemaPostCreativesImageCreative != null)
             {
+                if (ComponentsSchemaPostCreativesImageCreative is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesImageCreative>(null, ComponentsSchemaPostCreativesImageCreative);
             }
             else if(ComponentsSchemaPostCreativesPromotedPostCreative != null)
             {
+                if (ComponentsSchemaPostCreativesPromotedPostCreative is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesPromotedPostCreative>(null, ComponentsSchemaPostCreativesPromotedPostCreative);
             }
             else if(ComponentsSchemaPostCreativesTextCreative != null)
             {
+                if (ComponentsSchemaPostCreativesTextCreative is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesTextCreative>(null, ComponentsSchemaPostCreativesTextCreative);
             }
             else if(ComponentsSchemaPostCreativesVideoCreative != null)
             {
+                if (ComponentsSchemaPostCreativesVideoCreative is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesVideoCreative>(null, ComponentsSchemaPostCreativesVideoCreative);
             }
         }

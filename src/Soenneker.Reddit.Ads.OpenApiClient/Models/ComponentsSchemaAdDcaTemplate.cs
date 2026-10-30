@@ -12,7 +12,29 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaAdDcaTemplate : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ad_group_id") is { } nullNodeAdGroupId && nullNodeAdGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdGroupId = null;
+            if (parseNode.GetChildNode("asset_identifiers") is { } nullNodeAssetIdentifiers && nullNodeAssetIdentifiers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetIdentifiers = null;
+            if (parseNode.GetChildNode("campaign_objective_type") is { } nullNodeCampaignObjectiveType && nullNodeCampaignObjectiveType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignObjectiveType = null;
+            if (parseNode.GetChildNode("click_url") is { } nullNodeClickUrl && nullNodeClickUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickUrl = null;
+            if (parseNode.GetChildNode("click_url_query_parameters") is { } nullNodeClickUrlQueryParameters && nullNodeClickUrlQueryParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickUrlQueryParameters = null;
+            if (parseNode.GetChildNode("configured_status") is { } nullNodeConfiguredStatus && nullNodeConfiguredStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfiguredStatus = null;
+            if (parseNode.GetChildNode("destination") is { } nullNodeDestination && nullNodeDestination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destination = null;
+            if (parseNode.GetChildNode("enhancements") is { } nullNodeEnhancements && nullNodeEnhancements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enhancements = null;
+            if (parseNode.GetChildNode("event_trackers") is { } nullNodeEventTrackers && nullNodeEventTrackers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventTrackers = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("preview_expiry") is { } nullNodePreviewExpiry && nullNodePreviewExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewExpiry = null;
+            if (parseNode.GetChildNode("profile_id") is { } nullNodeProfileId && nullNodeProfileId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileId = null;
+            if (parseNode.GetChildNode("supplementary_text") is { } nullNodeSupplementaryText && nullNodeSupplementaryText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupplementaryText = null;
+            if (parseNode.GetChildNode("thumbnail_asset_identifiers") is { } nullNodeThumbnailAssetIdentifiers && nullNodeThumbnailAssetIdentifiers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThumbnailAssetIdentifiers = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The ad account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,18 +48,22 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The ID of the ad group this ad belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdGroupId { get; set; }
+        public string? AdGroupId { get => _explicitNullValueAdGroupId; set { _explicitNullValueAdGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ad_group_id"); else _explicitNullProperties?.Remove("ad_group_id"); } }
+        private string? _explicitNullValueAdGroupId = default!;
 #nullable restore
 #else
-        public string AdGroupId { get; set; }
+        public string AdGroupId { get => _explicitNullValueAdGroupId; set { _explicitNullValueAdGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ad_group_id"); else _explicitNullProperties?.Remove("ad_group_id"); } }
+        private string _explicitNullValueAdGroupId = default!;
 #endif
         /// <summary>The creative assets that Reddit can use to generate ads for delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId>? AssetIdentifiers { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId>? AssetIdentifiers { get => _explicitNullValueAssetIdentifiers; set { _explicitNullValueAssetIdentifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_identifiers"); else _explicitNullProperties?.Remove("asset_identifiers"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId>? _explicitNullValueAssetIdentifiers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId> AssetIdentifiers { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId> AssetIdentifiers { get => _explicitNullValueAssetIdentifiers; set { _explicitNullValueAssetIdentifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_identifiers"); else _explicitNullProperties?.Remove("asset_identifiers"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId> _explicitNullValueAssetIdentifiers = default!;
 #endif
         /// <summary>The ID of the ad&apos;s campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,25 +74,31 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string CampaignId { get; private set; }
 #endif
         /// <summary>The [campaign objective](https://business.reddithelp.com/s/article/Ad-campaign-objectives).</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseCampaignObjectiveType? CampaignObjectiveType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseCampaignObjectiveType? CampaignObjectiveType { get => _explicitNullValueCampaignObjectiveType; set { _explicitNullValueCampaignObjectiveType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_objective_type"); else _explicitNullProperties?.Remove("campaign_objective_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseCampaignObjectiveType? _explicitNullValueCampaignObjectiveType = default!;
         /// <summary>The URL users are directed to when they click the ad. When `shopping_creative` is set (catalog/product ads), `click_url` is not used for ad delivery; if both are sent in create or update requests, `click_url` is ignored.&gt; **Important:** Updating an ad or creative may update `destination_url`, which `click_url` often needs to match. [Update `click_url` to match its value](/docs/v3/guides/programs/campaign/match-destination-and-click-url) for **image**, **carousel**, or **video** formats.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClickUrl { get; set; }
+        public string? ClickUrl { get => _explicitNullValueClickUrl; set { _explicitNullValueClickUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_url"); else _explicitNullProperties?.Remove("click_url"); } }
+        private string? _explicitNullValueClickUrl = default!;
 #nullable restore
 #else
-        public string ClickUrl { get; set; }
+        public string ClickUrl { get => _explicitNullValueClickUrl; set { _explicitNullValueClickUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_url"); else _explicitNullProperties?.Remove("click_url"); } }
+        private string _explicitNullValueClickUrl = default!;
 #endif
         /// <summary>Optional query parameters to be appended to the `click_url`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter>? ClickUrlQueryParameters { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter>? ClickUrlQueryParameters { get => _explicitNullValueClickUrlQueryParameters; set { _explicitNullValueClickUrlQueryParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_url_query_parameters"); else _explicitNullProperties?.Remove("click_url_query_parameters"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter>? _explicitNullValueClickUrlQueryParameters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter> ClickUrlQueryParameters { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter> ClickUrlQueryParameters { get => _explicitNullValueClickUrlQueryParameters; set { _explicitNullValueClickUrlQueryParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_url_query_parameters"); else _explicitNullProperties?.Remove("click_url_query_parameters"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter> _explicitNullValueClickUrlQueryParameters = default!;
 #endif
         /// <summary>The ad&apos;s status set by the ad account. Can differ from `effective_status` depending on context, such as pending billing information.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseConfiguredStatus? ConfiguredStatus { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseConfiguredStatus? ConfiguredStatus { get => _explicitNullValueConfiguredStatus; set { _explicitNullValueConfiguredStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configured_status"); else _explicitNullProperties?.Remove("configured_status"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseConfiguredStatus? _explicitNullValueConfiguredStatus = default!;
         /// <summary>When this entity was created ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The delivery statuses for this ad group.</summary>
@@ -80,20 +112,24 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>A URL to navigate the user to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesDestinationsUrl? Destination { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesDestinationsUrl? Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesDestinationsUrl? _explicitNullValueDestination = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesDestinationsUrl Destination { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesDestinationsUrl Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesDestinationsUrl _explicitNullValueDestination = default!;
 #endif
         /// <summary>The calculated status determining the real status of this entity.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseEffectiveStatus? EffectiveStatus { get; private set; }
         /// <summary>Details about enhancements associated with the creative.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEnhancements? Enhancements { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEnhancements? Enhancements { get => _explicitNullValueEnhancements; set { _explicitNullValueEnhancements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enhancements"); else _explicitNullProperties?.Remove("enhancements"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEnhancements? _explicitNullValueEnhancements = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEnhancements Enhancements { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEnhancements Enhancements { get => _explicitNullValueEnhancements; set { _explicitNullValueEnhancements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enhancements"); else _explicitNullProperties?.Remove("enhancements"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEnhancements _explicitNullValueEnhancements = default!;
 #endif
         /// <summary>A list of fatal errors encountered while attempting to materialize. Populates when `materialization_status` is `FAILED`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,10 +142,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The event_trackers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseEventTrackersItem>? EventTrackers { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseEventTrackersItem>? EventTrackers { get => _explicitNullValueEventTrackers; set { _explicitNullValueEventTrackers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_trackers"); else _explicitNullProperties?.Remove("event_trackers"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseEventTrackersItem>? _explicitNullValueEventTrackers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseEventTrackersItem> EventTrackers { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseEventTrackersItem> EventTrackers { get => _explicitNullValueEventTrackers; set { _explicitNullValueEventTrackers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_trackers"); else _explicitNullProperties?.Remove("event_trackers"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdBaseEventTrackersItem> _explicitNullValueEventTrackers = default!;
 #endif
         /// <summary>The ad ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,13 +164,16 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The entity name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>When the link for `preview_url` will no longer work. Set to `null` to disable the preview URL. [Learn how to update this field](https://ads-api.reddit.com/docs/v3/preview-an-ad).</summary>
-        public DateTimeOffset? PreviewExpiry { get; set; }
+        public DateTimeOffset? PreviewExpiry { get => _explicitNullValuePreviewExpiry; set { _explicitNullValuePreviewExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_expiry"); else _explicitNullProperties?.Remove("preview_expiry"); } }
+        private DateTimeOffset? _explicitNullValuePreviewExpiry = default!;
         /// <summary>A URL to preview the ad in a placement. Available only while `preview_expiry` is valid. Append `?comment_ad={{Preview ID}}` to a post URL to preview in a different placement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -144,10 +185,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The ID of the profile to create the dynamic ads for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileId { get; set; }
+        public string? ProfileId { get => _explicitNullValueProfileId; set { _explicitNullValueProfileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_id"); else _explicitNullProperties?.Remove("profile_id"); } }
+        private string? _explicitNullValueProfileId = default!;
 #nullable restore
 #else
-        public string ProfileId { get; set; }
+        public string ProfileId { get => _explicitNullValueProfileId; set { _explicitNullValueProfileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_id"); else _explicitNullProperties?.Remove("profile_id"); } }
+        private string _explicitNullValueProfileId = default!;
 #endif
         /// <summary>Why the ad was rejected.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsRejectionReason? RejectionReason { get; private set; }
@@ -162,21 +205,26 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The supplementary text for the post. Used commonly as disclaimer text. **This is only available for select advertisers.** [Reach out](https://www.business.reddit.com/speak-with-a-reddit-ads-expert) for more details.&gt; **Tip:** Limit to 100 characters for optimal display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupplementaryText { get; set; }
+        public string? SupplementaryText { get => _explicitNullValueSupplementaryText; set { _explicitNullValueSupplementaryText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supplementary_text"); else _explicitNullProperties?.Remove("supplementary_text"); } }
+        private string? _explicitNullValueSupplementaryText = default!;
 #nullable restore
 #else
-        public string SupplementaryText { get; set; }
+        public string SupplementaryText { get => _explicitNullValueSupplementaryText; set { _explicitNullValueSupplementaryText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supplementary_text"); else _explicitNullProperties?.Remove("supplementary_text"); } }
+        private string _explicitNullValueSupplementaryText = default!;
 #endif
         /// <summary>A list of versioned thumbnail asset identifiers owned by the profile that can be used in the generated ads.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId>? ThumbnailAssetIdentifiers { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId>? ThumbnailAssetIdentifiers { get => _explicitNullValueThumbnailAssetIdentifiers; set { _explicitNullValueThumbnailAssetIdentifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnail_asset_identifiers"); else _explicitNullProperties?.Remove("thumbnail_asset_identifiers"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId>? _explicitNullValueThumbnailAssetIdentifiers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId> ThumbnailAssetIdentifiers { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId> ThumbnailAssetIdentifiers { get => _explicitNullValueThumbnailAssetIdentifiers; set { _explicitNullValueThumbnailAssetIdentifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnail_asset_identifiers"); else _explicitNullProperties?.Remove("thumbnail_asset_identifiers"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId> _explicitNullValueThumbnailAssetIdentifiers = default!;
 #endif
         /// <summary>The ad type used for a Reddit Max creative template.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.DynamicCreativeAdTemplateType? Type { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.DynamicCreativeAdTemplateType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.DynamicCreativeAdTemplateType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdDcaTemplate"/> and sets the default values.
         /// </summary>
@@ -192,7 +240,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdDcaTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdDcaTemplate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdDcaTemplate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -253,6 +301,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteStringValue("supplementary_text", SupplementaryText);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryAssetId>("thumbnail_asset_identifiers", ThumbnailAssetIdentifiers);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.DynamicCreativeAdTemplateType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

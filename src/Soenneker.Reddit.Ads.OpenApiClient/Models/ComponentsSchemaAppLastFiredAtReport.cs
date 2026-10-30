@@ -11,55 +11,110 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ComponentsSchemaAppLastFiredAtReport : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("mobile_conversion_ad_click") is { } nullNodeMobileConversionAdClick && nullNodeMobileConversionAdClick.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionAdClick = null;
+            if (parseNode.GetChildNode("mobile_conversion_add_payment_info") is { } nullNodeMobileConversionAddPaymentInfo && nullNodeMobileConversionAddPaymentInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionAddPaymentInfo = null;
+            if (parseNode.GetChildNode("mobile_conversion_add_to_cart") is { } nullNodeMobileConversionAddToCart && nullNodeMobileConversionAddToCart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionAddToCart = null;
+            if (parseNode.GetChildNode("mobile_conversion_add_to_wishlist") is { } nullNodeMobileConversionAddToWishlist && nullNodeMobileConversionAddToWishlist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionAddToWishlist = null;
+            if (parseNode.GetChildNode("mobile_conversion_ad_view") is { } nullNodeMobileConversionAdView && nullNodeMobileConversionAdView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionAdView = null;
+            if (parseNode.GetChildNode("mobile_conversion_app_launch") is { } nullNodeMobileConversionAppLaunch && nullNodeMobileConversionAppLaunch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionAppLaunch = null;
+            if (parseNode.GetChildNode("mobile_conversion_checkout") is { } nullNodeMobileConversionCheckout && nullNodeMobileConversionCheckout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionCheckout = null;
+            if (parseNode.GetChildNode("mobile_conversion_completed_tutorial") is { } nullNodeMobileConversionCompletedTutorial && nullNodeMobileConversionCompletedTutorial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionCompletedTutorial = null;
+            if (parseNode.GetChildNode("mobile_conversion_first_time_purchase") is { } nullNodeMobileConversionFirstTimePurchase && nullNodeMobileConversionFirstTimePurchase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionFirstTimePurchase = null;
+            if (parseNode.GetChildNode("mobile_conversion_install") is { } nullNodeMobileConversionInstall && nullNodeMobileConversionInstall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionInstall = null;
+            if (parseNode.GetChildNode("mobile_conversion_level_achieved") is { } nullNodeMobileConversionLevelAchieved && nullNodeMobileConversionLevelAchieved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionLevelAchieved = null;
+            if (parseNode.GetChildNode("mobile_conversion_login") is { } nullNodeMobileConversionLogin && nullNodeMobileConversionLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionLogin = null;
+            if (parseNode.GetChildNode("mobile_conversion_onboard_completed") is { } nullNodeMobileConversionOnboardCompleted && nullNodeMobileConversionOnboardCompleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionOnboardCompleted = null;
+            if (parseNode.GetChildNode("mobile_conversion_onboard_started") is { } nullNodeMobileConversionOnboardStarted && nullNodeMobileConversionOnboardStarted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionOnboardStarted = null;
+            if (parseNode.GetChildNode("mobile_conversion_purchase") is { } nullNodeMobileConversionPurchase && nullNodeMobileConversionPurchase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionPurchase = null;
+            if (parseNode.GetChildNode("mobile_conversion_rate") is { } nullNodeMobileConversionRate && nullNodeMobileConversionRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionRate = null;
+            if (parseNode.GetChildNode("mobile_conversion_reinstall") is { } nullNodeMobileConversionReinstall && nullNodeMobileConversionReinstall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionReinstall = null;
+            if (parseNode.GetChildNode("mobile_conversion_search") is { } nullNodeMobileConversionSearch && nullNodeMobileConversionSearch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionSearch = null;
+            if (parseNode.GetChildNode("mobile_conversion_sign_up") is { } nullNodeMobileConversionSignUp && nullNodeMobileConversionSignUp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionSignUp = null;
+            if (parseNode.GetChildNode("mobile_conversion_spend_credits") is { } nullNodeMobileConversionSpendCredits && nullNodeMobileConversionSpendCredits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionSpendCredits = null;
+            if (parseNode.GetChildNode("mobile_conversion_start_trial") is { } nullNodeMobileConversionStartTrial && nullNodeMobileConversionStartTrial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionStartTrial = null;
+            if (parseNode.GetChildNode("mobile_conversion_subscribe") is { } nullNodeMobileConversionSubscribe && nullNodeMobileConversionSubscribe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionSubscribe = null;
+            if (parseNode.GetChildNode("mobile_conversion_unlock_achievement") is { } nullNodeMobileConversionUnlockAchievement && nullNodeMobileConversionUnlockAchievement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionUnlockAchievement = null;
+            if (parseNode.GetChildNode("mobile_conversion_view_content") is { } nullNodeMobileConversionViewContent && nullNodeMobileConversionViewContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MobileConversionViewContent = null;
+        }
+
         /// <summary>The last time an Ad Click event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionAdClick { get; set; }
+        public DateTimeOffset? MobileConversionAdClick { get => _explicitNullValueMobileConversionAdClick; set { _explicitNullValueMobileConversionAdClick = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_ad_click"); else _explicitNullProperties?.Remove("mobile_conversion_ad_click"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionAdClick = default!;
         /// <summary>The last time an Add Payment Info event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionAddPaymentInfo { get; set; }
+        public DateTimeOffset? MobileConversionAddPaymentInfo { get => _explicitNullValueMobileConversionAddPaymentInfo; set { _explicitNullValueMobileConversionAddPaymentInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_add_payment_info"); else _explicitNullProperties?.Remove("mobile_conversion_add_payment_info"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionAddPaymentInfo = default!;
         /// <summary>The last time an Add to Cart event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionAddToCart { get; set; }
+        public DateTimeOffset? MobileConversionAddToCart { get => _explicitNullValueMobileConversionAddToCart; set { _explicitNullValueMobileConversionAddToCart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_add_to_cart"); else _explicitNullProperties?.Remove("mobile_conversion_add_to_cart"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionAddToCart = default!;
         /// <summary>The last time an Add to Wishlist event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionAddToWishlist { get; set; }
+        public DateTimeOffset? MobileConversionAddToWishlist { get => _explicitNullValueMobileConversionAddToWishlist; set { _explicitNullValueMobileConversionAddToWishlist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_add_to_wishlist"); else _explicitNullProperties?.Remove("mobile_conversion_add_to_wishlist"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionAddToWishlist = default!;
         /// <summary>The last time an Ad View event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionAdView { get; set; }
+        public DateTimeOffset? MobileConversionAdView { get => _explicitNullValueMobileConversionAdView; set { _explicitNullValueMobileConversionAdView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_ad_view"); else _explicitNullProperties?.Remove("mobile_conversion_ad_view"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionAdView = default!;
         /// <summary>The last time an App Launches event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionAppLaunch { get; set; }
+        public DateTimeOffset? MobileConversionAppLaunch { get => _explicitNullValueMobileConversionAppLaunch; set { _explicitNullValueMobileConversionAppLaunch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_app_launch"); else _explicitNullProperties?.Remove("mobile_conversion_app_launch"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionAppLaunch = default!;
         /// <summary>The last time a Checkout event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionCheckout { get; set; }
+        public DateTimeOffset? MobileConversionCheckout { get => _explicitNullValueMobileConversionCheckout; set { _explicitNullValueMobileConversionCheckout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_checkout"); else _explicitNullProperties?.Remove("mobile_conversion_checkout"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionCheckout = default!;
         /// <summary>The last time a Completed Tutorial event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionCompletedTutorial { get; set; }
+        public DateTimeOffset? MobileConversionCompletedTutorial { get => _explicitNullValueMobileConversionCompletedTutorial; set { _explicitNullValueMobileConversionCompletedTutorial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_completed_tutorial"); else _explicitNullProperties?.Remove("mobile_conversion_completed_tutorial"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionCompletedTutorial = default!;
         /// <summary>The last time a First Time Purchase event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionFirstTimePurchase { get; set; }
+        public DateTimeOffset? MobileConversionFirstTimePurchase { get => _explicitNullValueMobileConversionFirstTimePurchase; set { _explicitNullValueMobileConversionFirstTimePurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_first_time_purchase"); else _explicitNullProperties?.Remove("mobile_conversion_first_time_purchase"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionFirstTimePurchase = default!;
         /// <summary>The last time an Install event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionInstall { get; set; }
+        public DateTimeOffset? MobileConversionInstall { get => _explicitNullValueMobileConversionInstall; set { _explicitNullValueMobileConversionInstall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_install"); else _explicitNullProperties?.Remove("mobile_conversion_install"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionInstall = default!;
         /// <summary>The last time a Level Achieved event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionLevelAchieved { get; set; }
+        public DateTimeOffset? MobileConversionLevelAchieved { get => _explicitNullValueMobileConversionLevelAchieved; set { _explicitNullValueMobileConversionLevelAchieved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_level_achieved"); else _explicitNullProperties?.Remove("mobile_conversion_level_achieved"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionLevelAchieved = default!;
         /// <summary>The last time a Login event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionLogin { get; set; }
+        public DateTimeOffset? MobileConversionLogin { get => _explicitNullValueMobileConversionLogin; set { _explicitNullValueMobileConversionLogin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_login"); else _explicitNullProperties?.Remove("mobile_conversion_login"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionLogin = default!;
         /// <summary>The last time an Onboard Completed event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionOnboardCompleted { get; set; }
+        public DateTimeOffset? MobileConversionOnboardCompleted { get => _explicitNullValueMobileConversionOnboardCompleted; set { _explicitNullValueMobileConversionOnboardCompleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_onboard_completed"); else _explicitNullProperties?.Remove("mobile_conversion_onboard_completed"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionOnboardCompleted = default!;
         /// <summary>The last time an Onboard Started event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionOnboardStarted { get; set; }
+        public DateTimeOffset? MobileConversionOnboardStarted { get => _explicitNullValueMobileConversionOnboardStarted; set { _explicitNullValueMobileConversionOnboardStarted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_onboard_started"); else _explicitNullProperties?.Remove("mobile_conversion_onboard_started"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionOnboardStarted = default!;
         /// <summary>The last time a Purchase event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionPurchase { get; set; }
+        public DateTimeOffset? MobileConversionPurchase { get => _explicitNullValueMobileConversionPurchase; set { _explicitNullValueMobileConversionPurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_purchase"); else _explicitNullProperties?.Remove("mobile_conversion_purchase"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionPurchase = default!;
         /// <summary>The last time a Rate event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionRate { get; set; }
+        public DateTimeOffset? MobileConversionRate { get => _explicitNullValueMobileConversionRate; set { _explicitNullValueMobileConversionRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_rate"); else _explicitNullProperties?.Remove("mobile_conversion_rate"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionRate = default!;
         /// <summary>The last time a Reinstall event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionReinstall { get; set; }
+        public DateTimeOffset? MobileConversionReinstall { get => _explicitNullValueMobileConversionReinstall; set { _explicitNullValueMobileConversionReinstall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_reinstall"); else _explicitNullProperties?.Remove("mobile_conversion_reinstall"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionReinstall = default!;
         /// <summary>The last time an App Searches event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionSearch { get; set; }
+        public DateTimeOffset? MobileConversionSearch { get => _explicitNullValueMobileConversionSearch; set { _explicitNullValueMobileConversionSearch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_search"); else _explicitNullProperties?.Remove("mobile_conversion_search"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionSearch = default!;
         /// <summary>The last time a Sign Ups event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionSignUp { get; set; }
+        public DateTimeOffset? MobileConversionSignUp { get => _explicitNullValueMobileConversionSignUp; set { _explicitNullValueMobileConversionSignUp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_sign_up"); else _explicitNullProperties?.Remove("mobile_conversion_sign_up"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionSignUp = default!;
         /// <summary>The last time a Spend Credits event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionSpendCredits { get; set; }
+        public DateTimeOffset? MobileConversionSpendCredits { get => _explicitNullValueMobileConversionSpendCredits; set { _explicitNullValueMobileConversionSpendCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_spend_credits"); else _explicitNullProperties?.Remove("mobile_conversion_spend_credits"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionSpendCredits = default!;
         /// <summary>The last time a Start Trial event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionStartTrial { get; set; }
+        public DateTimeOffset? MobileConversionStartTrial { get => _explicitNullValueMobileConversionStartTrial; set { _explicitNullValueMobileConversionStartTrial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_start_trial"); else _explicitNullProperties?.Remove("mobile_conversion_start_trial"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionStartTrial = default!;
         /// <summary>The last time a Subscribe event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionSubscribe { get; set; }
+        public DateTimeOffset? MobileConversionSubscribe { get => _explicitNullValueMobileConversionSubscribe; set { _explicitNullValueMobileConversionSubscribe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_subscribe"); else _explicitNullProperties?.Remove("mobile_conversion_subscribe"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionSubscribe = default!;
         /// <summary>The last time an Unlock Achievement event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionUnlockAchievement { get; set; }
+        public DateTimeOffset? MobileConversionUnlockAchievement { get => _explicitNullValueMobileConversionUnlockAchievement; set { _explicitNullValueMobileConversionUnlockAchievement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_unlock_achievement"); else _explicitNullProperties?.Remove("mobile_conversion_unlock_achievement"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionUnlockAchievement = default!;
         /// <summary>The last time a View Content event fired ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
-        public DateTimeOffset? MobileConversionViewContent { get; set; }
+        public DateTimeOffset? MobileConversionViewContent { get => _explicitNullValueMobileConversionViewContent; set { _explicitNullValueMobileConversionViewContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile_conversion_view_content"); else _explicitNullProperties?.Remove("mobile_conversion_view_content"); } }
+        private DateTimeOffset? _explicitNullValueMobileConversionViewContent = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,7 +123,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAppLastFiredAtReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAppLastFiredAtReport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAppLastFiredAtReport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,7 +189,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("mobile_conversion_start_trial", MobileConversionStartTrial);
             writer.WriteDateTimeOffsetValue("mobile_conversion_subscribe", MobileConversionSubscribe);
             writer.WriteDateTimeOffsetValue("mobile_conversion_unlock_achievement", MobileConversionUnlockAchievement);
-            writer.WriteDateTimeOffsetValue("mobile_conversion_view_content", MobileConversionViewContent);
+            writer.WriteDateTimeOffsetValue("mobile_conversion_view_content", MobileConversionViewContent);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

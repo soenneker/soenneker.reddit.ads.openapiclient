@@ -11,7 +11,20 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ComponentsSchemaCustomAudienceBase : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customer_list_config") is { } nullNodeCustomerListConfig && nullNodeCustomerListConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerListConfig = null;
+            if (parseNode.GetChildNode("engagement_audience_config") is { } nullNodeEngagementAudienceConfig && nullNodeEngagementAudienceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EngagementAudienceConfig = null;
+            if (parseNode.GetChildNode("lookalike_config") is { } nullNodeLookalikeConfig && nullNodeLookalikeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookalikeConfig = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("pixel_audience_config") is { } nullNodePixelAudienceConfig && nullNodePixelAudienceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PixelAudienceConfig = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The ID of the ad account that owns this custom audience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,10 +48,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>Details for the [customer list audience](https://business.reddithelp.com/s/article/custom-audiences#customer-lists).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomerListConfig? CustomerListConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomerListConfig? CustomerListConfig { get => _explicitNullValueCustomerListConfig; set { _explicitNullValueCustomerListConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_list_config"); else _explicitNullProperties?.Remove("customer_list_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomerListConfig? _explicitNullValueCustomerListConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomerListConfig CustomerListConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomerListConfig CustomerListConfig { get => _explicitNullValueCustomerListConfig; set { _explicitNullValueCustomerListConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_list_config"); else _explicitNullProperties?.Remove("customer_list_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomerListConfig _explicitNullValueCustomerListConfig = default!;
 #endif
         /// <summary>The delivery statuses for this ad group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,10 +66,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>Configuration for an ENGAGEMENT_RETARGETING audience. Required when type is ENGAGEMENT_RETARGETING.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEngagementAudienceConfig? EngagementAudienceConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEngagementAudienceConfig? EngagementAudienceConfig { get => _explicitNullValueEngagementAudienceConfig; set { _explicitNullValueEngagementAudienceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engagement_audience_config"); else _explicitNullProperties?.Remove("engagement_audience_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEngagementAudienceConfig? _explicitNullValueEngagementAudienceConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEngagementAudienceConfig EngagementAudienceConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEngagementAudienceConfig EngagementAudienceConfig { get => _explicitNullValueEngagementAudienceConfig; set { _explicitNullValueEngagementAudienceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engagement_audience_config"); else _explicitNullProperties?.Remove("engagement_audience_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEngagementAudienceConfig _explicitNullValueEngagementAudienceConfig = default!;
 #endif
         /// <summary>The custom audience ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,28 +84,34 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>Configuration for a Lookalike audience. Required when the Custom Audience Type is LOOKALIKE.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfig? LookalikeConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfig? LookalikeConfig { get => _explicitNullValueLookalikeConfig; set { _explicitNullValueLookalikeConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookalike_config"); else _explicitNullProperties?.Remove("lookalike_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfig? _explicitNullValueLookalikeConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfig LookalikeConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfig LookalikeConfig { get => _explicitNullValueLookalikeConfig; set { _explicitNullValueLookalikeConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookalike_config"); else _explicitNullProperties?.Remove("lookalike_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfig _explicitNullValueLookalikeConfig = default!;
 #endif
         /// <summary>When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).</summary>
         public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The entity name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Configuration for a website retargeting audience. In the API, website retargeting is represented by the `PIXEL_RETARGETING` type and the `pixel_audience_config` field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfig? PixelAudienceConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfig? PixelAudienceConfig { get => _explicitNullValuePixelAudienceConfig; set { _explicitNullValuePixelAudienceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pixel_audience_config"); else _explicitNullProperties?.Remove("pixel_audience_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfig? _explicitNullValuePixelAudienceConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfig PixelAudienceConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfig PixelAudienceConfig { get => _explicitNullValuePixelAudienceConfig; set { _explicitNullValuePixelAudienceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pixel_audience_config"); else _explicitNullProperties?.Remove("pixel_audience_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfig _explicitNullValuePixelAudienceConfig = default!;
 #endif
         /// <summary>The lower bound of the estimated matched users for this audience.</summary>
         public int? SizeRangeLower { get; private set; }
@@ -97,7 +120,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The custom audience&apos;s processing status.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomAudienceBaseStatus? Status { get; private set; }
         /// <summary>The custom audience type. Learn about [custom audiences](https://business.reddithelp.com/s/article/custom-audiences).</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomAudienceBaseType? Type { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomAudienceBaseType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomAudienceBaseType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -106,7 +130,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomAudienceBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomAudienceBase();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomAudienceBase(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,7 +170,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfig>("lookalike_config", LookalikeConfig);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelAudienceConfig>("pixel_audience_config", PixelAudienceConfig);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomAudienceBaseType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaCustomAudienceBaseType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

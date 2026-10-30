@@ -11,41 +11,72 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ComponentsSchemaLastFiredAtReport : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("add_to_cart") is { } nullNodeAddToCart && nullNodeAddToCart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddToCart = null;
+            if (parseNode.GetChildNode("add_to_wishlist") is { } nullNodeAddToWishlist && nullNodeAddToWishlist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddToWishlist = null;
+            if (parseNode.GetChildNode("breakdown") is { } nullNodeBreakdown && nullNodeBreakdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Breakdown = null;
+            if (parseNode.GetChildNode("custom") is { } nullNodeCustom && nullNodeCustom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Custom = null;
+            if (parseNode.GetChildNode("custom_events") is { } nullNodeCustomEvents && nullNodeCustomEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomEvents = null;
+            if (parseNode.GetChildNode("lead") is { } nullNodeLead && nullNodeLead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lead = null;
+            if (parseNode.GetChildNode("page_visit") is { } nullNodePageVisit && nullNodePageVisit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageVisit = null;
+            if (parseNode.GetChildNode("purchase") is { } nullNodePurchase && nullNodePurchase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purchase = null;
+            if (parseNode.GetChildNode("search") is { } nullNodeSearch && nullNodeSearch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Search = null;
+            if (parseNode.GetChildNode("sign_up") is { } nullNodeSignUp && nullNodeSignUp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignUp = null;
+            if (parseNode.GetChildNode("view_content") is { } nullNodeViewContent && nullNodeViewContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewContent = null;
+        }
+
         /// <summary>The last time `AddToCart` was fired.</summary>
-        public DateTimeOffset? AddToCart { get; set; }
+        public DateTimeOffset? AddToCart { get => _explicitNullValueAddToCart; set { _explicitNullValueAddToCart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_to_cart"); else _explicitNullProperties?.Remove("add_to_cart"); } }
+        private DateTimeOffset? _explicitNullValueAddToCart = default!;
         /// <summary>The last time `AddToWishlist` was fired.</summary>
-        public DateTimeOffset? AddToWishlist { get; set; }
+        public DateTimeOffset? AddToWishlist { get => _explicitNullValueAddToWishlist; set { _explicitNullValueAddToWishlist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_to_wishlist"); else _explicitNullProperties?.Remove("add_to_wishlist"); } }
+        private DateTimeOffset? _explicitNullValueAddToWishlist = default!;
         /// <summary>The most recent time each custom conversion event was fired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportBreakdownProperty? Breakdown { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportBreakdownProperty? Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportBreakdownProperty? _explicitNullValueBreakdown = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportBreakdownProperty Breakdown { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportBreakdownProperty Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportBreakdownProperty _explicitNullValueBreakdown = default!;
 #endif
         /// <summary>The last time a custom conversion event was fired.</summary>
-        public DateTimeOffset? Custom { get; set; }
+        public DateTimeOffset? Custom { get => _explicitNullValueCustom; set { _explicitNullValueCustom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom"); else _explicitNullProperties?.Remove("custom"); } }
+        private DateTimeOffset? _explicitNullValueCustom = default!;
         /// <summary>A list of recently-fired custom conversion events and their timestamps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportCustomEventsItem>? CustomEvents { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportCustomEventsItem>? CustomEvents { get => _explicitNullValueCustomEvents; set { _explicitNullValueCustomEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_events"); else _explicitNullProperties?.Remove("custom_events"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportCustomEventsItem>? _explicitNullValueCustomEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportCustomEventsItem> CustomEvents { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportCustomEventsItem> CustomEvents { get => _explicitNullValueCustomEvents; set { _explicitNullValueCustomEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_events"); else _explicitNullProperties?.Remove("custom_events"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReportCustomEventsItem> _explicitNullValueCustomEvents = default!;
 #endif
         /// <summary>The last time `Lead` was fired.</summary>
-        public DateTimeOffset? Lead { get; set; }
+        public DateTimeOffset? Lead { get => _explicitNullValueLead; set { _explicitNullValueLead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lead"); else _explicitNullProperties?.Remove("lead"); } }
+        private DateTimeOffset? _explicitNullValueLead = default!;
         /// <summary>The last time `PageVisit` was fired.</summary>
-        public DateTimeOffset? PageVisit { get; set; }
+        public DateTimeOffset? PageVisit { get => _explicitNullValuePageVisit; set { _explicitNullValuePageVisit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_visit"); else _explicitNullProperties?.Remove("page_visit"); } }
+        private DateTimeOffset? _explicitNullValuePageVisit = default!;
         /// <summary>The last time `Purchase` was fired.</summary>
-        public DateTimeOffset? Purchase { get; set; }
+        public DateTimeOffset? Purchase { get => _explicitNullValuePurchase; set { _explicitNullValuePurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase"); else _explicitNullProperties?.Remove("purchase"); } }
+        private DateTimeOffset? _explicitNullValuePurchase = default!;
         /// <summary>The last time `Search` was fired.</summary>
-        public DateTimeOffset? Search { get; set; }
+        public DateTimeOffset? Search { get => _explicitNullValueSearch; set { _explicitNullValueSearch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search"); else _explicitNullProperties?.Remove("search"); } }
+        private DateTimeOffset? _explicitNullValueSearch = default!;
         /// <summary>The last time `SignUp` was fired.</summary>
-        public DateTimeOffset? SignUp { get; set; }
+        public DateTimeOffset? SignUp { get => _explicitNullValueSignUp; set { _explicitNullValueSignUp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_up"); else _explicitNullProperties?.Remove("sign_up"); } }
+        private DateTimeOffset? _explicitNullValueSignUp = default!;
         /// <summary>The last time `ViewContent` was fired.</summary>
-        public DateTimeOffset? ViewContent { get; set; }
+        public DateTimeOffset? ViewContent { get => _explicitNullValueViewContent; set { _explicitNullValueViewContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_content"); else _explicitNullProperties?.Remove("view_content"); } }
+        private DateTimeOffset? _explicitNullValueViewContent = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,7 +85,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLastFiredAtReport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,7 +125,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("purchase", Purchase);
             writer.WriteDateTimeOffsetValue("search", Search);
             writer.WriteDateTimeOffsetValue("sign_up", SignUp);
-            writer.WriteDateTimeOffsetValue("view_content", ViewContent);
+            writer.WriteDateTimeOffsetValue("view_content", ViewContent);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,58 +11,87 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ComponentsSchemaPixelConversionEvent : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action_source") is { } nullNodeActionSource && nullNodeActionSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSource = null;
+            if (parseNode.GetChildNode("click_id") is { } nullNodeClickId && nullNodeClickId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickId = null;
+            if (parseNode.GetChildNode("event_at") is { } nullNodeEventAt && nullNodeEventAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventAt = null;
+            if (parseNode.GetChildNode("event_source_url") is { } nullNodeEventSourceUrl && nullNodeEventSourceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventSourceUrl = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("referrer_url") is { } nullNodeReferrerUrl && nullNodeReferrerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferrerUrl = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+        }
+
         /// <summary>&lt;span id=&quot;action-source-field&quot;&gt;&lt;/span&gt;The channel where the conversion happened. Used for [source-level conversion metrics](https://business.reddithelp.com/s/article/Custom-Columns#supported-metrics) in reporting.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventActionSource? ActionSource { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventActionSource? ActionSource { get => _explicitNullValueActionSource; set { _explicitNullValueActionSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_source"); else _explicitNullProperties?.Remove("action_source"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventActionSource? _explicitNullValueActionSource = default!;
         /// <summary>&lt;span id=&apos;click-id-field&apos;&gt;&lt;/span&gt;The Reddit-generated ID associated with an ad click. Recommended for all conversion events. Learn how to [implement click ID persistence](https://ads-api.reddit.com/docs/v3/capi-click-id-persistence).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClickId { get; set; }
+        public string? ClickId { get => _explicitNullValueClickId; set { _explicitNullValueClickId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_id"); else _explicitNullProperties?.Remove("click_id"); } }
+        private string? _explicitNullValueClickId = default!;
 #nullable restore
 #else
-        public string ClickId { get; set; }
+        public string ClickId { get => _explicitNullValueClickId; set { _explicitNullValueClickId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_id"); else _explicitNullProperties?.Remove("click_id"); } }
+        private string _explicitNullValueClickId = default!;
 #endif
         /// <summary>When the conversion event occurred (Unix epoch in milliseconds).</summary>
-        public long? EventAt { get; set; }
+        public long? EventAt { get => _explicitNullValueEventAt; set { _explicitNullValueEventAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_at"); else _explicitNullProperties?.Remove("event_at"); } }
+        private long? _explicitNullValueEventAt = default!;
         /// <summary>The URL where the conversion event occurred. Used to parse a domain for [event details](https://business.reddithelp.com/s/article/Events-Manager#view-event-details). Applies only to [`WEBSITE` events](https://business.reddithelp.com/s/article/Conversions-API#measure-impact-across-channels).&gt; **Tip:** When the click ID is appended, that identifier is extracted to improve coverage when the `click_id` parameter isn’t provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventSourceUrl { get; set; }
+        public string? EventSourceUrl { get => _explicitNullValueEventSourceUrl; set { _explicitNullValueEventSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_source_url"); else _explicitNullProperties?.Remove("event_source_url"); } }
+        private string? _explicitNullValueEventSourceUrl = default!;
 #nullable restore
 #else
-        public string EventSourceUrl { get; set; }
+        public string EventSourceUrl { get => _explicitNullValueEventSourceUrl; set { _explicitNullValueEventSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_source_url"); else _explicitNullProperties?.Remove("event_source_url"); } }
+        private string _explicitNullValueEventSourceUrl = default!;
 #endif
         /// <summary>The conversion event&apos;s [metadata](https://business.reddithelp.com/s/article/about-event-metadata).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventMetadata? Metadata { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventMetadata Metadata { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The URL of the page that referred the user to the conversion page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferrerUrl { get; set; }
+        public string? ReferrerUrl { get => _explicitNullValueReferrerUrl; set { _explicitNullValueReferrerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referrer_url"); else _explicitNullProperties?.Remove("referrer_url"); } }
+        private string? _explicitNullValueReferrerUrl = default!;
 #nullable restore
 #else
-        public string ReferrerUrl { get; set; }
+        public string ReferrerUrl { get => _explicitNullValueReferrerUrl; set { _explicitNullValueReferrerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referrer_url"); else _explicitNullProperties?.Remove("referrer_url"); } }
+        private string _explicitNullValueReferrerUrl = default!;
 #endif
         /// <summary>Classifies the conversion event. Used for aggregating data in reporting. At least `tracking_type` must be defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventType? Type { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventType? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventType Type { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventType Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventType _explicitNullValueType = default!;
 #endif
         /// <summary>The identifying user parameters associated with the conversion event. Learn more about [match keys](https://business.reddithelp.com/s/article/about-match-keys).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventUser? User { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventUser? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventUser? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventUser User { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventUser User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventUser _explicitNullValueUser = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,7 +101,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEvent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEvent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,7 +135,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventMetadata>("metadata", Metadata);
             writer.WriteStringValue("referrer_url", ReferrerUrl);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventUser>("user", User);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventUser>("user", User);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

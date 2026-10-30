@@ -11,22 +11,35 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetThirdPartyTrackersResponseData : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("click_tracker_domains") is { } nullNodeClickTrackerDomains && nullNodeClickTrackerDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickTrackerDomains = null;
+            if (parseNode.GetChildNode("impression_tracker_domains") is { } nullNodeImpressionTrackerDomains && nullNodeImpressionTrackerDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImpressionTrackerDomains = null;
+        }
+
         /// <summary>Domains recognized for click tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ClickTrackerDomains { get; set; }
+        public List<string>? ClickTrackerDomains { get => _explicitNullValueClickTrackerDomains; set { _explicitNullValueClickTrackerDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_tracker_domains"); else _explicitNullProperties?.Remove("click_tracker_domains"); } }
+        private List<string>? _explicitNullValueClickTrackerDomains = default!;
 #nullable restore
 #else
-        public List<string> ClickTrackerDomains { get; set; }
+        public List<string> ClickTrackerDomains { get => _explicitNullValueClickTrackerDomains; set { _explicitNullValueClickTrackerDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_tracker_domains"); else _explicitNullProperties?.Remove("click_tracker_domains"); } }
+        private List<string> _explicitNullValueClickTrackerDomains = default!;
 #endif
         /// <summary>Domains recognized for impression tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ImpressionTrackerDomains { get; set; }
+        public List<string>? ImpressionTrackerDomains { get => _explicitNullValueImpressionTrackerDomains; set { _explicitNullValueImpressionTrackerDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impression_tracker_domains"); else _explicitNullProperties?.Remove("impression_tracker_domains"); } }
+        private List<string>? _explicitNullValueImpressionTrackerDomains = default!;
 #nullable restore
 #else
-        public List<string> ImpressionTrackerDomains { get; set; }
+        public List<string> ImpressionTrackerDomains { get => _explicitNullValueImpressionTrackerDomains; set { _explicitNullValueImpressionTrackerDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impression_tracker_domains"); else _explicitNullProperties?.Remove("impression_tracker_domains"); } }
+        private List<string> _explicitNullValueImpressionTrackerDomains = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +49,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetThirdPartyTrackersResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetThirdPartyTrackersResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetThirdPartyTrackersResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +71,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("click_tracker_domains", ClickTrackerDomains);
-            writer.WriteCollectionOfPrimitiveValues<string>("impression_tracker_domains", ImpressionTrackerDomains);
+            writer.WriteCollectionOfPrimitiveValues<string>("impression_tracker_domains", ImpressionTrackerDomains);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -12,7 +12,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaAdCreate : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateDynamicCreativeTemplate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             var result = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreate();
             if("DYNAMIC_CREATIVE_AD_TEMPLATE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaAdCreateDynamicCreativeTemplate = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateDynamicCreativeTemplate();
+                
             }
             else if("UNSPECIFIED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ComponentsSchemaAdCreateStandard = new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandard();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("ad_group_id") != null && parseNode.GetChildNode("configured_status") != null && (parseNode.GetChildNode("configured_status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("ACTIVE".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "ARCHIVED".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "DELETED".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "PAUSED".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("UNSPECIFIED".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("DYNAMIC_CREATIVE_AD_TEMPLATE".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("ad_group_id") != null && parseNode.GetChildNode("configured_status") != null && (parseNode.GetChildNode("configured_status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("ACTIVE".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "ARCHIVED".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "DELETED".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "PAUSED".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("profile_id") != null && parseNode.GetChildNode("asset_identifiers") != null && parseNode.GetChildNode("destination") != null))();
+            if (result.ComponentsSchemaAdCreateDynamicCreativeTemplate == null && result.ComponentsSchemaAdCreateStandard == null && matchesUnionBranch0 && !matchesUnionBranch1) result.ComponentsSchemaAdCreateStandard = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandard(), parseNode);
+            if (result.ComponentsSchemaAdCreateDynamicCreativeTemplate == null && result.ComponentsSchemaAdCreateStandard == null && matchesUnionBranch1 && !matchesUnionBranch0) result.ComponentsSchemaAdCreateDynamicCreativeTemplate = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateDynamicCreativeTemplate(), parseNode);
+            if (result.ComponentsSchemaAdCreateDynamicCreativeTemplate == null && result.ComponentsSchemaAdCreateStandard == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ComponentsSchemaAdCreateDynamicCreativeTemplate == null && ComponentsSchemaAdCreateStandard == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ComponentsSchemaAdCreateDynamicCreativeTemplate != null && ComponentsSchemaAdCreateStandard == null) { if (ComponentsSchemaAdCreateDynamicCreativeTemplate is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaAdCreateDynamicCreativeTemplate); return; }
+            if (ComponentsSchemaAdCreateStandard != null && ComponentsSchemaAdCreateDynamicCreativeTemplate == null) { if (ComponentsSchemaAdCreateStandard is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ComponentsSchemaAdCreateStandard); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ComponentsSchemaAdCreateDynamicCreativeTemplate != null)
             {
+                if (ComponentsSchemaAdCreateDynamicCreativeTemplate is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateDynamicCreativeTemplate>(null, ComponentsSchemaAdCreateDynamicCreativeTemplate);
             }
             else if(ComponentsSchemaAdCreateStandard != null)
             {
+                if (ComponentsSchemaAdCreateStandard is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandard>(null, ComponentsSchemaAdCreateStandard);
             }
         }

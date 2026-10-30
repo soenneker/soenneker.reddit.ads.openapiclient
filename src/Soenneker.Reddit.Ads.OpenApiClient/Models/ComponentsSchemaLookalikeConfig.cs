@@ -12,16 +12,28 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaLookalikeConfig : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audience_size") is { } nullNodeAudienceSize && nullNodeAudienceSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceSize = null;
+            if (parseNode.GetChildNode("source_audience_id") is { } nullNodeSourceAudienceId && nullNodeSourceAudienceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAudienceId = null;
+        }
+
         /// <summary>The audience size type.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfigAudienceSize? AudienceSize { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfigAudienceSize? AudienceSize { get => _explicitNullValueAudienceSize; set { _explicitNullValueAudienceSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience_size"); else _explicitNullProperties?.Remove("audience_size"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfigAudienceSize? _explicitNullValueAudienceSize = default!;
         /// <summary>The ID of the [website retargeting](https://business.reddithelp.com/s/article/custom-audiences#website-retargeting) or [customer list audience](https://business.reddithelp.com/s/article/custom-audiences#customer-lists) used to generate this audience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceAudienceId { get; set; }
+        public string? SourceAudienceId { get => _explicitNullValueSourceAudienceId; set { _explicitNullValueSourceAudienceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_audience_id"); else _explicitNullProperties?.Remove("source_audience_id"); } }
+        private string? _explicitNullValueSourceAudienceId = default!;
 #nullable restore
 #else
-        public string SourceAudienceId { get; set; }
+        public string SourceAudienceId { get => _explicitNullValueSourceAudienceId; set { _explicitNullValueSourceAudienceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_audience_id"); else _explicitNullProperties?.Remove("source_audience_id"); } }
+        private string _explicitNullValueSourceAudienceId = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -31,7 +43,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +65,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaLookalikeConfigAudienceSize>("audience_size", AudienceSize);
-            writer.WriteStringValue("source_audience_id", SourceAudienceId);
+            writer.WriteStringValue("source_audience_id", SourceAudienceId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

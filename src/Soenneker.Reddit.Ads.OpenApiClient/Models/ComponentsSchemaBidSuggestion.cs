@@ -11,15 +11,30 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ComponentsSchemaBidSuggestion : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bid_suggestion_max") is { } nullNodeBidSuggestionMax && nullNodeBidSuggestionMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BidSuggestionMax = null;
+            if (parseNode.GetChildNode("bid_suggestion_median") is { } nullNodeBidSuggestionMedian && nullNodeBidSuggestionMedian.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BidSuggestionMedian = null;
+            if (parseNode.GetChildNode("bid_suggestion_min") is { } nullNodeBidSuggestionMin && nullNodeBidSuggestionMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BidSuggestionMin = null;
+            if (parseNode.GetChildNode("min_bid_value") is { } nullNodeMinBidValue && nullNodeMinBidValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinBidValue = null;
+        }
+
         /// <summary>The maximum suggested bid value (microcurrency).</summary>
-        public int? BidSuggestionMax { get; set; }
+        public int? BidSuggestionMax { get => _explicitNullValueBidSuggestionMax; set { _explicitNullValueBidSuggestionMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_suggestion_max"); else _explicitNullProperties?.Remove("bid_suggestion_max"); } }
+        private int? _explicitNullValueBidSuggestionMax = default!;
         /// <summary>The median suggested bid value (microcurrency).</summary>
-        public int? BidSuggestionMedian { get; set; }
+        public int? BidSuggestionMedian { get => _explicitNullValueBidSuggestionMedian; set { _explicitNullValueBidSuggestionMedian = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_suggestion_median"); else _explicitNullProperties?.Remove("bid_suggestion_median"); } }
+        private int? _explicitNullValueBidSuggestionMedian = default!;
         /// <summary>The minimum suggested bid value (microcurrency).</summary>
-        public int? BidSuggestionMin { get; set; }
+        public int? BidSuggestionMin { get => _explicitNullValueBidSuggestionMin; set { _explicitNullValueBidSuggestionMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_suggestion_min"); else _explicitNullProperties?.Remove("bid_suggestion_min"); } }
+        private int? _explicitNullValueBidSuggestionMin = default!;
         /// <summary>The absolute minimum bid value (microcurrency). Bids below this value will be rejected.</summary>
-        public int? MinBidValue { get; set; }
+        public int? MinBidValue { get => _explicitNullValueMinBidValue; set { _explicitNullValueMinBidValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_bid_value"); else _explicitNullProperties?.Remove("min_bid_value"); } }
+        private int? _explicitNullValueMinBidValue = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -28,7 +43,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaBidSuggestion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaBidSuggestion();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaBidSuggestion(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,7 +69,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteIntValue("bid_suggestion_max", BidSuggestionMax);
             writer.WriteIntValue("bid_suggestion_median", BidSuggestionMedian);
             writer.WriteIntValue("bid_suggestion_min", BidSuggestionMin);
-            writer.WriteIntValue("min_bid_value", MinBidValue);
+            writer.WriteIntValue("min_bid_value", MinBidValue);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

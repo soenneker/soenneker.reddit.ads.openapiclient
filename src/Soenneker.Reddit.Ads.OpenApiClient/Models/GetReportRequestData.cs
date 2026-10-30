@@ -11,61 +11,94 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetReportRequestData : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("breakdowns") is { } nullNodeBreakdowns && nullNodeBreakdowns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Breakdowns = null;
+            if (parseNode.GetChildNode("conversion_custom_events") is { } nullNodeConversionCustomEvents && nullNodeConversionCustomEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionCustomEvents = null;
+            if (parseNode.GetChildNode("conversion_metrics") is { } nullNodeConversionMetrics && nullNodeConversionMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionMetrics = null;
+            if (parseNode.GetChildNode("custom_column_ids") is { } nullNodeCustomColumnIds && nullNodeCustomColumnIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomColumnIds = null;
+            if (parseNode.GetChildNode("ends_at") is { } nullNodeEndsAt && nullNodeEndsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndsAt = null;
+            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
+            if (parseNode.GetChildNode("starts_at") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
+            if (parseNode.GetChildNode("time_zone_id") is { } nullNodeTimeZoneId && nullNodeTimeZoneId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZoneId = null;
+        }
+
         /// <summary>Aggregations summarizing specific metrics or statistics. Up to **3 items** (4 with `COUNTRY` and `REGION`) can be chosen.&gt; **Important:** Starting December 8, 2026, the following requests will return a `400 Bad Request`:- Requests using `HOUR` for a range longer than 7 days. The requested range can be any continuous 7-day period.- Requests containing more than 1 of `KEYWORD`, `COMMUNITY` (legacy `SUBREDDIT`), `INTEREST`, or `LANGUAGE`.- Requests that combine any of those 4 breakdowns with `DMA` (`METRO`), `REGION`, `GALLERY_ITEM_ID` (`CAROUSEL_CARD`), `OS_TYPE`, or `COUNTRY`.[Review the upcoming Reporting API changes and migration guidance](https://ads-api.reddit.com/docs/v3/guides/programs/reporting/upcoming-reporting-api-changes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportBreakdown?>? Breakdowns { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportBreakdown?>? Breakdowns { get => _explicitNullValueBreakdowns; set { _explicitNullValueBreakdowns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdowns"); else _explicitNullProperties?.Remove("breakdowns"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportBreakdown?>? _explicitNullValueBreakdowns = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportBreakdown?> Breakdowns { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportBreakdown?> Breakdowns { get => _explicitNullValueBreakdowns; set { _explicitNullValueBreakdowns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdowns"); else _explicitNullProperties?.Remove("breakdowns"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportBreakdown?> _explicitNullValueBreakdowns = default!;
 #endif
         /// <summary>A list of name-keyed conversion custom events to request in a report. Use this structure going forward when reportingon custom conversion events by name. The legacy slot-based custom event metrics (`CONVERSION_CUSTOM_EVENT_1_*` ..`CONVERSION_CUSTOM_EVENT_20_*`) remain available as report `fields` for backward compatibility, but are on a path todeprecation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionCustomEvent>? ConversionCustomEvents { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionCustomEvent>? ConversionCustomEvents { get => _explicitNullValueConversionCustomEvents; set { _explicitNullValueConversionCustomEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversion_custom_events"); else _explicitNullProperties?.Remove("conversion_custom_events"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionCustomEvent>? _explicitNullValueConversionCustomEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionCustomEvent> ConversionCustomEvents { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionCustomEvent> ConversionCustomEvents { get => _explicitNullValueConversionCustomEvents; set { _explicitNullValueConversionCustomEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversion_custom_events"); else _explicitNullProperties?.Remove("conversion_custom_events"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionCustomEvent> _explicitNullValueConversionCustomEvents = default!;
 #endif
         /// <summary>A configuration of conversion metrics that includes the base conversion field and the action sources to be used for the conversion data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionMetrics>? ConversionMetrics { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionMetrics>? ConversionMetrics { get => _explicitNullValueConversionMetrics; set { _explicitNullValueConversionMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversion_metrics"); else _explicitNullProperties?.Remove("conversion_metrics"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionMetrics>? _explicitNullValueConversionMetrics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionMetrics> ConversionMetrics { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionMetrics> ConversionMetrics { get => _explicitNullValueConversionMetrics; set { _explicitNullValueConversionMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversion_metrics"); else _explicitNullProperties?.Remove("conversion_metrics"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionMetrics> _explicitNullValueConversionMetrics = default!;
 #endif
         /// <summary>An array of custom column IDs to show in your report. Learn how to create metrics with [custom columns](https://business.reddithelp.com/s/article/Custom-Columns).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? CustomColumnIds { get; set; }
+        public List<Guid?>? CustomColumnIds { get => _explicitNullValueCustomColumnIds; set { _explicitNullValueCustomColumnIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_column_ids"); else _explicitNullProperties?.Remove("custom_column_ids"); } }
+        private List<Guid?>? _explicitNullValueCustomColumnIds = default!;
 #nullable restore
 #else
-        public List<Guid?> CustomColumnIds { get; set; }
+        public List<Guid?> CustomColumnIds { get => _explicitNullValueCustomColumnIds; set { _explicitNullValueCustomColumnIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_column_ids"); else _explicitNullProperties?.Remove("custom_column_ids"); } }
+        private List<Guid?> _explicitNullValueCustomColumnIds = default!;
 #endif
         /// <summary>When to stop fetching data for the report ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Must follow the `YYYY-MM-DDTHH:00:00Z` format. Can only be of hourly granularity.</summary>
-        public DateTimeOffset? EndsAt { get; set; }
+        public DateTimeOffset? EndsAt { get => _explicitNullValueEndsAt; set { _explicitNullValueEndsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ends_at"); else _explicitNullProperties?.Remove("ends_at"); } }
+        private DateTimeOffset? _explicitNullValueEndsAt = default!;
         /// <summary>Fields to return in your metrics. &gt; **Important:** `CLICK_ATTRIBUTION_WINDOW`, `VIEW_ATTRIBUTION_WINDOW`, `GALLERY_ITEM_CAPTION`, and slot-based custom conversion event fields matching `CONVERSION_CUSTOM_EVENT_1_*` through `CONVERSION_CUSTOM_EVENT_20_*` are **legacy fields**. Use `conversion_custom_events` to request custom conversion events by name going forward.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportField?>? Fields { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportField?>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportField?>? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportField?> Fields { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportField?> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportField?> _explicitNullValueFields = default!;
 #endif
         /// <summary>A comma-separated list to restrict results by limiting field to specific values or ranges. Learn about [filters](https://ads-api.reddit.com/docs/v3/filter-reporting-metrics).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filter { get; set; }
+        public string? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private string? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public string Filter { get; set; }
+        public string Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private string _explicitNullValueFilter = default!;
 #endif
         /// <summary>When to start fetching data for the report ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Must follow the `YYYY-MM-DDTHH:00:00Z` format. Can only be of hourly granularity.</summary>
-        public DateTimeOffset? StartsAt { get; set; }
+        public DateTimeOffset? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starts_at"); else _explicitNullProperties?.Remove("starts_at"); } }
+        private DateTimeOffset? _explicitNullValueStartsAt = default!;
         /// <summary>The entity&apos;s default time zone.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZones? TimeZoneId { get; set; }
+#nullable enable
+        public string? TimeZoneId { get => _explicitNullValueTimeZoneId; set { _explicitNullValueTimeZoneId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_zone_id"); else _explicitNullProperties?.Remove("time_zone_id"); } }
+        private string? _explicitNullValueTimeZoneId = default!;
+#nullable restore
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,7 +107,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetReportRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetReportRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GetReportRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,7 +125,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "fields", n => { Fields = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportField>()?.AsList(); } },
                 { "filter", n => { Filter = n.GetStringValue(); } },
                 { "starts_at", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
-                { "time_zone_id", n => { TimeZoneId = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZones>(); } },
+                { "time_zone_id", n => { TimeZoneId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -110,7 +143,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportField>("fields", Fields);
             writer.WriteStringValue("filter", Filter);
             writer.WriteDateTimeOffsetValue("starts_at", StartsAt);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsTimeZones>("time_zone_id", TimeZoneId);
+            writer.WriteStringValue("time_zone_id", TimeZoneId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

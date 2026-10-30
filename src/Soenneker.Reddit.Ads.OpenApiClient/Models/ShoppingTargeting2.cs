@@ -11,27 +11,44 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ShoppingTargeting2 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conversion_event_types") is { } nullNodeConversionEventTypes && nullNodeConversionEventTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionEventTypes = null;
+            if (parseNode.GetChildNode("excluded_conversion_event_types") is { } nullNodeExcludedConversionEventTypes && nullNodeExcludedConversionEventTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedConversionEventTypes = null;
+            if (parseNode.GetChildNode("lookback_window_days") is { } nullNodeLookbackWindowDays && nullNodeLookbackWindowDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookbackWindowDays = null;
+            if (parseNode.GetChildNode("targeting_type") is { } nullNodeTargetingType && nullNodeTargetingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetingType = null;
+        }
+
         /// <summary>[Conversion events](https://business.reddithelp.com/s/article/supported-conversion-events) to target. Used when `targeting_type` is `RETARGETING`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?>? ConversionEventTypes { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?>? ConversionEventTypes { get => _explicitNullValueConversionEventTypes; set { _explicitNullValueConversionEventTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversion_event_types"); else _explicitNullProperties?.Remove("conversion_event_types"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?>? _explicitNullValueConversionEventTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?> ConversionEventTypes { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?> ConversionEventTypes { get => _explicitNullValueConversionEventTypes; set { _explicitNullValueConversionEventTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversion_event_types"); else _explicitNullProperties?.Remove("conversion_event_types"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?> _explicitNullValueConversionEventTypes = default!;
 #endif
         /// <summary>Conversion events to exclude from targeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?>? ExcludedConversionEventTypes { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?>? ExcludedConversionEventTypes { get => _explicitNullValueExcludedConversionEventTypes; set { _explicitNullValueExcludedConversionEventTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_conversion_event_types"); else _explicitNullProperties?.Remove("excluded_conversion_event_types"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?>? _explicitNullValueExcludedConversionEventTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?> ExcludedConversionEventTypes { get; set; }
+        public List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?> ExcludedConversionEventTypes { get => _explicitNullValueExcludedConversionEventTypes; set { _explicitNullValueExcludedConversionEventTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_conversion_event_types"); else _explicitNullProperties?.Remove("excluded_conversion_event_types"); } }
+        private List<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType?> _explicitNullValueExcludedConversionEventTypes = default!;
 #endif
         /// <summary>How far back (in days) to look for user actions to include for targeting.</summary>
-        public int? LookbackWindowDays { get; set; }
+        public int? LookbackWindowDays { get => _explicitNullValueLookbackWindowDays; set { _explicitNullValueLookbackWindowDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookback_window_days"); else _explicitNullProperties?.Remove("lookback_window_days"); } }
+        private int? _explicitNullValueLookbackWindowDays = default!;
         /// <summary>The `CATALOG_SALES` ad&apos;s [audience type](https://business.reddithelp.com/s/article/dynamic-product-ads#2-create-your-ad-group).</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingTargetingTargetingType? TargetingType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingTargetingTargetingType? TargetingType { get => _explicitNullValueTargetingType; set { _explicitNullValueTargetingType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targeting_type"); else _explicitNullProperties?.Remove("targeting_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingTargetingTargetingType? _explicitNullValueTargetingType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ShoppingTargeting2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,7 +83,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType>("conversion_event_types", ConversionEventTypes);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType>("excluded_conversion_event_types", ExcludedConversionEventTypes);
             writer.WriteIntValue("lookback_window_days", LookbackWindowDays);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingTargetingTargetingType>("targeting_type", TargetingType);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingTargetingTargetingType>("targeting_type", TargetingType);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

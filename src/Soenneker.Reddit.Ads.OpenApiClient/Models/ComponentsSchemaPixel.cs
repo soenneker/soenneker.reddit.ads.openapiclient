@@ -11,14 +11,26 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ComponentsSchemaPixel : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("automatic_matching_config") is { } nullNodeAutomaticMatchingConfig && nullNodeAutomaticMatchingConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticMatchingConfig = null;
+            if (parseNode.GetChildNode("enhanced_signal_collection_config") is { } nullNodeEnhancedSignalCollectionConfig && nullNodeEnhancedSignalCollectionConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnhancedSignalCollectionConfig = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+        }
+
         /// <summary>The Pixel&apos;s [automated advanced matching](https://business.reddithelp.com/s/article/automated-advanced-matching) settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAutomaticAdvancedMatchingConfig? AutomaticMatchingConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAutomaticAdvancedMatchingConfig? AutomaticMatchingConfig { get => _explicitNullValueAutomaticMatchingConfig; set { _explicitNullValueAutomaticMatchingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_matching_config"); else _explicitNullProperties?.Remove("automatic_matching_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAutomaticAdvancedMatchingConfig? _explicitNullValueAutomaticMatchingConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAutomaticAdvancedMatchingConfig AutomaticMatchingConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAutomaticAdvancedMatchingConfig AutomaticMatchingConfig { get => _explicitNullValueAutomaticMatchingConfig; set { _explicitNullValueAutomaticMatchingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatic_matching_config"); else _explicitNullProperties?.Remove("automatic_matching_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAutomaticAdvancedMatchingConfig _explicitNullValueAutomaticMatchingConfig = default!;
 #endif
         /// <summary>The business ID.</summary>
         public Guid? BusinessId { get; private set; }
@@ -35,10 +47,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The Pixel&apos;s enhanced signal collection settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEnhancedSignalCollectionConfig? EnhancedSignalCollectionConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEnhancedSignalCollectionConfig? EnhancedSignalCollectionConfig { get => _explicitNullValueEnhancedSignalCollectionConfig; set { _explicitNullValueEnhancedSignalCollectionConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enhanced_signal_collection_config"); else _explicitNullProperties?.Remove("enhanced_signal_collection_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEnhancedSignalCollectionConfig? _explicitNullValueEnhancedSignalCollectionConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEnhancedSignalCollectionConfig EnhancedSignalCollectionConfig { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEnhancedSignalCollectionConfig EnhancedSignalCollectionConfig { get => _explicitNullValueEnhancedSignalCollectionConfig; set { _explicitNullValueEnhancedSignalCollectionConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enhanced_signal_collection_config"); else _explicitNullProperties?.Remove("enhanced_signal_collection_config"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEnhancedSignalCollectionConfig _explicitNullValueEnhancedSignalCollectionConfig = default!;
 #endif
         /// <summary>The Pixel ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,10 +75,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The Pixel&apos;s human-readable name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -74,7 +90,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,7 +120,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAutomaticAdvancedMatchingConfig>("automatic_matching_config", AutomaticMatchingConfig);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaEnhancedSignalCollectionConfig>("enhanced_signal_collection_config", EnhancedSignalCollectionConfig);
-            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("name", Name);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

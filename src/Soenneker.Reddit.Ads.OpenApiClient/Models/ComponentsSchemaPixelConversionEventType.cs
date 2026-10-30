@@ -12,17 +12,29 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComponentsSchemaPixelConversionEventType : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_event_name") is { } nullNodeCustomEventName && nullNodeCustomEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomEventName = null;
+            if (parseNode.GetChildNode("tracking_type") is { } nullNodeTrackingType && nullNodeTrackingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackingType = null;
+        }
+
         /// <summary>A custom event name to pass when `tracking_type` is set to `CUSTOM`. This free-form and case-sensitive string may use any UTF-8 character and can have up to 64 characters, including spaces. For example, `Promotion Event` and `PromotionEvent` will be considered two distinct events. We recommend setting this to a value that doesn&apos;t match a standard event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomEventName { get; set; }
+        public string? CustomEventName { get => _explicitNullValueCustomEventName; set { _explicitNullValueCustomEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_event_name"); else _explicitNullProperties?.Remove("custom_event_name"); } }
+        private string? _explicitNullValueCustomEventName = default!;
 #nullable restore
 #else
-        public string CustomEventName { get; set; }
+        public string CustomEventName { get => _explicitNullValueCustomEventName; set { _explicitNullValueCustomEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_event_name"); else _explicitNullProperties?.Remove("custom_event_name"); } }
+        private string _explicitNullValueCustomEventName = default!;
 #endif
         /// <summary>The [conversion event type](https://business.reddithelp.com/s/article/supported-conversion-events).</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.StandardTrackingType? TrackingType { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.StandardTrackingType? TrackingType { get => _explicitNullValueTrackingType; set { _explicitNullValueTrackingType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracking_type"); else _explicitNullProperties?.Remove("tracking_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.StandardTrackingType? _explicitNullValueTrackingType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -31,7 +43,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventType();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPixelConversionEventType(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +65,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("custom_event_name", CustomEventName);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.StandardTrackingType>("tracking_type", TrackingType);
+            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.StandardTrackingType>("tracking_type", TrackingType);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }
