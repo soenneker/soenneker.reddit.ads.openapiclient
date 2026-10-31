@@ -329,6 +329,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "An ad group.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAdGroupResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -572,6 +583,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "An ad.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAdResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -905,6 +927,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "A campaign.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCampaignResponseBody"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -1164,6 +1197,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "Batch job request created and queued for processing.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitDataDeletionJobResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -1636,6 +1680,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "A lead generation form.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateLeadGenFormResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "deprecated": true,
@@ -2019,6 +2074,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "A saved audience.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSavedAudienceResponseBody"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -3082,6 +3148,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "A product catalog.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductCatalogResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -4276,6 +4353,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "Poster generation job created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateGeneratedPostersJobResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -4747,6 +4835,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "Batch job request created and queued for processing.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitPixelDataDeletionJobResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -5467,6 +5566,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "The product feed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductFeedResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -5621,6 +5731,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "The product set.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductSetResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -5870,6 +5991,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "The products.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsCreateResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -6683,6 +6815,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "Upload handles for the accepted creative asset uploads.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCreativeAssetUploadsResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -6859,6 +7002,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "A post.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePostResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "deprecated": true,
@@ -7051,6 +7205,17 @@
           "5XX": {
             "description": "Server error.",
             "$ref": "#/components/responses/ServerError"
+          },
+          "200": {
+            "description": "A post creation job.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePostCreationJobResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
