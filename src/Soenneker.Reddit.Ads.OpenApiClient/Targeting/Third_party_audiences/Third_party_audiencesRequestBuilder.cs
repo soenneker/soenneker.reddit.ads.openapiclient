@@ -77,7 +77,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Targeting.Third_party_audiences
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Reddit.Ads.OpenApiClient.Targeting.Third_party_audiences.Third_party_audiencesRequestBuilder.Third_party_audiencesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://ads-api.reddit.com/api/v3", "/targeting/third_party_audiences", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

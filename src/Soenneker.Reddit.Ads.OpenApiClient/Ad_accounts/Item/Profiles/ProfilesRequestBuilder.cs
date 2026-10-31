@@ -81,7 +81,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Profiles
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://ads-api.reddit.com/api/v3", "/ad_accounts/{adAccountId}/profiles", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

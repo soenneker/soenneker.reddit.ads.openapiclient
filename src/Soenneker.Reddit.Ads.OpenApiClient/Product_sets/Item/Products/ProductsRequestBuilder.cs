@@ -81,7 +81,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Product_sets.Item.Products
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Reddit.Ads.OpenApiClient.Product_sets.Item.Products.ProductsRequestBuilder.ProductsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://ads-api.reddit.com/api/v3", "/product_sets/{productSetId}/products", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
