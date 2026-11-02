@@ -52,9 +52,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
             return mappingValue switch
             {
-                "FAILED" => new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobFailed(),
-                "PROCESSING" => new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobProcessing(),
-                "SUCCESS" => new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobSuccess(),
+                "FAILED" => new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobFailedVariant(),
+                "PROCESSING" => new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobProcessingVariant(),
+                "SUCCESS" => new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobSuccessVariant(),
                 _ => new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJob(),
             };
         }

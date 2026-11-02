@@ -11,7 +11,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
     /// A poster generation job that is still running.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobProcessing : global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJob, IParsable
+    public partial class ComponentsSchemaGeneratedPostersJobProcessingVariant : global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJob, IParsable
     {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -36,12 +36,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobProcessing"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobProcessingVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobProcessing CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobProcessingVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobProcessing(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaGeneratedPostersJobProcessingVariant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

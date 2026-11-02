@@ -42190,9 +42190,9 @@
         "discriminator": {
           "propertyName": "status",
           "mapping": {
-            "PROCESSING": "#/components/schemas/ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobProcessing",
-            "SUCCESS": "#/components/schemas/ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobSuccess",
-            "FAILED": "#/components/schemas/ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobFailed"
+            "PROCESSING": "#/components/schemas/ComponentsSchemaGeneratedPostersJobProcessingVariant",
+            "SUCCESS": "#/components/schemas/ComponentsSchemaGeneratedPostersJobSuccessVariant",
+            "FAILED": "#/components/schemas/ComponentsSchemaGeneratedPostersJobFailedVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -61672,7 +61672,7 @@
           }
         ]
       },
-      "ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobProcessing": {
+      "ComponentsSchemaGeneratedPostersJobProcessingVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ComponentsSchemaGeneratedPostersJob"
@@ -61699,7 +61699,7 @@
           }
         ]
       },
-      "ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobSuccess": {
+      "ComponentsSchemaGeneratedPostersJobSuccessVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ComponentsSchemaGeneratedPostersJob"
@@ -61736,7 +61736,7 @@
           }
         ]
       },
-      "ComponentsSchemaGeneratedPostersJobComponentsSchemaGeneratedPostersJobFailed": {
+      "ComponentsSchemaGeneratedPostersJobFailedVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ComponentsSchemaGeneratedPostersJob"
