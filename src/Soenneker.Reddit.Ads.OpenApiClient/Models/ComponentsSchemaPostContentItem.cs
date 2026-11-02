@@ -30,8 +30,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         }
 
         /// <summary>The call to action text.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCallToAction? CallToAction { get => _explicitNullValueCallToAction; set { _explicitNullValueCallToAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_to_action"); else _explicitNullProperties?.Remove("call_to_action"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCallToAction? _explicitNullValueCallToAction = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCallToAction CallToAction { get => _explicitNullValueCallToAction; set { _explicitNullValueCallToAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_to_action"); else _explicitNullProperties?.Remove("call_to_action"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCallToAction _explicitNullValueCallToAction = default!;
+#endif
         /// <summary>A carousel image&apos;s caption.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,7 +97,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "call_to_action", n => { CallToAction = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCallToAction>(); } },
+                { "call_to_action", n => { CallToAction = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCallToAction>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCallToAction.CreateFromDiscriminatorValue); } },
                 { "caption", n => { Caption = n.GetStringValue(); } },
                 { "destination_url", n => { DestinationUrl = n.GetStringValue(); } },
                 { "display_url", n => { DisplayUrl = n.GetStringValue(); } },
@@ -104,7 +111,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCallToAction>("call_to_action", CallToAction);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsCallToAction>("call_to_action", CallToAction);
             writer.WriteStringValue("caption", Caption);
             writer.WriteStringValue("destination_url", DestinationUrl);
             writer.WriteStringValue("display_url", DisplayUrl);

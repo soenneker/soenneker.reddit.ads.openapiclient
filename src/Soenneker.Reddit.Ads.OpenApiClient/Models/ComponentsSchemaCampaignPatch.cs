@@ -49,11 +49,25 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         }
 
         /// <summary>The campaign&apos;s bid strategy. Required when `is_campaign_budget_optimization` is `true`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3? BidStrategy { get => _explicitNullValueBidStrategy; set { _explicitNullValueBidStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_strategy"); else _explicitNullProperties?.Remove("bid_strategy"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3? _explicitNullValueBidStrategy = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3 BidStrategy { get => _explicitNullValueBidStrategy; set { _explicitNullValueBidStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_strategy"); else _explicitNullProperties?.Remove("bid_strategy"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3 _explicitNullValueBidStrategy = default!;
+#endif
         /// <summary>The campaign&apos;s bid type. Required when `is_campaign_budget_optimization` is `true`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3? BidType { get => _explicitNullValueBidType; set { _explicitNullValueBidType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_type"); else _explicitNullProperties?.Remove("bid_type"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3? _explicitNullValueBidType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3 BidType { get => _explicitNullValueBidType; set { _explicitNullValueBidType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_type"); else _explicitNullProperties?.Remove("bid_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3 _explicitNullValueBidType = default!;
+#endif
         /// <summary>The amount to pay per bidding event (microcurrency). Used when `is_campaign_budget_optimization` is `true`. Optional when `bid_strategy` is `MAXIMIZE_VOLUME`. If set at campaign level, it **can&apos;t be set** at ad group level.</summary>
         public int? BidValue { get => _explicitNullValueBidValue; set { _explicitNullValueBidValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_value"); else _explicitNullProperties?.Remove("bid_value"); } }
         private int? _explicitNullValueBidValue = default!;
@@ -150,8 +164,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bid_strategy", n => { BidStrategy = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3>(); } },
-                { "bid_type", n => { BidType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3>(); } },
+                { "bid_strategy", n => { BidStrategy = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3.CreateFromDiscriminatorValue); } },
+                { "bid_type", n => { BidType = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3.CreateFromDiscriminatorValue); } },
                 { "bid_value", n => { BidValue = n.GetIntValue(); } },
                 { "configured_status", n => { ConfiguredStatus = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus3>(); } },
                 { "end_time", n => { EndTime = n.GetStringValue(); } },
@@ -173,8 +187,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3>("bid_strategy", BidStrategy);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3>("bid_type", BidType);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3>("bid_strategy", BidStrategy);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3>("bid_type", BidType);
             writer.WriteIntValue("bid_value", BidValue);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus3>("configured_status", ConfiguredStatus);
             writer.WriteStringValue("end_time", EndTime);

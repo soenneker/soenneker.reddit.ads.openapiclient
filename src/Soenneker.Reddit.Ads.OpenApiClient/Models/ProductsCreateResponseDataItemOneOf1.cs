@@ -26,12 +26,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>The product property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
-        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct? _explicitNullValueProduct = default!;
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1Product? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1Product? _explicitNullValueProduct = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
-        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct _explicitNullValueProduct = default!;
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1Product Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1Product _explicitNullValueProduct = default!;
 #endif
         /// <summary>The product creation status.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1Status? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
@@ -54,7 +54,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "product", n => { Product = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct.CreateFromDiscriminatorValue); } },
+                { "product", n => { Product = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1Product>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1Product.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1Status>(); } },
             };
         }
@@ -65,7 +65,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaProduct>("product", Product);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1Product>("product", Product);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ProductsCreateResponseDataItemOneOf1Status>("status", Status);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

@@ -42,8 +42,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         }
 
         /// <summary>The state of the credit card attachment. Applies only for `SELF_SERVE` funding instruments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentAuthorizeStatus? AuthorizeStatus { get => _explicitNullValueAuthorizeStatus; set { _explicitNullValueAuthorizeStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorize_status"); else _explicitNullProperties?.Remove("authorize_status"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentAuthorizeStatus? _explicitNullValueAuthorizeStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentAuthorizeStatus AuthorizeStatus { get => _explicitNullValueAuthorizeStatus; set { _explicitNullValueAuthorizeStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorize_status"); else _explicitNullProperties?.Remove("authorize_status"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentAuthorizeStatus _explicitNullValueAuthorizeStatus = default!;
+#endif
         /// <summary>The funding instrument&apos;s current outstanding debt (local microcurrency).</summary>
         public int? BillableAmount { get => _explicitNullValueBillableAmount; set { _explicitNullValueBillableAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billable_amount"); else _explicitNullProperties?.Remove("billable_amount"); } }
         private int? _explicitNullValueBillableAmount = default!;
@@ -67,8 +74,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Status indicating the eligibility or issues with the invoice group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentInvoiceGroupStatus? InvoiceGroupStatus { get => _explicitNullValueInvoiceGroupStatus; set { _explicitNullValueInvoiceGroupStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_group_status"); else _explicitNullProperties?.Remove("invoice_group_status"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentInvoiceGroupStatus? _explicitNullValueInvoiceGroupStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentInvoiceGroupStatus InvoiceGroupStatus { get => _explicitNullValueInvoiceGroupStatus; set { _explicitNullValueInvoiceGroupStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_group_status"); else _explicitNullProperties?.Remove("invoice_group_status"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentInvoiceGroupStatus _explicitNullValueInvoiceGroupStatus = default!;
+#endif
         /// <summary>Whether campaigns linked to this funding instrument are allowed to run.</summary>
         public bool? IsServable { get => _explicitNullValueIsServable; set { _explicitNullValueIsServable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_servable"); else _explicitNullProperties?.Remove("is_servable"); } }
         private bool? _explicitNullValueIsServable = default!;
@@ -113,13 +127,13 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authorize_status", n => { AuthorizeStatus = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentAuthorizeStatus>(); } },
+                { "authorize_status", n => { AuthorizeStatus = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentAuthorizeStatus>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentAuthorizeStatus.CreateFromDiscriminatorValue); } },
                 { "billable_amount", n => { BillableAmount = n.GetIntValue(); } },
                 { "credit_limit", n => { CreditLimit = n.GetIntValue(); } },
                 { "currency", n => { Currency = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsBillingCurrency>(); } },
                 { "end_time", n => { EndTime = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "invoice_group_status", n => { InvoiceGroupStatus = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentInvoiceGroupStatus>(); } },
+                { "invoice_group_status", n => { InvoiceGroupStatus = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentInvoiceGroupStatus>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentInvoiceGroupStatus.CreateFromDiscriminatorValue); } },
                 { "is_servable", n => { IsServable = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "reasons_not_servable", n => { ReasonsNotServable = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentReasonsNotServableItem>()?.AsList(); } },
@@ -133,13 +147,13 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentAuthorizeStatus>("authorize_status", AuthorizeStatus);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentAuthorizeStatus>("authorize_status", AuthorizeStatus);
             writer.WriteIntValue("billable_amount", BillableAmount);
             writer.WriteIntValue("credit_limit", CreditLimit);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsBillingCurrency>("currency", Currency);
             writer.WriteDateTimeOffsetValue("end_time", EndTime);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentInvoiceGroupStatus>("invoice_group_status", InvoiceGroupStatus);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentInvoiceGroupStatus>("invoice_group_status", InvoiceGroupStatus);
             writer.WriteBoolValue("is_servable", IsServable);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaFundingInstrumentReasonsNotServableItem>("reasons_not_servable", ReasonsNotServable);

@@ -133,8 +133,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         private string _explicitNullValueAgeGroup = default!;
 #endif
         /// <summary>The product availability.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsProductAvailabilityStatus? Availability { get => _explicitNullValueAvailability; set { _explicitNullValueAvailability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability"); else _explicitNullProperties?.Remove("availability"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsProductAvailabilityStatus? _explicitNullValueAvailability = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsProductAvailabilityStatus Availability { get => _explicitNullValueAvailability; set { _explicitNullValueAvailability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability"); else _explicitNullProperties?.Remove("availability"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsProductAvailabilityStatus _explicitNullValueAvailability = default!;
+#endif
         /// <summary>The average customer review rating.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -522,7 +529,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "additional_image_links", n => { AdditionalImageLinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "adult", n => { Adult = n.GetBoolValue(); } },
                 { "age_group", n => { AgeGroup = n.GetStringValue(); } },
-                { "availability", n => { Availability = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsProductAvailabilityStatus>(); } },
+                { "availability", n => { Availability = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsProductAvailabilityStatus>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsProductAvailabilityStatus.CreateFromDiscriminatorValue); } },
                 { "average_review_rating", n => { AverageReviewRating = n.GetStringValue(); } },
                 { "brand", n => { Brand = n.GetStringValue(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
@@ -579,7 +586,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("additional_image_links", AdditionalImageLinks);
             writer.WriteBoolValue("adult", Adult);
             writer.WriteStringValue("age_group", AgeGroup);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsProductAvailabilityStatus>("availability", Availability);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsProductAvailabilityStatus>("availability", Availability);
             writer.WriteStringValue("average_review_rating", AverageReviewRating);
             writer.WriteStringValue("brand", Brand);
             writer.WriteStringValue("color", Color);

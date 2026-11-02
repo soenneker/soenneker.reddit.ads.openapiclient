@@ -152,8 +152,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public bool? ExpandTargeting { get => _explicitNullValueExpandTargeting; set { _explicitNullValueExpandTargeting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expand_targeting"); else _explicitNullProperties?.Remove("expand_targeting"); } }
         private bool? _explicitNullValueExpandTargeting = default!;
         /// <summary>The gender group to target.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingGender? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingGender? _explicitNullValueGender = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingGender Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingGender _explicitNullValueGender = default!;
+#endif
         /// <summary>The [geolocations](https://ads-api.reddit.com/docs/v3/operations/List%20Geolocations) to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -262,7 +269,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "excluded_interests", n => { ExcludedInterests = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "excluded_keywords", n => { ExcludedKeywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "expand_targeting", n => { ExpandTargeting = n.GetBoolValue(); } },
-                { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingGender>(); } },
+                { "gender", n => { Gender = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingGender>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingGender.CreateFromDiscriminatorValue); } },
                 { "geolocations", n => { Geolocations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "interests", n => { Interests = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -290,7 +297,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_interests", ExcludedInterests);
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_keywords", ExcludedKeywords);
             writer.WriteBoolValue("expand_targeting", ExpandTargeting);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingGender>("gender", Gender);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaTargetingGender>("gender", Gender);
             writer.WriteCollectionOfPrimitiveValues<string>("geolocations", Geolocations);
             writer.WriteCollectionOfPrimitiveValues<string>("interests", Interests);
             writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);

@@ -139,15 +139,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string ProfileId { get => _explicitNullValueProfileId; set { _explicitNullValueProfileId = value; AdditionalData?.Remove("profile_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_id"); else _explicitNullProperties?.Remove("profile_id"); } }
         private string _explicitNullValueProfileId = default!;
 #endif
-        /// <summary>The shopping_creative property</summary>
+        /// <summary>A collection of attributes used to generate creatives for a particular ad.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative? ShoppingCreative { get => _explicitNullValueShoppingCreative; set { _explicitNullValueShoppingCreative = value; AdditionalData?.Remove("shopping_creative"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopping_creative"); else _explicitNullProperties?.Remove("shopping_creative"); } }
-        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative? _explicitNullValueShoppingCreative = default!;
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative? ShoppingCreative { get => _explicitNullValueShoppingCreative; set { _explicitNullValueShoppingCreative = value; AdditionalData?.Remove("shopping_creative"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopping_creative"); else _explicitNullProperties?.Remove("shopping_creative"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative? _explicitNullValueShoppingCreative = default!;
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative ShoppingCreative { get => _explicitNullValueShoppingCreative; set { _explicitNullValueShoppingCreative = value; AdditionalData?.Remove("shopping_creative"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopping_creative"); else _explicitNullProperties?.Remove("shopping_creative"); } }
-        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative _explicitNullValueShoppingCreative = default!;
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative ShoppingCreative { get => _explicitNullValueShoppingCreative; set { _explicitNullValueShoppingCreative = value; AdditionalData?.Remove("shopping_creative"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopping_creative"); else _explicitNullProperties?.Remove("shopping_creative"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative _explicitNullValueShoppingCreative = default!;
 #endif
         /// <summary>The ad type.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -188,7 +188,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "preview_expiry", n => { PreviewExpiry = n.GetDateTimeOffsetValue(); } },
                 { "products", n => { Products = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdProduct>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdProduct.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profile_id", n => { ProfileId = n.GetStringValue(); } },
-                { "shopping_creative", n => { ShoppingCreative = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative.CreateFromDiscriminatorValue); } },
+                { "shopping_creative", n => { ShoppingCreative = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative.CreateFromDiscriminatorValue); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
@@ -209,7 +209,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("preview_expiry", PreviewExpiry);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdProduct>("products", Products);
             writer.WriteStringValue("profile_id", ProfileId);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative>("shopping_creative", ShoppingCreative);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative>("shopping_creative", ShoppingCreative);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

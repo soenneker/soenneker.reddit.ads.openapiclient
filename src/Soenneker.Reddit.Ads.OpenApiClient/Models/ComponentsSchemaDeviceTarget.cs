@@ -60,8 +60,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         private string _explicitNullValueMinVersion = default!;
 #endif
         /// <summary>The device OS to target.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetOs? Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetOs? _explicitNullValueOs = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetOs Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetOs _explicitNullValueOs = default!;
+#endif
         /// <summary>The device type to target.</summary>
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetType? _explicitNullValueType = default!;
@@ -86,7 +93,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "label_map", n => { LabelMap = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetLabelMapProperty>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetLabelMapProperty.CreateFromDiscriminatorValue); } },
                 { "max_version", n => { MaxVersion = n.GetStringValue(); } },
                 { "min_version", n => { MinVersion = n.GetStringValue(); } },
-                { "os", n => { Os = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetOs>(); } },
+                { "os", n => { Os = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetOs>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetOs.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetType>(); } },
             };
         }
@@ -100,7 +107,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetLabelMapProperty>("label_map", LabelMap);
             writer.WriteStringValue("max_version", MaxVersion);
             writer.WriteStringValue("min_version", MinVersion);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetOs>("os", Os);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetOs>("os", Os);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaDeviceTargetType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

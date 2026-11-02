@@ -5750,8 +5750,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The device operating system type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsOsType? OsType { get => _explicitNullValueOsType; set { _explicitNullValueOsType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_type"); else _explicitNullProperties?.Remove("os_type"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsOsType? _explicitNullValueOsType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsOsType OsType { get => _explicitNullValueOsType; set { _explicitNullValueOsType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_type"); else _explicitNullProperties?.Remove("os_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsOsType _explicitNullValueOsType = default!;
+#endif
         /// <summary>The pacing for this period.</summary>
         public float? Pacing { get => _explicitNullValuePacing; set { _explicitNullValuePacing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pacing"); else _explicitNullProperties?.Remove("pacing"); } }
         private float? _explicitNullValuePacing = default!;
@@ -6897,7 +6904,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "key_conversion_views", n => { KeyConversionViews = n.GetLongValue(); } },
                 { "keyword", n => { Keyword = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
-                { "os_type", n => { OsType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsOsType>(); } },
+                { "os_type", n => { OsType = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsOsType>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsOsType.CreateFromDiscriminatorValue); } },
                 { "pacing", n => { Pacing = n.GetFloatValue(); } },
                 { "placement", n => { Placement = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsPlacements>(); } },
                 { "post_id", n => { PostId = n.GetStringValue(); } },
@@ -7949,7 +7956,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteLongValue("key_conversion_views", KeyConversionViews);
             writer.WriteStringValue("keyword", Keyword);
             writer.WriteStringValue("language", Language);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsOsType>("os_type", OsType);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsOsType>("os_type", OsType);
             writer.WriteFloatValue("pacing", Pacing);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsPlacements>("placement", Placement);
             writer.WriteStringValue("priority", Priority);

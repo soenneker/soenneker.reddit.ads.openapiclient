@@ -128,10 +128,23 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         private string _explicitNullValuePrimaryContactMemberId = default!;
 #endif
         /// <summary>The spend cap period applied to the ad account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSpendCapType? SpendCapType { get => _explicitNullValueSpendCapType; set { _explicitNullValueSpendCapType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spend_cap_type"); else _explicitNullProperties?.Remove("spend_cap_type"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSpendCapType? _explicitNullValueSpendCapType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSpendCapType SpendCapType { get => _explicitNullValueSpendCapType; set { _explicitNullValueSpendCapType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spend_cap_type"); else _explicitNullProperties?.Remove("spend_cap_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSpendCapType _explicitNullValueSpendCapType = default!;
+#endif
         /// <summary>Why this ad account was suspended.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSuspensionReason? SuspensionReason { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSuspensionReason SuspensionReason { get; private set; }
+#endif
         /// <summary>The entity&apos;s default time zone.</summary>
 #nullable enable
         public string? TimeZoneId { get; private set; }
@@ -176,8 +189,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "pixel_partner_preferences", n => { PixelPartnerPreferences = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountPixelPartnerPreferencesItem>()?.AsList(); } },
                 { "primary_contact_member_id", n => { PrimaryContactMemberId = n.GetStringValue(); } },
-                { "spend_cap_type", n => { SpendCapType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSpendCapType>(); } },
-                { "suspension_reason", n => { SuspensionReason = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSuspensionReason>(); } },
+                { "spend_cap_type", n => { SpendCapType = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSpendCapType>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSpendCapType.CreateFromDiscriminatorValue); } },
+                { "suspension_reason", n => { SuspensionReason = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSuspensionReason>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSuspensionReason.CreateFromDiscriminatorValue); } },
                 { "time_zone_id", n => { TimeZoneId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountType>(); } },
                 { "view_attribution_window", n => { ViewAttributionWindow = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountViewAttributionWindow>(); } },
@@ -200,7 +213,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_keywords", ExcludedKeywords);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("primary_contact_member_id", PrimaryContactMemberId);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSpendCapType>("spend_cap_type", SpendCapType);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountSpendCapType>("spend_cap_type", SpendCapType);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdAccountViewAttributionWindow>("view_attribution_window", ViewAttributionWindow);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

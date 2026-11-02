@@ -91,8 +91,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public string CampaignId { get; private set; }
 #endif
         /// <summary>The [campaign objective](https://business.reddithelp.com/s/article/Ad-campaign-objectives).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType2? CampaignObjectiveType { get => _explicitNullValueCampaignObjectiveType; set { _explicitNullValueCampaignObjectiveType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_objective_type"); else _explicitNullProperties?.Remove("campaign_objective_type"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType2? _explicitNullValueCampaignObjectiveType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType2 CampaignObjectiveType { get => _explicitNullValueCampaignObjectiveType; set { _explicitNullValueCampaignObjectiveType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_objective_type"); else _explicitNullProperties?.Remove("campaign_objective_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType2 _explicitNullValueCampaignObjectiveType = default!;
+#endif
         /// <summary>The URL users are directed to when they click the ad. When `shopping_creative` is set (catalog/product ads), `click_url` is not used for ad delivery; if both are sent in create or update requests, `click_url` is ignored.&gt; **Important:** Updating an ad or creative may update `destination_url`, which `click_url` often needs to match. [Update `click_url` to match its value](/docs/v3/guides/programs/campaign/match-destination-and-click-url) for **image**, **carousel**, or **video** formats.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,7 +144,13 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdPatchDestination _explicitNullValueDestination = default!;
 #endif
         /// <summary>The calculated status determining the real status of this entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus2? EffectiveStatus { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus2 EffectiveStatus { get; private set; }
+#endif
         /// <summary>Details about enhancements associated with the creative.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -228,16 +241,22 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         private string _explicitNullValueProfileId = default!;
 #endif
         /// <summary>Why the ad was rejected.</summary>
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsRejectionReason? RejectionReason { get; private set; }
-        /// <summary>The shopping_creative property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative? ShoppingCreative { get => _explicitNullValueShoppingCreative; set { _explicitNullValueShoppingCreative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopping_creative"); else _explicitNullProperties?.Remove("shopping_creative"); } }
-        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative? _explicitNullValueShoppingCreative = default!;
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsRejectionReason? RejectionReason { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative ShoppingCreative { get => _explicitNullValueShoppingCreative; set { _explicitNullValueShoppingCreative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopping_creative"); else _explicitNullProperties?.Remove("shopping_creative"); } }
-        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative _explicitNullValueShoppingCreative = default!;
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsRejectionReason RejectionReason { get; private set; }
+#endif
+        /// <summary>A collection of attributes used to generate creatives for a particular ad.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative? ShoppingCreative { get => _explicitNullValueShoppingCreative; set { _explicitNullValueShoppingCreative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopping_creative"); else _explicitNullProperties?.Remove("shopping_creative"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative? _explicitNullValueShoppingCreative = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative ShoppingCreative { get => _explicitNullValueShoppingCreative; set { _explicitNullValueShoppingCreative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopping_creative"); else _explicitNullProperties?.Remove("shopping_creative"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative _explicitNullValueShoppingCreative = default!;
 #endif
         /// <summary>Metadata of the SKAdNetwork source ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -289,14 +308,14 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "ad_group_id", n => { AdGroupId = n.GetStringValue(); } },
                 { "asset_identifiers", n => { AssetIdentifiers = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaRmaxAssetId>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaRmaxAssetId.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
-                { "campaign_objective_type", n => { CampaignObjectiveType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType2>(); } },
+                { "campaign_objective_type", n => { CampaignObjectiveType = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType2>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType2.CreateFromDiscriminatorValue); } },
                 { "click_url", n => { ClickUrl = n.GetStringValue(); } },
                 { "click_url_query_parameters", n => { ClickUrlQueryParameters = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "configured_status", n => { ConfiguredStatus = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus2>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "delivery_status", n => { DeliveryStatus = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "destination", n => { Destination = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdPatchDestination>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdPatchDestination.CreateFromDiscriminatorValue); } },
-                { "effective_status", n => { EffectiveStatus = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus2>(); } },
+                { "effective_status", n => { EffectiveStatus = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus2>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus2.CreateFromDiscriminatorValue); } },
                 { "enhancements", n => { Enhancements = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEnhancements>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPostCreativesEnhancements.CreateFromDiscriminatorValue); } },
                 { "event_trackers", n => { EventTrackers = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.EventTrackersItem>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.EventTrackersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -308,8 +327,8 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
                 { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
                 { "products", n => { Products = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdProduct>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdProduct.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profile_id", n => { ProfileId = n.GetStringValue(); } },
-                { "rejection_reason", n => { RejectionReason = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsRejectionReason>(); } },
-                { "shopping_creative", n => { ShoppingCreative = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative.CreateFromDiscriminatorValue); } },
+                { "rejection_reason", n => { RejectionReason = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsRejectionReason>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsRejectionReason.CreateFromDiscriminatorValue); } },
+                { "shopping_creative", n => { ShoppingCreative = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative.CreateFromDiscriminatorValue); } },
                 { "skadnetwork_metadata", n => { SkadnetworkMetadata = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.SkadnetworkMetadata2>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.SkadnetworkMetadata2.CreateFromDiscriminatorValue); } },
                 { "supplementary_text", n => { SupplementaryText = n.GetStringValue(); } },
                 { "thumbnail_asset_identifiers", n => { ThumbnailAssetIdentifiers = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaRmaxAssetId>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaRmaxAssetId.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -324,7 +343,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ad_group_id", AdGroupId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaRmaxAssetId>("asset_identifiers", AssetIdentifiers);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType2>("campaign_objective_type", CampaignObjectiveType);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType2>("campaign_objective_type", CampaignObjectiveType);
             writer.WriteStringValue("click_url", ClickUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaQueryParameter>("click_url_query_parameters", ClickUrlQueryParameters);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus2>("configured_status", ConfiguredStatus);
@@ -336,7 +355,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("preview_expiry", PreviewExpiry);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdProduct>("products", Products);
             writer.WriteStringValue("profile_id", ProfileId);
-            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaShoppingCreative>("shopping_creative", ShoppingCreative);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdCreateStandardShoppingCreative>("shopping_creative", ShoppingCreative);
             writer.WriteStringValue("supplementary_text", SupplementaryText);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaRmaxAssetId>("thumbnail_asset_identifiers", ThumbnailAssetIdentifiers);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

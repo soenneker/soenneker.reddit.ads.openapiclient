@@ -63,11 +63,25 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ad group&apos;s bid strategy. For CBO campaigns, this must match the campaign&apos;s bid strategy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy? BidStrategy { get => _explicitNullValueBidStrategy; set { _explicitNullValueBidStrategy = value; AdditionalData?.Remove("bid_strategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_strategy"); else _explicitNullProperties?.Remove("bid_strategy"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy? _explicitNullValueBidStrategy = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy BidStrategy { get => _explicitNullValueBidStrategy; set { _explicitNullValueBidStrategy = value; AdditionalData?.Remove("bid_strategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_strategy"); else _explicitNullProperties?.Remove("bid_strategy"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy _explicitNullValueBidStrategy = default!;
+#endif
         /// <summary>The ad group&apos;s [bidding strategy](https://business.reddithelp.com/s/article/How-much-do-Reddit-Ads-cost#bidding-strategies), which must fit the `optimization_goal` and campaign `objective`. For campaign budget optimization (CBO), this must match the campaign&apos;s bid type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType? BidType { get => _explicitNullValueBidType; set { _explicitNullValueBidType = value; AdditionalData?.Remove("bid_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_type"); else _explicitNullProperties?.Remove("bid_type"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType? _explicitNullValueBidType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType BidType { get => _explicitNullValueBidType; set { _explicitNullValueBidType = value; AdditionalData?.Remove("bid_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_type"); else _explicitNullProperties?.Remove("bid_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType _explicitNullValueBidType = default!;
+#endif
         /// <summary>The amount to pay per bidding event (microcurrency). Must be between $3.50 and $100 USD when `bid_type` is `CPM`.</summary>
         public int? BidValue { get => _explicitNullValueBidValue; set { _explicitNullValueBidValue = value; AdditionalData?.Remove("bid_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bid_value"); else _explicitNullProperties?.Remove("bid_value"); } }
         private int? _explicitNullValueBidValue = default!;
@@ -82,10 +96,23 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         private string _explicitNullValueCampaignId = default!;
 #endif
         /// <summary>The campaign&apos;s objective type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType? CampaignObjectiveType { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType CampaignObjectiveType { get; private set; }
+#endif
         /// <summary>The ad group&apos;s status set by the ad account. Can differ from `effective_status` depending on context, such as pending billing information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus? ConfiguredStatus { get => _explicitNullValueConfiguredStatus; set { _explicitNullValueConfiguredStatus = value; AdditionalData?.Remove("configured_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configured_status"); else _explicitNullProperties?.Remove("configured_status"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus? _explicitNullValueConfiguredStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus ConfiguredStatus { get => _explicitNullValueConfiguredStatus; set { _explicitNullValueConfiguredStatus = value; AdditionalData?.Remove("configured_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configured_status"); else _explicitNullProperties?.Remove("configured_status"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus _explicitNullValueConfiguredStatus = default!;
+#endif
         /// <summary>The ad group&apos;s Pixel ID.&gt; **Important:** This field is required for all ad groups starting July 13th, 2026. Retrieve your Pixels with [`List Pixels by Ad Account`](https://ads-api.reddit.com/docs/v3/operations/List%20Pixels%20By%20Ad%20Account).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,8 +134,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public List<string> DeliveryStatus { get; private set; }
 #endif
         /// <summary>The calculated status determining the real status of this entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus? EffectiveStatus { get => _explicitNullValueEffectiveStatus; set { _explicitNullValueEffectiveStatus = value; AdditionalData?.Remove("effective_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_status"); else _explicitNullProperties?.Remove("effective_status"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus? _explicitNullValueEffectiveStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus EffectiveStatus { get => _explicitNullValueEffectiveStatus; set { _explicitNullValueEffectiveStatus = value; AdditionalData?.Remove("effective_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_status"); else _explicitNullProperties?.Remove("effective_status"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus _explicitNullValueEffectiveStatus = default!;
+#endif
         /// <summary>When the ad group will stop delivering ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). If `null`, the ad group will run continuously. For campaign budget optimization (CBO), this must match or be earlier than the campaign end time. Set this to `null` if the campaign end time is also `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,8 +154,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         private string _explicitNullValueEndTime = default!;
 #endif
         /// <summary>The ad group&apos;s goal type. For campaign budget optimization (CBO), this must match the campaign&apos;s goal type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType? GoalType { get => _explicitNullValueGoalType; set { _explicitNullValueGoalType = value; AdditionalData?.Remove("goal_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_type"); else _explicitNullProperties?.Remove("goal_type"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType? _explicitNullValueGoalType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType GoalType { get => _explicitNullValueGoalType; set { _explicitNullValueGoalType = value; AdditionalData?.Remove("goal_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_type"); else _explicitNullProperties?.Remove("goal_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType _explicitNullValueGoalType = default!;
+#endif
         /// <summary>The value used to determine if the goal has been met. Measured in microcurrency for monetary goal types. Set to `null` for campaign budget optimization.&gt; **Note:** This value is based on `goal_type`. Therefore, for `PERCENTAGE` goals, this value should be a value between 0 and 100. </summary>
         public int? GoalValue { get => _explicitNullValueGoalValue; set { _explicitNullValueGoalValue = value; AdditionalData?.Remove("goal_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_value"); else _explicitNullProperties?.Remove("goal_value"); } }
         private int? _explicitNullValueGoalValue = default!;
@@ -148,8 +189,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The event you want to measure. Must match the campaign&apos;s optimization goal for CBO campaigns. Set to `NULL` for conversions or app installs objectives to default from the campaign. **This can&apos;t be changed later.** See the [goal options](https://ads-api.reddit.com/docs/v3/operations/Create%20Ad%20Group#optimization-goal-options).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal? OptimizationGoal { get => _explicitNullValueOptimizationGoal; set { _explicitNullValueOptimizationGoal = value; AdditionalData?.Remove("optimization_goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimization_goal"); else _explicitNullProperties?.Remove("optimization_goal"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal? _explicitNullValueOptimizationGoal = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal OptimizationGoal { get => _explicitNullValueOptimizationGoal; set { _explicitNullValueOptimizationGoal = value; AdditionalData?.Remove("optimization_goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimization_goal"); else _explicitNullProperties?.Remove("optimization_goal"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal _explicitNullValueOptimizationGoal = default!;
+#endif
         /// <summary>When the ad group will begin to deliver ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)). Required if `end_time` is set. If `null`, the ad group will run continuously starting today. For ad groups in a campaign with a start time in the future, this must match or be later than the campaign start time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,8 +222,15 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Type2? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.Type2? _explicitNullValueType = default!;
         /// <summary>The type of view-through conversion being measured. For ad groups under CBO campaigns, this field must match the campaign&apos;s `view_through_conversion_type`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType? ViewThroughConversionType { get => _explicitNullValueViewThroughConversionType; set { _explicitNullValueViewThroughConversionType = value; AdditionalData?.Remove("view_through_conversion_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_through_conversion_type"); else _explicitNullProperties?.Remove("view_through_conversion_type"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType? _explicitNullValueViewThroughConversionType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType ViewThroughConversionType { get => _explicitNullValueViewThroughConversionType; set { _explicitNullValueViewThroughConversionType = value; AdditionalData?.Remove("view_through_conversion_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_through_conversion_type"); else _explicitNullProperties?.Remove("view_through_conversion_type"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType _explicitNullValueViewThroughConversionType = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAdGroupAutomated"/> and sets the default values.
         /// </summary>
@@ -202,28 +257,28 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ad_account_id", n => { AdAccountId = n.GetStringValue(); } },
-                { "bid_strategy", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBidStrategy = default; _explicitNullProperties?.Remove("bid_strategy"); AdditionalData["bid_strategy"] = unknown; } else { BidStrategy = parsed; AdditionalData.Remove("bid_strategy"); } } },
-                { "bid_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBidType = default; _explicitNullProperties?.Remove("bid_type"); AdditionalData["bid_type"] = unknown; } else { BidType = parsed; AdditionalData.Remove("bid_type"); } } },
+                { "bid_strategy", n => { BidStrategy = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy.CreateFromDiscriminatorValue); } },
+                { "bid_type", n => { BidType = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType.CreateFromDiscriminatorValue); } },
                 { "bid_value", n => { BidValue = n.GetIntValue(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
-                { "campaign_objective_type", n => { CampaignObjectiveType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType>(); } },
-                { "configured_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConfiguredStatus = default; _explicitNullProperties?.Remove("configured_status"); AdditionalData["configured_status"] = unknown; } else { ConfiguredStatus = parsed; AdditionalData.Remove("configured_status"); } } },
+                { "campaign_objective_type", n => { CampaignObjectiveType = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.CampaignObjectiveType.CreateFromDiscriminatorValue); } },
+                { "configured_status", n => { ConfiguredStatus = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus.CreateFromDiscriminatorValue); } },
                 { "conversion_pixel_id", n => { ConversionPixelId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "delivery_status", n => { DeliveryStatus = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "effective_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEffectiveStatus = default; _explicitNullProperties?.Remove("effective_status"); AdditionalData["effective_status"] = unknown; } else { EffectiveStatus = parsed; AdditionalData.Remove("effective_status"); } } },
+                { "effective_status", n => { EffectiveStatus = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus.CreateFromDiscriminatorValue); } },
                 { "end_time", n => { EndTime = n.GetStringValue(); } },
-                { "goal_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGoalType = default; _explicitNullProperties?.Remove("goal_type"); AdditionalData["goal_type"] = unknown; } else { GoalType = parsed; AdditionalData.Remove("goal_type"); } } },
+                { "goal_type", n => { GoalType = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType.CreateFromDiscriminatorValue); } },
                 { "goal_value", n => { GoalValue = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_campaign_budget_optimization", n => { IsCampaignBudgetOptimization = n.GetBoolValue(); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "optimization_goal", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOptimizationGoal = default; _explicitNullProperties?.Remove("optimization_goal"); AdditionalData["optimization_goal"] = unknown; } else { OptimizationGoal = parsed; AdditionalData.Remove("optimization_goal"); } } },
+                { "optimization_goal", n => { OptimizationGoal = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal.CreateFromDiscriminatorValue); } },
                 { "start_time", n => { StartTime = n.GetStringValue(); } },
                 { "targeting", n => { Targeting = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Targeting>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.Targeting.CreateFromDiscriminatorValue); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Type2>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
-                { "view_through_conversion_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueViewThroughConversionType = default; _explicitNullProperties?.Remove("view_through_conversion_type"); AdditionalData["view_through_conversion_type"] = unknown; } else { ViewThroughConversionType = parsed; AdditionalData.Remove("view_through_conversion_type"); } } },
+                { "view_through_conversion_type", n => { ViewThroughConversionType = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -233,22 +288,22 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy>("bid_strategy", BidStrategy);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType>("bid_type", BidType);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy>("bid_strategy", BidStrategy);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType>("bid_type", BidType);
             writer.WriteIntValue("bid_value", BidValue);
             writer.WriteStringValue("campaign_id", CampaignId);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus>("configured_status", ConfiguredStatus);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ConfiguredStatus>("configured_status", ConfiguredStatus);
             writer.WriteStringValue("conversion_pixel_id", ConversionPixelId);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus>("effective_status", EffectiveStatus);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.EffectiveStatus>("effective_status", EffectiveStatus);
             writer.WriteStringValue("end_time", EndTime);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType>("goal_type", GoalType);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GoalType>("goal_type", GoalType);
             writer.WriteIntValue("goal_value", GoalValue);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal>("optimization_goal", OptimizationGoal);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.OptimizationGoal>("optimization_goal", OptimizationGoal);
             writer.WriteStringValue("start_time", StartTime);
             writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Targeting>("targeting", Targeting);
             writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Type2>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType>("view_through_conversion_type", ViewThroughConversionType);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsViewThroughConversionType>("view_through_conversion_type", ViewThroughConversionType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -40,14 +40,28 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         public int? DayOfMonth { get => _explicitNullValueDayOfMonth; set { _explicitNullValueDayOfMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day_of_month"); else _explicitNullProperties?.Remove("day_of_month"); } }
         private int? _explicitNullValueDayOfMonth = default!;
         /// <summary>The day of week to fetch feed for weekly schedules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3DayOfWeek? DayOfWeek { get => _explicitNullValueDayOfWeek; set { _explicitNullValueDayOfWeek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day_of_week"); else _explicitNullProperties?.Remove("day_of_week"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3DayOfWeek? _explicitNullValueDayOfWeek = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3DayOfWeek DayOfWeek { get => _explicitNullValueDayOfWeek; set { _explicitNullValueDayOfWeek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day_of_week"); else _explicitNullProperties?.Remove("day_of_week"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3DayOfWeek _explicitNullValueDayOfWeek = default!;
+#endif
         /// <summary>The hour of the day to fetch the product feed.</summary>
         public int? Hour { get => _explicitNullValueHour; set { _explicitNullValueHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hour"); else _explicitNullProperties?.Remove("hour"); } }
         private int? _explicitNullValueHour = default!;
         /// <summary>The interval at which the product feed gets fetched.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3Interval? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
         private global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3Interval? _explicitNullValueInterval = default!;
+#nullable restore
+#else
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3Interval Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3Interval _explicitNullValueInterval = default!;
+#endif
         /// <summary>The number of intervals between each import, which defaults to `1`. For example, if `interval_count` is `2` and `interval` is `DAILY`, the feed will be imported every 2 days at the specified time.</summary>
         public int? IntervalCount { get => _explicitNullValueIntervalCount; set { _explicitNullValueIntervalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval_count"); else _explicitNullProperties?.Remove("interval_count"); } }
         private int? _explicitNullValueIntervalCount = default!;
@@ -91,9 +105,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "day_of_month", n => { DayOfMonth = n.GetIntValue(); } },
-                { "day_of_week", n => { DayOfWeek = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3DayOfWeek>(); } },
+                { "day_of_week", n => { DayOfWeek = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3DayOfWeek>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3DayOfWeek.CreateFromDiscriminatorValue); } },
                 { "hour", n => { Hour = n.GetIntValue(); } },
-                { "interval", n => { Interval = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3Interval>(); } },
+                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3Interval>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3Interval.CreateFromDiscriminatorValue); } },
                 { "interval_count", n => { IntervalCount = n.GetIntValue(); } },
                 { "is_paused", n => { IsPaused = n.GetBoolValue(); } },
                 { "minute", n => { Minute = n.GetIntValue(); } },
@@ -109,9 +123,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("day_of_month", DayOfMonth);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3DayOfWeek>("day_of_week", DayOfWeek);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3DayOfWeek>("day_of_week", DayOfWeek);
             writer.WriteIntValue("hour", Hour);
-            writer.WriteEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3Interval>("interval", Interval);
+            writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.Schedule3Interval>("interval", Interval);
             writer.WriteIntValue("interval_count", IntervalCount);
             writer.WriteBoolValue("is_paused", IsPaused);
             writer.WriteIntValue("minute", Minute);
