@@ -18266,7 +18266,7 @@
         "$ref": "#/components/schemas/ComponentsSchemaSkadnetworkMetadata"
       },
       "ComponentsSchemaAdGroupManual": {
-        "title": "Ad Group",
+        "title": "Ad Group Manual",
         "type": "object",
         "properties": {
           "type": {
@@ -19761,7 +19761,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaAdUnspecified": {
-        "title": "Ad",
+        "title": "Ad Unspecified",
         "type": "object",
         "properties": {
           "type": {
@@ -22616,7 +22616,7 @@
         "$ref": "#/components/schemas/ComponentsSchemaThirdPartyDataCost"
       },
       "ComponentsSchemaCustomerListCustomAudience": {
-        "title": "Customer List Audience",
+        "title": "Customer List Custom Audience",
         "required": [
           "name",
           "type"
@@ -61334,7 +61334,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaCustomAudienceCreate"
           },
           {
-            "title": "Customer List Audience",
+            "title": "Customer List Custom Audience",
             "required": [
               "name",
               "type"
@@ -61423,7 +61423,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaCustomAudienceCreate"
           },
           {
-            "title": "Website Retargeting Audience",
+            "title": "Pixel Retargeting Custom Audience Create",
             "required": [
               "name",
               "type",
@@ -61454,7 +61454,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaCustomAudienceCreate"
           },
           {
-            "title": "Engagement Retargeting Audience",
+            "title": "Engagement Retargeting Custom Audience Create",
             "required": [
               "name",
               "type",
@@ -62968,7 +62968,7 @@
       "description": "Creative inputs and materialization state for a Reddit Max dynamic creative template ad.\n"
     },
     "ComponentsSchemaAdBase": {
-      "title": "Ad",
+      "title": "Ad Base",
       "type": "object",
       "properties": {
         "ad_account_id": {
@@ -63703,7 +63703,7 @@
       "readOnly": true
     },
     "ComponentsSchemaPixelRetargetingCustomAudienceCreate": {
-      "title": "Website Retargeting Audience",
+      "title": "Pixel Retargeting Custom Audience Create",
       "required": [
         "name",
         "type",
@@ -63727,7 +63727,7 @@
       "additionalProperties": false
     },
     "ComponentsSchemaEngagementRetargetingCustomAudienceCreate": {
-      "title": "Engagement Retargeting Audience",
+      "title": "Engagement Retargeting Custom Audience Create",
       "required": [
         "name",
         "type",
