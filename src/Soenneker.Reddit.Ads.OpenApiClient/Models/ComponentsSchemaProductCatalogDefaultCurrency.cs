@@ -47,5 +47,9 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         #pragma warning disable CS1591
         Nok,
         #pragma warning restore CS1591
+        [EnumMember(Value = "BRL")]
+        #pragma warning disable CS1591
+        Brl,
+        #pragma warning restore CS1591
     }
 }

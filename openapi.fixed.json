@@ -41118,7 +41118,8 @@
           "CHF",
           "NZD",
           "SEK",
-          "NOK"
+          "NOK",
+          "BRL"
         ],
         "type": "string",
         "description": "The catalog\u0027s default currency.",
@@ -41165,6 +41166,10 @@
             {
               "value": "NOK",
               "name": "Nok"
+            },
+            {
+              "value": "BRL",
+              "name": "Brl"
             }
           ]
         }
@@ -59188,7 +59193,8 @@
           "CHF",
           "NZD",
           "SEK",
-          "NOK"
+          "NOK",
+          "BRL"
         ],
         "type": "string",
         "description": "The catalog\u0027s default currency.",
@@ -59235,6 +59241,10 @@
             {
               "value": "NOK",
               "name": "Nok"
+            },
+            {
+              "value": "BRL",
+              "name": "Brl"
             }
           ]
         }
