@@ -16567,7 +16567,7 @@
         ]
       },
       "ComponentsSchemaAdAccountWithSpendCaps": {
-        "title": "Ad Account With Spend Caps",
+        "title": "AdAccountWithSpendCaps",
         "type": "object",
         "properties": {
           "admin_approval": {
@@ -16614,7 +16614,7 @@
             "readOnly": true
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -16758,7 +16758,7 @@
         "description": "Whether clients should select\n[Redditor Highlights](https://business.reddithelp.com/s/article/redditor-highlights)\nby default for eligible new ads. If null, clients should use the platform\ndefault. This preference does not itself change ad selection, existing\nads, or eligibility.\n"
       },
       "ComponentsSchemaAdAccountUpdateRequest": {
-        "title": "Ad Account Update Request",
+        "title": "AdAccountUpdateRequest",
         "type": "object",
         "properties": {
           "admin_approval": {
@@ -16805,7 +16805,7 @@
             "readOnly": true
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -18268,7 +18268,7 @@
         "$ref": "#/components/schemas/ComponentsSchemaSkadnetworkMetadata"
       },
       "ComponentsSchemaAdGroupManual": {
-        "title": "Ad Group Manual",
+        "title": "AdGroupManual",
         "type": "object",
         "properties": {
           "type": {
@@ -18336,7 +18336,7 @@
             "$ref": "#/components/schemas/IsCampaignBudgetOptimization"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -18401,7 +18401,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaAdGroupAutomated": {
-        "title": "Automated Ad Group",
+        "title": "AutomatedAdGroup",
         "required": [
           "type"
         ],
@@ -18466,7 +18466,7 @@
             "$ref": "#/components/schemas/IsCampaignBudgetOptimization"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -18513,7 +18513,7 @@
         "description": "An ad group in an automated Reddit Max campaign."
       },
       "ComponentsSchemaAdGroup": {
-        "title": "Ad Group",
+        "title": "AdGroup",
         "oneOf": [
           {
             "$ref": "#/components/schemas/ComponentsSchemaAdGroupManual"
@@ -18548,7 +18548,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaAdGroupCreateManual": {
-        "title": "Manual Ad Group Create",
+        "title": "ManualAdGroupCreate",
         "required": [
           "bid_strategy",
           "bid_type",
@@ -18832,7 +18832,7 @@
         "unevaluatedProperties": {
           "not": {}
         },
-        "title": "Reddit Max Ad Group Targeting",
+        "title": "RedditMaxAdGroupTargeting",
         "description": "Audience signals and controls for an automated Reddit Max ad group.\n\nAt least one of \u0060communities\u0060, \u0060interests\u0060, \u0060keywords\u0060, or\n\u0060custom_audience_ids\u0060 must be a non-empty array. Reddit uses those values as\nseed signals for automated targeting. Geolocations and exclusion fields\nremain hard controls. The service enforces the cross-field seed requirement\nand returns a \u0060400\u0060 response when it is not met.\n"
       },
       "ComponentsSchemaAssetLibraryAssetId": {
@@ -18908,7 +18908,7 @@
         "description": "A URL to navigate the user to."
       },
       "ComponentsSchemaPostCreativesEnhancementsUgc": {
-        "title": "UGC Enhancement",
+        "title": "UGCEnhancement",
         "required": [
           "enroll_status"
         ],
@@ -18922,7 +18922,7 @@
         "description": "The [Redditor Highlights](https://business.reddithelp.com/s/article/redditor-highlights) enhancement setting for this creative."
       },
       "ComponentsSchemaPostCreativesEnhancements": {
-        "title": "Creative Enhancements",
+        "title": "CreativeEnhancements",
         "type": "object",
         "properties": {
           "user_generated_content": {
@@ -18943,7 +18943,7 @@
         "description": "URLs to be called on certain events. Only URLs from Reddit\u0027s list of [approved measurement providers](https://business.reddithelp.com/s/article/Set-up-third-party-measurement) are allowed."
       },
       "ComponentsSchemaBulkActionsResultProblem": {
-        "title": "Result Problem",
+        "title": "ResultProblem",
         "type": "object",
         "properties": {
           "code": {
@@ -18973,7 +18973,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaAdGroupCreateAutomated": {
-        "title": "Automated Ad Group Create",
+        "title": "AutomatedAdGroupCreate",
         "required": [
           "type",
           "campaign_id",
@@ -19044,7 +19044,7 @@
         "description": "Create an automated ad group in a Reddit Max campaign. The parent campaign controls bidding, delivery pacing, priority, and frequency caps. Creative inputs belong on the dynamic creative template ad rather than the ad group. See the [Max campaign setup guide](/docs/v3/guides/programs/campaign/max-campaign-setup) for the complete creation workflow.\n"
       },
       "ComponentsSchemaAdGroupCreate": {
-        "title": "Ad Group Create",
+        "title": "AdGroupCreate",
         "oneOf": [
           {
             "$ref": "#/components/schemas/ComponentsSchemaAdGroupCreateManual"
@@ -19090,7 +19090,7 @@
         }
       },
       "ComponentsSchemaQueryParameter": {
-        "title": "Click URL Query Parameter",
+        "title": "ClickURLQueryParameter",
         "type": "object",
         "properties": {
           "name": {
@@ -19763,7 +19763,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaAdUnspecified": {
-        "title": "Ad Unspecified",
+        "title": "AdUnspecified",
         "type": "object",
         "properties": {
           "type": {
@@ -19866,7 +19866,7 @@
             "readOnly": true
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -19960,7 +19960,7 @@
         }
       },
       "ComponentsSchemaAdDcaTemplate": {
-        "title": "Dynamic Creative Ad Template",
+        "title": "DynamicCreativeAdTemplate",
         "required": [
           "type",
           "profile_id",
@@ -20062,7 +20062,7 @@
             "readOnly": true
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -20246,7 +20246,7 @@
         "format": "date-time"
       },
       "ComponentsSchemaAdCreateStandard": {
-        "title": "Standard Ad Create",
+        "title": "StandardAdCreate",
         "required": [
           "ad_group_id",
           "configured_status",
@@ -20329,7 +20329,7 @@
         }
       },
       "ComponentsSchemaRmaxAssetId": {
-        "title": "Reddit Max Asset Identifier",
+        "title": "RedditMaxAssetIdentifier",
         "required": [
           "id"
         ],
@@ -20350,7 +20350,7 @@
         "description": "A creative asset ID with an optional numeric version."
       },
       "ComponentsSchemaAdCreateDynamicCreativeTemplate": {
-        "title": "Dynamic Creative Template Ad Create",
+        "title": "DynamicCreativeTemplateAdCreate",
         "required": [
           "type",
           "ad_group_id",
@@ -20438,7 +20438,7 @@
         "description": "Create a dynamic creative template ad in an automated Reddit Max ad group. Reddit uses the supplied creative assets and destination to generate ads for delivery. Materialization state and errors are returned by the service. See the [Max campaign setup guide](/docs/v3/guides/programs/campaign/max-campaign-setup) for the complete creation workflow.\n"
       },
       "ComponentsSchemaAdCreate": {
-        "title": "Ad Create",
+        "title": "AdCreate",
         "oneOf": [
           {
             "$ref": "#/components/schemas/ComponentsSchemaAdCreateStandard"
@@ -21168,7 +21168,7 @@
         "unevaluatedProperties": {
           "not": {}
         },
-        "title": "Plan Configurations",
+        "title": "PlanConfigurations",
         "required": [
           "goal_value",
           "campaign_objective"
@@ -21432,7 +21432,7 @@
             "readOnly": true
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -22057,7 +22057,7 @@
         "description": "A free-form label agencies can use for tracking and reconciliation purposes on the resulting invoice. Only settable on campaigns whose funding instrument is **not** a credit card; attempts to set this field on credit-card-funded campaigns are ignored.\n"
       },
       "ComponentsSchemaCampaignCreateManual": {
-        "title": "Manual Campaign Create",
+        "title": "ManualCampaignCreate",
         "required": [
           "name",
           "configured_status",
@@ -22145,7 +22145,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaCampaignCreateAutomated": {
-        "title": "Automated Campaign Create",
+        "title": "AutomatedCampaignCreate",
         "required": [
           "type",
           "name",
@@ -22235,7 +22235,7 @@
         "description": "Create an automated Reddit Max campaign. Reddit Max campaigns always use\ncampaign budget optimization, uniform delivery, and auction priority.\n\nSee the [Max campaign setup guide](/docs/v3/guides/programs/campaign/max-campaign-setup)\nfor the complete creation workflow.\n\n**Conditional requirements:**\n- \u0060end_time\u0060 is required when \u0060goal_type\u0060 is \u0060LIFETIME_SPEND\u0060.\n- Optimization, bid type, app, attribution, and Pixel requirements depend on\n  the selected objective and the ad account\u0027s measurement configuration.\n\nThe service validates these conditional requirements and returns a \u0060400\u0060\nresponse when they are not met.\n"
       },
       "ComponentsSchemaCampaignCreate": {
-        "title": "Campaign Create",
+        "title": "CampaignCreate",
         "oneOf": [
           {
             "$ref": "#/components/schemas/ComponentsSchemaCampaignCreateManual"
@@ -22356,7 +22356,7 @@
         "description": "Configuration for a website retargeting audience. In the API, website retargeting is represented by the \u0060PIXEL_RETARGETING\u0060 type and the \u0060pixel_audience_config\u0060 field."
       },
       "ComponentsSchemaCustomerListConfig": {
-        "title": "Customer List Audience",
+        "title": "CustomerListAudience",
         "minProperties": 1,
         "required": [
           "origin_client_id"
@@ -22385,7 +22385,7 @@
         "description": "Details for the [customer list audience](https://business.reddithelp.com/s/article/custom-audiences#customer-lists)."
       },
       "ComponentsSchemaThirdPartyDataCost": {
-        "title": "Third-Party Data Cost",
+        "title": "ThirdPartyDataCost",
         "type": "object",
         "properties": {
           "partner": {
@@ -22446,7 +22446,7 @@
         "readOnly": true
       },
       "ComponentsSchemaCustomAudienceBase": {
-        "title": "Custom Audience Base",
+        "title": "CustomAudienceBase",
         "required": [
           "name",
           "type"
@@ -22498,7 +22498,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaDeliveryStatus"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -22618,7 +22618,7 @@
         "$ref": "#/components/schemas/ComponentsSchemaThirdPartyDataCost"
       },
       "ComponentsSchemaCustomerListCustomAudience": {
-        "title": "Customer List Custom Audience",
+        "title": "CustomerListCustomAudience",
         "required": [
           "name",
           "type"
@@ -22664,7 +22664,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaDeliveryStatus"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -22821,7 +22821,7 @@
         "description": "Configuration for a website retargeting audience. In the API, website retargeting is represented by the \u0060PIXEL_RETARGETING\u0060 type and the \u0060pixel_audience_config\u0060 field."
       },
       "ComponentsEnumsEngagementTrackingTypes": {
-        "title": "Engagement Audience Tracking Type",
+        "title": "EngagementAudienceTrackingType",
         "enum": [
           "IMPRESSIONS",
           "CLICKS",
@@ -22910,7 +22910,7 @@
         "description": "Configuration for an ENGAGEMENT_RETARGETING audience. Required when type is ENGAGEMENT_RETARGETING."
       },
       "ComponentsSchemaCustomAudienceCreate": {
-        "title": "Custom Audience Create",
+        "title": "CustomAudienceCreate",
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -22920,7 +22920,7 @@
           }
         },
         "x-client-original-tagged-union": {
-          "title": "Custom Audience Create",
+          "title": "CustomAudienceCreate",
           "oneOf": [
             {
               "$ref": "#/components/schemas/ComponentsSchemaCustomerListCustomAudience"
@@ -22952,7 +22952,7 @@
         ]
       },
       "ComponentsSchemaPixelRetargetingCustomAudience": {
-        "title": "Website Retargeting Audience",
+        "title": "WebsiteRetargetingAudience",
         "required": [
           "name",
           "type",
@@ -22999,7 +22999,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaDeliveryStatus"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -23032,7 +23032,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaEngagementRetargetingCustomAudience": {
-        "title": "Engagement Retargeting Audience",
+        "title": "EngagementRetargetingAudience",
         "required": [
           "name",
           "type",
@@ -23079,7 +23079,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaDeliveryStatus"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -23112,7 +23112,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaCustomAudience": {
-        "title": "Custom Audience",
+        "title": "CustomAudience",
         "oneOf": [
           {
             "$ref": "#/components/schemas/ComponentsSchemaCustomerListCustomAudience"
@@ -23134,7 +23134,7 @@
         }
       },
       "ComponentsEnumsDataDeletionIdentifierType": {
-        "title": "Data Deletion Identifier Type",
+        "title": "DataDeletionIdentifierType",
         "enum": [
           "EMAIL",
           "PHONE_NUMBER",
@@ -23172,7 +23172,7 @@
         }
       },
       "ComponentsSchemaDataDeletionIdentifier": {
-        "title": "Data Deletion Identifier",
+        "title": "DataDeletionIdentifier",
         "required": [
           "type",
           "value"
@@ -23191,7 +23191,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaSubmitDataDeletionJobRequestData": {
-        "title": "Submit Data Deletion Job Request Data",
+        "title": "SubmitDataDeletionJobRequestData",
         "required": [
           "identifiers"
         ],
@@ -23210,7 +23210,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaDataDeletionJobStatus": {
-        "title": "Data Deletion Job Status",
+        "title": "DataDeletionJobStatus",
         "required": [
           "job_id",
           "status"
@@ -23229,7 +23229,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaForecastingEstimatesCampaignGoalValue": {
-        "title": "With Campaign Goal Values",
+        "title": "WithCampaignGoalValues",
         "required": [
           "goal_value",
           "objective",
@@ -23266,7 +23266,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaForecastingEstimatesAdGroupGoalValue": {
-        "title": "With Ad Group Goal Values",
+        "title": "WithAdGroupGoalValues",
         "required": [
           "objective",
           "ad_group_configs"
@@ -23391,7 +23391,7 @@
         }
       },
       "ComponentsSchemaFundingInstrument": {
-        "title": "Funding Instrument",
+        "title": "FundingInstrument",
         "type": "object",
         "properties": {
           "id": {
@@ -23609,7 +23609,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaLeadGenFormQuestion": {
-        "title": "Lead Gen Form Question",
+        "title": "LeadGenFormQuestion",
         "type": "object",
         "properties": {
           "type": {
@@ -23626,7 +23626,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaLeadGenForm": {
-        "title": "Lead Gen Form",
+        "title": "LeadGenForm",
         "type": "object",
         "properties": {
           "ad_account_id": {
@@ -23683,7 +23683,7 @@
             "example": "2023-03-27T21:18:39Z"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -23706,7 +23706,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaAutomaticAdvancedMatchingConfig": {
-        "title": "Automatic Advanced Matching Config",
+        "title": "AutomaticAdvancedMatchingConfig",
         "type": "object",
         "properties": {
           "collect_email": {
@@ -23736,7 +23736,7 @@
         "description": "The Pixel\u0027s [automated advanced matching](https://business.reddithelp.com/s/article/automated-advanced-matching) settings."
       },
       "ComponentsSchemaEnhancedSignalCollectionConfig": {
-        "title": "Enhanced Signal Collection Config",
+        "title": "EnhancedSignalCollectionConfig",
         "type": "object",
         "properties": {
           "collect_page_metadata": {
@@ -23797,7 +23797,7 @@
             "readOnly": true
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -23842,7 +23842,7 @@
             "readOnly": true
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -39442,7 +39442,7 @@
         "description": "The [languages](https://ads-api.reddit.com/docs/v3/operations/List%20Languages) to target ([ISO 639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php))."
       },
       "ComponentsSchemaSavedAudience": {
-        "title": "Saved Audience",
+        "title": "SavedAudience",
         "type": "object",
         "properties": {
           "active_ad_groups_count": {
@@ -39740,7 +39740,7 @@
         "description": "Targeting information for the ad group."
       },
       "ComponentsSchemaAdGroupPatch": {
-        "title": "Ad Group Patch",
+        "title": "AdGroupPatch",
         "type": "object",
         "properties": {
           "name": {
@@ -39828,7 +39828,7 @@
             "$ref": "#/components/schemas/IsCampaignBudgetOptimization"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -40036,7 +40036,7 @@
         ]
       },
       "ComponentsSchemaAdPatch": {
-        "title": "Ad Patch",
+        "title": "AdPatch",
         "type": "object",
         "properties": {
           "ad_account_id": {
@@ -40086,7 +40086,7 @@
             "readOnly": true
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -40658,7 +40658,7 @@
             "$ref": "#/components/schemas/ComponentsEnumsIndustryType"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -40762,7 +40762,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaAdAccount": {
-        "title": "Ad Account",
+        "title": "AdAccount",
         "type": "object",
         "properties": {
           "admin_approval": {
@@ -40809,7 +40809,7 @@
             "readOnly": true
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -40987,7 +40987,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaProductCatalog": {
-        "title": "Product Catalog",
+        "title": "ProductCatalog",
         "type": "object",
         "properties": {
           "id": {
@@ -41051,7 +41051,7 @@
             "example": "2023-03-27T21:18:39Z"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -41180,7 +41180,7 @@
         "$ref": "#/components/schemas/Nullable"
       },
       "ComponentsSchemaCampaignPatch": {
-        "title": "Campaign Patch",
+        "title": "CampaignPatch",
         "type": "object",
         "properties": {
           "name": {
@@ -41562,7 +41562,7 @@
         }
       },
       "ComponentsSchemaCatalogImportIssue": {
-        "title": "Catalog Import Issue",
+        "title": "CatalogImportIssue",
         "type": "object",
         "properties": {
           "id": {
@@ -42124,7 +42124,7 @@
         ]
       },
       "ComponentsSchemaBidSuggestion": {
-        "title": "Bid Suggestion",
+        "title": "BidSuggestion",
         "type": "object",
         "properties": {
           "min_bid_value": {
@@ -42147,7 +42147,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaGeneratedPoster": {
-        "title": "Generated Poster",
+        "title": "GeneratedPoster",
         "required": [
           "url"
         ],
@@ -42164,7 +42164,7 @@
         "description": "A generated still image extracted from the source video."
       },
       "ComponentsSchemaGeneratedPostersJobError": {
-        "title": "Generated Posters Job Error",
+        "title": "GeneratedPostersJobError",
         "required": [
           "code",
           "message"
@@ -42184,7 +42184,7 @@
         "description": "Failure information for a terminal poster generation job."
       },
       "ComponentsSchemaGeneratedPostersJob": {
-        "title": "Generated Posters Job",
+        "title": "GeneratedPostersJob",
         "description": "Poster generation job state selected by \u0060status\u0060.",
         "x-client-original-discriminator": {
           "propertyName": "status",
@@ -42203,7 +42203,7 @@
           }
         },
         "x-client-original-tagged-union": {
-          "title": "Generated Posters Job",
+          "title": "GeneratedPostersJob",
           "oneOf": [
             {
               "$ref": "#/components/schemas/ComponentsSchemaGeneratedPostersJobProcessing"
@@ -43009,7 +43009,7 @@
         }
       },
       "ComponentsSchemaCatalogImport": {
-        "title": "Catalog Import",
+        "title": "CatalogImport",
         "type": "object",
         "properties": {
           "id": {
@@ -43058,7 +43058,7 @@
             "example": "2023-03-27T21:18:39Z"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -43069,7 +43069,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaProductFeed": {
-        "title": "Product Feed",
+        "title": "ProductFeed",
         "type": "object",
         "properties": {
           "id": {
@@ -43142,7 +43142,7 @@
             "example": "2023-03-27T21:18:39Z"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -43153,7 +43153,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaProductSet": {
-        "title": "Product Set",
+        "title": "ProductSet",
         "type": "object",
         "properties": {
           "id": {
@@ -43196,7 +43196,7 @@
             "example": "2023-03-27T21:18:39Z"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -43971,7 +43971,7 @@
             "example": "2023-03-27T21:18:39Z"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -44130,7 +44130,7 @@
         "description": "When to update the feed."
       },
       "ComponentsSchemaProductFeedUpdate": {
-        "title": "Product Feed Update",
+        "title": "ProductFeedUpdate",
         "type": "object",
         "properties": {
           "name": {
@@ -44410,7 +44410,7 @@
         }
       },
       "ComponentsSchemaPostCreativesEvent": {
-        "title": "Creative Event",
+        "title": "CreativeEvent",
         "required": [
           "type",
           "start_time"
@@ -44562,7 +44562,7 @@
         ]
       },
       "ComponentsSchemaStructuredPost": {
-        "title": "Structured Post",
+        "title": "StructuredPost",
         "required": [
           "creative"
         ],
@@ -44616,7 +44616,7 @@
         "description": "A post with structured data inside the creative property."
       },
       "ComponentsSchemaStructuredPostCreationJob": {
-        "title": "Structured Post Creation Job",
+        "title": "StructuredPostCreationJob",
         "required": [
           "id",
           "status",
@@ -44644,7 +44644,7 @@
             "example": "2023-03-27T21:18:39Z"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -45423,7 +45423,7 @@
         }
       },
       "ComponentsSchemaThirdPartyAudience": {
-        "title": "Third Party Audiences",
+        "title": "ThirdPartyAudiences",
         "type": "object",
         "properties": {
           "id": {
@@ -45461,7 +45461,7 @@
         "additionalProperties": false
       },
       "ComponentsSchemaTimeZone": {
-        "title": "Time Zone",
+        "title": "TimeZone",
         "type": "object",
         "properties": {
           "code": {
@@ -45538,7 +45538,7 @@
             "x-client-original-format": "uri"
           },
           {
-            "title": "Empty String",
+            "title": "EmptyString",
             "enum": [
               ""
             ],
@@ -45665,12 +45665,12 @@
             "examples": [
               "5"
             ],
-            "title": "Reddit Max Asset Version String",
+            "title": "RedditMaxAssetVersionString",
             "pattern": "^[0-9]\u002B$",
             "type": "string"
           },
           {
-            "title": "Reddit Max Asset Version Integer",
+            "title": "RedditMaxAssetVersionInteger",
             "minimum": 0,
             "type": "integer"
           }
@@ -52103,7 +52103,7 @@
         "additionalProperties": false
       },
       "CreateGeneratedPostersJobRequest": {
-        "title": "Create Generated Posters Job Request",
+        "title": "CreateGeneratedPostersJobRequest",
         "required": [
           "data"
         ],
@@ -52116,7 +52116,7 @@
         "additionalProperties": false
       },
       "CreateGeneratedPostersJobResponse": {
-        "title": "Create Generated Posters Job Response",
+        "title": "CreateGeneratedPostersJobResponse",
         "required": [
           "data"
         ],
@@ -52640,7 +52640,7 @@
         "additionalProperties": false
       },
       "GetThirdPartyTrackersResponse": {
-        "title": "Get Third Party Trackers Response",
+        "title": "GetThirdPartyTrackersResponse",
         "required": [
           "data"
         ],
@@ -52745,7 +52745,7 @@
         "additionalProperties": false
       },
       "SubmitDataDeletionJobResponse": {
-        "title": "Submit Data Deletion Job Response",
+        "title": "SubmitDataDeletionJobResponse",
         "required": [
           "data"
         ],
@@ -52987,7 +52987,7 @@
         "additionalProperties": false
       },
       "GetDataDeletionJobStatusResponse": {
-        "title": "Get Data Deletion Job Status Response",
+        "title": "GetDataDeletionJobStatusResponse",
         "required": [
           "data"
         ],
@@ -53012,7 +53012,7 @@
         "additionalProperties": false
       },
       "GetGeneratedPostersJobResponse": {
-        "title": "Get Generated Posters Job Response",
+        "title": "GetGeneratedPostersJobResponse",
         "required": [
           "data"
         ],
@@ -53067,7 +53067,7 @@
         "additionalProperties": false
       },
       "SubmitPixelDataDeletionJobResponse": {
-        "title": "Submit Pixel Data Deletion Job Response",
+        "title": "SubmitPixelDataDeletionJobResponse",
         "required": [
           "data"
         ],
@@ -53501,7 +53501,7 @@
         }
       },
       "CreateGeneratedPostersJobRequestData": {
-        "title": "Poster Job Source URL Input",
+        "title": "PosterJobSourceURLInput",
         "required": [
           "source_url"
         ],
@@ -53530,7 +53530,7 @@
       "GeolocationsValidationsRequestData": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/GeolocationsValidationsRequestDataGeolocationIds"
+            "$ref": "#/components/schemas/GeolocationsValidationsRequestDataGeolocationIDs"
           },
           {
             "$ref": "#/components/schemas/GeolocationsValidationsRequestDataCities"
@@ -53568,8 +53568,8 @@
         },
         "additionalProperties": false
       },
-      "GeolocationsValidationsRequestDataGeolocationIds": {
-        "title": "geolocation_ids",
+      "GeolocationsValidationsRequestDataGeolocationIDs": {
+        "title": "GeolocationIDs",
         "required": [
           "geolocation_ids"
         ],
@@ -53594,7 +53594,7 @@
         "additionalProperties": false
       },
       "GeolocationsValidationsRequestDataCities": {
-        "title": "cities",
+        "title": "Cities",
         "required": [
           "cities"
         ],
@@ -54062,7 +54062,7 @@
             "example": "2023-03-27T21:18:39Z"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -55269,7 +55269,7 @@
             "example": "2023-03-27T21:18:39Z"
           },
           "modified_at": {
-            "title": "Modified At",
+            "title": "ModifiedAt",
             "type": "string",
             "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
             "format": "date-time",
@@ -55361,7 +55361,7 @@
         "additionalProperties": false
       },
       "GetThirdPartyTrackersResponseData": {
-        "title": "Third Party Tracker Domains",
+        "title": "ThirdPartyTrackerDomains",
         "required": [
           "click_tracker_domains",
           "impression_tracker_domains"
@@ -61346,7 +61346,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaCustomAudienceCreate"
           },
           {
-            "title": "Customer List Custom Audience",
+            "title": "CustomerListCustomAudience",
             "required": [
               "name",
               "type"
@@ -61392,7 +61392,7 @@
                 "$ref": "#/components/schemas/ComponentsSchemaDeliveryStatus"
               },
               "modified_at": {
-                "title": "Modified At",
+                "title": "ModifiedAt",
                 "type": "string",
                 "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
                 "format": "date-time",
@@ -61435,7 +61435,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaCustomAudienceCreate"
           },
           {
-            "title": "Pixel Retargeting Custom Audience Create",
+            "title": "PixelRetargetingCustomAudienceCreate",
             "required": [
               "name",
               "type",
@@ -61466,7 +61466,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaCustomAudienceCreate"
           },
           {
-            "title": "Engagement Retargeting Custom Audience Create",
+            "title": "EngagementRetargetingCustomAudienceCreate",
             "required": [
               "name",
               "type",
@@ -61690,7 +61690,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaGeneratedPostersJob"
           },
           {
-            "title": "Generated Posters Job Processing",
+            "title": "GeneratedPostersJobProcessing",
             "required": [
               "id",
               "status"
@@ -61717,7 +61717,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaGeneratedPostersJob"
           },
           {
-            "title": "Generated Posters Job Success",
+            "title": "GeneratedPostersJobSuccess",
             "required": [
               "id",
               "status",
@@ -61754,7 +61754,7 @@
             "$ref": "#/components/schemas/ComponentsSchemaGeneratedPostersJob"
           },
           {
-            "title": "Generated Posters Job Failed",
+            "title": "GeneratedPostersJobFailed",
             "required": [
               "id",
               "status",
@@ -62612,7 +62612,7 @@
       "readOnly": true
     },
     "ComponentsSchemaModifiedAt": {
-      "title": "Modified At",
+      "title": "ModifiedAt",
       "type": "string",
       "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
       "format": "date-time",
@@ -62980,7 +62980,7 @@
       "description": "Creative inputs and materialization state for a Reddit Max dynamic creative template ad.\n"
     },
     "ComponentsSchemaAdBase": {
-      "title": "Ad Base",
+      "title": "AdBase",
       "type": "object",
       "properties": {
         "ad_account_id": {
@@ -63080,7 +63080,7 @@
           "readOnly": true
         },
         "modified_at": {
-          "title": "Modified At",
+          "title": "ModifiedAt",
           "type": "string",
           "description": "When this entity was last changed ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)).",
           "format": "date-time",
@@ -63582,7 +63582,7 @@
       "description": "The [languages](https://ads-api.reddit.com/docs/v3/api/list-languages) to target ([ISO 639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php))."
     },
     "ComponentsSchemaForecastingAdGroup": {
-      "title": "Forecasting Ad Group",
+      "title": "ForecastingAdGroup",
       "type": "object",
       "properties": {
         "start_time": {
@@ -63715,7 +63715,7 @@
       "readOnly": true
     },
     "ComponentsSchemaPixelRetargetingCustomAudienceCreate": {
-      "title": "Pixel Retargeting Custom Audience Create",
+      "title": "PixelRetargetingCustomAudienceCreate",
       "required": [
         "name",
         "type",
@@ -63739,7 +63739,7 @@
       "additionalProperties": false
     },
     "ComponentsSchemaEngagementRetargetingCustomAudienceCreate": {
-      "title": "Engagement Retargeting Custom Audience Create",
+      "title": "EngagementRetargetingCustomAudienceCreate",
       "required": [
         "name",
         "type",
@@ -64435,7 +64435,7 @@
       }
     },
     "ComponentsSchemaPosterJobSourceUrlInput": {
-      "title": "Poster Job Source URL Input",
+      "title": "PosterJobSourceURLInput",
       "required": [
         "source_url"
       ],
@@ -64452,7 +64452,7 @@
       "description": "Start poster generation from an externally hosted video URL."
     },
     "ComponentsSchemaGeneratedPostersJobProcessing": {
-      "title": "Generated Posters Job Processing",
+      "title": "GeneratedPostersJobProcessing",
       "required": [
         "id",
         "status"
@@ -64472,7 +64472,7 @@
       "description": "A poster generation job that is still running."
     },
     "ComponentsSchemaGeneratedPostersJobSuccess": {
-      "title": "Generated Posters Job Success",
+      "title": "GeneratedPostersJobSuccess",
       "required": [
         "id",
         "status",
@@ -64502,7 +64502,7 @@
       "description": "A poster generation job that completed successfully."
     },
     "ComponentsSchemaGeneratedPostersJobFailed": {
-      "title": "Generated Posters Job Failed",
+      "title": "GeneratedPostersJobFailed",
       "required": [
         "id",
         "status",
@@ -65971,7 +65971,7 @@
       }
     },
     "ComponentsSchemaShoppingCreativeDestinationUrlOneOf2": {
-      "title": "Empty String",
+      "title": "EmptyString",
       "enum": [
         ""
       ],

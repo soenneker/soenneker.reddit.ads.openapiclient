@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataCities"/>, <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIds"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataCities"/>, <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIDs"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GeolocationsValidationsRequestData : IComposedTypeWrapper, IParsable
@@ -26,13 +26,13 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 #else
         public global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataCities GeolocationsValidationsRequestDataCities { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIds"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIDs"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIds? GeolocationsValidationsRequestDataGeolocationIds { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIDs? GeolocationsValidationsRequestDataGeolocationIDs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIds GeolocationsValidationsRequestDataGeolocationIds { get; set; }
+        public global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIDs GeolocationsValidationsRequestDataGeolocationIDs { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +48,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
             {
                 
             }
-            else if("GeolocationsValidationsRequestDataGeolocationIds".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GeolocationsValidationsRequestDataGeolocationIDs".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
@@ -127,10 +127,10 @@ return matches; }))() : null;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
             if (matchesUnionBranch1 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.GeolocationsValidationsRequestDataCities == null && result.GeolocationsValidationsRequestDataGeolocationIds == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.GeolocationsValidationsRequestDataGeolocationIds = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIds(), parseNode);
+            bool noSelectedUnionBranch = result.GeolocationsValidationsRequestDataCities == null && result.GeolocationsValidationsRequestDataGeolocationIDs == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.GeolocationsValidationsRequestDataGeolocationIDs = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIDs(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.GeolocationsValidationsRequestDataCities = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataCities(), parseNode);
-            if (result.GeolocationsValidationsRequestDataCities == null && result.GeolocationsValidationsRequestDataGeolocationIds == null) result.UnrecognizedValue = unionPayload;
+            if (result.GeolocationsValidationsRequestDataCities == null && result.GeolocationsValidationsRequestDataGeolocationIDs == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -145,9 +145,9 @@ return result;
             {
                 return GeolocationsValidationsRequestDataCities.GetFieldDeserializers();
             }
-            else if(GeolocationsValidationsRequestDataGeolocationIds != null)
+            else if(GeolocationsValidationsRequestDataGeolocationIDs != null)
             {
-                return GeolocationsValidationsRequestDataGeolocationIds.GetFieldDeserializers();
+                return GeolocationsValidationsRequestDataGeolocationIDs.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -158,12 +158,12 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (GeolocationsValidationsRequestDataCities == null && GeolocationsValidationsRequestDataGeolocationIds == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (GeolocationsValidationsRequestDataCities == null && GeolocationsValidationsRequestDataGeolocationIDs == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (GeolocationsValidationsRequestDataCities != null) selectedUnionBranches++;
-            if (GeolocationsValidationsRequestDataGeolocationIds != null) selectedUnionBranches++;
+            if (GeolocationsValidationsRequestDataGeolocationIDs != null) selectedUnionBranches++;
             if (GeolocationsValidationsRequestDataCities != null && selectedUnionBranches == 1) { if (GeolocationsValidationsRequestDataCities is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeolocationsValidationsRequestDataCities); return; }
-            if (GeolocationsValidationsRequestDataGeolocationIds != null && selectedUnionBranches == 1) { if (GeolocationsValidationsRequestDataGeolocationIds is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeolocationsValidationsRequestDataGeolocationIds); return; }
+            if (GeolocationsValidationsRequestDataGeolocationIDs != null && selectedUnionBranches == 1) { if (GeolocationsValidationsRequestDataGeolocationIDs is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeolocationsValidationsRequestDataGeolocationIDs); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(GeolocationsValidationsRequestDataCities != null)
@@ -171,10 +171,10 @@ return result;
                 if (GeolocationsValidationsRequestDataCities is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataCities>(null, GeolocationsValidationsRequestDataCities);
             }
-            else if(GeolocationsValidationsRequestDataGeolocationIds != null)
+            else if(GeolocationsValidationsRequestDataGeolocationIDs != null)
             {
-                if (GeolocationsValidationsRequestDataGeolocationIds is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIds>(null, GeolocationsValidationsRequestDataGeolocationIds);
+                if (GeolocationsValidationsRequestDataGeolocationIDs is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIDs>(null, GeolocationsValidationsRequestDataGeolocationIDs);
             }
         }
     }

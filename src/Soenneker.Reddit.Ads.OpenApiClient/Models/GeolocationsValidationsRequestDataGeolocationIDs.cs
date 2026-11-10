@@ -9,7 +9,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GeolocationsValidationsRequestDataGeolocationIds : IParsable
+    public partial class GeolocationsValidationsRequestDataGeolocationIDs : IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -34,12 +34,12 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIds"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIDs"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIds CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIDs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIds(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Reddit.Ads.OpenApiClient.Models.GeolocationsValidationsRequestDataGeolocationIDs(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
