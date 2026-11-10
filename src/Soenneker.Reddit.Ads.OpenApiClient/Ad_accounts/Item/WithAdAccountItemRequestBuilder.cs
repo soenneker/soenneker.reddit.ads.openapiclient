@@ -83,6 +83,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item
             get => new global::Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The lead_gen_forms property</summary>
+        [Obsolete("")]
         public global::Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Lead_gen_forms.Lead_gen_formsRequestBuilder Lead_gen_forms
         {
             get => new global::Soenneker.Reddit.Ads.OpenApiClient.Ad_accounts.Item.Lead_gen_forms.Lead_gen_formsRequestBuilder(PathParameters, RequestAdapter);

@@ -18,6 +18,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Lead_gen_forms
         /// <summary>Gets an item from the Soenneker.Reddit.Ads.OpenApiClient.lead_gen_forms.item collection</summary>
         /// <param name="position">The form ID.</param>
         /// <returns>A <see cref="global::Soenneker.Reddit.Ads.OpenApiClient.Lead_gen_forms.Item.WithLeadGenFormItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.Reddit.Ads.OpenApiClient.Lead_gen_forms.Item.WithLeadGenFormItemRequestBuilder this[string position]
         {
             get
