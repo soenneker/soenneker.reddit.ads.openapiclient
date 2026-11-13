@@ -22701,7 +22701,7 @@
       },
       "StandardTrackingType": {
         "examples": [
-          "PAGE_VISIT"
+          "CUSTOM"
         ],
         "enum": [
           "PAGE_VISIT",
