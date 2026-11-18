@@ -83,7 +83,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "actors", n => { Actors = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaActor>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaActor.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "assets", n => { Assets = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAsset>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAsset.CreateFromDiscriminatorValue)?.AsList(); } },

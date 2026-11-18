@@ -69,7 +69,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "conversion_event_types", n => { ConversionEventTypes = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType>()?.AsList(); } },
                 { "excluded_conversion_event_types", n => { ExcludedConversionEventTypes = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsConversionEventType>()?.AsList(); } },

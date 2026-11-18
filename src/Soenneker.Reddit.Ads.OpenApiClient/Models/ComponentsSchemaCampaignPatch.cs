@@ -162,7 +162,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "bid_strategy", n => { BidStrategy = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidStrategy3.CreateFromDiscriminatorValue); } },
                 { "bid_type", n => { BidType = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.BidType3.CreateFromDiscriminatorValue); } },

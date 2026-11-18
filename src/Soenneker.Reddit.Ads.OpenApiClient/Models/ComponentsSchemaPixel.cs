@@ -101,7 +101,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "automatic_matching_config", n => { AutomaticMatchingConfig = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAutomaticAdvancedMatchingConfig>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAutomaticAdvancedMatchingConfig.CreateFromDiscriminatorValue); } },
                 { "business_id", n => { BusinessId = n.GetGuidValue(); } },

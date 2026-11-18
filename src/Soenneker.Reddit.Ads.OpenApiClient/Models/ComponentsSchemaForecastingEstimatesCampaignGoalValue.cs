@@ -62,7 +62,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "ad_group_configs", n => { AdGroupConfigs = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingEstimatesCampaignGoalValueAdGroupConfigsItem>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaForecastingEstimatesCampaignGoalValueAdGroupConfigsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "goal_value", n => { GoalValue = n.GetIntValue(); } },

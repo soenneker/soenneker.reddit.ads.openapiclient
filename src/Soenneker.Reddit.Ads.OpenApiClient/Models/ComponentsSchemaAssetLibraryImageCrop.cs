@@ -67,7 +67,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "aspect_ratio", n => { AspectRatio = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumImageCropAspectRatio>(); } },
                 { "dimensions", n => { Dimensions = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryImageCropDimensions>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaAssetLibraryImageCropDimensions.CreateFromDiscriminatorValue); } },

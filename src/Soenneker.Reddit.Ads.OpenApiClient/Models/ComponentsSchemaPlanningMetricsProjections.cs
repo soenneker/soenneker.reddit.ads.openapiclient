@@ -149,7 +149,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "budget", n => { Budget = n.GetIntValue(); } },
                 { "clicks", n => { Clicks = n.GetObjectValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPlanningMetricPointEstimate>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaPlanningMetricPointEstimate.CreateFromDiscriminatorValue); } },

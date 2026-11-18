@@ -176,7 +176,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(22)
             {
                 { "admin_approval", n => { AdminApproval = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AdminApproval>(); } },
                 { "app_attribution_type", n => { AppAttributionType = n.GetEnumValue<global::Soenneker.Reddit.Ads.OpenApiClient.Models.AppAttributionType>(); } },

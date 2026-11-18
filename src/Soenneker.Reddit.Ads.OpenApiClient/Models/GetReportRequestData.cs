@@ -124,7 +124,7 @@ namespace Soenneker.Reddit.Ads.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "breakdowns", n => { Breakdowns = n.GetCollectionOfEnumValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsEnumsReportBreakdown>()?.AsList(); } },
                 { "conversion_custom_events", n => { ConversionCustomEvents = n.GetCollectionOfObjectValues<global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionCustomEvent>(global::Soenneker.Reddit.Ads.OpenApiClient.Models.ComponentsSchemaConversionCustomEvent.CreateFromDiscriminatorValue)?.AsList(); } },
